@@ -1,0 +1,22 @@
+{
+    "flowersApp": {
+        "pinchVariety" : {
+            "home": {
+                "title": "Pinch Varieties",
+                "createLabel": "Crear nuevo Pinch Variety",
+                "createOrEditLabel": "Crear o editar Pinch Variety"
+            },
+            "created": "Un nuevo Pinch Variety ha sido creado con el identificador {{ param }}",
+            "updated": "Un Pinch Variety ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Pinch Variety ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Pinch Variety {{ id }}?"
+            },
+            "detail": {
+                "title": "Pinch Variety"
+            },
+            "pinch": "Pinch",
+            "variety": "Variety"
+        }
+    }
+}

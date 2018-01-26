@@ -1,0 +1,52 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "client",
+            "otherEntityName": "client",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "clientEmployee"
+        },
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "clientEmployeePosition",
+            "otherEntityName": "clientEmployeePosition",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "clientEmployee"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "fullName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mobilePhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "officePhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "skype",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170219155757",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "client_employee",
+    "pagination": "pagination"
+}

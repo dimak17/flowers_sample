@@ -1,0 +1,67 @@
+<form [formGroup]="rootFormGroup" novalidate *ngIf="allBoxTypes && boxGroups">
+    <p-growl life="3000" [(value)]="msgs"></p-growl>
+    <h2 jhiTranslate="flowersApp.box-grouping.title"></h2>
+    <div class="scrolling">
+        <div formArrayName="root">
+            <div *ngFor="let group of rootFormGroup.controls.root.controls; trackBy: trackByFn; let groupIndex = index;">
+                <div class="group-container" [formGroupName]="groupIndex">
+                    <div *ngIf="showMessageHandler(group, groupIndex)" class="warn-text"><span jhiTranslate="flowersApp.box-grouping.warn_save"></span>&nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></div>
+                    <div formArrayName="boxTypeGroups">
+                        <div class="group-controls" *ngFor="let boxTypeControl of group.controls.boxTypeGroups.controls; let boxIndex = index">
+                            <span class="group-equal">=</span>
+                            <div [formGroupName]="boxIndex">
+                                <jhi-flowers-box-grouping-group
+                                    (onQuantityChange)="onQuantityChange($event)"
+                                    (onBoxChoose)="onBoxChoose($event)"
+                                    [canCollapse]="isShowControls(groupIndex)"
+                                    [disabledIds]="disabledBoxIds && disabledBoxIds.length > groupIndex ? disabledBoxIds[groupIndex][boxIndex] : null"
+                                    [selectedBox]=" boxGroups[groupIndex].boxTypes[boxIndex]"
+                                    [selectedQuantity]="boxGroups[groupIndex].quantities[boxIndex]"
+                                    [boxTypes]="allBoxTypes"
+                                    [boxTypeFormGroup]="boxTypeControl"
+                                    [groupIndex]="groupIndex"
+                                    [boxIndex]="boxIndex"
+                                    [disabledQuantities]="
+                                        disabledQuantities
+                                        && disabledQuantities.length
+                                        && disabledQuantities[groupIndex]
+                                        && disabledQuantities[groupIndex]
+                                        && disabledQuantities[groupIndex][boxIndex]
+                                            ? disabledQuantities[groupIndex][boxIndex][0]
+                                            : null
+                                    "
+                                >
+                                </jhi-flowers-box-grouping-group>
+                            </div>
+                        </div>
+                        <div *ngIf="isShowControls(groupIndex)" class="controls">
+                            <div *ngIf="isShowAddButton(group, groupIndex)"
+                                 class="add-button fa fa-plus-square-o"
+                                 (click)="addBoxTypesControls(groupIndex)">
+                            </div>
+                            <div *ngIf="isShowMinusButton(groupIndex)"
+                                 class="fa fa-minus-square-o float-left minus-button"
+                                 (click)="removeControls(groupIndex)">
+                            </div>
+                            <div *ngIf="isShowSaveButton(group, groupIndex)"
+                                 class="fa fa-check-square-o save-button"
+                                 (click)="save(groupIndex)">
+                            </div>
+                            <div class="delete-block"
+                                *ngIf="isShowDeleteAllButton(group, groupIndex)"
+                                [routerLink]="['/', { outlets: { popup: 'box-grouping/'+ boxGroups[groupIndex].id + '/delete/' + groupIndex + '/groupName/' + getGroupName(groupIndex)} }]"
+                                replaceUrl="true"
+                            >
+                                <div class="delete-button fa fa-trash-o"></div>
+                                <span class="delete-text" jhiTranslate="flowersApp.box-grouping.deleteAllButton"></span>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="tab-padding"></div>
+

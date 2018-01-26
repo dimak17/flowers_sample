@@ -1,0 +1,24 @@
+{
+    "flowersApp": {
+        "destination" : {
+            "home": {
+                "title": "Destinations",
+                "createLabel": "Create a new Destination",
+                "createOrEditLabel": "Create or edit a Destination"
+            },
+            "created": "A new Destination is created with identifier {{ param }}",
+            "updated": "A Destination is updated with identifier {{ param }}",
+            "deleted": "A Destination is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Destination {{ id }}?"
+            },
+            "detail": {
+                "title": "Destination"
+            },
+            "city": "City",
+            "info": "Info",
+            "labelCountry": "Label Country",
+            "company": "Company"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "flowersApp": {
+        "claimsPolicy" : {
+            "home": {
+                "title": "Claims Policies",
+                "createLabel": "Создать новый Claims Policy",
+                "createOrEditLabel": "Создать или отредактировать Claims Policy"
+            },
+            "created": "Новый Claims Policy создан с идентификатором {{ param }}",
+            "updated": "Claims Policy обновлен с идентификатором {{ param }}",
+            "deleted": "Claims Policy удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Claims Policy {{ id }}?"
+            },
+            "detail": {
+                "title": "Claims Policy"
+            },
+            "shortName": "Short Name",
+            "fullName": "Full Name"
+        }
+    }
+}

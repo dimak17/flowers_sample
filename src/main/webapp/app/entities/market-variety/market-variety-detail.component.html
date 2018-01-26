@@ -1,0 +1,37 @@
+
+<div *ngIf="marketVariety">
+    <h2><span jhiTranslate="flowersApp.marketVariety.detail.title">Market Variety</span> {{marketVariety.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.marketVariety.type">Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'flowersApp.MarketVarietyType.' + marketVariety.type}}">{{marketVariety.type}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketVariety.market">Market</span></dt>
+        <dd>
+            <div *ngIf="marketVariety.market">
+                <a [routerLink]="['/market', marketVariety.market?.id]">{{marketVariety.market?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketVariety.variety">Variety</span></dt>
+        <dd>
+            <div *ngIf="marketVariety.variety">
+                <a [routerLink]="['/variety', marketVariety.variety?.id]">{{marketVariety.variety?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'market-variety/'+ marketVariety.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

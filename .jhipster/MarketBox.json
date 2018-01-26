@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "market",
+            "otherEntityName": "market",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "boxType",
+            "otherEntityName": "boxType",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "width",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "height",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "length",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "unit",
+            "fieldType": "BoxSizeUnit",
+            "fieldValues": "mm,m,cm"
+        }
+    ],
+    "changelogDate": "20170723122919",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "market_box",
+    "pagination": "no"
+}

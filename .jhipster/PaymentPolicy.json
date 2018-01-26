@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "clientPaymentPolicy",
+            "otherEntityName": "clientPaymentPolicy",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "paymentPolicy"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170717141739",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "payment_policy",
+    "pagination": "no"
+}

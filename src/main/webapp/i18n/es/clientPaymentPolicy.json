@@ -1,0 +1,25 @@
+{
+    "flowersApp": {
+        "clientPaymentPolicy" : {
+            "home": {
+                "title": "Client Payment Policies",
+                "createLabel": "Crear nuevo Client Payment Policy",
+                "createOrEditLabel": "Crear o editar Client Payment Policy"
+            },
+            "created": "Un nuevo Client Payment Policy ha sido creado con el identificador {{ param }}",
+            "updated": "Un Client Payment Policy ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Client Payment Policy ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Client Payment Policy {{ id }}?"
+            },
+            "detail": {
+                "title": "Client Payment Policy"
+            },
+            "termsInDays": "Terms In Days",
+            "termsInSum": "Terms In Sum",
+            "status": "Status",
+            "client": "Client",
+            "paymentPolicy": "Payment Policy"
+        }
+    }
+}

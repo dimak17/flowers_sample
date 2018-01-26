@@ -1,0 +1,29 @@
+{
+    "flowersApp": {
+        "company" : {
+            "home": {
+                "title": "Companies",
+                "createLabel": "Создать новый Company",
+                "createOrEditLabel": "Создать или отредактировать Company"
+            },
+            "created": "Новый Company создан с идентификатором {{ param }}",
+            "updated": "Company обновлен с идентификатором {{ param }}",
+            "deleted": "Company удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Company {{ id }}?"
+            },
+            "detail": {
+                "title": "Company"
+            },
+            "farmName": "Farm Name",
+            "legalName": "Legal Name",
+            "generalOfficePhone": "General Office Phone",
+            "country": "Country",
+            "city": "City",
+            "farmSize": "Farm Size",
+            "generalEmailAddress": "General Email Address",
+            "address": "Address",
+            "typeOfFlowers": "Type Of Flowers"
+        }
+    }
+}

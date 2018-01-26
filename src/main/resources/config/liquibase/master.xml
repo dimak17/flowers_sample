@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170622083617_added_entity_Company.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170219154329_added_entity_Brand.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170219155134_added_entity_Client.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170219155757_added_entity_ClientEmployee.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170219180954_added_entity_Contact.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170219183745_added_entity_Label.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170317085154_added_entity_CompanyUser.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170330130213_added_entity_Disease.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170605161137_added_entity_BoxType.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170613112149_added_entity_Variety.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170615152238_added_entity_Position.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170713141820_added_entity_AirLines.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170629180013_added_entity_BoxTypeGroup.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170630125251_added_entity_BoxGroup.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170722151101_added_entity_MarketVariety.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723122919_added_entity_MarketBox.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170705133732_added_entity_BankDetails.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170728125042_added_entity_CargoEmployeePosition.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170731085933_added_entity_CargoEmployee.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170731090717_added_entity_CargoAgency.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170725112609_added_entity_PriceList.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170704131348_added_entity_Block.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170729121144_added_entity_TypeOfFlower.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170710130519_added_entity_MixType.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170717134818_added_entity_ShippingPolicy.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170717140339_added_entity_ClaimsPolicy.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170912163947_added_entity_MarketBoxVarietyProperty.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170717141739_added_entity_PaymentPolicy.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170905122431_added_entity_Pinch.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170906091042_added_entity_PinchVariety.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170906095544_added_entity_PinchVarietyProperty.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170725113320_added_entity_MarketVarietyPropertyPriceList.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170920080722_added_entity_MarketSeason.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170722150356_added_entity_Market.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170905121631_added_entity_Season.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170919100438_added_entity_MarketSeasonVarietyProperty.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171024164615_added_entity_Country.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171024170243_added_entity_LabelCountry.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171024171325_added_entity_Destination.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171024181844_added_entity_MarketClient.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171024195743_added_entity_ClientEmployeePosition.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171025142824_added_entity_ClientPaymentPolicy.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20170219155757_added_entity_constraints_ClientEmployee.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170219183745_added_entity_constraints_Label.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170317085154_added_entity_constraints_CompanyUser.xml" relativeToChangelogFile="false"/>
+
+
+    <include file="classpath:config/liquibase/changelog/20170607111106_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170615152238_added_entity_constraints_Position.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170713141820_added_entity_constraints_AirLines.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170705133732_added_entity_constraints_BankDetails.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170605161137_added_entity_constraints_BoxType.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170629180013_added_entity_constraints_BoxTypeGroup.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170630125251_added_entity_constraints_BoxGroup.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170731090717_added_entity_constraints_CargoAgency.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170731085933_added_entity_constraints_CargoEmployee.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170728125042_added_entity_constraints_CargoEmployeePosition.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170722151101_added_entity_constraints_MarketVariety.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723122919_added_entity_constraints_MarketBox.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170725113320_added_entity_constraints_MarketVarietyPropertyPriceList.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170613112149_added_entity_constraints_Variety.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170704131348_added_entity_constraints_Block.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170729121144_added_entity_constraints_TypeOfFlower.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170906091042_added_entity_constraints_PinchVariety.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170906095544_added_entity_constraints_PinchVarietyProperty.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170710130519_added_entity_constraints_MixType.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170725113320_added_entity_constraints_MarketVarietyPropertyPriceList.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170919100438_added_entity_constraints_MarketSeasonVarietyProperty.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170920080722_added_entity_constraints_MarketSeason.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170722150356_added_entity_constraints_Market.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170905121631_added_entity_constraints_Season.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170717141739_added_entity_constraints_PaymentPolicy.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170717140339_added_entity_constraints_ClaimsPolicy.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171024170243_added_entity_constraints_LabelCountry.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171024171325_added_entity_constraints_Destination.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170219155134_added_entity_constraints_Client.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171024181844_added_entity_constraints_MarketClient.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171024195743_added_entity_constraints_ClientEmployeePosition.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171025142824_added_entity_constraints_ClientPaymentPolicy.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170912163947_added_entity_constraints_MarketBoxVarietyProperty.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

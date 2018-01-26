@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "mobilePhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "officePhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "whatsapp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "skype",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "zipcode",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170219180954",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "contact",
+    "pagination": "pagination"
+}

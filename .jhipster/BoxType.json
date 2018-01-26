@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+        "relationshipName": "company",
+        "otherEntityName": "company",
+        "relationshipType": "many-to-one",
+        "otherEntityField": "mainName"
+        },
+        {
+            "relationshipName": "marketBoxes",
+            "otherEntityName": "marketBox",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "boxType"
+        }],
+
+    "fields": [
+        {
+            "fieldName": "shortName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fullName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "boxSize",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170605161137",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "box_type",
+    "pagination": "infinite-scroll"
+}

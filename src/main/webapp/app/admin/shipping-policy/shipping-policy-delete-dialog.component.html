@@ -1,0 +1,23 @@
+<form name="deleteForm" (ngSubmit)="confirmDelete(shippingPolicy.id)">
+    <div class="modal-header">
+        <i class="fa fa-times close" aria-hidden="true" (click)="clear()"></i>
+        <h4 class="modal-title" jhiTranslate="flowersApp.shippingPolicy.action.confirm"></h4>
+    </div>
+    <div class="modal-body">
+        <span class="question" jhiTranslate="flowersApp.shippingPolicy.delete.question"
+              translateValues="{id: '{{shippingPolicy.shortName}}'}"></span>
+    </div>
+    <div class="modal-body">
+        <div class="warning">
+            <p class="delete-warning" jhiTranslate="flowersApp.shippingPolicy.warningMessage"></p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="button button-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="flowersApp.shippingPolicy.action.cancel"></span>
+        </button>
+        <button type="submit" class="button button-danger">
+            <span class="fa fa-remove"></span>&nbsp;<span jhiTranslate="flowersApp.shippingPolicy.action.delete"></span>
+        </button>
+    </div>
+</form>

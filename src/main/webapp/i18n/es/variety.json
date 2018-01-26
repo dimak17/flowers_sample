@@ -1,0 +1,64 @@
+{
+    "flowersApp": {
+        "variety" : {
+            "home": {
+                "title": "Lista de variedades",
+                "createLabel": "Crear nueva variedad",
+                "createOrEditLabel": "Editar la variedad"
+            },
+            "created": "Una nueva variedad ha sido creada con el identificador {{ param }}",
+            "updated": "Una variedad ha sido actualizada con el identificador {{ param }}",
+            "deleted": "Una variedad ha sido eliminada con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar variedad {{ id }}?",
+                "image-question": "¿Seguro que quiere eleminar esta imagen?",
+                "usageBlocksError": "'{{ name }}' - se utiliza en 'Empresa' 🡪 'Bloqués y Camas' 🡪 bloqués: '{{blocks}}'",
+                "finalText": "Por favor, primero elimínenlo ahí"
+            },
+            "detail": {
+                "title": "Variedad"
+            },
+            "flowers-type": "Tipo de flor:",
+            "name": "Nombre:",
+            "color": "Color:",
+            "breeder": "Breeder principal:",
+            "breeder2": "Breeder:",
+            "minLength": "Longitud min.:",
+            "maxLength": "Longitud max.:",
+            "alert": "Esta variedad ya existe",
+            "createVariety": "Crear nueva variedad",
+            "block": "Bloque",
+           	"special": "Especial",
+            "marketVarieties": "Variedades de mercados",
+            "choose": "Tipo de flor",
+
+            "validation": {
+                "name": {
+                    "required": "Nombre es requerido",
+                    "pattern": "Nombre debe contener caracteres latinos",
+                    "maximumSymbols": "Nombre debe contener máximo 35 símbolos"
+                },
+                "color": {
+                    "required": "Color es requerido",
+                    "pattern": "Color debe contener caracteres latinos",
+                    "maximumSymbols": "Color debe contener máximo 25 símbolos"
+                },
+                "breeder": {
+                    "pattern": "Breeder puede contener caracteres latinos",
+                    "maximumSymbols": "Breeder debe contener máximo 25 símbolos"
+                },
+                "minLength": {
+                    "pattern":  "Longitud min. debe contener dígitos",
+                    "maximumSymbols": "Longitud min. debe contener máximo 4 dígitos"
+                },
+                "maxLength": {
+                    "pattern":  "Longitud max. debe contener dígitos",
+                    "maximumSymbols": "Longitud max. debe contener máximo 4 dígitos"
+                }
+            },
+            "uploader": "Formatos permitidos:",
+            "uploader-title": "Imagen",
+            "extensions": "(.png, .jpg, .jpeg)"
+        }
+    }
+}

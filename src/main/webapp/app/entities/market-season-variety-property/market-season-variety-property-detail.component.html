@@ -1,0 +1,47 @@
+
+<div *ngIf="marketSeasonVarietyProperty">
+    <h2><span jhiTranslate="flowersApp.marketSeasonVarietyProperty.detail.title">Market Season Variety Property</span> {{marketSeasonVarietyProperty.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.marketSeasonVarietyProperty.length">Length</span></dt>
+        <dd>
+            <span jhiTranslate="{{'flowersApp.Length.' + marketSeasonVarietyProperty.length}}">{{marketSeasonVarietyProperty.length}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketSeasonVarietyProperty.price">Price</span></dt>
+        <dd>
+            <span>{{marketSeasonVarietyProperty.price}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketSeasonVarietyProperty.variety">Variety</span></dt>
+        <dd>
+            <div *ngIf="marketSeasonVarietyProperty.variety">
+                <a [routerLink]="['/variety', marketSeasonVarietyProperty.variety?.id]">{{marketSeasonVarietyProperty.variety?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketSeasonVarietyProperty.priceList">Price List</span></dt>
+        <dd>
+            <div *ngIf="marketSeasonVarietyProperty.priceList">
+                <a [routerLink]="['/price-list', marketSeasonVarietyProperty.priceList?.id]">{{marketSeasonVarietyProperty.priceList?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketSeasonVarietyProperty.marketSeason">Market Season</span></dt>
+        <dd>
+            <div *ngIf="marketSeasonVarietyProperty.marketSeason">
+                <a [routerLink]="['/market-season', marketSeasonVarietyProperty.marketSeason?.id]">{{marketSeasonVarietyProperty.marketSeason?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'market-season-variety-property/'+ marketSeasonVarietyProperty.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

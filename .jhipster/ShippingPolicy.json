@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "marketVarietyProperty",
+            "otherEntityName": "marketVarietyProperty",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "shippingPolicy"
+        },
+        {
+            "relationshipName": "marketSeasonVarietyProperty",
+            "otherEntityName": "marketSeasonVarietyProperty",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "shippingPolicy"
+        },
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "shortName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fullName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170717134818",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "shipping_policy",
+    "pagination": "no"
+}

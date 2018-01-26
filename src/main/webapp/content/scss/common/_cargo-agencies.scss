@@ -1,0 +1,177 @@
+// Cargo agencies dialog component
+
+.btn-cargo {
+    margin:10px 62px 0 0;
+    float: right;
+    height: 40px;
+    padding: 6px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    border: 2px solid #44b0b0;
+    color: #44b0b0;
+    background-color: #fff;
+    outline: none;
+    &:hover {
+        color: #fff;
+        background-color: #44b0b0;
+    }
+}
+
+.cargo-modal-body {
+    width: 200px;
+}
+
+.cargo-form-control-label {
+    margin: 0 0 0 15px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 12px;
+    color: #414242;
+}
+
+.cargo-form-control {
+    &:focus {
+        background-color: white;
+    }
+    padding-left: 1px;
+    outline: none;
+    background-color: #f0f0f0;
+    margin: 0 0 0 15px;
+    border-radius: 0;
+    border: 1px solid #a7a7a7;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    width: 240px;
+}
+
+.cargo-agency-field-err-msg {
+    margin: 0 0 0 15px;
+    width: 300px;
+    display: block;
+    height: 13px;
+    font-family: FlowersFont-HEAD-OFFICE-TEXT;
+    position: absolute;
+    font-size: 12px;
+}
+
+.cargo-agency-data {
+    input.ng-invalid {
+        border-left: 2px solid red !important;
+    }
+    height: 70px;
+    small {
+        font-size: 11px;
+        font-family: "FlowersFont-HEAD-OFFICE-TEXT";
+    }
+}
+
+.cargo-agency-field-err-msg {
+    width: 249px;
+    margin: 0 0 0 15px;
+    display: block;
+    height: 13px;
+    font-size: 11px;
+    font-family: FlowersFont-HEAD-OFFICE-TEXT;
+    position: absolute;
+    z-index: 2;
+}
+
+.alert-on-time {
+    margin: 0 0 0 107px;
+    font-size: 12px;
+}
+
+// Cargo agencies dialog component ********************************
+
+// Cargo-employee dialog global
+
+.cargo-employee-multiselect {
+    position: absolute;
+    margin: 39px 100px 0 350px;
+    width: 250px;
+    height:27px;
+}
+
+.cargo-positions-title {
+    margin: 20px 0 0 350px;
+    position: absolute;
+}
+
+// Cargo-employee dialog global ******************
+
+// Cargo employee dialog
+.btn-cargo {
+    float: right;
+    width: 220px;
+    margin: 10px 50px 0 0;
+    height: 40px;
+    padding: 6px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    border: 2px solid #44b0b0;
+    color: #44b0b0;
+    background-color: #fff;
+    outline: none;
+    &:hover {
+        color: #fff;
+        background-color: #44b0b0;
+    }
+}
+
+.cargo-employee-form-control-label {
+    margin: 0 0 0 15px;
+}
+
+.cargo-employee-form-control {
+    &:focus {
+        background-color: white;
+    }
+    padding-left: 1px;
+    outline: none;
+    background-color: #f0f0f0;
+    margin: 10px 0 0 15px;
+    border-radius: 0;
+    border: 1px solid #a7a7a7;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    width: 240px;
+}
+
+.cargo-employee-field-err-msg {
+    margin: 0 0 0 15px;
+    width: 300px;
+    display: block;
+    height: 13px;
+    font-family: FlowersFont-HEAD-OFFICE-TEXT;
+    position: absolute;
+    font-size: 12px;
+}
+
+
+.cargo-agency-data {
+    input.ng-invalid {
+        border-left: 2px solid red !important;
+    }
+
+    height: 70px;
+    small {
+        font-size: 11px;
+        font-family: "FlowersFont-HEAD-OFFICE-TEXT";
+    }
+}
+
+.cargo-employee-field-err-msg {
+    width: 249px;
+    margin: 0 0 0 15px;
+    display: block;
+    height: 13px;
+    font-size: 11px;
+    font-family: FlowersFont-HEAD-OFFICE-TEXT;
+    position: absolute;
+    z-index: 2;
+}
+
+.alert-on-time {
+    margin: 0 0 0 120px;
+    font-size: 12px;
+}
+//Cargo employee dialog ****************************************

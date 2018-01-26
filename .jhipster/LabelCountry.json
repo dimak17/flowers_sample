@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "label",
+            "otherEntityName": "label",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "destination",
+            "otherEntityName": "destination",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "labelCountry"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20171024170243",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "label_country",
+    "pagination": "no"
+}

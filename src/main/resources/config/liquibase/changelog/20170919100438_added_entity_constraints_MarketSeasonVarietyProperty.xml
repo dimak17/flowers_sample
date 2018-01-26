@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity MarketSeasonVarietyProperty.
+    -->
+    <changeSet id="20170919100438-2" author="dima">
+
+        <addForeignKeyConstraint baseColumnNames="variety_id"
+                                 baseTableName="market_season_variety_property"
+                                 constraintName="fk_market_season_variety_property_variety_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="variety"/>
+
+        <addForeignKeyConstraint baseColumnNames="price_list_id"
+                                 baseTableName="market_season_variety_property"
+                                 constraintName="fk_market_season_variety_property_price_list_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="price_list"/>
+
+        <addForeignKeyConstraint baseColumnNames="market_season_id"
+                                 baseTableName="market_season_variety_property"
+                                 constraintName="fk_market_season_variety_property_market_season_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="market_season"/>
+
+        <addForeignKeyConstraint baseColumnNames="shipping_policy_id"
+                                 baseTableName="market_season_variety_property"
+                                 constraintName="fk_market_season_variety_property_shipping_policy_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="shipping_policy"/>
+
+        <addForeignKeyConstraint baseColumnNames="company_id"
+                                 baseTableName="market_season_variety_property"
+                                 constraintName="fk_market_season_variety_property_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="company"/>
+
+    </changeSet>
+</databaseChangeLog>

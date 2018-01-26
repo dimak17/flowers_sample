@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "season",
+            "otherEntityName": "season",
+            "relationshipType": "many-to-many",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "pinches"
+        },
+        {
+            "relationshipName": "companyUser",
+            "otherEntityName": "companyUser",
+            "relationshipType": "many-to-many",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "pinches"
+        },
+        {
+            "relationshipName": "pinchVariety",
+            "otherEntityName": "pinchVariety",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "pinches"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "startDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "totalStems",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "notifyStartDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170905122431",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "pinch",
+    "pagination": "no"
+}

@@ -1,0 +1,92 @@
+.navleftbar {
+	margin-right:7px;
+	height: 40px;
+}
+
+.navleftbar a {
+	text-aligne: center;
+    background-color: #FFFFFF;
+    color: #292929;
+    display: block;
+    padding: 12px 0px 8.1px 20px;
+    text-decoration: none;
+}
+
+.navleftbar-hide{
+    width: 55px;
+}
+
+.navleftbar-show{
+    width: 236px;
+}
+
+.navleftbar a:hover {
+    background-color: #EAEAEA;
+    color: #292929;
+ 	height: 40px;
+}
+
+.mrg{
+    margin-top:11px;
+}
+
+.navleftbar-margin {
+ 	margin: 0 0 9px 0;
+	float: left;
+	height: 100vh;
+	background-color: #FFFFFF !important;
+	-moz-box-shadow: 0 0 3px #ccc;
+	-webkit-box-shadow: 0 0 3px #ccc;
+	box-shadow: 0 0 3px #ccc;
+}
+
+.active {
+   	background-color: #F2F2F2 !important;
+    border-left: 4px solid cadetblue;
+    color: black !important;
+    padding: 12px 0px 8.1px 16px !important;
+    height: 40px;
+}
+
+.nav{
+  	float: left;
+    height: 745px;
+    padding: 1em;
+}
+
+.fa-home:before{
+	margin-right: 8px;
+}
+
+.fa-user-circle-o:before{
+	margin-right: 8px;
+}
+
+.fa-sun-o:before{
+	margin-right: 8px;
+}
+
+.fa-truck:before{
+	margin-right: 8px;
+}
+
+.fa-plane:before{
+	margin: 0 8px 0 2.5px;
+}
+
+.fa-file-text-o:before{
+	margin-right: 8px;
+}
+
+.fa-dollar:before{
+	margin:0 10px 0 2px;
+}
+
+.fa-users:before{
+	margin: 0 8px 0 -2px;
+}
+
+.fa-files-o:before{
+	margin-right: 8px;
+}
+

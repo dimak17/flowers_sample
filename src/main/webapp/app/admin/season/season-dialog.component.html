@@ -1,0 +1,147 @@
+<div class="modal-window__large">
+
+    <div *ngIf="selectAllValuesPending" class="loader season-dialog-loader"></div>
+    <div *ngIf="!selectAllValuesPending">
+
+        <div class="modal__close fa fa-times"data-dismiss="modal" (click)="clear()"></div>
+
+        <div class="modal-header">
+            <h4 class="modal-title_center" *ngIf="!season.id" id="createSeasonLabel" jhiTranslate="flowersApp.season.home.createLabel">Create a new season</h4>
+            <h4 class="modal-title_center" *ngIf="season.id" id="updateSeasonLabel" jhiTranslate="flowersApp.season.home.editLabel">Edit a season</h4>
+        </div>
+
+        <div class="modal-body">
+            <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm" class="clearfix">
+
+                <div class="modal__container_left">
+                    <div class="form__group_required">
+
+                        <label class="form-label" jhiTranslate="flowersApp.season.seasonName" for="field_seasonName">Season name</label>
+                        <input type="text" [class]="requiredValidation(season.seasonName) || latinValidation(season.seasonName)
+                        || maxLength(season.seasonName, seasonNameMax)? 'form-input_required' : 'form-input'" name="seasonName" id="field_seasonName" maxlength="51" [(ngModel)]="season.seasonName"/>
+
+                        <div class="form-input_error-container">
+                            <small *ngIf="requiredValidation(season.seasonName)" class="form-input_error" jhiTranslate="flowersApp.season.validation.seasonName.required"></small>
+                            <small *ngIf="isFillValidation(season.seasonName) && latinValidation(season.seasonName)" class="form-input_error" jhiTranslate="flowersApp.season.validation.seasonName.pattern"></small>
+                            <small *ngIf="isFillValidation(season.seasonName) && maxLength(season.seasonName, seasonNameMax)" class="form-input_error" jhiTranslate="flowersApp.season.validation.seasonName.maximumSymbols"></small>
+                            <small *ngIf="isFillValidation(season.seasonName) && duplicateNameValidation(season, seasonNameMax) && duplicateYearValidation(season, seasonYearMax)" class="form-input_error" jhiTranslate="flowersApp.season.alert">This season name and year already exist!</small>
+                        </div>
+                    </div>
+
+                    <div class="form__group_required">
+                        <label class="form-label" jhiTranslate="flowersApp.season.seasonYear" for="field_seasonYear">Season year</label>
+                        <p-inputMask mask="9999" name="seasonYear" id="field_seasonYear" [class]="requiredValidation(seasonYear)? 'form-input_mask-required': 'form-input_mask'" [(ngModel)]="seasonYear" [placeholder]="currentDate.getFullYear()"></p-inputMask>
+
+                        <div class="form-input_error-container">
+                            <small *ngIf="requiredValidation(seasonYear)" class="form-input_error" jhiTranslate="flowersApp.season.validation.seasonYear.required"></small>
+                        </div>
+                    </div>
+
+                    <div class="form__group_required">
+                        <label class="form-label" jhiTranslate="flowersApp.season.startDate">Season start date</label>
+                        <p-calendar *ngIf="onSpanish" name="seasonStartDate" [(ngModel)]="seasonStartDate"
+                                    dateFormat="dd/mm/yy"
+                                    [showIcon]="true"
+                                    [locale]="es"
+                                    [styleClass]="'date-calendar'"
+                                    [inputStyleClass]="'form-calendar'">
+                        </p-calendar>
+
+                        <p-calendar *ngIf="!onSpanish" name="seasonStartDate" [(ngModel)]="seasonStartDate"
+                                    dateFormat="dd/mm/yy"
+                                    [showIcon]="true"
+                                    [styleClass]="'date-calendar'"
+                                    [inputStyleClass]="'form-calendar'">
+                        </p-calendar>
+                    </div>
+
+                    <div class="form__group_required">
+                        <label class="form-label" jhiTranslate="flowersApp.season.endDate">Season end date</label>
+                        <p-calendar *ngIf="onSpanish" name="seasonEndDate" [(ngModel)]="seasonEndDate"
+                                    dateFormat="dd/mm/yy"
+                                    [showIcon]="true"
+                                    [locale]="es"
+                                    [minDate]="seasonStartDate"
+                                    [styleClass]="'date-calendar'"
+                                    [inputStyleClass]="'form-calendar'">
+                        </p-calendar>
+
+                        <p-calendar *ngIf="!onSpanish" name="seasonEndDate" [(ngModel)]="seasonEndDate"
+                                    dateFormat="dd/mm/yy"
+                                    [showIcon]="true"
+                                    [minDate]="seasonStartDate"
+                                    [styleClass]="'date-calendar'"
+                                    [inputStyleClass]="'form-calendar'">
+                        </p-calendar>
+
+                        <div class="form-input_error-container">
+                            <small *ngIf="endDateValidation(seasonStartDate, seasonEndDate)" class="form-input_error" jhiTranslate="flowersApp.season.validation.seasonEndDate"></small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal__container_right">
+
+                    <div class="form__group_required">
+                        <label class="form-label" jhiTranslate="flowersApp.season.markets">Markets</label>
+                        <p-multiSelect *ngIf="selectedMarketsLabel && defaultMarketLabel" name="markets"
+                                       [styleClass]="'form-multiselect'"
+                                       [selectedItemsLabel]="selectedMarketsLabel"
+                                       [maxSelectedLabels]="3"
+                                       [defaultLabel]="defaultMarketLabel"
+                                       [options]="seasonMarkets"
+                                       [(ngModel)]="marketsIdSelected">
+                        </p-multiSelect>
+
+                        <div class="form-input_error-container">
+                            <small *ngIf="multiselectValidation(marketsIdSelected)" class="form-input_error" jhiTranslate="flowersApp.season.validation.markets.required"></small>
+                        </div>
+                    </div>
+
+                    <div class="form__group_required">
+
+                        <label class="form-label" jhiTranslate="flowersApp.season.notifyStartDate">Notify since...</label>
+                        <p-calendar *ngIf="onSpanish" name="seasonNotifySince" [(ngModel)]="seasonNotifySince"
+                                    dateFormat="dd/mm/yy"
+                                    [locale]="es"
+                                    [showIcon]="true"
+                                    [maxDate]="seasonStartDate"
+                                    [styleClass]="'date-calendar'"
+                                    [inputStyleClass]="'form-calendar'">
+                        </p-calendar>
+
+                        <p-calendar *ngIf="!onSpanish" name="seasonNotifySince" [(ngModel)]="seasonNotifySince"
+                                    dateFormat="dd/mm/yy"
+                                    [showIcon]="true"
+                                    [maxDate]="seasonStartDate"
+                                    [styleClass]="'date-calendar'"
+                                    [inputStyleClass]="'form-calendar'">
+                        </p-calendar>
+
+                        <div class="form-input_error-container">
+                            <small *ngIf="notifyDateValidation(seasonNotifySince, seasonStartDate)" class="form-input_error" jhiTranslate="flowersApp.season.validation.seasonNotifyDate"></small>
+                        </div>
+                    </div>
+
+                    <div class="form__group">
+                        <label class="form-label" jhiTranslate="flowersApp.season.positions">Notify to...</label>
+                        <p-multiSelect *ngIf="selectedPositionsLabel && defaultPositionLabel" name="positions"
+                                       [styleClass]="'form-multiselect'"
+                                       [selectedItemsLabel]="selectedPositionsLabel"
+                                       [maxSelectedLabels]="2"
+                                       [defaultLabel]="defaultPositionLabel"
+                                       [options]="seasonPositions"
+                                       [(ngModel)]="positionsIdSelected">
+                        </p-multiSelect>
+                    </div>
+
+                    <div class="modal-btn_flex-end">
+                        <button class="button_medium" type="submit" [disabled]="editForm.form.invalid || isSaving || saveButtonDeactive(season)">
+                            <span jhiTranslate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

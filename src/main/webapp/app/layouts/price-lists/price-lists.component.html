@@ -1,0 +1,8 @@
+<jhi-flowers-tabs *ngIf="titles">
+    <p-tabView class="flower-tabs" >
+        <p-tabPanel header="{{titles.defaultPriceList}}"><jhi-flowers-default-price-list ></jhi-flowers-default-price-list></p-tabPanel>
+        <p-tabPanel header="{{titles.lowMarketPriceList}}"><jhi-flowers-low-market-price-list ></jhi-flowers-low-market-price-list></p-tabPanel>
+        <p-tabPanel header="{{titles.highMarketPriceList}}"><jhi-flowers-high-market-price-list ></jhi-flowers-high-market-price-list></p-tabPanel>
+        <p-tabPanel header="{{titles.priceListsBySeasons}}"><jhi-flowers-seasons-price-list ></jhi-flowers-seasons-price-list></p-tabPanel>
+    </p-tabView>
+</jhi-flowers-tabs>

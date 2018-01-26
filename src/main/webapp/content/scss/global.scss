@@ -1,0 +1,1101 @@
+@import "../../../../../node_modules/primeng/resources/primeng.min.css";
+//@import "../../../../../node_modules/primeng/resources/themes/omega/theme.css";
+@import "bank-details";
+@import "mixins";
+@import "fonts";
+@import "variables";
+@import "vars";
+@import "base";
+@import "common/home";
+@import "common/cargo-agencies";
+@import "common/clients";
+@import "common/company";
+@import "common/daes";
+@import "common/employee";
+@import "common/policy";
+@import "common/price-list";
+@import "common/seasons";
+
+@import "media";
+
+/* ==============================================================
+Bootstrap tweaks
+===============================================================*/
+//
+//body, h1, h2, h3, h4 {
+//    font-weight: 300;
+//}
+//
+//body {
+//    background: #eaeaea !important;
+//}
+//
+//.full-width {
+//    width: 100%;
+//}
+
+/* ==========================================================================
+Browser Upgrade Prompt
+========================================================================== */
+//.browserupgrade {
+//    margin: 0.2em 0;
+//    background: #ccc;
+//    color: #000;
+//    padding: 0.2em 0;
+//}
+
+/* ==========================================================================
+Generic styles
+========================================================================== */
+
+/* Error highlight on input fields */
+//
+//.ng-invalid:not(form)  {
+//  border-left: 5px solid red;
+//}
+
+/* other generic styles */
+//
+//.jh-card {
+//
+//}
+//
+//.error {
+//    color: white;
+//    background-color: red;
+//}
+//
+//.pad {
+//    padding: 10px;
+//}
+//
+//.w-40 {
+//    width: 40% !important;
+//}
+//
+//.w-60 {
+//    width: 60% !important;
+//}
+//
+//.break {
+//    white-space: normal;
+//    word-break: break-all;
+//}
+//
+//.readonly {
+//    background-color: #eee;
+//    opacity: 1;
+//}
+//
+//.footer {
+//    border-top: 1px solid rgba(0,0,0,.125);
+//}
+
+/* ==========================================================================
+make sure browsers use the pointer cursor for anchors, even with no href
+========================================================================== */
+//a:hover {
+//  cursor: pointer;
+//}
+//
+//.hand {
+//    cursor: pointer;
+//}
+
+/* ==========================================================================
+Custom alerts for notification
+========================================================================== */
+.alerts {
+    .alert {
+        text-overflow: ellipsis;
+        pre {
+            background: none;
+            border: none;
+            font: inherit;
+            color: inherit;
+            padding: 0;
+            margin: 0;
+        }
+        .popover pre {
+            font-size: 10px;
+        }
+    }
+    .toast {
+        position: fixed;
+        width: 100%;
+        &.left {
+            left: 5px;
+        }
+        &.right {
+            right: 5px;
+        }
+        &.top {
+            top: 55px;
+        }
+        &.bottom {
+            bottom: 55px;
+        }
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .alerts .toast {
+        width: 50%;
+    }
+}
+
+/* ==========================================================================
+entity tables helpers
+========================================================================== */
+
+/* Remove Bootstrap padding from the element
+   http://stackoverflow.com/questions/19562903/remove-padding-from-columns-in-bootstrap-3 */
+//@mixin no-padding($side) {
+//    @if $side == 'all' {
+//        .no-padding {
+//            padding: 0 !important;
+//        }
+//    } @else {
+//        .no-padding-#{$side} {
+//            padding-#{$side}: 0 !important;
+//        }
+//    }
+//}
+//@include no-padding("left");
+//@include no-padding("right");
+//@include no-padding("top");
+//@include no-padding("bottom");
+//@include no-padding("all");
+
+/* bootstrap 3 input-group 100% width
+   http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
+//.width-min { width: 1% !important; }
+
+/* Makes toolbar not wrap on smaller screens
+   http://www.sketchingwithcss.com/samplechapter/cheatsheet.html#right */
+//.flex-btn-group-container {
+//   display: -webkit-flex;
+//   display: flex;
+//   -webkit-flex-direction: row;
+//   flex-direction: row;
+//   -webkit-justify-content: flex-end;
+//   justify-content: flex-end;
+//}
+
+/* ==========================================================================
+entity detail page css
+========================================================================== */
+//.row.jh-entity-details > {
+//    dd {
+//        margin-bottom: 15px;
+//    }
+//}
+//
+//@media screen and (min-width: 768px) {
+//    .row.jh-entity-details > {
+//        dt {
+//            margin-bottom: 15px;
+//        }
+//        dd {
+//            border-bottom: 1px solid #eee;
+//            padding-left: 180px;
+//            margin-left: 0;
+//        }
+//    }
+//}
+//
+//.container-fluid {
+//     margin-top: 8px;
+//}
+
+/* ==========================================================================
+ui bootstrap tweaks
+========================================================================== */
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+
+.datetime-picker-dropdown > li.date-picker-menu div > table .btn-default,
+.uib-datepicker-popup > li > div.uib-datepicker > table .btn-default {
+    border: 0;
+}
+
+.datetime-picker-dropdown > li.date-picker-menu div > table:focus,
+.uib-datepicker-popup > li > div.uib-datepicker > table:focus {
+    outline: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.reset-margin {
+    margin: 0;
+}
+
+.test div.modal-content {
+    width: 600px !important;
+}
+
+.ui-datatable .ui-datatable-data > tr > td.myEdit:hover {
+    color: cadetblue;
+}
+
+.ui-datatable .ui-datatable-data > tr > td.myDelete:hover {
+    color: cadetblue;
+}
+
+.ui-datatable .ui-datatable-thead {
+    th {
+        background: cadetblue;
+        height: 50px;
+        font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+        color: white;
+        width: auto;
+    }
+}
+
+.ui-datatable .ui-datatable-data>tr>td {
+    border-color: inherit;
+    box-sizing: border-box;
+    padding: .25em .5em;
+    border-width: 1px;
+    border-style: solid;
+    word-break: break-all;
+    vertical-align: top;
+    color: black;
+}
+
+.ui-paginator .ui-paginator-page.ui-state-active {
+    background: cadetblue;
+    color: #ffffff;
+    border-color: cadetblue;
+}
+
+.ui-paginator .ui-paginator-page, .ui-paginator .ui-paginator-next,
+.ui-paginator .ui-paginator-last, .ui-paginator .ui-paginator-first,
+.ui-paginator .ui-paginator-prev {
+    cursor: pointer;
+    outline: none;
+}
+
+.ui-paginator .ui-paginator-rpp-options {
+    margin-left: 1em;
+    margin-right: 1em;
+    background-image: none;
+    height: 30px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR
+}
+
+.ui-datatable-scrollable .ui-datatable-scrollable-header {
+    background-color: cadetblue;
+}
+
+.ui-datatable tbody tr.ui-state-highlight td {
+    background-color: #eceeef;
+}
+
+
+//*******************************************************************
+//.box-type-modal-window .modal-content {
+//    position: absolute;
+//    margin: 161px 0 0 50px;
+//    width: 375px;
+//    height: 453px;
+//    background-color: white;
+//    border-radius: 0;
+//}
+
+.bank-details-modal-window .modal-content {
+    margin-top: 100px;
+    width: 500px;
+    height: 460px;
+    background-color: #ffffff;
+    border-radius: 0.0rem;
+    margin-left: 130px;
+}
+.shipping-type-modal-window .modal-content{
+    margin-top: 161px;
+    width: 375px;
+    height: 428px;
+    background-color: white;
+    border-radius: 0;
+}
+
+.shipping-type-modal-window .modal-dialog{
+    width:375px;
+}
+
+.claims-type-modal-window .modal-content{
+    margin-top: 161px;
+    width: 375px;
+    height: 453px;
+    background-color: white;
+    border-radius: 0;
+}
+
+.claims-type-modal-window .modal-dialog{
+    width:375px;
+}
+
+.modal-body-preview .modal-content {
+    width: 700px;
+    margin-left: -70px;
+    height: 600px;
+    border-radius: 0;
+}
+
+.cargo-employee-delete-modal-window .modal-content {
+    margin-top: 161px;
+    width: 500px;
+    background-color: white;
+    border-radius: 0.0rem;
+
+}
+
+.cargo-employee-modal-window .modal-content {
+    margin-top: 161px;
+    width: 950px;
+    background-color: white;
+    border-radius: 0.0rem;
+    margin-right: 200px;
+}
+
+.cargo-employee-modal-window .modal-dialog {
+    width: 1000px;
+    margin-right: 650px;
+    margin-top: -100px;
+}
+
+.cargo-employee-position-delete-modal-window .modal-content {
+    margin-top: 161px;
+    width: 500px;
+    background-color: white;
+    border-radius: 0.0rem;
+
+}
+
+.cargo-employee-position-modal-window .modal-content {
+    margin-top: 161px;
+    width: 375px;
+    height: 379px;
+    background-color: white;
+    border-radius: 0.0rem;
+}
+
+.cargo-employee-position-modal-window .modal-dialog {
+    width: 375px;
+    height: 379px;
+}
+
+
+.cargo-agency-delete-modal-window .modal-content {
+    margin-top: 161px;
+    width: 500px;
+    background-color: white;
+    border-radius: 0.0rem;
+}
+
+.cargo-agency-modal-window .modal-content {
+    margin-top: 161px;
+    width: 375px;
+    background-color: white;
+    border-radius: 0.0rem;
+}
+
+.cargo-agency-modal-window .modal-dialog {
+    width: 375px;
+}
+
+//.delete-box-type .modal-content {
+//    margin-top: 161px;
+//    width: 500px;
+//    background-color: white;
+//    border-radius: 0;
+//}
+
+.delete-variety .modal-content {
+    margin-top: 161px;
+    width: 500px;
+    background-color: white;
+    border-radius: 0;
+}
+
+.delete-block .modal-content {
+    margin-top: 30%;
+    width: 500px;
+    height: 200px;
+    background-color: white;
+    border-radius: 0.0rem;
+}
+
+.create_edit-block .modal-content {
+	margin-top: 30%;
+	background-color: transparent;
+	border-radius: 0rem;
+	display: table-row;
+}
+
+.delete-avatar .modal-content {
+    margin-top: 170px;
+    width: 500px;
+    height: 200px;
+    background-color: white;
+    border-radius: 0;
+}
+
+.delete-image .modal-content {
+    margin-top: 320px;
+    width: 500px;
+    height: 200px;
+    background-color: white;
+    border-radius: 0;
+}
+
+.buttons .btn-secondary {
+    border-radius: 0;
+}
+
+.variety-list-modal-window .modal-content {
+    margin-top: 161px;
+    width: 820px;
+    height: 500px;
+    background-color: white;
+    border-radius: 0.0rem;
+    margin-left: -150px;
+}
+//*******************************************************************
+
+//NavBar
+//.disable-nav-collapsed-margin span a {
+//    margin-right: 0 !important;
+//    width: 60px !important;
+//}
+//
+//div.disable-nav-collapsed-margin {
+//    margin: 11px 0 0 5% !important;
+//}
+//
+.dropdown-toggle::after {
+    display: none;
+}
+
+.block-group-data {
+    .dropdown {
+        width: 279px;
+        height: 36px;
+        margin: 5px 9px -10px 32px;
+        border-radius: 0;
+        outline: none;
+        cursor: pointer;
+    }
+    label {
+        margin: 9px 0 2px 32px !important;
+        font-size: 15px !important;
+    }
+    ul {
+        font-size: 14px;
+        font-family: "FlowersFont-TEXT-OFFICE-REGULAR";
+        display: block;
+    }
+}
+
+.ui-select-choices-row.active>a {
+    background-color: cadetblue !important;
+}
+//
+.input-block-data .form-control {
+    background: #ffffff url('../images/arrow.svg');
+    &:hover {
+        background: #ffffff url('../images/arrow_green.svg');
+    }
+    input {
+        &:hover {
+            background: #ffffff;
+        }
+    }
+}
+
+.input-variety-data .form-control {
+    background: #ffffff url('../images/variety-arrow.svg');
+    &:hover {
+        background: #ffffff url('../images/variety-arrow.svg');
+    }
+    input {
+        &:hover {
+            background: #ffffff;
+        }
+    }
+}
+
+.variety-group-data {
+    .dropdown {
+        width: 249px;
+        height: 38px;
+        margin: 5px 9px -10px 32px;
+        border-radius: 0;
+        outline: none;
+        cursor: pointer;
+    }
+    label {
+        margin: 9px 0 2px 32px;
+        font-size: 15px !important;
+    }
+    ul {
+        font-size: 14px;
+        font-family: "FlowersFont-TEXT-OFFICE-REGULAR";
+        display: block;
+    }
+}
+
+.variety-group-data .form-control {
+    background: #f0f0f0 url('../images/variety-arrow.svg');
+    border-radius: 0;
+    border: 1px solid #a7a7a7;
+    width: 249px;
+    height: 38px;
+    &:hover {
+        background: #f0f0f0 url('../images/variety-arrow-green.svg');
+    }
+    &:focus, &:active {
+        border: 1px solid cadetblue;
+        background: #ffffff url('../images/variety-arrow-green.svg');
+        box-shadow: none;
+    }
+    input {
+        &:active {
+            border: 1px solid cadetblue;
+        }
+        &:hover {
+            background: #f0f0f0;
+        }
+    }
+}
+
+.variety-group-data-req .form-control {
+    border-left: 2px solid red;
+}
+
+
+
+ng-select.ng-invalid {
+    border: none;
+    .ui-select-match span {
+        border-left: 2px solid red;
+    }
+}
+
+.show-global {
+    display: block;
+}
+
+.hide-global {
+    display: none;
+}
+
+
+//.actions-container {
+//    .ui-dropdown {
+//        width: 247px;
+//        height: 42px;
+//        margin-top: 11px;
+//        border-radius: 0;
+//        outline: none;
+//        border: none;
+//        .ui-dropdown-label {
+//            padding-left: 11px;
+//            padding-top: 9px;
+//            padding-bottom: 9px;
+//        }
+//        .ui-dropdown-trigger {
+//            border: none;
+//            .fa {
+//                margin-top: 11px;
+//                margin-left: -11px;
+//                font-size: 20px;
+//            }
+//        }
+//        &:hover {
+//            .ui-dropdown-trigger {
+//                .fa {
+//                    color: cadetblue;
+//                }
+//            }
+//        }
+//    }
+//
+//    .ui-dropdown-item {
+//        border-radius: 0;
+//        padding: 3px 10px;
+//    }
+//    .ui-dropdown-list {
+//        padding: 0;
+//    }
+//    .ui-shadow {
+//        box-shadow: none;
+//        border-radius: 0;
+//    }
+//    .ui-state-highlight {
+//        background: cadetblue;
+//        color: white !important;
+//    }
+//}
+
+.ui-growl-item-container {
+    &.ui-state-highlight {
+        &.ui-growl-message-success {
+            background-color: cadetblue;
+            border-color: cadetblue;
+        }
+    }
+}
+
+.ui-growl {
+    right: 43px;
+}
+
+.cadetblue {
+    color: cadetblue;
+}
+
+.table-rows tbody tr {
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+
+    &:hover {
+        border: 3px solid cadetblue;
+    }
+}
+
+.title-table {
+    background-color: cadetblue;
+    font-size: 14px;
+    .fa.pull-right {
+        display: none;
+    }
+}
+
+.activated {
+    color: cadetblue;
+}
+
+.deactivated {
+    color: #d32f2f;
+}
+
+.edit-block-table {
+    width: 15px;
+    height: 15px;
+    background: url('../../content/images/edit-1.png') no-repeat;
+    border:none;
+    display: block;
+    cursor: pointer;
+    outline: none;
+    margin: auto;
+    color: transparent;
+}
+
+.edit-block-table:hover {
+    background: url('../../content/images/edit-2.png') no-repeat;
+}
+
+.edit-id {
+    color: transparent;
+}
+
+.changeTable table {
+    table-layout:fixed;
+    width:100%;
+}
+
+.cells-resize td {
+    word-break: break-all
+}
+
+// checkbox primeng
+//.ui-chkbox {
+//
+//    .ui-chkbox-box {
+//        border-radius: 0;
+//
+//    }
+//
+//    .ui-chkbox-box.ui-state-active, .ui-radiobutton-box.ui-state-active {
+//        border: 1px solid #1d908d;
+//        background: cadetblue;
+//        color: #FFFFFF;
+//        box-shadow: none;
+//    }
+//
+//    .ui-chkbox-box.ui-state-focus, .ui-radiobutton-box.ui-state-focus {
+//        box-shadow: none;
+//    }
+//}
+
+// start multiselect primeng ------------------------------------------------------------------------
+//.ui-multiselect {
+//    label {
+//        margin-bottom: 0;
+//        font-size: 14px;
+//        font-family: "FlowersFont-TEXT-OFFICE-REGULAR";
+//    }
+//    .ui-multiselect-label {
+//        background-color: #f0f0f0;
+//        color: black;
+//        padding: 5px 35px 5px 10px;
+//    }
+//    .ui-multiselect-trigger {
+//        border: none;
+//        background-color: #f0f0f0;
+//        height: 99%;
+//        .fa {
+//            color: #c7c7c7;
+//            margin-top: 2px;
+//            margin-left: -19px;
+//            font-size: 30px;
+//        }
+//        &:hover {
+//            background-color: #f0f0f0;
+//        }
+//        &:hover .fa {
+//            color: cadetblue;
+//        }
+//    }
+//
+//    .ui-multiselect-item {
+//        border: none;
+//        padding: 6px .5em;
+//        label {
+//            vertical-align: baseline;
+//            cursor: pointer;
+//        }
+//        &:hover {
+//            outline: 1px solid cadetblue;
+//            label {
+//                color: black;
+//            }
+//        }
+//    }
+//    .ui-multiselect-header {
+//        padding: 0.5rem;
+//        .ui-multiselect-filter-container .fa {
+//            position: absolute;
+//            top: 6px;
+//            left: 2px;
+//        }
+//        .ui-multiselect-close {
+//            right: 5px;
+//            top: 10px;
+//        }
+//    }
+//    .ui-multiselect-label-container {
+//        background: #f0f0f0;
+//        overflow: hidden;
+//    }
+//}
+//
+//.ui-multiselect-panel {
+//    padding: 0;
+//    border: 1px solid cadetblue;
+//    .ui-multiselect-items-wrapper {
+//        padding: 0;
+//    }
+//}
+//.ui-chkbox .ui-chkbox-box {
+//    border-radius: 0;
+//    border: 1px solid #c0c0c0;
+//}
+//
+//.ui-multiselect:not(.ui-state-disabled) {
+//    &:hover {
+//        background: #f0f0f0;
+//    }
+//    background: #f0f0f0;
+//    border: 1px solid #a7a7a7;
+//    //margin-top: 5px;
+//}
+//
+//.ui-multiselect.ui-state-focus {
+//    box-shadow: none;
+//}
+//
+//.ui-multiselect.ui-inputtext.ui-state-focus, .ui-inputtext:focus {
+//    box-shadow: none;
+//    outline: none;
+//    border: 1px solid cadetblue;
+//    &:focus {
+//        border: 1px solid cadetblue;
+//    }
+//}
+//
+//.ui-corner-all {
+//    border-radius: 0;
+//}
+//
+//li.ui-state-highlight {
+//    background: white;
+//    color: #555555;
+//    border-color: cadetblue;
+//}
+//
+//.table thead th {
+//    vertical-align: bottom;
+//    border-bottom: 1px solid #eceeef;
+//    color: white;
+//    text-align: center;
+//    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+//}
+//
+//.ui-widget-header {
+//    background: #eceeef;
+//}
+
+// end multiselect primeng ------------------------------------------------------------------------
+
+
+
+// start switcher primeng ------------------------------------------------------------------------
+.employee-switch .ui-inputswitch-checked {
+
+    .ui-inputswitch-on {
+        z-index: 4;
+        background: cadetblue !important;
+    }
+
+    .ui-inputswitch-off {
+        z-index: 1;
+        background: white !important;
+    }
+
+}
+
+.ui-inputswitch-on {
+    background: white !important;
+    color: #ffffff !important;
+    border-radius: 52px !important;
+    width: 140px !important;
+    padding-top: 13px;
+    font-size: 16px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    z-index: 1;
+}
+
+.ui-inputswitch-off {
+    background: #b12626 !important;
+    color: #ffffff !important;
+    border-radius: 52px !important;
+    width: 140px !important;
+    padding-top: 13px;
+    font-size: 16px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    z-index: 4;
+    margin-right: 15px;
+}
+
+.employee-switch .ui-inputswitch {
+    border-color: white;
+    margin-left: 8px;
+    background: white;
+
+    .ui-state-default {
+        background: transparent !important;
+        color: #555555;
+        width: 136px !important;
+        border: none;
+        z-index: 3;
+    }
+}
+
+// end switcher primeng ------------------------------------------------------------------------
+
+// Delete Dialog Cancel and Delete buttons
+.button-secondary {
+    color: #292b2c;
+    background-color: #fff;
+    border-color: #ccc;
+    outline: none !important;
+    cursor: pointer;
+}
+
+.button-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d9534f;
+    outline: none !important;
+    cursor: pointer;
+}
+/* jhipster-needle-scss-add-main JHipster will add new css style */
+
+//start primeng datatable--------------------------------------------------------------------------
+.ui-datatable-scrollable .ui-datatable-scrollable-header {
+    position: relative;
+    border: 1px solid cadetblue;
+    background: cadetblue;
+}
+
+.ui-datatable .ui-paginator-bottom {
+    border-top-width: 0;
+    background: ghostwhite;
+}
+
+.ui-datatable .ui-datatable-data > tr > td.myEdit:hover {
+    color: cadetblue;
+}
+
+.ui-datatable .ui-datatable-data > tr > td.myDelete:hover {
+    color: cadetblue;
+}
+
+.ui-datatable .ui-datatable-thead {
+    th {
+        background: cadetblue;
+        height: 50px;
+        font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+        color: white;
+        width: auto;
+    }
+}
+
+.ui-datatable .ui-datatable-data>tr>td {
+    border-color: inherit;
+    box-sizing: border-box;
+    padding: .25em .5em;
+    border-width: 1px;
+    border-style: solid;
+    word-break: break-all;
+    vertical-align: top;
+    color: black;
+}
+
+.ui-paginator .ui-paginator-page.ui-state-active {
+    background: cadetblue;
+    color: #ffffff;
+    border-color: cadetblue;
+}
+
+.ui-paginator .ui-paginator-page, .ui-paginator .ui-paginator-next,
+.ui-paginator .ui-paginator-last, .ui-paginator .ui-paginator-first,
+.ui-paginator .ui-paginator-prev {
+    cursor: pointer;
+    outline: none;
+    color: cadetblue;
+}
+
+.ui-paginator .ui-paginator-rpp-options {
+    margin-left: 1em;
+    margin-right: 1em;
+    background-image: none;
+    height: 30px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR
+}
+
+.ui-datatable-scrollable .ui-datatable-scrollable-header {
+    background-color: cadetblue;
+}
+
+.ui-datatable tbody tr.ui-state-highlight td {
+    background-color: #eceeef;
+}
+//end primeng datatable---------------------------------------------------------------------------
+
+//start primeng tabview---------------------------------------------------------------------------
+
+ .flower-tabs {
+     .ui-tabview {
+         .ui-tabview-panel {
+             padding: 0;
+         }
+         max-width: inherit;
+         .ui-corner-top {
+             border-top-left-radius: 0;
+             border-top-right-radius: 0;
+         }
+         padding: 0;
+         flex-grow: 1;
+     }
+
+     .ui-tabview-nav {
+         li {
+             margin: 0;
+             padding: 0;
+             flex-grow: 1;
+         }
+
+         li a {
+             margin: auto;
+             padding: 0.5em;
+         }
+
+         li:not(.ui-state-active):not(.ui-state-disabled):hover {
+             background: #FFFFFF;
+         }
+         li.ui-state-default {
+             background: none;
+             height: 63px;
+         }
+         li.ui-state-active {
+             .ui-tabview-title {
+                 color: cadetblue;
+                 vertical-align: middle;
+             }
+             background-color: #FFFFFF;
+         }
+         background: #F2F2F2;
+         border: none;
+         margin: 0;
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         font-family: FlowersFont-HEAD-OFFICE-LIGHT;
+     }
+
+     .ui-tabview-top {
+         .ui-tabview-nav li {
+         border: none;
+         top: 0;
+         display: flex;
+         justify-content: center;
+         }
+         .ui-tabview-nav {
+             padding: 0;
+             flex-wrap: wrap;
+         }
+     }
+ }
+
+//end primeng tabview---------------------------------------------------------------------------
+
+
+//Use for Mix-types
+//.red {
+//    background: red;
+//}
+//
+//.green {
+//    background: green;
+//}
+//
+//.blue {
+//    background: blue;
+//}
+//
+//.gold {
+//    background: gold;
+//}
+//
+//.brown {
+//    background: brown;
+//}
+//
+//.violet {
+//    background: violet;
+//}
+//
+//.pink {
+//    background: pink;
+//}
+//
+//.aqua {
+//    background: aqua;
+//}
+
+@import "market-global.scss";

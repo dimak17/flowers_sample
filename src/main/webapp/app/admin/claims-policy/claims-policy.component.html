@@ -1,0 +1,43 @@
+<div class="claims-container" xmlns="http://www.w3.org/1999/html">
+    <div class="button-class">
+        <div class="add-button" [routerLink]="['/', { outlets: { popup: 'claims-policy-new' } }]"
+             jhiTranslate="flowersApp.claimsPolicy.home.createButton">
+        </div>
+    </div>
+    <div class="load" >
+        <div *ngFor="let claimsPolicy of claimsPolicies; trackBy: trackId">
+            <div class="claim-line-block">
+                <i class="fa fa-credit-card fa-4x claims-line-icon {{claimsPolicy.colorClass}}" aria-hidden="true"></i>
+                <div class="fields-block">
+                    <div class="modal-body">
+                        <div class="name">
+                            <span jhiTranslate="flowersApp.claimsPolicy.shortName"></span>
+                            <span class="info-name">{{claimsPolicy.shortName}}</span>
+                            <div class="name">
+                                <span jhiTranslate="flowersApp.claimsPolicy.fullName"></span>
+                                <span class="info-name">{{claimsPolicy.fullName}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="trackDefaultClaimsPolicy(claimsPolicy.shortName)" class="float-left">
+                    <div class="act-block">
+                        <div class="edit-block"
+                             [routerLink]="['/', { outlets: { popup: 'claims-policy/'+ claimsPolicy.id + '/edit'} }]"
+                             replaceUrl="true">
+                            <span class="fa fa-pencil edit-delete-icons"></span>
+                            <span class="delete-span"
+                                  jhiTranslate="flowersApp.claimsPolicy.action.edit"></span>
+                        </div>
+                        <span class="vertical-separator"></span>
+                        <div class="delete-block"
+                             [routerLink]="['/', { outlets: { popup: 'claims-policy/'+ claimsPolicy.id + '/delete'} }]">
+                            <span class="fa fa-trash-o edit-delete-icons"></span>
+                            <span class="delete-span"
+                                  jhiTranslate="flowersApp.claimsPolicy.action.delete"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

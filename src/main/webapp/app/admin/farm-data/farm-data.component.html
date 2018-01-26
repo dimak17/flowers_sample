@@ -1,0 +1,117 @@
+<div class="farm-data">
+    <div class="farm-data-h2">
+        <h2 jhiTranslate="flowersApp.farm-data.title"></h2>
+    </div>
+    <p-growl [(value)]="msgs"></p-growl>
+    <form [formGroup]="dataForm" novalidate>
+        <div>
+            <label for="logo-upload" class="image-uploader">
+                <div class="camera fa fa-camera-retro"></div>
+                <div class="black"></div>
+                <input type="file" id="logo-upload" (change)="upload()" #logoInput />
+            </label>
+            <img *ngIf="base64Image" #logoImage [src]="'data:image/png;base64,'+base64Image" class="image-uploader-background"/>
+            <div [routerLink]="['/', { outlets:  { popup: 'farm-data/image/delete'} }]" replaceUrl="true" class="image-close fa fa-times"></div>
+        </div>
+        <div class="input-group-data">
+            <div class="profile-data-group">
+                <label for="farmName" jhiTranslate="flowersApp.farm-data.farmName"></label>
+                <input type="text" id="farmName" formControlName="farmName" maxlength="51"/>
+                <small *ngIf="checkOnError('farmName','required')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.farmName.required"></small>
+                <small *ngIf="checkOnError('farmName','maxlength')"
+                       class="text-danger" jhiTranslate="flowersApp.validation.farmName.maxlength"></small>
+                <small *ngIf="checkOnError('farmName','pattern')&& checkOnSuccess('farmName','maxlength')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.farmName.pattern"></small>
+            </div>
+            <div class="profile-data-group">
+                <label for="legalName" jhiTranslate="flowersApp.farm-data.legalName"></label>
+                <input type="text" id="legalName" formControlName="legalName" maxlength="51"/>
+                <small *ngIf="checkOnError('legalName','required')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.legalName.required"></small>
+                <small *ngIf="checkOnError('legalName','maxlength')"
+                       class="text-danger" jhiTranslate="flowersApp.validation.legalName.maxlength"></small>
+                <small *ngIf="checkOnError('legalName','pattern')&& !checkOnError('legalName','maxlength')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.legalName.pattern"></small>
+            </div>
+        </div>
+        <div class="input-group-data">
+            <div class="profile-data-group container-type-of-flowers">
+                <label for="typeOfFlowers" jhiTranslate="flowersApp.farm-data.typeOfFlowers"></label>
+                <p-multiSelect id="typeOfFlowers" [options]="typeOfFlower" [filter]="false"  defaultLabel="" formControlName="typeOfFlowers" [(ngModel)]="selected"></p-multiSelect>
+                <small *ngIf="checkOnError('typeOfFlowers','required')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.typeOfFlowers.required"></small>
+            </div>
+
+            <div class="profile-data-group">
+                <label for="generalOfficePhone" jhiTranslate="flowersApp.farm-data.generalOfficePhone"></label>
+                <input type="text" id="generalOfficePhone" formControlName="generalOfficePhone" maxlength="25"/>
+                <small *ngIf="checkOnError('generalOfficePhone','required')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.generalOfficePhone.required"></small>
+                <small *ngIf="checkOnError('generalOfficePhone','maxlength')"
+                    class="text-danger" jhiTranslate="flowersApp.validation.generalOfficePhone.maxlength"></small>
+                <small *ngIf="checkOnError('generalOfficePhone','pattern')&& !checkOnError('generalOfficePhone','maxlength')"
+                       class="text-danger" jhiTranslate="flowersApp.validation.generalOfficePhone.pattern"></small>
+            </div>
+        </div>
+
+        <hr>
+        <div class="input-group-data">
+            <div class="profile-data-group container-country" maxlength="50">
+                <label for="country" jhiTranslate="flowersApp.farm-data.country"></label>
+                <ng-select id="country"
+                           [allowClear]="true"
+                           [items]="countries"
+                           formControlName="country">
+                </ng-select>
+                <small *ngIf="checkOnError('country','required')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.country.required"></small>
+            </div>
+            <div class="profile-data-group">
+                <label for="city" jhiTranslate="flowersApp.farm-data.city"></label>
+                <input type="text" id="city" formControlName="city" maxlength="51"/>
+                <small *ngIf="checkOnError('city','maxlength')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.city.maxlength"></small>
+                <small *ngIf="checkOnError('city','pattern')&& !checkOnError('city','maxlength')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.city.pattern"></small>
+            </div>
+            <div class="profile-data-group">
+                <label for="farmSize" jhiTranslate="flowersApp.farm-data.farmSize"></label>
+                <input type="text" id="farmSize" formControlName="farmSize" maxlength="51"/>
+                <small *ngIf="checkOnError('farmSize','maxlength')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.farmSize.maxlength"></small>
+                <small *ngIf="checkOnError('farmSize','pattern')&& !checkOnError('farmSize','maxlength')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.farmSize.pattern"></small>
+            </div>
+        </div>
+        <div class="input-group-data">
+            <div class="profile-data-group" >
+                <label for="generalEmailAddress" jhiTranslate="flowersApp.farm-data.generalEmailAddress"></label>
+                <input type="email" id="generalEmailAddress" formControlName="generalEmailAddress" maxlength="51"/>
+                <small *ngIf="checkOnError('generalEmailAddress','email') && (!checkOnError('generalEmailAddress','required')
+                && !checkOnError('generalEmailAddress','maxlength') && !checkOnError('generalEmailAddress','pattern')) "
+                       class="text-danger" jhiTranslate="flowersApp.validation.generalEmailAddress.email"></small>
+                <small *ngIf="checkOnError('generalEmailAddress','maxlength')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.generalEmailAddress.maxlength"></small>
+                <small *ngIf="checkOnError('generalEmailAddress','required')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.generalEmailAddress.required"></small>
+                <small *ngIf="checkOnError('generalEmailAddress','pattern')&& !checkOnError('generalEmailAddress','maxlength')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.generalEmailAddress.pattern"></small>
+            </div>
+            <div class="profile-data-group">
+                <label for="address" jhiTranslate="flowersApp.farm-data.address"></label>
+                <input type="text" id="address" formControlName="address" maxlength="51"/>
+                <small *ngIf="checkOnError('address','maxlength') " class="text-danger"
+                       jhiTranslate="flowersApp.validation.address.maxlength"></small>
+                <small *ngIf="checkOnError('address','pattern')&& !checkOnError('address','maxlength')" class="text-danger"
+                       jhiTranslate="flowersApp.validation.address.pattern"></small>
+            </div>
+        </div>
+        <div>
+            <button type="button" class="download-button" (click)="download()">
+                <span jhiTranslate="farm-data.action.download">Download</span>
+            </button>
+        </div>
+    </form>
+</div>
+

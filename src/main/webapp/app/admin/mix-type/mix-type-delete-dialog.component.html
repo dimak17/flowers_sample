@@ -1,0 +1,27 @@
+<div class="modal-window__small">
+
+        <div class="modal__close" aria-hidden="true" (click)="clear()"><i class="fa fa-times" ></i></div>
+    <div class="modal-header">
+        <h4 class="modal-title_center" jhiTranslate="entity.delete.title">Confirm delete operation</h4>
+    </div>
+
+    <div class="modal-body">
+
+        <form name="deleteForm" (ngSubmit)="confirmDelete(mixType.id)">
+
+            <div class="modal__form-group">
+                <span class="question" jhiTranslate="flowersApp.mixType.delete.question" translateValues="{id: '{{mixType.name}}'}"></span>
+
+                <div class="form-input_error-container">
+                    <jhi-alert-error></jhi-alert-error>
+                </div>
+            </div>
+
+            <div class="modal-btn__container">
+                <button type="button" class="button-empty_small" data-dismiss="modal" (click)="clear()"><span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span></button>
+                <button type="submit" class="button-danger_small"><span class="fa fa-remove"></span>&nbsp;<span jhiTranslate="entity.action.delete">Delete</span></button>
+            </div>
+
+        </form>
+    </div>
+</div>

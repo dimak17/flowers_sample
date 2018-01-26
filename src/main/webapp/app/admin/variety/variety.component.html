@@ -1,0 +1,61 @@
+<div class="variety-list-block">
+    <h2>
+        <span class="title" jhiTranslate="flowersApp.variety.home.title">Variety list</span>
+    </h2>
+
+    <form [formGroup]="formGroup" novalidate>
+    <div class="flower-selector input-group-data input-block-data block-group-data">
+        <label class="choose-title" for="typeOfFlowers"  jhiTranslate="flowersApp.variety.choose">Type of flower</label>
+        <ng-select id="typeOfFlowers" formControlName="typeOfFlowers" [allowClear]="true" [items]="typeOfFlowerNames" (selected)="selectedTypeOfFlower($event)"></ng-select>
+    </div>
+    </form>
+
+    <div class="add-button" [routerLink]="['/', { outlets: { popup: 'variety-new' } }]"
+         jhiTranslate="flowersApp.variety.createVariety">Create New Variety</div>
+
+    <div class="variety-scroll">
+        <div *ngFor="let variety of varieties; trackBy: trackId; let i = index; ">
+                <div class="variety-block">
+                    <div class="img-pos">
+                        <img *ngIf="base64Images && base64Images[i] && base64Images.length" #image [src]="'data:image/png;base64,'+base64Images[i]" class="center"/>
+                    </div>
+
+                    <div class="info">
+
+                        <div class="info-name">
+                            <span jhiTranslate="flowersApp.variety.name">Variety name:</span><span class="info-data">{{variety.name}}</span>
+                        </div>
+
+                        <div class="info-color">
+                            <span jhiTranslate="flowersApp.variety.color">Color:</span><span class="info-data">{{onValue(variety.color)}}</span>
+                        </div>
+
+                        <div class="info-breeder">
+                            <span jhiTranslate="flowersApp.variety.breeder2">Breeder:</span><span class="info-data">{{onValue(variety.breeder)}}</span>
+                        </div>
+
+                        <div class="info-min-length">
+                            <span jhiTranslate="flowersApp.variety.minLength">Min length:</span><span class="info-data">{{onValue(variety.minLength)}}</span>
+                        </div>
+
+                        <div class="info-max-length">
+                            <span jhiTranslate="flowersApp.variety.maxLength">Max length:</span><span class="info-data">{{onValue(variety.maxLength)}}</span>
+                        </div>
+
+                        <div class="edit-block" [routerLink]="['/', { outlets: { popup: 'variety/'+ variety.id + '/edit'} }]" replaceUrl="true">
+                            <span class="fa fa-pencil edit-delete-icons"></span>
+                            <span class="data-edit data" jhiTranslate="entity.action.edit">Edit</span>
+                        </div>
+
+                        <span class="vertical-separator"></span>
+
+                        <div class="delete-block" [routerLink]="['/', { outlets: { popup: 'variety/'+ variety.id + '/delete'} }]" replaceUrl="true">
+                            <span class="fa fa-trash-o edit-delete-icons"></span>
+                            <span class="data-delete data" jhiTranslate="entity.action.delete">Delete</span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+

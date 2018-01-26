@@ -1,0 +1,25 @@
+{
+    "flowersApp": {
+        "clientPaymentPolicy" : {
+            "home": {
+                "title": "Client Payment Policies",
+                "createLabel": "Создать новый Client Payment Policy",
+                "createOrEditLabel": "Создать или отредактировать Client Payment Policy"
+            },
+            "created": "Новый Client Payment Policy создан с идентификатором {{ param }}",
+            "updated": "Client Payment Policy обновлен с идентификатором {{ param }}",
+            "deleted": "Client Payment Policy удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Client Payment Policy {{ id }}?"
+            },
+            "detail": {
+                "title": "Client Payment Policy"
+            },
+            "termsInDays": "Terms In Days",
+            "termsInSum": "Terms In Sum",
+            "status": "Status",
+            "client": "Client",
+            "paymentPolicy": "Payment Policy"
+        }
+    }
+}

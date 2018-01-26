@@ -1,0 +1,7 @@
+<jhi-flowers-tabs *ngIf="titles">
+    <p-tabView class="flower-tabs" (onChange)="onChange($event)" [activeIndex]="selectedIndex">
+        <p-tabPanel header="{{titles.shippingPolicy}}"><jhi-shipping-policy *ngIf="selectedIndex == 0"></jhi-shipping-policy></p-tabPanel>
+        <p-tabPanel header="{{titles.claimsPolicy}}"><jhi-claims-policy *ngIf="selectedIndex == 1">Tab 2 Content</jhi-claims-policy></p-tabPanel>
+        <p-tabPanel header="{{titles.paymentPolicy}}"><jhi-payment-policy *ngIf="selectedIndex == 2"></jhi-payment-policy></p-tabPanel>
+    </p-tabView>
+</jhi-flowers-tabs>

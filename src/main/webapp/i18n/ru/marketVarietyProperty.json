@@ -1,0 +1,26 @@
+{
+    "flowersApp": {
+        "marketVarietyProperty" : {
+            "home": {
+                "title": "Market Variety Properties",
+                "createLabel": "Создать новый Market Variety Property",
+                "createOrEditLabel": "Создать или отредактировать Market Variety Property"
+            },
+            "created": "Новый Market Variety Property создан с идентификатором {{ param }}",
+            "updated": "Market Variety Property обновлен с идентификатором {{ param }}",
+            "deleted": "Market Variety Property удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Market Variety Property {{ id }}?"
+            },
+            "detail": {
+                "title": "Market Variety Property"
+            },
+            "length": "Length",
+            "price": "Price",
+            "priceList": "Price List",
+            "market": "Market",
+            "variety": "Variety",
+            "shippingPolicy": "Shipping Policy"
+        }
+    }
+}

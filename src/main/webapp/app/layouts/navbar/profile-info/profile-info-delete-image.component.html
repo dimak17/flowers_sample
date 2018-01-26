@@ -1,0 +1,18 @@
+<div name="deleteForm" >
+    <div class="modal-header">
+        <h4 class="modal-title" jhiTranslate="entity.delete.title">Confirm delete operation</h4>
+        <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()"></button>
+    </div>
+    <div class="modal-body">
+        <span class="question" jhiTranslate="flowersApp.delete-image.image-question"></span>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="button button-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="button" class="button button-danger" (click)="confirmImageDelete(companyUser.id)">
+            <span class="fa fa-remove"></span>&nbsp;<span jhiTranslate="entity.action.delete">Delete</span>
+        </button>
+    </div>
+</div>

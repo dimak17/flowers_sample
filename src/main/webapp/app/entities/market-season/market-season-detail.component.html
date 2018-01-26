@@ -1,0 +1,33 @@
+
+<div *ngIf="marketSeason">
+    <h2><span jhiTranslate="flowersApp.marketSeason.detail.title">Market Season</span> {{marketSeason.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.marketSeason.market">Market</span></dt>
+        <dd>
+            <div *ngIf="marketSeason.market">
+                <a [routerLink]="['/market', marketSeason.market?.id]">{{marketSeason.market?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketSeason.season">Season</span></dt>
+        <dd>
+            <div *ngIf="marketSeason.season">
+                <a [routerLink]="['/season', marketSeason.season?.id]">{{marketSeason.season?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'market-season/'+ marketSeason.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

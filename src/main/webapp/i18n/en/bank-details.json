@@ -1,0 +1,51 @@
+{
+    "flowersApp": {
+        "validation": {
+            "generalBankDetails": {
+                "maxLength": "Bank details can not be more than 500 characters long",
+                "pattern": "Bank Details should contains latin symbols"
+            },
+            "alternativeBankDetails": {
+                "maxLength": "Bank details can not be more than 500 characters long",
+                "pattern": "Bank Details should contains latin symbols"
+            }
+        },
+        "bankDetails": {
+            "home": {
+                "title": "Bank Details",
+                "createLabel": "Create a new Bank Details",
+                "createOrEditLabel": "Create or edit a Bank Details"
+            },
+            "created": "A new Bank Details is created with identifier {{ param }}",
+            "updated": "A Bank Details is updated with identifier {{ param }}",
+            "deleted": "A Bank Details is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete {{ name }} Bank Details ?"
+            },
+            "detail": {
+                "title": "Bank Details"
+            },
+            "general": "General",
+            "alternative": "Alternative",
+            "company": "Company",
+            "chekBoxLabel1": "Select General Company Bank Details",
+            "chekBoxLabel2": "Select Alternative Company Bank Details",
+            "generalLabel": "General Company Bank Details",
+            "alternativeLabel": "Alternative Company Bank Details",
+            "buttonContainer": {
+                "preview": "Preview",
+                "download": "Download",
+                "copy": "Copy",
+                "sendTo": "SendTo"
+            },
+            "uploadGeneralLabel": "General Bank Details File",
+            "uploadAlternativeLabel": "Alternative Bank Details File",
+            "uploadGeneralFileNameLabel": "Uploaded file name",
+            "uploadAlternativeFileNameLabel": "Uploaded file name",
+            "uploadBtnContainer": {
+                "upload": "Upload",
+                "delete": "Delete"
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+<div *ngIf="loadComponent" class="loader employee-component-loader"></div>
+<div *ngIf="!loadComponent">
+<div class="cargo-employee">
+        <div>
+            <span>
+                <button class="create-cargo-employee" jhiTranslate="flowersApp.cargoEmployee.createCargoEmployee" [routerLink]="['/', { outlets: { popup: ['cargo-employee-new'] } }]"></button>
+            </span>
+        </div>
+    <div class="table-responsive" *ngIf="cargoEmployees">
+    <div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none; outline: none; background: ghostwhite">
+        <i class="fa fa-search" style="margin:4px 4px 0 0; outline: none"></i>
+        <input class="filter" #gb type="text" pInputText size="40" placeholder="{{globalFilterPlaceHolderHeader}}">
+    </div>
+        <div>
+        <p-dataTable [value]="cargoEmployees"
+                     selectionMode="multiple"
+                     sortMode="multiple"
+                     scrollable="true"
+                     scrollHeight="300px"
+                     [globalFilter]="gb"
+                     #dt exportFilename="cargoAgencies"
+                     class="cargo-table"
+                     [(selection)]="cargoEmployee"
+                     (onRowDblclick)="action($event, '/edit')"
+                     (onRowClick)="onRowClick($event)"
+                     [rows]="10"
+                     [paginator]="true"
+                     [pageLinks]="3"
+                     [(selection)]="cargoEmployee">
+            <p-column field="fullName" header="{{fullNameHeader}}" [sortable]="true" [style]="{'width':'13%'}"></p-column>
+            <p-column field="email" header="{{emailHeader}}" [sortable]="true" [style]="{'width':'9%'}"></p-column>
+            <p-column field="officePhone" header="{{officePhoneHeader}}" [sortable]="true" [style]="{'width':'12%'}"></p-column>
+            <p-column field="mobilePhone" header="{{mobilePhoneHeader}}" [sortable]="true" [style]="{'width':'12%'}"></p-column>
+            <p-column field="skype" header="{{skypeHeader}}" [sortable]="true" [style]="{'width':'9%'}"></p-column>
+            <p-column field="tableMarkets" header="{{marketsHeader}}" [style]="{'width':'13%'}"></p-column>
+            <p-column field="tableCargoEmployeePositions" header="{{positionsHeader}}" [style]="{'width':'14%'}"></p-column>
+            <p-column field="edit" header="{{editHeader}}" styleClass="myEdit" [style]="{'width':'9%', 'vertical-align':'inherit', 'text-align':'center'}">
+                <template let-item="rowData" pTemplate="body">
+                    <i (click)="editCargoEmployee(item, '/edit')" class="edit-employee favicon-table fa fa-pencil"></i>
+                </template>
+            </p-column>
+            <p-column field="delete" header="{{deleteHeader}}" styleClass="myDelete" [style]="{'width':'9%', 'vertical-align':'inherit', 'text-align':'center'}">
+                <template let-item="rowData" pTemplate="body">
+                    <i (click)="deleteCargoEmployee(item, '/delete')" class="delete-employee favicon-table fa fa-trash-o"></i>
+                </template>
+            </p-column>
+        </p-dataTable>
+    </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,223 @@
+.top-color-line {
+    width: 108px;
+    height: 6px;
+    margin: 0 auto;
+    background: cadetblue;;
+}
+
+.cargo-bottom-color-line {
+        width: 108px;
+        height: 6px;
+        background: cadetblue;
+        margin: 0 0 0 132.5px;
+        bottom: 0;
+        position: absolute;
+}
+
+.cargo-position-modal-title {
+    margin: 70px 0 0 0;
+    font-size: 23px;
+    text-align: center;
+}
+
+.form {
+    background-color: #F2F2F2;
+    width: 249px;
+    height: 38px;
+    border: 1px solid #a7a7a7;
+    margin-left: 15px;
+    color: black;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 14px;
+    padding-left: 13px;
+    outline: none;
+}
+
+.form-invalid {
+    border-left: 2px solid red !important;
+}
+
+.phrase {
+    font-size: 26px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    color: black;
+    margin: 61px 0 0 72px;
+}
+
+.close {
+    margin: -7px 4px 0 0;
+    display: block;
+    outline: none;
+    &:hover {
+        color:cadetblue;
+    }
+    span {
+        font-size: 20px;
+    }
+}
+
+.cargo-short-name {
+    color: #414242;
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    margin: 0 0 0 54px;
+}
+
+.full-name {
+    color: #414242;
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    margin: 16px 0 0 55px;
+}
+
+.form {
+    background-color: #F2F2F2 ;
+    width: 249px;
+    height: 38px;
+    border: 1px solid #a7a7a7 ;
+    margin: 0 0 0 55px;
+    color: black;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 14px;
+    padding-left: 13px;
+    outline: none;
+}
+
+input {
+    &:focus {
+        background-color: #ffffff;
+        border: 1px solid cadetblue;
+    }
+    &:active {
+        background-color: #ffffff
+    }
+}
+
+.form-control {
+&:focus {
+    background-color: white;
+}
+    padding-left: 1px;
+    outline: none;
+    background-color: #f0f0f0;
+    margin: 0 0 0 59px;
+    border-radius: 0;
+    border: 1px solid #a7a7a7;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    width: 240px;
+}
+
+.save-button {
+    width: 250px;
+    height: 52px;
+    background-color: #FFFFFF ;
+    font-size: 16px;
+    font-family: FlowersFont-HEAD-OFFICE-MEDIUM;
+    border-radius: 52px;
+    border: 3px solid cadetblue;
+    margin: 30px 0 0 70px;
+    color: cadetblue;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        color: #FFFFFF ;
+        background-color: cadetblue;
+    }
+}
+
+.cargo-employee-position-position {
+    .ng-invalid {
+        border-left: 2px solid red !important;
+        outline: none;
+    }
+}
+
+.cargo-field-err-msg {
+    width: 249px;
+    margin: 0 0 0 59px;
+    display: block;
+    height: 13px;
+    position: absolute;
+    z-index: 2;
+    font-size: 11px;
+    font-family: FlowersFont-HEAD-OFFICE-TEXT;
+}
+
+.alert-on-time {
+    margin: 0 0 0 86px;
+    font-size: 12px;
+}
+
+.text-danger {
+    color: #d9534f !important;
+    font-size: 11px;
+    font-family: FlowersFont-HEAD-OFFICE-TEXT;
+    width: 249px;
+    margin: 0 0 0 59px;
+    display: block;
+    height: 13px;
+    position: absolute;
+    z-index: 2;
+}
+
+.text-danger-position {
+    color: #d9534f !important;
+    font-size: 11px;
+    font-family: FlowersFont-HEAD-OFFICE-TEXT;
+    width: 249px;
+    margin: -15px 0 0 72px;
+    display: block;
+    height: 13px;
+    position: absolute;
+    z-index: 2;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid cadetblue;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+.position-component-loader {
+    margin: 100px auto;
+    width: 100px;
+    height: 100px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background: green;
+}
+
+.blue {
+    background: blue;
+}
+
+.gold {
+    background: gold;
+}
+
+.brown {
+    background: brown;
+}
+
+.violet {
+    background: violet;
+}
+
+.pink {
+    background: pink;
+}
+
+.aqua {
+    background: aqua;
+}

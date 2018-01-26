@@ -1,0 +1,38 @@
+{
+    "flowersApp": {
+        "airLines" : {
+            "home": {
+                "title": "Air Lines",
+                "createLabel": "Enter an Air Line Name",
+                "createOrEditLabel": "Enter an Air Line Name"
+            },
+            "created": "A new Air Lines is created with identifier {{ param }}",
+            "updated": "A Air Lines is updated with identifier {{ param }}",
+            "deleted": "A Air Lines is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Air Line {{ name }}?"
+            },
+            "detail": {
+                "title": "Air Lines"
+            },
+            "name": "Name",
+            "number": "Number",
+            "company": "Company",
+            "alert": "This Air Line already exist!",
+            "labels": {
+                "Name": "Air Line Name: ",
+                "Number": "Air Line Number: "
+            },
+            "validation": {
+                "Name": {
+                    "required": "Name is required",
+                    "pattern": "Name should contains max 25 latin symbols"
+                },
+                "Number": {
+                    "required": "Number is required",
+                    "pattern": "Number should contains only 5 digits"
+                }
+            }
+        }
+    }
+}

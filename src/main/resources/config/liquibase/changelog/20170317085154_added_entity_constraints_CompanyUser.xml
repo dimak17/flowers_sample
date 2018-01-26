@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity CompanyUser.
+    -->
+    <changeSet id="20170317085154-2" author="dima">
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="company_user"
+                                 constraintName="fk_company_user_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="company_id"
+                                 baseTableName="company_user"
+                                 constraintName="fk_company_user_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="company"/>
+
+        <addForeignKeyConstraint baseColumnNames="client_id"
+                                 baseTableName="company_user"
+                                 constraintName="fk_company_user_client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"/>
+
+        <addForeignKeyConstraint baseColumnNames="company_user_id"
+                                 baseTableName="company_user_position"
+                                 constraintName="fk_company_user_position_company_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="company_user"/>
+        <addForeignKeyConstraint baseColumnNames="position_id"
+                                 baseTableName="company_user_position"
+                                 constraintName="fk_company_user_position_position_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="position"/>
+
+        <addForeignKeyConstraint baseColumnNames="company_user_id"
+                                 baseTableName="company_user_market"
+                                 constraintName="fk_company_user_market_company_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="company_user"/>
+        <addForeignKeyConstraint baseColumnNames="market_id"
+                                 baseTableName="company_user_market"
+                                 constraintName="fk_company_user_market_market_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="market"/>
+
+    </changeSet>
+</databaseChangeLog>

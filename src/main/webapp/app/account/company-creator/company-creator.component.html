@@ -1,0 +1,235 @@
+<div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 jhiTranslate="flowersApp.company-creator.title">Create company</h1>
+
+            <div class="alert alert-success" *ngIf="success" jhiTranslate="flowersApp.company-creator.messages.successCreation">
+                <strong>Registration saved!</strong> Please notify client to email for confirmation.
+            </div>
+
+            <div class="alert alert-danger" *ngIf="error" jhiTranslate="flowersApp.company-creator.messages.error.fail">
+                <strong>Registration failed!</strong> Please try again later.
+            </div>
+
+            <div class="alert alert-danger" *ngIf="errorActivationKey" jhiTranslate="flowersApp.company-creator.messages.error.activationKey">
+                <strong>Registration failed!</strong> Registration key is invalid or you have already create account
+            </div>
+
+            <div class="alert alert-danger" *ngIf="errorEmailExists" jhiTranslate="flowersApp.company-creator.messages.error.emailexists">
+                <strong>E-mail is already in use!</strong> Please choose another one.
+            </div>
+        </div>
+        <div class="col-md-8 offset-md-2" *ngIf="!errorActivationKey">
+            <form name="form" role="form" (ngSubmit)="activate()" #companyCreatorForm="ngForm">
+                <div class="form-group">
+                    <label class="form-control-label" for="firstName" jhiTranslate="global.form.firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" #firstName="ngModel" placeholder="{{'global.form.firstName.placeholder' | translate}}"
+                           [(ngModel)]="createAccount.firstName" minlength=5 maxlength=100 required>
+                    <div *ngIf="firstName.dirty && firstName.invalid">
+                        <small class="form-text text-danger" *ngIf="firstName.errors.required"
+                               jhiTranslate="global.messages.validate.email.required">
+                            Your e-mail is required.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="firstName.errors.invalid"
+                               jhiTranslate="global.messages.validate.email.invalid">
+                            Your e-mail is invalid.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="firstName.errors.minlength"
+                               jhiTranslate="global.messages.validate.email.minlength">
+                            Your e-mail is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="firstName.errors.maxlength"
+                               jhiTranslate="global.messages.validate.email.maxlength">
+                            Your e-mail cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="secondName" jhiTranslate="global.form.secondName">Second Name</label>
+                    <input type="text" class="form-control" id="secondName" name="secondName" #secondName="ngModel" placeholder="{{'global.form.secondName.placeholder' | translate}}"
+                           [(ngModel)]="createAccount.secondName" minlength=5 maxlength=100 required>
+                    <div *ngIf="secondName.dirty && secondName.invalid">
+                        <small class="form-text text-danger" *ngIf="secondName.errors.required"
+                               jhiTranslate="global.messages.validate.email.required">
+                            Your e-mail is required.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="secondName.errors.invalid"
+                               jhiTranslate="global.messages.validate.email.invalid">
+                            Your e-mail is invalid.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="secondName.errors.minlength"
+                               jhiTranslate="global.messages.validate.email.minlength">
+                            Your e-mail is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="secondName.errors.maxlength"
+                               jhiTranslate="global.messages.validate.email.maxlength">
+                            Your e-mail cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="lastName" jhiTranslate="global.form.lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" #lastName="ngModel" placeholder="{{'global.form.lastName.placeholder' | translate}}"
+                           [(ngModel)]="createAccount.lastName" minlength=5 maxlength=100 required>
+                    <div *ngIf="lastName.dirty && lastName.invalid">
+                        <small class="form-text text-danger" *ngIf="lastName.errors.required"
+                               jhiTranslate="global.messages.validate.email.required">
+                            Your e-mail is required.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="lastName.errors.invalid"
+                               jhiTranslate="global.messages.validate.email.invalid">
+                            Your e-mail is invalid.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="lastName.errors.minlength"
+                               jhiTranslate="global.messages.validate.lastName.minlength">
+                            Your e-mail is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="lastName.errors.maxlength"
+                               jhiTranslate="global.messages.validate.email.maxlength">
+                            Your e-mail cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="email" jhiTranslate="global.form.email">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email" #email="ngModel" placeholder="{{'global.form.email.placeholder' | translate}}"
+                           [(ngModel)]="createAccount.email" minlength=5 maxlength=100 required>
+                    <div *ngIf="email.dirty && email.invalid">
+                        <small class="form-text text-danger" *ngIf="email.errors.required"
+                               jhiTranslate="global.messages.validate.email.required">
+                            Your e-mail is required.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="email.errors.invalid"
+                               jhiTranslate="global.messages.validate.email.invalid">
+                            Your e-mail is invalid.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="email.errors.minlength"
+                               jhiTranslate="global.messages.validate.email.minlength">
+                            Your e-mail is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="email.errors.maxlength"
+                               jhiTranslate="global.messages.validate.email.maxlength">
+                            Your e-mail cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="secondaryEmail" jhiTranslate="global.form.secondaryEmail">Secondary e-mail</label>
+                    <input type="email" class="form-control" id="secondaryEmail" name="secondaryEmail" #secondaryEmail="ngModel" placeholder="{{'global.form.secondaryEmail.placeholder' | translate}}"
+                           [(ngModel)]="createAccount.secondaryEmail" minlength=5 maxlength=100 required>
+                    <div *ngIf="secondaryEmail.dirty && secondaryEmail.invalid">
+                        <small class="form-text text-danger" *ngIf="secondaryEmail.errors.required"
+                               jhiTranslate="global.messages.validate.email.required">
+                            Your e-mail is required.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="secondaryEmail.errors.invalid"
+                               jhiTranslate="global.messages.validate.email.invalid">
+                            Your e-mail is invalid.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="secondaryEmail.errors.minlength"
+                               jhiTranslate="global.messages.validate.email.minlength">
+                            Your e-mail is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="secondaryEmail.errors.maxlength"
+                               jhiTranslate="global.messages.validate.email.maxlength">
+                            Your e-mail cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="companyName" jhiTranslate="global.form.companyName">Company Name</label>
+                    <input type="text" class="form-control" id="companyName" name="companyName" #companyName="ngModel" placeholder="{{'global.form.companyName.placeholder' | translate}}"
+                           [(ngModel)]="createAccount.companyName" minlength=5 maxlength=100 required>
+                    <div *ngIf="companyName.dirty && companyName.invalid">
+                        <small class="form-text text-danger" *ngIf="companyName.errors.required"
+                               jhiTranslate="global.messages.validate.email.required">
+                            Your e-mail is required.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="companyName.errors.invalid"
+                               jhiTranslate="global.messages.validate.email.invalid">
+                            Your e-mail is invalid.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="companyName.errors.minlength"
+                               jhiTranslate="global.messages.validate.email.minlength">
+                            Your e-mail is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="companyName.errors.maxlength"
+                               jhiTranslate="global.messages.validate.email.maxlength">
+                            Your e-mail cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="phone" jhiTranslate="global.form.phone">Phone</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" #phone="ngModel" placeholder="{{'global.form.phone.placeholder' | translate}}"
+                           [(ngModel)]="createAccount.phone" minlength=5 maxlength=100 required>
+                    <div *ngIf="phone.dirty && phone.invalid">
+                        <small class="form-text text-danger" *ngIf="phone.errors.required"
+                               jhiTranslate="global.messages.validate.email.required">
+                            Your e-mail is required.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="phone.errors.invalid"
+                               jhiTranslate="global.messages.validate.email.invalid">
+                            Your e-mail is invalid.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="phone.errors.minlength"
+                               jhiTranslate="global.messages.validate.email.minlength">
+                            Your e-mail is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="phone.errors.maxlength"
+                               jhiTranslate="global.messages.validate.email.maxlength">
+                            Your e-mail cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="skype" jhiTranslate="global.form.skype">Skype</label>
+                    <input type="text" class="form-control" id="skype" name="skype" #skype="ngModel" placeholder="{{'global.form.skype.placeholder' | translate}}"
+                           [(ngModel)]="createAccount.skype" minlength=5 maxlength=100 required>
+                    <div *ngIf="skype.dirty && skype.invalid">
+                        <small class="form-text text-danger" *ngIf="skype.errors.required"
+                               jhiTranslate="global.messages.validate.email.required">
+                            Your e-mail is required.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="skype.errors.invalid"
+                               jhiTranslate="global.messages.validate.email.invalid">
+                            Your e-mail is invalid.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="skype.errors.minlength"
+                               jhiTranslate="global.messages.validate.email.minlength">
+                            Your e-mail is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="skype.errors.maxlength"
+                               jhiTranslate="global.messages.validate.email.maxlength">
+                            Your e-mail cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="whatsup" jhiTranslate="global.form.whatsup">WhatsUp</label>
+                    <input type="tel" class="form-control" id="whatsup" name="whatsup" #whatsup="ngModel" placeholder="{{'global.form.whatsup.placeholder' | translate}}"
+                           [(ngModel)]="createAccount.whatsup" minlength=5 maxlength=100 required>
+                    <div *ngIf="whatsup.dirty && whatsup.invalid">
+                        <small class="form-text text-danger" *ngIf="whatsup.errors.required"
+                               jhiTranslate="global.messages.validate.email.required">
+                            Your e-mail is required.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="whatsup.errors.invalid"
+                               jhiTranslate="global.messages.validate.email.invalid">
+                            Your e-mail is invalid.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="whatsup.errors.minlength"
+                               jhiTranslate="global.messages.validate.email.minlength">
+                            Your e-mail is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="whatsup.errors.maxlength"
+                               jhiTranslate="global.messages.validate.email.maxlength">
+                            Your e-mail cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="companyCreatorForm.form.invalid" class="btn btn-primary" jhiTranslate="flowersApp.company-creator.form.button">Create</button>
+            </form>
+        </div>
+    </div>
+</div>

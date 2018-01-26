@@ -1,0 +1,24 @@
+{
+    "flowersApp": {
+        "boxTypeGroup" : {
+            "home": {
+                "title": "Box Type Groups",
+                "createLabel": "Create a new Box Type Group",
+                "createOrEditLabel": "Create or edit a Box Type Group"
+            },
+            "created": "A new Box Type Group is created with identifier {{ param }}",
+            "updated": "A Box Type Group is updated with identifier {{ param }}",
+            "deleted": "A Box Type Group is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Box Type Group {{ id }}?"
+            },
+            "detail": {
+                "title": "Box Type Group"
+            },
+            "quantity": "Quantity",
+            "order": "Order",
+            "boxGroup": "Box Group",
+            "boxType": "Box Type"
+        }
+    }
+}

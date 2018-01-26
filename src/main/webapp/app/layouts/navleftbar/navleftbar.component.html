@@ -1,0 +1,10 @@
+<div class="navleftbar-margin" [ngClass]="!collapseNavleftbar() ? 'navleftbar-show' : 'navleftbar-hide'">
+    <div class="mrg">
+        <div class="navleftbar" [ngClass]="!collapseNavleftbar() ? 'navleftbar-show' : 'navleftbar-hide'"
+             *ngFor="let row of rows">
+            <a [ngClass]="row.icon"
+               routerLink="{{row.path}}" routerLinkActive="active" >
+                {{!collapseNavleftbar() ? row.name : ''}}</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+{
+    "flowersApp": {
+        "price-lists": {
+            "defaultPriceList": "Default Price List",
+            "lowMarketPriceList": "Low Market Price List",
+            "highMarketPriceList": "High Market Price List",
+            "priceListsBySeasons": "Price Lists by Seasons"
+        }
+    }
+}

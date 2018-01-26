@@ -1,0 +1,77 @@
+.table-employee {
+    margin:170px 0 0 25px;
+
+}
+
+.employee-add-button {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    border-radius: 52px;
+    border: 2px solid cadetblue;
+    margin: -40px 50px 0 0;
+    color: cadetblue;
+    outline: none;
+    cursor: pointer;
+    float: right;
+    text-align: center;
+    padding-top: 6px;
+
+    &:hover {
+        color: #FFFFFF;
+        background-color: cadetblue;
+    }
+}
+
+.employee-filter {
+    margin-top: 10px;
+    background: #f0f0f0;
+    border-radius: 0;
+    border: 1px solid #a7a7a7;
+    width: 279px;
+    height: 36px;
+    outline: none;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    padding-left: 13px;
+    font-size: 14px;
+
+    &:focus, &:active {
+        border-color: cadetblue;
+        background: none;
+    }
+}
+
+.employee-checkbox {
+    position: absolute;
+    z-index: 3;
+    margin: 13px 0 0 325px;
+    box-shadow: none !important;
+}
+
+.check-box-info {
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    font-size: 16px;
+    color: #555;
+    position: absolute;
+    margin: 16px 0 0 355px;
+}
+
+.employee-scroll {
+    margin-top: 35px;
+    overflow: auto;
+    height: 500px
+}
+
+.employee-list-block {
+    margin: 0 0 0 30px;
+    height: 643px;
+}
+
+.title {
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 21px;
+}
+
+
+

@@ -1,0 +1,57 @@
+
+<div *ngIf="company">
+    <h2><span jhiTranslate="flowersApp.company.detail.title">Company</span> {{company.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.company.farmName">Farm Name</span></dt>
+        <dd>
+            <span>{{company.farmName}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.company.legalName">Legal Name</span></dt>
+        <dd>
+            <span>{{company.legalName}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.company.generalOfficePhone">General Office Phone</span></dt>
+        <dd>
+            <span>{{company.generalOfficePhone}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.company.country">Country</span></dt>
+        <dd>
+            <span>{{company.country}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.company.city">City</span></dt>
+        <dd>
+            <span>{{company.city}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.company.farmSize">Farm Size</span></dt>
+        <dd>
+            <span>{{company.farmSize}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.company.generalEmailAddress">General Email Address</span></dt>
+        <dd>
+            <span>{{company.generalEmailAddress}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.company.address">Address</span></dt>
+        <dd>
+            <span>{{company.address}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.company.typeOfFlowers">Type Of Flowers</span></dt>
+        <dd>
+            <span jhiTranslate="{{'flowersApp.TYPE_OF_FLOWERS.' + company.typeOfFlowers}}">{{company.typeOfFlowers}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'company/'+ company.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

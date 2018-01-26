@@ -1,0 +1,143 @@
+.bank-details {
+    margin: 20px 0;
+}
+
+label {
+    font-size: 16px;
+    display: inline-block;
+    margin: 35px 0 6px 31px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+}
+
+textarea {
+    font-size: 14px;
+    font-family: "FlowersFont-TEXT-OFFICE-REGULAR";
+    width: 450px;
+    height: 150px;
+    max-height: 150px;
+    border: 1px solid #a7a7a7;
+    background-color: #f0f0f0;
+    margin-left: 32px;
+    outline: none;
+    padding: 0;
+    float: left;
+    &:focus {
+        background-color: #fff;
+        border: 1px solid cadetblue;
+    }
+}
+
+button {
+    width: 120px;
+    padding: 6px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    border: 2px solid cadetblue;
+    color: cadetblue;
+    transition: all .0s;
+    background-color: #fff;
+    outline: none;
+    margin-left: 25px;
+    &:disabled {
+        cursor: not-allowed;
+        color: #a7a7a7;
+        border-color: #a7a7a7;
+        &:hover {
+            background-color: transparent;
+            color: #a7a7a7;
+        }
+    }
+    &:hover {
+        color: #fff;
+        background-color: cadetblue;
+    }
+}
+
+.btn__container {
+    display: flex;
+    justify-content: flex-start;
+    margin: 25px 30px 30px 0;
+    button {
+        margin-left: 32px;
+    }
+    button:nth-child(2) {
+        margin-left: 32px;
+    }
+    button:nth-child(3) {
+        margin-left: auto;
+    }
+    button:nth-child(4) {
+        margin-left: 32px;
+    }
+}
+
+.textarea-validation {
+    height: 120px;
+    width: min-content;
+    small {
+        float: left;
+        font-size: 11px;
+        margin: 10px 0 0 32px;
+    }
+}
+
+.textarea-validation-2 {
+    height: 180px;
+    width: min-content;
+    small {
+        float: left;
+        font-size: 11px;
+        margin: 10px 0 0 32px;
+
+    }
+}
+
+hr {
+    margin-top: 61px;
+}
+
+hr[_ngcontent-c17] {
+    margin: 14px 0 32px;
+}
+
+// end of uploader tabs
+
+.upload-buttons-label2 {
+    font-size: 16px;
+    margin: 40px 0 0 41px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+}
+
+.upload-buttons-label {
+    font-size: 16px;
+    margin: 40px 0 0 41px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+}
+
+// start of display file name style
+.display-gen-filename-label {
+    margin: 40px 40px 0;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+}
+
+.display-gen-file-name {
+    margin: 25px 39px 0px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    width: fit-content;
+    border-bottom: 2px solid cadetblue;
+}
+
+.display-alt-filename-label {
+    margin: 40px 40px 0;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+}
+
+.display-alt-file-name {
+    margin: 25px 39px 0px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    width: fit-content;
+    border-bottom: 2px solid cadetblue;
+}
+
+// end of display file name style

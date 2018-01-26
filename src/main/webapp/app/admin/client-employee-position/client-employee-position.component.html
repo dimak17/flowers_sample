@@ -1,0 +1,62 @@
+<div>
+    <h2>
+        <span jhiTranslate="flowersApp.clientEmployeePosition.home.title">Client Employee Positions</span>
+        <button class="btn btn-primary float-right create-client-employee-position" [routerLink]="['/', { outlets: { popup: ['client-employee-position-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="flowersApp.clientEmployeePosition.home.createLabel">
+            Create new Client Employee Position
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="clientEmployeePositions">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="flowersApp.clientEmployeePosition.name">Name</span></th>
+            <th><span jhiTranslate="flowersApp.clientEmployeePosition.company">Company</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let clientEmployeePosition of clientEmployeePositions ;trackBy: trackId">
+                <td><a [routerLink]="['../client-employee-position', clientEmployeePosition.id ]">{{clientEmployeePosition.id}}</a></td>
+                <td>{{clientEmployeePosition.name}}</td>
+                <td>
+                    <div *ngIf="clientEmployeePosition.company">
+                        <a [routerLink]="['../company', clientEmployeePosition.company?.id ]" >{{clientEmployeePosition.company?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../client-employee-position', clientEmployeePosition.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'client-employee-position/'+ clientEmployeePosition.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'client-employee-position/'+ clientEmployeePosition.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

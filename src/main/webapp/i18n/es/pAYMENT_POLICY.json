@@ -1,0 +1,9 @@
+{
+    "flowersApp": {
+        "PAYMENT_POLICY" : {
+            "null": "",
+            "POLICY1": "POLICY1",
+            "POLICY2": "POLICY2"
+        }
+    }
+}

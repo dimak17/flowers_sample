@@ -1,0 +1,39 @@
+
+<div *ngIf="labelCountry">
+    <h2><span jhiTranslate="flowersApp.labelCountry.detail.title">Label Country</span> {{labelCountry.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.labelCountry.label">Label</span></dt>
+        <dd>
+            <div *ngIf="labelCountry.label">
+                <a [routerLink]="['/label', labelCountry.label?.id]">{{labelCountry.label?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.labelCountry.country">Country</span></dt>
+        <dd>
+            <div *ngIf="labelCountry.country">
+                <a [routerLink]="['/country', labelCountry.country?.id]">{{labelCountry.country?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.labelCountry.company">Company</span></dt>
+        <dd>
+            <div *ngIf="labelCountry.company">
+                <a [routerLink]="['/company', labelCountry.company?.id]">{{labelCountry.company?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'label-country/'+ labelCountry.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

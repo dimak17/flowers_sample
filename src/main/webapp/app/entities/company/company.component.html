@@ -1,0 +1,72 @@
+<div>
+    <h2>
+        <span jhiTranslate="flowersApp.company.home.title">Companies</span>
+        <button class="btn btn-primary float-right create-company" [routerLink]="['/', { outlets: { popup: ['company-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="flowersApp.company.home.createLabel">
+            Create new Company
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="companies">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="farmName"><span jhiTranslate="flowersApp.company.farmName">Farm Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="legalName"><span jhiTranslate="flowersApp.company.legalName">Legal Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="generalOfficePhone"><span jhiTranslate="flowersApp.company.generalOfficePhone">General Office Phone</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="country"><span jhiTranslate="flowersApp.company.country">Country</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="city"><span jhiTranslate="flowersApp.company.city">City</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="farmSize"><span jhiTranslate="flowersApp.company.farmSize">Farm Size</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="generalEmailAddress"><span jhiTranslate="flowersApp.company.generalEmailAddress">General Email Address</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="address"><span jhiTranslate="flowersApp.company.address">Address</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="typeOfFlowers"><span jhiTranslate="flowersApp.company.typeOfFlowers">Type Of Flowers</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let company of companies ;trackBy: trackId">
+                <td><a [routerLink]="['../company', company.id ]">{{company.id}}</a></td>
+                <td>{{company.farmName}}</td>
+                <td>{{company.legalName}}</td>
+                <td>{{company.generalOfficePhone}}</td>
+                <td>{{company.country}}</td>
+                <td>{{company.city}}</td>
+                <td>{{company.farmSize}}</td>
+                <td>{{company.generalEmailAddress}}</td>
+                <td>{{company.address}}</td>
+                <td jhiTranslate="{{'flowersApp.TYPE_OF_FLOWERS.' + company.typeOfFlowers}}">{{company.typeOfFlowers}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../company', company.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'company/'+ company.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'company/'+ company.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

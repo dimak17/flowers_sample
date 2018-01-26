@@ -1,0 +1,36 @@
+ <div class="box-type-block">
+  	<h2>
+        <span class="title" jhiTranslate="flowersApp.block.home.title">Farm Block & Beds List</span>
+        <button type="submit" [routerLink]="['/', { outlets: { popup: 'block-new' } }]" class="create-block-button" jhiTranslate="flowersApp.block.createBlock"></button>
+    </h2>
+
+    <div style=" margin-top: 35px; overflow: auto; height: 625px" infinite-scroll >
+            <div *ngFor="let block of blocks; trackBy: trackId">
+                <div class="separation-border">
+                    <div class="box-border">
+                        <span class="short-name-block">
+                            {{block.name}}
+                        </span>
+                        <span class="{{block.colorClass}} line-separator"></span>
+                        <span class="full-name-block">
+                            {{block.beds}}
+                        </span>
+
+                        <div class="float-none">
+                            <div class="edit-block" [routerLink]="['/', { outlets: { popup: 'block/'+ block.id + '/edit'} }]" replaceUrl="true">
+                                <span class="fa fa-pencil edit-delete-icons"></span>
+                                <span
+                                    class="delete-span" jhiTranslate="entity.action.edit">Edit</span>
+                            </div>
+                            <span class="vertical-separator"></span>
+                            <div class="delete-block" [routerLink]="['/', { outlets: { popup: 'block/'+ block.id + '/delete'} }]">
+                                <span class="fa fa-trash-o edit-delete-icons"></span>
+                                <span class="delete-span" jhiTranslate="entity.action.delete">Delete</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+   	</div>
+ </div>

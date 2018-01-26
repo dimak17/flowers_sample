@@ -1,0 +1,9 @@
+{
+    "flowersApp": {
+        "MarketVarietyType" : {
+            "null": "",
+            "PROHIBITED": "PROHIBITED",
+            "SPECIAL": "SPECIAL"
+        }
+    }
+}

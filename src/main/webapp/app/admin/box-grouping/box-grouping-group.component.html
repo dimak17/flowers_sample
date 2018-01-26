@@ -1,0 +1,59 @@
+<div class="group-control-container" jhi-clickOutside (onClickOutside)="onClickOutside()">
+    <div
+        class="group-collapsed"
+        [ngClass]="getCollapsedClass(false)"
+        [formGroup]="boxTypeFormGroup"
+    >
+        <div class="group-collapsed-selected" (click)="toggleGrouping()">
+            <div class="group-left">{{selectedQuantity}}</div>
+            <div class="group-line"></div>
+            <div class="group-title">{{selectedBoxTypeName}}</div>
+            <div class="group-arrow fa fa-angle-down"></div>
+        </div>
+        <div class="float-left left-area">
+            <div class="group-collapsed-list-left" *ngFor="let quantity of quantities; trackBy: trackByFn; let i = index;">
+                <div *ngIf="quantity" class="group-left-container" [ngClass]="getDisabledQuantityClass(quantity)">
+                    <label (click)="chooseQuantity($event, quantity)">
+                        <input type="radio"
+                               [(ngModel)]="selectedQuantity"
+                               formControlName="quantity"
+                        />
+                        <div class="radio">
+                            <div *ngIf="quantity" [ngClass]="getSelectedRadioQuantityClasses(quantity)"></div>
+                        </div>
+                        {{quantity}}
+                    </label>
+                </div>
+                <div class="group-collapsed-line"></div>
+            </div>
+        </div>
+        <div class="float-left scrolled-box-types">
+            <div *ngFor="let boxType of boxTypes; trackBy: trackByFn; let i = index;">
+                <div *ngIf="boxTypes[i]" [ngClass]="getDisabledClasses(boxTypes[i].id)">
+                    <label (click)="chooseBoxTypeId($event, boxTypes[i].id)">
+                        <input type="radio"
+                               [ngModel]="selectedBoxTypeId"
+                               (ngModelChange)="changeBoxModel($event)"
+
+                               formControlName="id"
+                        />
+                        <div class="radio">
+                            <div [ngClass]="getSelectedRadioBoxClasses(boxTypes[i].id)"></div>
+                        </div>
+                        {{boxTypes[i].shortName}}
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="group" #group (mouseenter)="onGroupMouseEnter(group)" (mouseleave)="onGroupMouseLeave(group)" (click)="toggleGrouping()" [ngClass]="getCollapsedClass(true)">
+        <div class="group-inner">
+            <div class="group-left">{{selectedQuantity}}</div>
+            <div class="group-line"></div>
+            <div class="group-title">{{selectedBoxTypeName}}</div>
+            <div class="group-arrow fa fa-angle-down"></div>
+        </div>
+    </div>
+    <span *ngIf="showValidationMessage(true)" class="box-grouping-err-msg text-danger" jhiTranslate="flowersApp.box-grouping.validation.required"></span>
+    <span *ngIf="showValidationMessage(false)" class="box-grouping-err-msg text-danger" jhiTranslate="flowersApp.box-grouping.validation.required_or_delete"></span>
+</div>

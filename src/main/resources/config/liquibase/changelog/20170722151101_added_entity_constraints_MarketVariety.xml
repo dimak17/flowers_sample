@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity MarketVariety.
+    -->
+    <changeSet id="20170722151101-2" author="dima">
+
+        <addForeignKeyConstraint baseColumnNames="market_id"
+                                 baseTableName="market_variety"
+                                 constraintName="fk_market_variety_market_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="market"/>
+
+        <addForeignKeyConstraint baseColumnNames="variety_id"
+                                 baseTableName="market_variety"
+                                 constraintName="fk_market_variety_variety_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="variety"/>
+
+    </changeSet>
+</databaseChangeLog>

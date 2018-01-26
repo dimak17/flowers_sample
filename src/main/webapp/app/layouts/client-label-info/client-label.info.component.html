@@ -1,0 +1,8 @@
+<jhi-flowers-tabs *ngIf="titles">
+    <p-tabView class="flower-tabs" (onChange)="onChange($event)" [activeIndex]="selectedIndex">
+        <p-tabPanel header="{{titles.clients}}"><jhi-client *ngIf="selectedIndex == 0"></jhi-client></p-tabPanel>
+        <p-tabPanel header="{{titles.labels}}"><jhi-label *ngIf="selectedIndex == 1"></jhi-label></p-tabPanel>
+        <p-tabPanel header="{{titles.labelDestinations}}"><jhi-destination *ngIf="selectedIndex == 2"></jhi-destination></p-tabPanel>
+        <p-tabPanel header="{{titles.clientEmployees}}"><jhi-client-employee *ngIf="selectedIndex == 3"></jhi-client-employee></p-tabPanel>
+    </p-tabView>
+</jhi-flowers-tabs>

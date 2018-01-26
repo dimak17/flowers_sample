@@ -1,0 +1,37 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="platon (generated)" id="1490102789414-1">
+        <createTable tableName="company_user_position">
+            <column name="position_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="company_user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="platon (generated)" id="1490102789414-2">
+        <createTable tableName="position">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="positionPK"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="authority" type="VARCHAR(50)"/>
+            <column name="company_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="platon (generated)" id="1490102789414-3">
+        <addForeignKeyConstraint baseColumnNames="position_id" baseTableName="company_user_position" constraintName="FKcsse5a0ou2m9iyvyw5vd35x70" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="position"/>
+    </changeSet>
+    <changeSet author="platon (generated)" id="1490102789414-4">
+        <addForeignKeyConstraint baseColumnNames="authority" baseTableName="position" constraintName="FKd83mk3jf61ki4begrv5fj0drt" deferrable="false" initiallyDeferred="false" referencedColumnNames="name" referencedTableName="jhi_authority"/>
+    </changeSet>
+    <changeSet author="platon (generated)" id="1490102789414-5">
+        <addForeignKeyConstraint baseColumnNames="company_user_id" baseTableName="company_user_position" constraintName="FKk6p9ksxojpbtw5rewlt1e234y" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="company_user"/>
+    </changeSet>
+    <changeSet author="platon (generated)" id="1490102789414-6">
+        <addForeignKeyConstraint baseColumnNames="company_id" baseTableName="position" constraintName="FKkpqfp6ontwcnqpkrfwv02iw1y" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="company"/>
+    </changeSet>
+</databaseChangeLog>

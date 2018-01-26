@@ -1,0 +1,84 @@
+<div>
+    <h2>
+        <span jhiTranslate="flowersApp.companyUser.home.title">Company Users</span>
+        <button class="btn btn-primary float-right create-company-user" [routerLink]="['/', { outlets: { popup: ['company-user-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="flowersApp.companyUser.home.createLabel">
+            Create new Company User
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="companyUsers">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="skype"><span jhiTranslate="flowersApp.companyUser.skype">Skype</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fullName"><span jhiTranslate="flowersApp.companyUser.fullName">Full Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="workEmail"><span jhiTranslate="flowersApp.companyUser.workEmail">Work Email</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="mobilePhone"><span jhiTranslate="flowersApp.companyUser.mobilePhone">Mobile Phone</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="whatsUp"><span jhiTranslate="flowersApp.companyUser.whatsUp">Whats Up</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="officePhone"><span jhiTranslate="flowersApp.companyUser.officePhone">Office Phone</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="user.login"><span jhiTranslate="flowersApp.companyUser.user">User</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="company.mainName"><span jhiTranslate="flowersApp.companyUser.company">Company</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let companyUser of companyUsers ;trackBy: trackId">
+                <td><a [routerLink]="['../company-user', companyUser.id ]">{{companyUser.id}}</a></td>
+                <td>{{companyUser.skype}}</td>
+                <td>{{companyUser.fullName}}</td>
+                <td>{{companyUser.workEmail}}</td>
+                <td>{{companyUser.mobilePhone}}</td>
+                <td>{{companyUser.whatsUp}}</td>
+                <td>{{companyUser.officePhone}}</td>
+                <td>
+                    {{companyUser.user?.login}}
+                </td>
+                <td>
+                    <div *ngIf="companyUser.company">
+                        <a [routerLink]="['../company', companyUser.company?.id ]" >{{companyUser.company?.mainName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../company-user', companyUser.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'company-user/'+ companyUser.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'company-user/'+ companyUser.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <div *ngIf="companyUsers && companyUsers.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

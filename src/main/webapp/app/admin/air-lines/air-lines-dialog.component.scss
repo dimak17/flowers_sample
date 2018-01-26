@@ -1,0 +1,141 @@
+.top-color-line {
+    width: 108px;
+    height: 12px;
+    margin:0 auto;
+    background: #FFAC34;
+}
+
+.bottom-color-line {
+    width: 108px;
+    height: 12px;
+    background: #FFAC34;
+    margin: 97.5px auto 0;
+}
+
+.phrase {
+    font-size: 26px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    color: black;
+    margin: 61px 0 0 72px;
+}
+
+.close {
+    background: url('../../../content/images/Close-up-1.png') no-repeat;
+    width: 17px;
+    height: 17px;
+    margin:0 10px 100px 0;
+    display: block;
+    outline: none;
+}
+
+.close {
+    &:hover{
+        background: url('../../../content/images/Close-up-2.png') no-repeat;
+    }
+}
+
+.name {
+    color: #414242;
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    margin-left: 55px;
+}
+
+.number {
+    color: #414242;
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    margin:16px 0 0 55px;
+}
+
+.form {
+    background-color: #F2F2F2;
+    width: 249px;
+    height: 38px;
+    border: 1px solid #a7a7a7;
+    margin-left: 55px;
+    color: black;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 14px;
+    padding-left: 13px;
+    outline: none;
+}
+
+.form:focus {
+    border-color: #18a09f;
+}
+
+.save-button {
+    width: 250px;
+    height: 52px;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    font-family: FlowersFont-HEAD-OFFICE-MEDIUM;
+    border-radius: 52px;
+    border: 3px solid #18a09f;
+    margin: 30px 0 0 70px;
+    color: #18a09f;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        color: #FFFFFF;
+        background-color: #18a09f;
+    }
+}
+
+input:required {
+    background: #ffffff ;
+}
+
+input:required:invalid {
+    background: #f2f2f2;
+    border-left: 3px solid red !important;
+}
+
+.air-line-field-err-msg {
+    width: 249px;
+    margin-left: 58px;
+    display: block;
+    height: 13px;
+    font-size: 11px;
+    font-family: FlowersFont-HEAD-OFFICE-TEXT;
+    position: absolute;
+}
+
+.alert-on-time {
+    margin-left: 120px;
+    font-size: 12px;
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background: green;
+}
+
+.blue {
+    background: blue;
+}
+
+.gold {
+    background: gold;
+}
+
+.brown {
+    background: brown;
+}
+
+.violet {
+    background: violet;
+}
+
+.pink {
+    background: pink;
+}
+
+.aqua {
+    background: aqua;
+}
+

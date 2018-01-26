@@ -1,0 +1,53 @@
+
+<div *ngIf="contact">
+    <h2><span jhiTranslate="flowersApp.contact.detail.title">Contact</span> {{contact.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.contact.mobilePhone">Mobile Phone</span></dt>
+        <dd>
+            <span>{{contact.mobilePhone}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.contact.officePhone">Office Phone</span></dt>
+        <dd>
+            <span>{{contact.officePhone}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.contact.email">Email</span></dt>
+        <dd>
+            <span>{{contact.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.contact.whatsapp">Whatsapp</span></dt>
+        <dd>
+            <span>{{contact.whatsapp}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.contact.skype">Skype</span></dt>
+        <dd>
+            <span>{{contact.skype}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.contact.address">Address</span></dt>
+        <dd>
+            <span>{{contact.address}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.contact.fax">Fax</span></dt>
+        <dd>
+            <span>{{contact.fax}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.contact.zipcode">Zipcode</span></dt>
+        <dd>
+            <span>{{contact.zipcode}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'contact/'+ contact.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

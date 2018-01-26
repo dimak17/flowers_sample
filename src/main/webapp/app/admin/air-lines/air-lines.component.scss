@@ -1,0 +1,136 @@
+.air-lenes-container {
+    margin: 0 0 0 30px;
+    height: 643px;
+}
+
+.air-line-block {
+    width: 49.6%;
+    height:196px;
+    border: 2px solid #eaeaea;
+    padding: 18px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    display: flex;
+    float: left;
+    align-items: center;
+}
+
+.add-button {
+    margin: 0 auto;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.air-line-icon {
+    margin: 0 25px;
+}
+
+.fields-block {
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 18px;
+}
+
+.fields-text {
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: left;
+}
+
+.act-block {
+    padding-top: 15px;
+}
+
+.vertical-separator {
+    height: 10px;
+    width: 2px;
+    background: grey;
+    display: block;
+    float: left;
+    margin: 3px 20px;
+}
+
+/* global  overall image styles */
+.image-w img, .image-w svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.title {
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 21px;
+}
+
+.edit-block {
+    width: 45px;
+    border: none;
+    cursor: pointer;
+    float: left;
+    outline: none;
+    &:hover {
+        color: #30BABA ;
+    }
+}
+
+.delete-block {
+    width: 57px;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    float: left;
+    outline: none;
+    &:hover {
+        color: #30BABA ;
+    }
+}
+
+.delete-span, .delete-span {
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    outline: none;
+    float: right;
+}
+
+.edit-delete-icons {
+    font-size: 17px;
+    cursor: pointer;
+    float: left;
+    outline: none;
+}
+
+.red {
+    color: #ff471a;
+}
+
+.green {
+    color: cadetblue;
+}
+
+.blue {
+    color: blue;
+}
+
+.gold {
+    color: #ffc61a;
+}
+
+.brown {
+    color: brown;
+}
+
+.violet {
+    color: #a366ff;
+}
+
+.pink {
+    color: pink;
+}
+
+.aqua {
+    color: steelblue;
+}
+

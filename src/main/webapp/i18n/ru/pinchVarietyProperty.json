@@ -1,0 +1,23 @@
+{
+    "flowersApp": {
+        "pinchVarietyProperty" : {
+            "home": {
+                "title": "Pinch Variety Properties",
+                "createLabel": "Создать новый Pinch Variety Property",
+                "createOrEditLabel": "Создать или отредактировать Pinch Variety Property"
+            },
+            "created": "Новый Pinch Variety Property создан с идентификатором {{ param }}",
+            "updated": "Pinch Variety Property обновлен с идентификатором {{ param }}",
+            "deleted": "Pinch Variety Property удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Pinch Variety Property {{ id }}?"
+            },
+            "detail": {
+                "title": "Pinch Variety Property"
+            },
+            "length": "Length",
+            "quantity": "Quantity",
+            "pinchVariety": "Pinch Variety"
+        }
+    }
+}

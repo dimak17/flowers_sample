@@ -1,0 +1,51 @@
+.wrapper {
+    width: 50%;
+    margin: 100px auto;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+}
+
+.prepay {
+    width: 40%;
+    height: 80px;
+    border: 2px solid gray;
+    display: inline-block;
+    float: right;
+    background-color: cadetblue;
+    &:hover {
+    cursor: default;
+}
+}
+.info {
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    font-size: 16px;
+    margin: -16px 0 30px 16px;
+    color: black;
+    width: 400px;
+    &:hover {
+        cursor: default;
+    }
+}
+
+.fa-info{
+    color:black;
+    margin: 45px 30px 20px 80px;
+    font-size: 20px;
+    width: 400px;
+    &:hover {
+       cursor: default;
+    }
+}
+
+.credit {
+    @extend .prepay;
+    float: none;
+    &:hover {
+        cursor: default;
+    }
+}
+
+p {
+    text-align: center;
+    margin-top: 25px;
+    color: white;
+}

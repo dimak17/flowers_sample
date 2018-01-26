@@ -1,0 +1,115 @@
+{
+    "flowersApp": {
+        "companyUser" : {
+            "home": {
+                "title": "Lista de empleados",
+                "createLabel": "Crear nuevo empleado",
+                "createOrEditLabel": "Editar empleado"
+            },
+            "created": "Un nuevo empleado ha sido creado con el identificador {{ param }}",
+            "updated": "Un empleado ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Company User ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar empleado {{ id }}?"
+            },
+            "detail": {
+                "title": "Empleado"
+            },
+            "skype": "Skype",
+            "fullName": "Nombre completo",
+            "accountEmail": "Email de la cuenta",
+            "workEmail": "Email del trabajo",
+            "mobilePhone": "Numero celular",
+            "whatsUp": "Whats app",
+            "officePhone": "Tel. de oficina",
+            "user": "Usario",
+            "company": "Empresa",
+            "positions": "Puestos",
+            "markets": "Mercados",
+
+            "defaultPositionTitle": "Elige puestos del empleado",
+            "defaultMarketsLabel": "Elige mercados del empleado",
+
+            "columnPositions":"Puestos",
+            "columnFullName":"Nombre completo",
+            "columnAccountEmail":"Email de la cuenta",
+            "columnWorkEmail":"Email del trabajo",
+            "columnOfficePhone":"Tel. de oficina",
+            "columnMobilePhone":"Numero celular",
+            "columnSkype":"Skype",
+            "columnMarkets":"Mercados",
+            "columnStatus":"Estado",
+            "columnEdit":"Editar",
+
+            "statusActivated": "Activado",
+            "statusDeactivated": "Desactivado",
+            "actSwitch": "Activar",
+            "deactSwitch": "Desactivar",
+
+            "salesManager": "Ventas",
+            "salesAssistant": "Asistente de ventas",
+            "companyOwner": "Dueño de la empresa",
+            "agronomEngineer": "Ingeniero agronomo",
+            "postHarvestManager": "Jefe de la postcosecha",
+            "generalManager": "Gerente general",
+            "accountantMananger": "Contabilidad",
+            "accountantAssistant": "Asistente de contabilidad",
+            "claimsMananger": "Reclamos",
+            "claimsAssistant": "Asistente de reclamos",
+            "coordinationManager": "Coordinación",
+            "systemManager": "Gerente del sistema",
+
+            "filterInput": "Filtro global",
+
+            "checkBoxText": "Mostrar únicamente empleados activados",
+
+            "firstText": "Primera",
+            "previousText": "Anterior",
+            "nextText": "Próxima",
+            "lastText": "Última",
+
+            "pageXofY": "Página",
+
+            "createEmployee": "Crear nuevo empleado",
+
+            "validation": {
+                "positions" : {
+                    "required": "Puesto es requerido"
+                },
+                "markets" : {
+                    "required": "Mercado es requerido"
+                },
+                "fullName": {
+                    "required": "Nombre completo es requerido",
+                    "pattern": "Nombre completo debe contener caracteres latinos",
+                    "maximumSymbols": "Nombre completo debe contener máximo 50 símbolos"
+                },
+                "accountEmail": {
+                    "required": "Email de la cuenta es requerido",
+                    "pattern": "Email de la cuenta debe contener caracteres latinos",
+                    "maximumSymbols": "Email de la cuenta debe contener máximo 50 símbolos"
+                },
+                "workEmail": {
+                    "required": "Email del trabajo es requerido",
+                    "pattern": "Email del trabajo debe contener caracteres latinos",
+                    "maximumSymbols": "Email del trabajo debe contener máximo 50 símbolos"
+                },
+                "skype": {
+                    "maximumSymbols": "Skype debe contener máximo 50 símbolos"
+                },
+                "mobilePhone": {
+                    "maximumSymbols": "Numero celular debe contener máximo 50 símbolos",
+                    "pattern": "Numero celular puede contener dígitos, + y ( )"
+                },
+                "officePhone": {
+                    "maximumSymbols": "Tel. de oficina debe contener máximo 50 símbolos",
+                    "pattern": "Tel. de oficina puede contener dígitos y caracteres latinos"
+                },
+                "emailValidation": "Este Email no es válido, ejemplo: email@gmail.com",
+                "maximumSymbols": "Email debe contener máximo 50 símbolos"
+            },
+
+            "alert": "Esta cuenta ya existe"
+        }
+    }
+}

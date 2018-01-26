@@ -1,0 +1,9 @@
+{
+    "flowersApp": {
+        "seasons-pinch-info": {
+            "seasonsList": "Seasons List",
+            "pinchList": "Pinch List",
+            "pinchVarietyData": "Pinch Variety Data"
+        }
+    }
+}

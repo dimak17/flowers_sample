@@ -1,0 +1,175 @@
+
+.box-type-block {
+    margin: 40px 0 0 30px;
+    height: 643px;
+}
+.separation-border {
+    float: left;
+    width: 217px;
+    height: 217px;
+    display: block;
+}
+
+.box-border {
+    width: 196px;
+    height:196px;
+    border: 1px solid  #D5D5D5;
+    display: block;
+}
+
+.short-name-block {
+    text-align: center;
+    font-family: FlowersFont-HEAD-OFFICE-BOLD;
+    font-size: 20px;
+    margin-top: 41px;
+    display: block;
+}
+
+.line-separator {
+    height:3px;
+    width: 31px;
+    background: cadetblue;
+    margin: 15px auto 0;
+    display: block;
+}
+
+.full-name-block {
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 14px;
+    display: block;
+}
+
+.data-edit {
+    position: absolute;
+    margin-left: -25px;
+}
+
+.data-delete {
+    position: absolute;
+    margin-left: -40px;
+}
+.data {
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    outline: none;
+    float: right;
+}
+
+.edit-delete-icons {
+    font-size: 15px;
+    cursor: pointer;
+    float: left;
+    outline: none;
+}
+
+.edit-block {
+    width: 45px;
+    margin: 32px 0 0 29px;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    float: left;
+    outline: none;
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.delete-block {
+    width: 57px;
+    margin-top: 32px;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    float: left;
+    outline: none;
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.vertical-separator {
+    height:20px;
+    width: 2px;
+    background: grey;
+    display: block;
+    float: left;
+    margin: 30px 20px 0;
+}
+
+/* global  overall image styles */
+.image-w img, .image-w svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.title {
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 21px;
+}
+
+.add-button {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    border-radius: 52px;
+    border: 2px solid cadetblue;
+    margin: -40px 50px 0 0;
+    color: cadetblue;
+    outline: none;
+    cursor: pointer;
+    float: right;
+    text-align: center;
+    padding-top: 6px;
+
+    &:hover {
+        color: #FFFFFF;
+        background-color: cadetblue;
+    }
+}
+
+.fa-plus-square-o:hover {
+    color: cadetblue;
+}
+
+.box-scroll {
+    margin-top: 35px;
+    overflow: auto;
+    height: 650px
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background: green;
+}
+
+.blue {
+    background: blue;
+}
+
+.gold {
+    background: gold;
+}
+
+.brown {
+    background: brown;
+}
+
+.violet {
+    background: violet;
+}
+
+.pink {
+    background: pink;
+}
+
+.aqua {
+    background: aqua;
+}

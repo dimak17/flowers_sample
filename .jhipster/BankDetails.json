@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "bankDetails"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "general",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "alternative",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170705133732",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "bank_details",
+    "pagination": "no"
+}

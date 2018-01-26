@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "farmName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "legalName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "generalOfficePhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "farmSize",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "generalEmailAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typeOfFlowers",
+            "fieldType": "TYPE_OF_FLOWERS",
+            "fieldValues": "ROSES"
+        }
+    ],
+    "changelogDate": "20170622083617",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "company",
+    "pagination": "infinite-scroll"
+}

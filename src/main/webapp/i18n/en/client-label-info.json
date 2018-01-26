@@ -1,0 +1,10 @@
+{
+    "flowersApp": {
+        "client-label-info": {
+            "clients": "Clients",
+            "labels": "Labels",
+            "labelDestinations": "Label Destinations",
+            "clientEmployees": "Client Employees"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@mixin transition($default-transition) {
+    transition: $default-transition;
+}
+
+@mixin border-radius($border-radius) {
+    border-radius:$border-radius;
+}
+
+@mixin rotate($rotate) {
+    transform: rotate($rotate);
+}
+
+@mixin scale($scale) {
+    transform: scale($scale);
+}
+
+@mixin shadow($shadow) {
+    box-shadow: ($shadow);
+}
+
+@mixin text-align($text-align) {
+    text-align: ($text-align);
+}
+@mixin button($button-bg, $button-border, $button-border-color, $button-pad, $button-size, $button-line-height, $height-button, $button-radius) {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 0 0;
+  padding: 10px $button-pad 0 $button-pad;
+  background: $button-bg;
+  border: $button-border solid $button-border-color;
+  font-size: $button-size;
+  line-height: $button-line-height;
+  height: $height-button;
+  position: relative;
+  @include radius($button-radius);
+}
+
+@mixin font($font-ff, $font-s, $font-s2) {
+    font-family: $font-ff, sans-serif;
+    font-size: $font-s;
+    font-size: $font-s2;
+}
+

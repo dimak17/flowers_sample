@@ -1,0 +1,75 @@
+.ui-widget button {
+    font-family: FontAwesome;
+}
+
+.accordion-price-list .ui-accordion .ui-accordion-content {
+    padding: 0;
+}
+
+.accordion-price-list .dropdown {
+    margin: 0;
+}
+
+.accordion-price-list .ui-accordion .ui-accordion-header {
+    display: none;
+}
+
+.price-list {
+
+    .ui-datatable-emptymessage {
+        cursor: default;
+    }
+
+    .ui-datatable-scrollable-header-box {
+        margin-right: 0 !important;
+    }
+
+    .ui-datatable tbody tr.ui-state-highlight td {
+        background-color: #eeeeee;
+        color: black;
+        outline: 1px solid cadetblue;
+    }
+
+    .ui-datatable .ui-datatable-thead {
+        th {
+            background: cadetblue;
+            height: 25px;
+            color: white;
+        }
+    }
+
+}
+
+.container-price-list {
+    .ui-datatable {
+        .ui-editable-column {
+            input {
+                position: relative;
+                width: 52px;
+                outline: 0;
+            }
+        }
+        .ui-datatable-thead {
+            th {
+                padding: 0;
+                height: 25px;
+            }
+        }
+        .ui-datatable-data > tr > td {
+            .ui-editable-column {
+                padding: 6px 0;
+            }
+            padding: 6px 0;
+            vertical-align: middle;
+        }
+    }
+}
+
+.accordion-price-list .ui-accordion-header .ui-state-default .ui-corner-all .ui-state-active {
+    background: cadetblue;
+}
+
+.container-price-list .ui-inputtext {
+    transition: 0s;
+}
+

@@ -1,0 +1,45 @@
+
+<div *ngIf="employee">
+    <h2><span jhiTranslate="flowersApp.employee.detail.title">Company User</span> {{employee.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="flowersApp.employee.firstName">First name</span></dt>
+        <dd>
+            <span>{{employee.firstName}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.employee.secondName">Second name</span></dt>
+        <dd>
+            <span>{{employee.secondName}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.employee.phone">Phone</span></dt>
+        <dd>
+            <span>{{employee.phone}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.employee.skype">Skype</span></dt>
+        <dd>
+            <span>{{employee.skype}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.employee.email">Email</span></dt>
+        <dd>
+            <span>{{employee.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.employee.whatsUp">WhatsUp</span></dt>
+        <dd>
+            <span>{{employee.whatsUp}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'employee/'+ employee.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

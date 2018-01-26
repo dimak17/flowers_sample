@@ -1,0 +1,8 @@
+{
+    "flowersApp": {
+        "TYPE_OF_FLOWERS" : {
+            "null": "",
+            "ROSES": "ROSES"
+        }
+    }
+}

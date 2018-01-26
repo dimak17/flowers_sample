@@ -1,0 +1,23 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "pinch",
+            "otherEntityName": "pinch",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "variety",
+            "otherEntityName": "variety",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20170906091042",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "pinch_variety",
+    "pagination": "no"
+}

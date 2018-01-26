@@ -1,0 +1,22 @@
+{
+    "flowersApp": {
+        "shippingPolicy" : {
+            "home": {
+                "title": "Shipping Policies",
+                "createLabel": "Создать новый Shipping Policy",
+                "createOrEditLabel": "Создать или отредактировать Shipping Policy"
+            },
+            "created": "Новый Shipping Policy создан с идентификатором {{ param }}",
+            "updated": "Shipping Policy обновлен с идентификатором {{ param }}",
+            "deleted": "Shipping Policy удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Shipping Policy {{ id }}?"
+            },
+            "detail": {
+                "title": "Shipping Policy"
+            },
+            "shortName": "Short Name",
+            "fullName": "Full Name"
+        }
+    }
+}

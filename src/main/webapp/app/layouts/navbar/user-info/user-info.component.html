@@ -1,0 +1,10 @@
+<ul class="user-info" *ngIf="companyUser">
+    <li>
+        <span class="key" jhiTranslate="flowersApp.user-info.user">User</span>
+        <span class="value">{{companyUser.fullName}}</span>
+    </li>
+    <li class="line">
+        <span class="key" jhiTranslate="flowersApp.user-info.company">Company</span>
+        <span class="value">{{companyUser.company.farmName}}</span>
+    </li>
+</ul>

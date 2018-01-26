@@ -1,0 +1,57 @@
+<form name="editForm" role="form" [formGroup]="formGroup" #editForm="ngForm">
+<div class="dialog">
+	<div class="left-block">
+		<div class="title" jhiTranslate="flowersApp.block.title">Enter block & beds name</div>
+
+		<div class="input-group-data">
+			<label for="block-name" jhiTranslate="flowersApp.block.name">Block name</label>
+			<div class="block-height">
+			    <input type="text" id="block-name" name="block-name" [ngClass]="(!isFillValidation(block.name) ||
+			     isLatinValidation(block.name) || !isFieldLengthValidation(block.name) || isDuplicateValidation(block.name)) ? 'invalid' : ''" [(ngModel)]="block.name" maxlength="11" [ngModelOptions]="{standalone: true}"/>
+			    <small *ngIf="!isFillValidation(block.name) && !isLatinValidation(block.name) &&
+						  isFieldLengthValidation(block.name)" class="block-field-err-msg text-danger" jhiTranslate="flowersApp.block.validation.name.required"></small>
+        	    <small *ngIf="isLatinValidation(block.name) && isFillValidation(block.name) &&
+        				  isFieldLengthValidation(block.name)" class="block-field-err-msg text-danger" jhiTranslate="flowersApp.block.validation.name.pattern"></small>
+        	    <small *ngIf="!isFieldLengthValidation(block.name) && !isDuplicateValidation(block.name)" class="block-field-err-msg text-danger" jhiTranslate="flowersApp.block.validation.name.maximumSymbols"></small>
+                <small *ngIf="isDuplicateValidation(block.name)" class="block-field-err-msg text-danger alert-on-time" jhiTranslate="flowersApp.block.alert"></small>
+            </div>
+
+			<label for="quantity" jhiTranslate="flowersApp.block.beds">Quantity of beds</label>
+			<div class="block-height">
+			    <input type="text" id="quantity" name="quantity" [ngClass]="(!isFillValidation(block.beds) ||
+			    isNumberValidation(block.beds) || !isBedsLengthValidation(block.beds) ? 'invalid' : '')" [(ngModel)]="block.beds" required required maxlength="6" [ngModelOptions]="{standalone: true}"/>
+			    <small *ngIf="!isFillValidation(block.beds) && !isNumberValidation(block.beds) &&
+				   isBedsLengthValidation(block.beds)" class="block-field-err-msg text-danger" jhiTranslate="flowersApp.block.validation.beds.required"></small>
+        	    <small *ngIf="isNumberValidation(block.beds) && isBedsLengthValidation(block.beds)" class="block-field-err-msg text-danger" jhiTranslate="flowersApp.block.validation.beds.pattern"></small>
+			    <small *ngIf="!isBedsLengthValidation(block.beds)" class="block-field-err-msg text-danger" jhiTranslate="flowersApp.block.validation.beds.maximumSymbols"></small>
+			</div>
+		</div>
+
+		<div class="switch-button-label" jhiTranslate="flowersApp.block.switchButtons">Varieties for this block</div>
+		<button type="button" id="switch-button" class="all-button"
+			[ngClass]="isAllButton ? 'all-button-active' : ''" (click)="useAllButton()"
+			jhiTranslate="flowersApp.block.allButton">All</button>
+		<button type="button" class="var-button"
+			[ngClass]="!isAllButton ? 'var-button-active' : ''" (click)="useVarButton()"
+			 jhiTranslate="flowersApp.block.varButton">Variety list</button>
+
+		<button type="submit" (click)="save()" class="save-button"
+		jhiTranslate="flowersApp.block.saveButton">Save</button>
+	</div>
+	<div class="right-block" >
+		<button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()"></button>
+        <div class="input-group-data input-block-data block-group-data">
+            <label for="typeOfFlowers">Choose type of flowers</label>
+            <ng-select id="typeOfFlowers" [allowClear]="true" [items]="typeOfFlowerNames"
+                       formControlName="typeOfFlowers"  (selected)="selectedTypeOfFlower($event)"></ng-select>
+        </div>
+		<div class="mrg scroll-style">
+			<div class="square-container" *ngFor="let variety of chosenVarieties">
+				<div class="square" [ngClass]="selectedVarieties.includes(variety) ? 'square-selected' : ''" (click)="onSelect(variety)"> {{(variety.name).toLowerCase()}}</div>
+			</div>
+		</div>
+	</div>
+</div>
+</form>
+

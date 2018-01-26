@@ -1,0 +1,100 @@
+{
+    "flowersApp": {
+        "companyUser" : {
+            "home": {
+                "title": "Company Users",
+                "createLabel": "Создать новый Company User",
+                "createOrEditLabel": "Создать или отредактировать Company User"
+            },
+            "created": "Новый Company User создан с идентификатором {{ param }}",
+            "updated": "Company User обновлен с идентификатором {{ param }}",
+            "deleted": "Company User удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Company User {{ id }}?"
+            },
+            "detail": {
+                "title": "Company User"
+            },
+            "skype": "Skype",
+            "fullName": "Full Name",
+            "accountEmail": "Account Email",
+            "workEmail": "Work Email",
+            "mobilePhone": "Mobile Phone",
+            "whatsUp": "Whats App",
+            "officePhone": "Office Phone",
+            "user": "User",
+            "company": "Company",
+            "positions": "Positions",
+            "markets": "Markets",
+
+            "defaultPositionTitle": "Create",
+            "defaultMarketsLabel": "Choose markets fro employee",
+
+            "columnPositions":"Positions",
+            "columnFullName":"Full Name",
+            "columnAccountEmail":"Account Email",
+            "columnWorkEmail":"Work Email",
+            "columnOfficePhone":"Office Phone",
+            "columnMobilePhone":"Mobile Phone",
+            "columnSkype":"Skype",
+            "columnMarkets":"Markets",
+            "columnStatus":"Status",
+            "columnEdit":"Edit",
+
+            "statusActivated": "Activated",
+            "statusDeactivated": "Deactivated",
+            "actSwitch": "Activate",
+            "deactSwitch": "Deactivate",
+
+            "salesManager": "Sales manager",
+            "salesAssistant": "Sales assistant",
+            "companyOwner": "Company owner",
+            "agronomEngineer": "Agronom engineer",
+            "postHarvestManager": "Post harvest manager",
+            "generalManager": "General manager",
+            "accountantMananger": "Accountant manager",
+            "accountantAssistant": "Accountant assistant",
+            "claimsMananger": "Claims manager",
+            "claimsAssistant": "Claims assistant",
+            "coordinationManager": "Coordination manager",
+            "systemManager": "System manager",
+
+            "filterInput": "Filter all columns",
+
+            "checkBoxText": "Show only Activated Employees!",
+
+            "firstText": "First",
+            "previousText": "Prevoius",
+            "nextText": "Next",
+            "lastText": "Last",
+
+            "pageXofY": "Page",
+
+            "createEmployee": "Create New Employee",
+
+            "validation": {
+                "positions" : {
+                    "required": "Position is required"
+                },
+                "markets" : {
+                    "required": "Market is required"
+                },
+                "fullName": {
+                    "required": "Full Name is required",
+                    "pattern": "Full Name should contains latin symbols"
+                },
+                "accountEmail": {
+                    "required": "Account Email is required",
+                    "maximumSymbols": "This field should contain maximum 50 symbols"
+                },
+                "workEmail": {
+                    "required": "Work Email is required"
+                },
+                "emailValidation": "Email is not valid, example: email@gmail.com",
+                "maximumSymbols": "This field should contain maximum 50 symbols"
+            },
+
+            "alert": "This Account already exist!"
+        }
+    }
+}

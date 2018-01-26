@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "labelCountry",
+            "otherEntityName": "labelCountry",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "label"
+        },
+        {
+            "relationshipName": "client",
+            "otherEntityName": "client",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "labelName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deliveryDays",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "wanted",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170219183745",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "label",
+    "pagination": "pagination"
+}

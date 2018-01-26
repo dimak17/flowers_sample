@@ -1,0 +1,71 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myBoxTypeGroupLabel" jhiTranslate="flowersApp.boxTypeGroup.home.createOrEditLabel">Create or edit a Box Type Group</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!boxTypeGroup.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="boxTypeGroup.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.boxTypeGroup.quantity" for="field_quantity">Quantity</label>
+            <input type="number" class="form-control" name="quantity" id="field_quantity"
+                [(ngModel)]="boxTypeGroup.quantity"
+            min="1" />
+            <div [hidden]="!(editForm.controls.quantity?.dirty && editForm.controls.quantity?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.quantity?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 1 }">
+                    This field should be at least 1.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.quantity?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.boxTypeGroup.order" for="field_order">Order</label>
+            <input type="number" class="form-control" name="order" id="field_order"
+                [(ngModel)]="boxTypeGroup.order"
+            min="0" />
+            <div [hidden]="!(editForm.controls.order?.dirty && editForm.controls.order?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.order?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.order?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="flowersApp.boxTypeGroup.boxGroup" for="field_boxGroup">Box Group</label>
+            <select class="form-control" id="field_boxGroup" name="boxGroup" [(ngModel)]="boxTypeGroup.boxGroup" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="boxGroupOption.id === boxTypeGroup.boxGroup?.id ? boxTypeGroup.boxGroup : boxGroupOption" *ngFor="let boxGroupOption of boxgroups; trackBy: trackBoxGroupById"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="flowersApp.boxTypeGroup.boxType" for="field_boxType">Box Type</label>
+            <select class="form-control" id="field_boxType" name="boxType" [(ngModel)]="boxTypeGroup.boxType" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="boxTypeOption.id === boxTypeGroup.boxType?.id ? boxTypeGroup.boxType : boxTypeOption" *ngFor="let boxTypeOption of boxtypes; trackBy: trackBoxTypeById">{{boxTypeOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

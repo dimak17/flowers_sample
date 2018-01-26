@@ -1,0 +1,90 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "clientEmployees",
+            "otherEntityName": "clientEmployee",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "client"
+        },
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "marketClient",
+            "otherEntityName": "marketClient",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "client"
+        },
+        {
+            "relationshipName": "claimsPolicy",
+            "otherEntityName": "claimsPolicy",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "label",
+            "otherEntityName": "label",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "client"
+        },
+        {
+            "relationshipName": "companyUser",
+            "otherEntityName": "companyUser",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "client"
+        },
+        {
+            "relationshipName": "clientPaymentPolicy",
+            "otherEntityName": "clientPaymentPolicy",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "client"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "companyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "officePhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "skype",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "webPage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activationStatus",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "blockStatus",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "idNumber",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170219155134",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "client",
+    "pagination": "pagination"
+}

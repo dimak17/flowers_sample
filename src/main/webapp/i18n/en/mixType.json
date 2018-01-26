@@ -1,0 +1,32 @@
+{
+    "flowersApp": {
+        "mixType" : {
+            "create": {
+                "createNewMixType": "Create new mix type"
+            },
+            "validation": {
+                "mixName":{
+                    "required": "Mix name is required",
+                    "pattern": "Mix name should contain latin symbols",
+                    "maximumSymbols": "Mix name should contain maximum 24 symbols"
+                }
+            },
+            "home": {
+                "title": "Mix types",
+                "createLabel": "Enter mix type name",
+                "createOrEditLabel": "Create or edit a mix type"
+            },
+            "created": "A new Mix Type is created with identifier {{ param }}",
+            "updated": "A Mix Type is updated with identifier {{ param }}",
+            "deleted": "A Mix Type is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete mix type {{ id }}?"
+            },
+            "detail": {
+                "title": "Mix type"
+            },
+            "name": "Mix name",
+            "alert": "This mix type already exist!"
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "variety",
+            "otherEntityName": "variety",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "block"
+        },
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "beds",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170704131348",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "block",
+    "pagination": "no"
+}

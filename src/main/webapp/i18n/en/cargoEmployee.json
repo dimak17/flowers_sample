@@ -1,0 +1,52 @@
+{
+    "flowersApp": {
+        "cargoEmployee" : {
+            "alert": "This cargo agency employee already exist",
+            "question": "Are you sure you want to delete Cargo Agency Employee {{ fullName }}?",
+            "createOrEditLabel" : "Edit cargo agency employee",
+            "createLabel" : "Create a new cargo agency employee",
+            "fullNameHeader": "Full name",
+            "emailHeader": "Email",
+            "officePhoneHeader": "Office phone",
+            "mobilePhoneHeader": "Mobile phone",
+            "skypeHeader": "Skype",
+            "marketsHeader": "Markets",
+            "positionsHeader" : "Positions",
+            "agencies" : "Cargo agency",
+            "editHeader" : "Edit",
+            "deleteHeader" : "Delete",
+            "globalFilterPlaceHolderHeader" : "Global Filter",
+            "createCargoEmployee" : "Create employee",
+            "defaultMarketsLabel": "Choose market for cargo agency employee",
+            "defaultLabel": "Choose positions for cargo agency employee",
+            "selectedPositionsLabel": "{0} positions are selected",
+            "selectedMarketsLabel": "{0} markets are selected",
+            "chooseAgencyForCargoEmployee" : "Choose agency for cargo agency employee",
+
+            "validation": {
+                "fullNameHeader": {
+                    "required": "Full name is required",
+                    "pattern": "Full name should contain latin symbols",
+                    "maximumSymbols": "Full name should contain maximum 50 symbols"
+                },
+
+                "emailHeader": {
+                    "pattern": "Email should contain latin symbols",
+                    "maximumSymbols": "Email should contain maximum 50 symbols",
+                    "emailValidation": "Email is not valid, example: email@gmail.com",
+                    "required": "Email is required",
+                    "alertEmail": "This account already exist"
+                },
+
+                "skypeHeader": {
+                    "pattern": "Skype should contain latin symbols",
+                    "maximumSymbols": "Skype should contain maximum 50 symbols"
+                },
+
+                "agencies": {
+                    "required": "Cargo agency is required"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "flowersApp": {
+        "season" : {
+            "home": {
+                "title": "Seasons list",
+                "createLabel": "Create a new season",
+                "editLabel": "Edit a season"
+            },
+            "createSeason": "Create new season",
+            "globalFilterPlaceHolder": "Global filter",
+            "created": "A new Season is created with identifier {{ param }}",
+            "updated": "A Season is updated with identifier {{ param }}",
+            "deleted": "A Season is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete season {{ name }}?"
+            },
+            "detail": {
+                "title": "Season"
+            },
+            "alert": "This season name and year already exist",
+            "seasonName": "Season name",
+            "seasonYear": "Season year",
+            "startDate": "Season start sate",
+            "endDate": "Season end date",
+            "notifyStartDate": "Notify since...",
+            "markets": "Markets",
+            "positions": "Notify to...",
+
+            "defaultPositionLabel": "Choose positions for notification",
+            "defaultMarketLabel": "Choose markets for season",
+            "selectedPositionsLabel": "{0} positions are selected",
+            "selectedMarketsLabel": "{0} markets are selected",
+
+            "salesManager": "Sales manager",
+            "salesAssistant": "Sales assistant",
+            "companyOwner": "Company owner",
+            "agronomEngineer": "Agronom engineer",
+            "postHarvestManager": "Post harvest manager",
+            "generalManager": "General manager",
+            "accountantMananger": "Accountant manager",
+            "accountantAssistant": "Accountant assistant",
+            "claimsMananger": "Claims manager",
+            "claimsAssistant": "Claims assistant",
+            "coordinationManager": "Coordination manager",
+            "systemManager": "System manager",
+
+            "headerSeasonName": "Season name",
+            "headerSeasonYear": "Season year",
+            "headerSeasonMarkets": "Season markets",
+            "headerSeasonDates": "Season dates",
+            "headerNotifySince": "Notify since...",
+            "headerNotifyTo": "Notify to...",
+            "headerEdit": "Edit",
+            "headerDelete": "Delete",
+
+            "validation" : {
+                "seasonName" : {
+                    "required" : "Season name is required",
+                    "pattern": "Season name should contain latin symbols",
+                    "maximumSymbols": "Season name should contain maximum 50 symbols"
+                },
+                "seasonYear" : {
+                    "required" : "Season year is required",
+                    "pattern":  "Season year should contain only digits",
+                    "maximumSymbols": "Season year should contain maximum 4 symbols"
+                },
+                "markets" : {
+                    "required" : "Market is required"
+                },
+                "seasonEndDate" : "Season end date should be older then season start date",
+                "seasonNotifyDate": "Season notify date should not be older then season start date"
+            }
+        }
+    }
+}

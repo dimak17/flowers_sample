@@ -1,0 +1,60 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "position",
+            "otherEntityName": "position",
+            "relationshipType": "many-to-many",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "seasons",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "pinches",
+            "otherEntityName": "pinch",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "seasons"
+        },
+        {
+            "relationshipName": "marketSeason",
+            "otherEntityName": "marketSeason",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "season"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "seasonName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "seasonYear",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "notifyStartDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170905121631",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "season",
+    "pagination": "no"
+}

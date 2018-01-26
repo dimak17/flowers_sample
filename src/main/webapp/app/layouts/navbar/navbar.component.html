@@ -1,0 +1,63 @@
+<header class="header" [ngSwitch]="isAuthenticated()">
+
+    <div [ngClass]="!collapseNavleftbar() ? 'h__toggle-container' : 'h__toggle-container_short'">
+        <a href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavleftbar()">
+            <i class="fa fa-navicon"></i>
+        </a>
+
+    </div>
+
+    <div class="h__main-container">
+
+        <div class="h__main-container_one">
+            <div class="h__logo-container">
+                <jhi-flowers-logo [ngClass]="!collapseNavleftbar() ? '' : 'h__logo'"></jhi-flowers-logo>
+            </div>
+
+            <jhi-flowers-avatar *ngSwitchCase="true"></jhi-flowers-avatar>
+
+            <jhi-flowers-user-info [companyUser]="companyUser" *ngSwitchCase="true"></jhi-flowers-user-info>
+
+            <div class="h__user-type-container" *ngSwitchCase="true">
+                <jhi-flowers-user-actions></jhi-flowers-user-actions>
+            </div>
+        </div>
+
+        <!--<div class="h__main-container_middle">-->
+            <!--<jhi-flowers-logo [ngClass]="!collapseNavleftbar() ? '' : 'h__logo'"></jhi-flowers-logo>-->
+
+        <!--</div>-->
+        <div class="h__main-container_two">
+
+            <ul class="h__languages-container" *ngIf="languages && languages.length > 1">
+                <li *ngFor="let language of languages">
+                    <a [jhiActiveMenu]="language" href="javascript:void(0);" (click)="changeLanguage(language);collapseNavbar();">{{language | firstLetterToUpperCase}}</a>
+                </li>
+            </ul>
+
+            <div class="h__settings-container">
+                <i class="fa fa-cog" #settings [ngClass]="showProfileInfo ? 'settings-active' : ''" (click)="toggleProfileInfo()" *ngSwitchCase="true" (mouseenter) ="mouseEnterSettings()"  (mouseleave) ="mouseLeaveSettings()"></i>
+            </div>
+
+            <div class="h__login-container">
+                <i class="fa fa-sign-out" aria-hidden="true" *ngSwitchCase="true" (click)="logout()"></i>
+                <div class="logout" *ngSwitchCase="true" (click)="logout()" jhiTranslate="global.menu.account.logout">Logout</div>
+
+                <i class="fa fa-sign-in" aria-hidden="true" *ngSwitchCase="false" (click)="login()"></i>
+                <div class="login" *ngSwitchCase="false" (click)="login()" jhiTranslate="global.menu.account.login">Login</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="h__profile-container" *ngIf="showProfileInfo">
+        <jhi-flowers-profile-info
+            *ngSwitchCase="true"
+            (hideProfileInfo)="authDataChanged($event)"
+            (updateCompanyUser)="receiveProfileInfoChanges($event)"
+            (onClickOutside)="onClickOutsideProfileInfo($event)"
+            [settingsComponent]="settings.nativeElement"
+            [ngClass]="getProfileInfoToggledClass()"
+        ></jhi-flowers-profile-info>
+    </div>
+</header>
+

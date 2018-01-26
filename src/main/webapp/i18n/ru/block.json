@@ -1,0 +1,44 @@
+{
+    "flowersApp": {
+        "block" : {
+            "home": {
+                "title": "Farm block & beds list",
+                "createLabel": "Создать новый Block",
+                "createOrEditLabel": "Создать или отредактировать Block"
+            },
+            "created": "Новый Block создан с идентификатором {{ param }}",
+            "updated": "Block обновлен с идентификатором {{ param }}",
+            "deleted": "Block удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Block {{ id }}?"
+            },
+            "detail": {
+                "title": "Block"
+            },
+            "name": "Block name",
+            "beds": "Quantity of beds",
+            "variety": "Variety",
+            "company": "Company",
+            "title": "Enter block & beds name",
+            "switchButtons": "Varieties for this block",
+			"allButton": "All",
+			"varButton": "Variety list",
+			"saveButton": "Save",
+            "alert": "Block name already exist",
+            "createBlock": "Create new block",
+
+            "validation": {
+                "name": {
+                    "pattern": "Block name should contain latin symbols",
+                    "required": "Block name is required",
+                    "maximumSymbols": "Block name should contain maximum 10 symbols"
+                },
+                "beds": {
+                    "pattern":  "Quantity of beds should contain numbers",
+                    "required": "Quantity of beds is required",
+                    "maximumSymbols": "Quantity of beds should contain maximum 5 digits"
+                }
+            }
+        }
+    }
+}

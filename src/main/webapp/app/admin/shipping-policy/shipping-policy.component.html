@@ -1,0 +1,47 @@
+<div class="shipping-container">
+    <div class="button-class">
+        <div class="add-button" [routerLink]="['/', { outlets: { popup: 'shipping-policy-new' } }]"
+             jhiTranslate="flowersApp.shippingPolicy.home.createButton">
+        </div>
+    </div>
+    <div class="load" >
+        <div *ngFor="let shippingPolicy of shippingPolicies; trackBy: trackId">
+            <div class="shipping-line-block">
+                <i class="fa fa-ship fa-4x shipping-line-icon {{shippingPolicy.colorClass}}" aria-hidden="true"></i>
+                <div class="fields-block">
+                    <div class="modal-body">
+                        <div class="name">
+                            <span jhiTranslate="flowersApp.shippingPolicy.shortName"></span>
+                            <span class="info-name">{{shippingPolicy.shortName}}</span>
+                            <div class="name">
+                                <span jhiTranslate="flowersApp.shippingPolicy.fullName"></span>
+                                <span class="info-name">{{shippingPolicy.fullName}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="trackDefaultShippingPolicy(shippingPolicy.shortName)" class="float-left">
+                    <div class="act-block">
+                        <div class="edit-block"
+                             [routerLink]="['/', { outlets: { popup: 'shipping-policy/'+ shippingPolicy.id + '/edit'} }]"
+                             replaceUrl="true">
+                            <span class="fa fa-pencil edit-delete-icons"></span>
+                            <span class="delete-span"
+                                  jhiTranslate="flowersApp.shippingPolicy.action.edit"></span>
+                        </div>
+                        <span class="vertical-separator"></span>
+                        <div class="delete-block"
+                             [routerLink]="['/', { outlets: { popup: 'shipping-policy/'+ shippingPolicy.id + '/delete'} }]">
+                            <span class="fa fa-trash-o edit-delete-icons"></span>
+                            <span class="delete-span"
+                                  jhiTranslate="flowersApp.shippingPolicy.action.delete"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

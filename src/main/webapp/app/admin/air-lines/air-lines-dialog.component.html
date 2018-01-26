@@ -1,0 +1,25 @@
+<form role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="{{airLines.colorClass}} top-color-line"></div>
+    <div class="close" data-dismiss="modal" (click)="clear()"></div>
+    <div>
+        <h4 class="phrase" jhiTranslate="flowersApp.airLines.home.createOrEditLabel">Enter your Air Line name</h4>
+    </div>
+    <div class="modal-body">
+        <div class="name" jhiTranslate="flowersApp.airLines.name" for="name">Name</div>
+        <div class="form-border">
+            <div class="air-lene-position"><input type="text" required class="form" name="name" id="name" [(ngModel)]="airLines.name"/></div>
+        </div>
+        <small *ngIf="!airLines.name" class="air-line-field-err-msg text-danger" jhiTranslate="flowersApp.airLines.validation.Name.required"></small>
+        <small *ngIf="latinLengthValidation(airLines.name)" class="air-line-field-err-msg text-danger" jhiTranslate="flowersApp.airLines.validation.Name.pattern"></small>
+
+        <div class="number" jhiTranslate="flowersApp.airLines.number" for="number">Number</div>
+            <div class="air-line-position"><input type="text" required class="form" name="number" id="number" [(ngModel)]="airLines.number"/>
+        </div>
+        <small *ngIf="!airLines.number" class="air-line-field-err-msg text-danger" jhiTranslate="flowersApp.airLines.validation.Number.required"></small>
+        <small *ngIf="digitLengthValidation(airLines.number)" class="air-line-field-err-msg text-danger" jhiTranslate="flowersApp.airLines.validation.Number.pattern"></small>
+    </div>
+    <small *ngIf="errorAlert" class="air-line-field-err-msg text-danger alert-on-time" jhiTranslate="flowersApp.airLines.alert">This Air Line already exist!</small>
+    <button type="submit" [disabled]="editForm.form.invalid || isSaving || saveButtonDeactivation(airLines)" class="save-button" jhiTranslate="entity.action.save">Save</button>
+    <div class="{{airLines.colorClass}} bottom-color-line"></div>
+</form>

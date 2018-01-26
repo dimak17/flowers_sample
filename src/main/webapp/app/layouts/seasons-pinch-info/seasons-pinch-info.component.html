@@ -1,0 +1,6 @@
+<jhi-flowers-tabs *ngIf="titles">
+    <p-tabView class="flower-tabs" (onChange)="onChange($event)" [activeIndex]="selectedIndex">
+        <p-tabPanel header="{{titles.seasonsList}}"><jhi-season *ngIf="selectedIndex == 0"></jhi-season></p-tabPanel>
+        <p-tabPanel header="{{titles.pinchList}}"><jhi-pinch *ngIf="selectedIndex == 1"></jhi-pinch></p-tabPanel>
+    </p-tabView>
+</jhi-flowers-tabs>

@@ -1,0 +1,82 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "companyUsers"
+        },
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "mainName"
+        },
+        {
+            "relationshipName": "position",
+            "otherEntityName": "position",
+            "relationshipType": "many-to-many",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "companyUsers"
+        },
+        {
+            "relationshipName": "market",
+            "otherEntityName": "market",
+            "relationshipType": "many-to-many",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "companyUsers"
+        },
+        {
+            "relationshipName": "pinches",
+            "otherEntityName": "pinch",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "companyUsers"
+        },
+        {
+            "relationshipName": "client",
+            "otherEntityName": "client",
+            "relationshipType": "many-to-one",
+            "otherEntityRelationshipName": "companyUsers"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "skype",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fullName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accountEmail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "workEmail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mobilePhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "whatsUp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "officePhone",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170317085154",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "company_user",
+    "pagination": "pagination"
+}

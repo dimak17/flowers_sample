@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity CompanyUser.
+    -->
+    <changeSet id="20170905122431-2" author="dima">
+
+
+        <addForeignKeyConstraint baseColumnNames="pinch_id"
+                                 baseTableName="pinch_season"
+                                 constraintName="fk_pinch_season_pinch_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pinch"/>
+        <addForeignKeyConstraint baseColumnNames="season_id"
+                                 baseTableName="pinch_season"
+                                 constraintName="fk_pinch_season_season_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="season"/>
+
+        <addForeignKeyConstraint baseColumnNames="pinch_id"
+                                 baseTableName="pinch_company_user"
+                                 constraintName="fk_pinch_company_user_pinch_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pinch"/>
+        <addForeignKeyConstraint baseColumnNames="company_user_id"
+                                 baseTableName="pinch_company_user"
+                                 constraintName="fk_pinch_company_user_company_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="company_user"/>
+
+    </changeSet>
+</databaseChangeLog>

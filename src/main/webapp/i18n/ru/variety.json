@@ -1,0 +1,28 @@
+{
+    "flowersApp": {
+        "variety" : {
+            "home": {
+                "title": "Varieties",
+                "createLabel": "Создать новый Variety",
+                "createOrEditLabel": "Создать или отредактировать Variety"
+            },
+            "created": "Новый Variety создан с идентификатором {{ param }}",
+            "updated": "Variety обновлен с идентификатором {{ param }}",
+            "deleted": "Variety удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Variety {{ id }}?"
+            },
+            "detail": {
+                "title": "Variety"
+            },
+            "name": "Name",
+            "color": "Color",
+            "breeder": "Breeder",
+            "minLength": "Min Length",
+            "maxLength": "Max Length",
+            "block": "Block",
+           	"special": "Special",
+            "marketVarieties": "Market Varieties"
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "flowersApp": {
+        "company-info": {
+            "farmData": "FarmDatas",
+            "boxesManager": "Boxes Manager",
+            "boxesGrouping": "Boxes Grouping",
+            "varietiesList": "Varieties List",
+            "mixList": "Mix List",
+            "farmBlockBeds": "Farm Block & Beds",
+            "markets": "Markets",
+            "bankDetails": "Bank Details"
+        }
+    }
+}

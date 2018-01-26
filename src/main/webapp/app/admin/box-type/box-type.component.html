@@ -1,0 +1,39 @@
+<div class="box-type-block">
+    <h2>
+        <span class="title" jhiTranslate="flowersApp.boxType.home.title">Box types list</span>
+    </h2>
+
+    <div class="add-button" [routerLink]="['/', { outlets: { popup: 'box-type-new' } }]"
+         jhiTranslate="flowersApp.boxType.createBoxType">Create new box type</div>
+
+    <div class="box-scroll">
+            <div *ngFor="let boxType of boxTypes; trackBy: trackId">
+                <div class="separation-border">
+                    <div class="box-border">
+                        <span class="short-name-block">
+                            {{boxType.shortName}}
+                        </span>
+                        <span *ngIf="boxType && boxType.colorClass" class="{{boxType.colorClass}} line-separator"></span>
+                        <span class="full-name-block">
+                            {{boxType.fullName}}
+                        </span>
+                        <div *ngIf="trackDefaultBoxTypes(boxType.shortName)" class="float-left">
+
+                            <div class="edit-block" [routerLink]="['/', { outlets: { popup: 'box-type/'+ boxType.id + '/edit'} }]" replaceUrl="true">
+                                <span class="fa fa-pencil edit-delete-icons"></span>
+                                <span class="data-edit data" jhiTranslate="entity.action.edit">Edit</span>
+                            </div>
+
+                            <span class="vertical-separator"></span>
+
+                            <div class="delete-block" [routerLink]="['/', { outlets: { popup: 'box-type/'+ boxType.id + '/delete'} }]" replaceUrl="true">
+                                <span class="fa fa-trash-o edit-delete-icons"></span>
+                                <span class="data-delete data" jhiTranslate="entity.action.delete">Delete</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

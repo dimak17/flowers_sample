@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity MarketSeason.
+    -->
+    <changeSet id="20170920080722-2" author="dima">
+
+        <addForeignKeyConstraint baseColumnNames="market_id"
+                                 baseTableName="market_season"
+                                 constraintName="fk_market_season_market_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="market"/>
+
+        <addForeignKeyConstraint baseColumnNames="season_id"
+                                 baseTableName="market_season"
+                                 constraintName="fk_market_season_season_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="season"
+                                 onDelete="CASCADE"
+                                 deleteCascade="true"/>
+
+    </changeSet>
+</databaseChangeLog>

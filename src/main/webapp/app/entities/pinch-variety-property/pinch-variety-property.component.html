@@ -1,0 +1,64 @@
+<div>
+    <h2>
+        <span jhiTranslate="flowersApp.pinchVarietyProperty.home.title">Pinch Variety Properties</span>
+        <button class="btn btn-primary float-right create-pinch-variety-property" [routerLink]="['/', { outlets: { popup: ['pinch-variety-property-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="flowersApp.pinchVarietyProperty.home.createLabel">
+            Create new Pinch Variety Property
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="pinchVarietyProperties">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="flowersApp.pinchVarietyProperty.length">Length</span></th>
+            <th><span jhiTranslate="flowersApp.pinchVarietyProperty.quantity">Quantity</span></th>
+            <th><span jhiTranslate="flowersApp.pinchVarietyProperty.pinchVariety">Pinch Variety</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let pinchVarietyProperty of pinchVarietyProperties ;trackBy: trackId">
+                <td><a [routerLink]="['../pinch-variety-property', pinchVarietyProperty.id ]">{{pinchVarietyProperty.id}}</a></td>
+                <td>{{pinchVarietyProperty.length}}</td>
+                <td>{{pinchVarietyProperty.quantity}}</td>
+                <td>
+                    <div *ngIf="pinchVarietyProperty.pinchVariety">
+                        <a [routerLink]="['../pinch-variety', pinchVarietyProperty.pinchVariety?.id ]" >{{pinchVarietyProperty.pinchVariety?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../pinch-variety-property', pinchVarietyProperty.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'pinch-variety-property/'+ pinchVarietyProperty.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'pinch-variety-property/'+ pinchVarietyProperty.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

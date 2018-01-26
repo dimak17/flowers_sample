@@ -1,0 +1,39 @@
+<div class="mix-type-block">
+    <div class="title">
+        <h2 jhiTranslate="flowersApp.mixType.home.title"></h2>
+        <div class="add-button" [routerLink]="['/', { outlets: { popup: 'mix-type-new' } }]"
+             jhiTranslate="flowersApp.mixType.create.createNewMixType"></div>
+    </div>
+    <div style=" margin-top: 35px; overflow: auto; height: 573px" infinite-scroll>
+        <div *ngFor="let mixType of mixTypes, let i=index; trackBy: trackId">
+            <div class="separation-border">
+                <div class="box-border">
+                        <span class="number-block">
+                            {{i+1}}
+                        </span>
+                    <span class="{{mixType.colorClass}} line-separator"></span>
+                    <span class="name-block">
+                            {{mixType.name}}
+                        </span>
+                    <div *ngIf="!checkMixTypeName(mixType.name)">
+                    <div class="float-none">
+                        <div class="edit-block"
+                             [routerLink]="['/', { outlets: { popup: 'mix-type/'+ mixType.id + '/edit'} }]"
+                             replaceUrl="true">
+                            <span class="fa fa-pencil edit-delete-icons"></span>
+                            <span
+                                class="delete-span" jhiTranslate="entity.action.edit">Edit</span>
+                        </div>
+                        <span class="vertical-separator-mix-type"></span>
+                        <div class="delete-block"
+                             [routerLink]="['/', { outlets: { popup: 'mix-type/'+ mixType.id + '/delete'} }]">
+                            <span class="fa fa-trash-o edit-delete-icons"></span>
+                            <span class="delete-span" jhiTranslate="entity.action.delete">Delete</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

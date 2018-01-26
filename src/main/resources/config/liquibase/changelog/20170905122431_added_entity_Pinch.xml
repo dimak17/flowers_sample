@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Pinch.
+    -->
+    <changeSet id="20170905122431-1" author="dima">
+        <createTable tableName="pinch">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="start_date" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="end_date" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="total_stems" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="notify_start_date" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+
+        <createTable tableName="pinch_season">
+            <column name="season_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pinch_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addPrimaryKey columnNames="pinch_id, season_id" tableName="pinch_season"/>
+
+        <createTable tableName="pinch_company_user">
+            <column name="company_user_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pinch_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addPrimaryKey columnNames="pinch_id, company_user_id" tableName="pinch_company_user"/>
+
+    </changeSet>
+</databaseChangeLog>

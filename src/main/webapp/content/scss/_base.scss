@@ -1,0 +1,450 @@
+//Global Buttons
+.button {
+    display: block;
+    border: none;
+    cursor: pointer;
+    height: 38px;
+    transition: $default-transition;
+}
+@mixin button($name-btn,$width-btn) {
+    .button_#{$name-btn} {
+        @extend .button;
+        width: $width-btn;
+        background-color: $base-color;
+        color: $white;
+        &:hover {
+            background-color: darken($base-color, 5%);
+            color: $white;
+        }
+    }
+}
+@mixin button-empty($name-btn,$width-btn) {
+    .button-empty_#{$name-btn} {
+        @extend .button;
+        width: $width-btn;
+        background-color: transparent;
+        border: $base-border;
+        color: $base-color;
+        &:hover {
+            background-color: $base-color;
+            color: $white;
+        }
+    }
+}
+@mixin button-danger($name-btn,$width-btn) {
+    .button-danger_#{$name-btn} {
+        @extend .button;
+        width: $width-btn;
+        background-color: $btn-red;
+        color: $white;
+        &:hover {
+            background-color: lighten($btn-red, 5%);
+        }
+    }
+}
+//Modal Button mixin
+@include button(small,120px);
+@include button(medium,150px);
+@include button-empty(small,120px);
+@include button-danger(small,120px);
+
+.button_margin-center {margin: 2rem auto 0;}
+.button_center { margin: 0 auto; }
+// **********************************************************
+
+// **********************************************************
+
+//Global Modal Form
+//Containers
+.modal {
+    display: flex!important;
+    justify-content:center;
+    align-items:center;
+}
+.modal-content {
+    border: none;
+    width:auto;
+    margin: 0;
+    background-color: transparent;
+}
+.modal-header {
+    border: none;
+    margin: 2.5rem 0 2rem;
+    padding: 0;
+    display: block;
+}
+.modal-body {
+    padding: 0;
+    margin: 0 0 3rem;
+}
+// **********************************************************
+
+//Modal window mixin&usage
+.modal-window {
+    background-color: $white;
+    padding: 0 3rem;
+    position: relative;
+    flex-direction: column;
+    justify-content:space-between;
+}
+@mixin modal-window($name-form, $form-width) {
+    .modal-window__#{$name-form} {
+        @extend .modal-window;
+        width: $form-width;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+//Add class to the component main container <div class="modal-window__[small]"
+//SMall 375px modal form
+@include modal-window(small, $small-form);
+// **********************************************************
+//Medium 500px modal form
+@include modal-window(medium, $medium-form);
+// **********************************************************
+//Large 800 modal form
+@include modal-window(large, $large-form);
+// **********************************************************
+
+//Add class to y'r service in windowClass
+// Global Classes for modal use on modal.service modal_small/modal_medium/modal_large
+.modal_small .modal-dialog { width:$small-form;max-width:none;}
+.modal_medium .modal-dialog { width:$medium-form;max-width:none;}
+.modal_large .modal-dialog { width:$large-form;max-width:none;}
+// **********************************************************
+//Large form
+.modal__container_left {
+    width: 40%;
+    display: inline-block;
+    float: left;
+    padding-right: 5%;
+    border-right: 2px solid $table-color;
+    height: 100%;
+}
+.modal__container_right {
+    width: 60%;
+    display: inline-block;
+    float: left;
+    padding-left: 5%;
+    height: 100%;
+}
+    //*******************************************************
+// **********************************************************
+
+//Modal Close&Color-line&Alert
+//Close
+.modal__close{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    padding: 10px 10px;
+    outline: none;
+    border: none;
+    transition: $default-transition;
+    background-color: transparent;
+    &:focus{
+        outline: none;
+    }
+    &:hover {
+        color: $base-color;
+    }
+}
+// **********************************************************
+//Color Line
+.g__color-line {
+     width: 100px;
+     height: 6px;
+     margin: 0 auto;
+     background: $base-color;
+ }
+// **********************************************************
+//Modal alert
+.alert {
+    background-color: transparent;
+    font-size: 14px;
+    letter-spacing: $letter-spacing;
+    font-family: $base-font;
+    cursor: pointer;
+    padding: 0;
+}
+@mixin alert($name-alert) {
+    .alert_#{$name-alert} {
+        @extend .alert;
+        text-decoration: none;
+        color: $link-color;
+        text-align: center;
+        margin-top: 30px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+@include alert(link);
+// **********************************************************
+// **********************************************************
+
+//Modal &group&input&checkbox
+
+//Group
+.form__group {
+    margin-bottom: 1rem;
+}
+.form__group_required {
+    margin-bottom: 0.4rem;
+    .ng-pristine{
+        height: $form-input-h;
+        display: flex;
+    }
+}
+.modal-btn__container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+}
+.modal-btn_flex-end {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+.form-check-label,.form-label {
+    margin:0 auto;
+    padding: 0;
+    display: block;
+}
+// **********************************************************
+
+//Input
+
+.form-input {
+    background-color: $form-color;
+    height: $form-input-h;
+    border: $form-border;
+    color: $black;
+    font-family: $base-font-light;
+    font-size: 14px;
+    padding-left: 7px;
+    border-radius: 0;
+    width: 100%;
+    transition: $default-transition;
+    &:active,
+    &:focus {
+        border-color: $base-color;
+        background-color: lighten($form-color, 3.5%);
+    }
+}
+
+.form-input_required{
+    @extend .form-input;
+    border-left: 2px solid $red!important;
+}
+
+.form-input_error-container {
+    height: 1.15rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.form-input_error {
+    color: $red;
+    font-size: 0.6rem;
+    font-family: $base-font-light;
+}
+
+.date-calendar {
+    width: 100%;
+}
+$form-calc-input-icon: 2rem;
+.form-calendar {
+    background-color: $form-color;
+    height: $form-input-h;
+    border: $form-border;
+    color: $black;
+    font-family: $base-font;
+    font-size: 14px;
+    padding-left: 7px;
+    border-radius: 0;
+    width: calc(100% - #{$form-calc-input-icon});
+    transition: $default-transition;
+}
+.ui-calendar {
+    button {
+        width: $form-calc-input-icon;
+    }
+}
+
+.form-multiselect {
+    width: 100%;
+}
+.form-input_mask {
+    input {
+        @extend .form-input;
+    }
+}
+.form-input_mask-required {
+    input {
+        @extend .form-input_required;
+    }
+}
+
+// **********************************************************
+
+//Title
+.modal-title {
+    font-family: $base-font-light;
+}
+@mixin modal-title($name-title, $text-align) {
+    .modal-title_#{$name-title} {
+        @extend .modal-title;
+        @include text-align($text-align);
+    }
+}
+@include modal-title(center, center);
+
+.modal-question__container {
+    text-align: center;
+}
+// **********************************************************
+// **********************************************************
+
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: $form-border-color!important;
+    background-image: none!important;
+    color: rgb(0, 0, 0)!important;
+}
+
+
+//Flex-containers
+.flex-conainer__sb {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+//*************************************************
+
+
+//Prime ng elements
+//Calendar
+.ui-button {
+    background-color: $base-color;
+    outline: none;
+    border: none;
+    color: $white;
+}
+.ui-datepicker {
+    background-color: $white;
+    padding: 0;
+    border: 1px solid $table-color;
+    box-shadow: $box-shadow;
+    margin: 0;
+    td {
+        transition: $default-transition;
+        border: 2px solid $table-color;
+        &:hover {
+            background-color: $base-color;
+            a {
+                color: $white;
+            }
+        }
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    th {
+        padding: 0.4rem 0 0.1rem 0;
+    }
+}
+.ui-datepicker-current-day {
+    background-color: $base-color;
+    a {
+        color: $white;
+    }
+}
+.ui-datepicker-calendar {
+    margin: 0!important;
+    thead {
+        background-color: $table-color;
+    }
+}
+.ui-datepicker-header {
+    background-color: $base-color;
+    color: $white;
+    .ui-datepicker-prev,
+    .ui-datepicker-next {
+        color: $white;
+    }
+}
+
+//****************************************
+
+//Multi-select
+//.ui-multiselect-label {
+//    vertical-align: bottom;
+//}
+//.ui-multiselect-label-container {
+//    display: flex;
+//    align-items: center;
+//}
+.ui-multiselect-label-container {
+    @extend .form-input;
+    display: flex;
+    align-items: center;
+}
+.ui-multiselect-trigger {
+    display: flex;
+    align-items:center;
+    .fa {
+        margin: 0!important;
+    }
+}
+.ui-multiselect-panel {
+    background-color: $white;
+    padding: 0;
+    border: 1px solid $table-color;
+    box-shadow: $box-shadow;
+    .ui-multiselect-items-wrapper {
+        padding: 0;
+    }
+    .ui-multiselect-item {
+        label {
+            vertical-align: bottom;
+        }
+    }
+    .ui-widget-header {
+        background-color: $form-color;
+        margin: 0;
+        .ui-inputtext {
+            vertical-align: bottom;
+        }
+        .ui-multiselect-filter-container {
+            width: 80%;
+            .fa {
+                top: calc(50% - 0.5rem);
+            }
+        }
+        .ui-multiselect-close {
+            right: 0.125rem;
+        }
+    }
+}
+.ui-chkbox {
+    .ui-chkbox-box.ui-state-active, .ui-radiobutton-box.ui-state-active {
+        border: 1px solid $base-color;
+        background: $base-color;
+        color: $white;
+        border-radius: 0;
+    }
+    .ui-chkbox-box {
+        background-color: $white;
+        color: $text-color;
+        border: 1px solid $base-color;
+        border-radius: 0;
+    }
+}
+//**********************************************

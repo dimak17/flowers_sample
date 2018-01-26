@@ -1,0 +1,87 @@
+<div class="profile-info">
+    <div [ngClass]="loading ? 'loader' : ''"></div>
+    <form *ngIf="!loading" (ngSubmit)="saveRight()" [formGroup]="profileForm" novalidate>
+        <div class="left" formGroupName="leftForm">
+            <div>
+                <label for="file-upload" class="image-uploader">
+                    <span class="fa fa-camera-retro camera"></span>
+                    <div class="black"></div>
+                    <input type="file" id="file-upload" (change)="upload()" #fileInput />
+                </label>
+                <div class="black"></div>
+                <img *ngIf="base64Image" #image [src]="'data:image/png;base64,'+base64Image" class="image-uploader-background"/>
+                <div *ngIf="companyUser && companyUser.id" [routerLink]="['/', { outlets: { popup: 'company-user/'+ companyUser.id + '/image/delete'} }]"
+                     replaceUrl="true" class="image-close fa fa-times"></div>
+            </div>
+            <div class="profile-form-group" [ngSwitch]="leftFormErrors.loginEmail">
+                <label id="account_email_label" for="email" jhiTranslate="flowersApp.form.label.account-email"></label>
+                <input id="email" formControlName="loginEmail" type="email" maxlength="51"/>
+                <small *ngSwitchCase="'email'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.loginEmail.email"></small>
+                <small *ngSwitchCase="'required'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.loginEmail.required"></small>
+                <small *ngSwitchCase="'maxlength'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.loginEmail.maxlength"></small>
+            </div>
+            <div class="profile-form-group" [ngSwitch]="leftFormErrors.newPassword">
+                    <label for="new_password" jhiTranslate="flowersApp.form.label.new-password"></label>
+                    <input id="new_password" formControlName="newPassword" maxlength="51" type="text"/>
+                    <small *ngIf="leftForm.get('newPassword').hasError('required')" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.newPassword.required"></small>
+                    <small *ngSwitchCase="'minlength'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.newPassword.minlength"></small>
+                    <small *ngSwitchCase="'maxlength'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.newPassword.maxlength"></small>
+                </div>
+            <div class="profile-form-group" [ngSwitch]="leftFormErrors.newPasswordRepeat">
+                    <label for="new_password_repeat" jhiTranslate="flowersApp.form.label.new-password-repeat">Repeat new password</label>
+                    <input id="new_password_repeat" formControlName="newPasswordRepeat" maxlength="51" type="text"/>
+                    <small *ngSwitchCase="'pass-not-match'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.newPasswordRepeat.diff"></small>
+                    <small *ngIf="leftForm.get('newPasswordRepeat').hasError('required')" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.newPasswordRepeat.required"></small>
+                    <small *ngSwitchCase="'minlength'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.newPasswordRepeat.minlength"></small>
+                    <small *ngSwitchCase="'maxlength'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.newPasswordRepeat.maxlength"></small>
+                </div>
+            <div class="delimiter"></div>
+            <div class="profile-form-group" [ngSwitch]="leftFormErrors.oldPassword">
+                    <label for="old_password" jhiTranslate="flowersApp.form.label.old-password"></label>
+                    <input [ngClass]="oldPasswordIncorrect ? 'incorrectPassword' : ''" id="old_password" name="oldPassword" maxlength="51" formControlName="oldPassword" type="text"/>
+                    <small *ngIf="oldPasswordIncorrect" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.save.incorrect-password"></small>
+                    <small *ngIf="!oldPasswordIncorrect && leftForm.get('oldPassword').hasError('required')" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.oldPassword.required"></small>
+                    <small *ngSwitchCase="'maxlength'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.oldPassword.maxlength"></small>
+                </div>
+            <button [disabled]="isSavingLeft" (click)="saveLeft()" id="save-btn-left" type="button" class="btn-left">
+                    <span jhiTranslate="entity.action.save">Save</span>
+                </button>
+        </div>
+        <div class="right" formGroupName="rightForm">
+            <div class="account_fullName_label" [ngSwitch]="rightFormErrors.fullName">
+                <label for="fullName" jhiTranslate="flowersApp.form.label.fullName"></label>
+                <input id="fullName" type="text" maxlength="51" formControlName="fullName"/>
+                <small *ngSwitchCase="'required'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.fullName.required"></small>
+                <small *ngSwitchCase="'maxlength'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.fullName.maxlength"></small>
+                <small *ngSwitchCase="'pattern'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.fullName.pattern"></small>
+            </div>
+            <div class="profile-form-group" [ngSwitch]="rightFormErrors.email">
+                <label for="right_email" jhiTranslate="flowersApp.form.label.right-email"></label>
+                <input id="right_email" type="email" maxlength="51" formControlName="email"/>
+                <small *ngSwitchCase="'required'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.email.required"></small>
+                <small *ngSwitchCase="'email'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.email.email"></small>
+                <small *ngSwitchCase="'maxlength'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.email.maxlength"></small>
+            </div>
+            <div class="profile-form-group" [ngSwitch]="rightFormErrors.officePhone">
+                <label for="office_phone" jhiTranslate="flowersApp.form.label.office-phone"></label>
+                <input id="office_phone" type="text" maxlength="25" formControlName="officePhone"/>
+                <small *ngSwitchCase="'maxlength'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.officePhone.maxlength"></small>
+            </div>
+            <div class="profile-form-group" [ngSwitch]="rightFormErrors.mobilePhone">
+                <label for="mobile" jhiTranslate="flowersApp.form.label.mobile"></label>
+                <input id="mobile" type="text" maxlength="25" formControlName="mobilePhone"/>
+                <small *ngSwitchCase="'pattern'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.mobilePhone.pattern"></small>
+                <small *ngSwitchCase="'maxlength'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.mobilePhone.maxlength"></small>
+            </div>
+            <div class="profile-form-group" [ngSwitch]="rightFormErrors.skype">
+                <label for="skype" jhiTranslate="flowersApp.form.label.skype"></label>
+                <input id="skype" type="text" maxlength="51" formControlName="skype"/>
+                <small *ngSwitchCase="'maxlength'" class="profile-err-msg text-danger" jhiTranslate="flowersApp.validation.skype.maxlength"></small>
+            </div>
+
+            <button type="submit" id="save-btn-right" class="btn-right" value="Save">
+                <span jhiTranslate="entity.action.save">Save</span>
+            </button>
+        </div>
+    </form>
+</div>

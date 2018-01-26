@@ -1,0 +1,51 @@
+{
+    "flowersApp": {
+        "validation": {
+            "generalBankDetails": {
+                "maxLength": "Bank details can not be more than 500 characters long ES",
+                "pattern": "Bank Details should contains latin symbols ES"
+            },
+            "alternativeBankDetails": {
+                "maxLength": "Bank details can not be more than 500 characters long ES",
+                "pattern": "Bank Details should contains latin symbols ES"
+            }
+        },
+        "bankDetails": {
+            "home": {
+                "title": "Bank Details ES",
+                "createLabel": "Create a new Bank Details ES",
+                "createOrEditLabel": "Create or edit a Bank Details ES"
+            },
+            "created": "A new Bank Details is created with identifier {{ param }} ES",
+            "updated": "A Bank Details is updated with identifier {{ param }} ES",
+            "deleted": "A Bank Details is deleted with identifier {{ param }} ES",
+            "delete": {
+                "question": "Are you sure you want to delete Bank Details {{ id }}? ES"
+            },
+            "detail": {
+                "title": "Bank Details ES"
+            },
+            "general": "General ES",
+            "alternative": "Alternative ES",
+            "company": "Company ES",
+            "chekBoxLabel1": "Select General Company Bank Details ES",
+            "chekBoxLabel2": "Select Alternative Company Bank Detail ES",
+            "generalLabel": "General Company Bank Details ES",
+            "alternativeLabel": "Alternative Company Bank Details ES",
+            "buttonContainer": {
+                "preview": "Preview ES",
+                "download": "Download ES",
+                "copy": "Copy ES",
+                "sendTo": "SendTo ES"
+            },
+            "uploadGeneralLabel": "General Bank Details File ES",
+            "uploadAlternativeLabel": "Alternative Bank Details File ES",
+            "uploadGeneralFileNameLabel": "Uploaded file name ES",
+            "uploadAlternativeFileNameLabel": "Uploaded file name ES",
+            "uploadBtnContainer": {
+                "upload": "Upload ES",
+                "delete": "Delete ES"
+            }
+        }
+    }
+}

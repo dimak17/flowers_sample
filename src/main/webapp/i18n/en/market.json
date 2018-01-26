@@ -1,0 +1,51 @@
+{
+    "flowersApp": {
+        "market" : {
+            "home": {
+                "title": "Markets",
+                "createLabel": "Create new market",
+                "editLabel": "Edit market"
+            },
+            "created": "A new Market is created with identifier {{ param }}",
+            "updated": "A Market is updated with identifier {{ param }}",
+            "deleted": "A Market is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Market {{ id }}?"
+            },
+            "detail": {
+                "title": "Market"
+            },
+            "name": "Name",
+            "company": "Company",
+            "marketVarieties": "Market Varieties",
+            "boxGroups": "Box Groups",
+            "marketBoxes": "Market Boxes",
+            "companyUsers": "Company Users",
+            "marketSeason": "Market Season",
+            "checkAll": "Select all",
+            "width-label": "Width",
+            "length-label": "Length",
+            "height-label": "Height",
+            "box-table-param-col-header": "Box parameter",
+            "box-table-value-col-header": "Value",
+            "typeOfFlowers": "Choose type of Flowers",
+            "selectbtn" : {
+                "prohibited": "Special varieties",
+                "special": "Prohibited varieties"
+            },
+            "tabs": {
+                "boxes": "Boxes",
+                "box-groups": "Box groups",
+                "varieties": "Varieties"
+            },
+            "validation": {
+                "name": {
+                    "required": "Market name is required",
+                    "duplicate": "Market name \"{{ name }}\" already exist",
+                    "pattern": "Market name should contain only latin symbols",
+                    "maximumSymbols": "Market name should contain maximum 16 symbols"
+                }
+            }
+        }
+    }
+}

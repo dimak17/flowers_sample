@@ -1,0 +1,115 @@
+{
+    "flowersApp": {
+        "companyUser" : {
+            "home": {
+                "title": "Employee list",
+                "createLabel": "Create a new employee",
+                "createOrEditLabel": "Edit employee"
+            },
+            "created": "A new employee is created with identifier {{ param }}",
+            "updated": "An employee is updated with identifier {{ param }}",
+            "deleted": "A Company User is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Company User {{ id }}?"
+            },
+            "detail": {
+                "title": "Employee"
+            },
+            "skype": "Skype",
+            "fullName": "Full name",
+            "accountEmail": "Account email",
+            "workEmail": "Work email",
+            "mobilePhone": "Mobile phone",
+            "whatsUp": "Whats up",
+            "officePhone": "Office phone",
+            "user": "User",
+            "company": "Company",
+            "positions": "Positions",
+            "markets": "Markets",
+
+            "defaultPositionTitle": "Choose positions for employee",
+            "defaultMarketsLabel": "Choose markets for employee",
+
+            "columnPositions":"Positions",
+            "columnFullName":"Full name",
+            "columnAccountEmail":"Account email",
+            "columnWorkEmail":"Work email",
+            "columnOfficePhone":"Office phone",
+            "columnMobilePhone":"Mobile phone",
+            "columnSkype":"Skype",
+            "columnMarkets":"Markets",
+            "columnStatus":"Status",
+            "columnEdit":"Edit",
+
+            "statusActivated": "Activated",
+            "statusDeactivated": "Deactivated",
+            "actSwitch": "Activate",
+            "deactSwitch": "Deactivate",
+
+            "salesManager": "Sales manager",
+            "salesAssistant": "Sales assistant",
+            "companyOwner": "Company owner",
+            "agronomEngineer": "Agronom engineer",
+            "postHarvestManager": "Post harvest manager",
+            "generalManager": "General manager",
+            "accountantMananger": "Accountant manager",
+            "accountantAssistant": "Accountant assistant",
+            "claimsMananger": "Claims manager",
+            "claimsAssistant": "Claims assistant",
+            "coordinationManager": "Coordination manager",
+            "systemManager": "System manager",
+
+            "filterInput": "Filter all columns",
+
+            "checkBoxText": "Show only activated employees",
+
+            "firstText": "First",
+            "previousText": "Prevoius",
+            "nextText": "Next",
+            "lastText": "Last",
+
+            "pageXofY": "Page",
+
+            "createEmployee": "Create new employee",
+
+            "validation": {
+                "positions" : {
+                    "required": "Position is required"
+                },
+                "markets" : {
+                    "required": "Market is required"
+                },
+                "fullName": {
+                    "required": "Full name is required",
+                    "pattern": "Full name should contain latin symbols",
+                    "maximumSymbols": "Full name should contain maximum 50 symbols"
+                },
+                "accountEmail": {
+                    "required": "Account email is required",
+                    "pattern": "Account email should contain latin symbols",
+                    "maximumSymbols": "Account email should contain maximum 50 symbols"
+                },
+                "workEmail": {
+                    "required": "Work email is required",
+                    "pattern": "Work email should contain latin symbols",
+                    "maximumSymbols": "Work email should contain maximum 50 symbols"
+                },
+                "skype": {
+                    "maximumSymbols": "Skype should contain maximum 50 symbols"
+                },
+                "mobilePhone": {
+                    "maximumSymbols": "Mobile phone should contain maximum 50 symbols",
+                    "pattern": "Mobile phone can contain only digits, + and ( )"
+                },
+                "officePhone": {
+                    "maximumSymbols": "Office phone should contain maximum 50 symbols",
+                    "pattern": "Office phone can contain only digits and latin characters"
+                },
+                "emailValidation": "Email is not valid, example: email@gmail.com",
+                "maximumSymbols": "Email should contain maximum 50 symbols"
+            },
+
+            "alert": "This account already exist"
+        }
+    }
+}

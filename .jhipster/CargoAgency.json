@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "cargoEmployee",
+            "otherEntityName": "cargoEmployee",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "cargoAgency"
+        },
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mainAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "additionalAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "officePhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "webPage",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170731090717",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "cargo_agency",
+    "pagination": "no"
+}

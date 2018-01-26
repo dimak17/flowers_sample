@@ -1,0 +1,24 @@
+{
+    "flowersApp": {
+        "pinch" : {
+            "home": {
+                "title": "Pinches",
+                "createLabel": "Создать новый Pinch",
+                "createOrEditLabel": "Создать или отредактировать Pinch"
+            },
+            "created": "Новый Pinch создан с идентификатором {{ param }}",
+            "updated": "Pinch обновлен с идентификатором {{ param }}",
+            "deleted": "Pinch удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Pinch {{ id }}?"
+            },
+            "detail": {
+                "title": "Pinch"
+            },
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "totalStems": "Total Stems",
+            "notifyStartDate": "Notify Start Date"
+        }
+    }
+}

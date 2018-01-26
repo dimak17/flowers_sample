@@ -1,0 +1,76 @@
+{
+    "flowersApp": {
+        "season" : {
+            "home": {
+                "title": "Lista de las temporadas",
+                "createLabel": "Crear nueva temporada",
+                "editLabel": "Editar temporada"
+            },
+            "createSeason": "Crear nueva temporada",
+            "globalFilterPlaceHolder": "Filtro global",
+            "created": "Un nuevo Season ha sido creado con el identificador {{ param }}",
+            "updated": "Un Season ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Season ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar temporada {{ name }}?"
+            },
+            "detail": {
+                "title": "Season"
+            },
+            "alert": "Esta temporada y año ya existen",
+            "seasonName": "Nombre de temporada",
+            "seasonYear": "Año de temporada",
+            "startDate": "Fecha de inicio",
+            "endDate": "Fecha del fin",
+            "notifyStartDate": "Notificar desde...",
+            "markets": "Mercados",
+            "positions": "Notificar a...",
+
+
+            "defaultPositionLabel": "Elige puestos para notificación",
+            "defaultMarketLabel": "Elige mercados de temporada",
+            "selectedPositionsLabel": "{0} puestos elegidos",
+            "selectedMarketsLabel": "{0} mercados elegidos",
+
+            "salesManager": "Ventas",
+            "salesAssistant": "Asistente de ventas",
+            "companyOwner": "Dueño de la empresa",
+            "agronomEngineer": "Ingeniero agronomo",
+            "postHarvestManager": "Jefe de la postcosecha",
+            "generalManager": "Gerente general",
+            "accountantMananger": "Contabilidad",
+            "accountantAssistant": "Asistente de contabilidad",
+            "claimsMananger": "Reclamos",
+            "claimsAssistant": "Asistente de reclamos",
+            "coordinationManager": "Coordinación",
+            "systemManager": "Gerente del sistema",
+
+            "headerSeasonName": "Nombre",
+            "headerSeasonYear": "Año",
+            "headerSeasonMarkets": "Mercados",
+            "headerSeasonDates": "Fechas",
+            "headerNotifySince": "Notificar desde...",
+            "headerNotifyTo": "Notificar a...",
+            "headerEdit": "Editar",
+            "headerDelete": "Eliminar",
+
+            "validation" : {
+                "seasonName" : {
+                    "required" : "Nombre de temporada es requerido",
+                    "pattern": "Nombre de temporada debe contener caracteres latinos",
+                    "maximumSymbols": "Nombre de temporada debe contener máximo 50 símbolos"
+                },
+                "seasonYear" : {
+                    "required" : "Año de temporada es requerido",
+                    "pattern":  "Año de temporada debe contener dígitos",
+                    "maximumSymbols": "Año de temporada debe contener máximo 4 dígitos"
+                },
+                "markets" : {
+                    "required" : "Mercado es requerido"
+                },
+                "seasonEndDate" : "Fecha de inicio debe ser anterior a la fecha del fin",
+                "seasonNotifyDate": "Fecha de notificación debe ser anterior a la fecha de inicio"
+            }
+        }
+    }
+}

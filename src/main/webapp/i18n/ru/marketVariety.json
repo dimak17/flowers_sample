@@ -1,0 +1,23 @@
+{
+    "flowersApp": {
+        "marketVariety" : {
+            "home": {
+                "title": "Market Varieties",
+                "createLabel": "Создать новый Market Variety",
+                "createOrEditLabel": "Создать или отредактировать Market Variety"
+            },
+            "created": "Новый Market Variety создан с идентификатором {{ param }}",
+            "updated": "Market Variety обновлен с идентификатором {{ param }}",
+            "deleted": "Market Variety удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Market Variety {{ id }}?"
+            },
+            "detail": {
+                "title": "Market Variety"
+            },
+            "type": "Type",
+            "market": "Market",
+            "variety": "Variety"
+        }
+    }
+}

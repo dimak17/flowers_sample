@@ -1,0 +1,68 @@
+<div>
+    <h2>
+        <span jhiTranslate="flowersApp.market.home.title">Markets</span>
+        <button class="btn btn-primary float-right jh-create-entity create-market" [routerLink]="['/', { outlets: { popup: ['market-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="flowersApp.market.home.createLabel">
+            Create new Market
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="markets">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="flowersApp.market.name">Name</span></th>
+            <th><span jhiTranslate="flowersApp.market.boxGroups">Box Groups</span></th>
+            <th><span jhiTranslate="flowersApp.market.company">Company</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let market of markets ;trackBy: trackId">
+                <td><a [routerLink]="['../market', market.id ]">{{market.id}}</a></td>
+                <td>{{market.name}}</td>
+                <td>
+                    <span *ngFor="let boxGroups of market.boxGroupDtos; let last = last">
+                            <a class="form-control-static" [routerLink]="['../box-group', boxGroups?.id ]">{{boxGroups.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td>
+                    <div *ngIf="market.company">
+                        <a [routerLink]="['../company', market.company?.id ]" >{{market.company?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../market', market.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'market/'+ market.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'market/'+ market.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

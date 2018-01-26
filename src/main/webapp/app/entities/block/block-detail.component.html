@@ -1,0 +1,41 @@
+
+<div *ngIf="block">
+    <h2><span jhiTranslate="flowersApp.block.detail.title">Block</span> {{block.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.block.name">Name</span></dt>
+        <dd>
+            <span>{{block.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.block.beds">Beds</span></dt>
+        <dd>
+            <span>{{block.beds}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.block.variety">Variety</span></dt>
+        <dd>
+            <span *ngFor="let variety of block.varieties; let last = last">
+                <a [routerLink]="['/variety', variety?.id ]">{{variety.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.block.company">Company</span></dt>
+        <dd>
+            <div *ngIf="block.company">
+                <a [routerLink]="['/company', block.company?.id]">{{block.company?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'block/'+ block.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

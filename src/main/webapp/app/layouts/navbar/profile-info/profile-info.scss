@@ -1,0 +1,256 @@
+.profile-info {
+    width: 620px;
+    height: 522px;
+    background: white;
+    box-shadow: -1px 1px 2px 1px #CCC;
+    position: absolute;
+    z-index: 3;
+    right: 15px;
+    top: 65px;
+}
+
+.loader {
+    margin: 250px auto;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid cadetblue;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.left {
+    width: 314px;
+    height: 522px;
+    float: left;
+    border: none !important;
+    input[type=text], input[type=email] {
+        border: 1px solid #a7a7a7;
+    }
+    label {
+        margin: 0 0 2px 29px;
+    }
+    .ng-invalid {
+        border-left: 2px solid red !important;
+    }
+    .incorrectPassword {
+        border-left: 2px solid red !important;
+    }
+}
+
+.right {
+    width: 306px;
+    height: 522px;
+    float: left;
+    background: #f2f2f2;
+    border: none !important;
+    label {
+        margin: 20px 0 2px 29px;
+    }
+    input[type=text], input[type=email] {
+        border: 1px solid #a7a7a7;
+    }
+    .ng-invalid {
+        border-left: 2px solid red !important;
+    }
+}
+
+.profile-info {
+    input[type=text], input[type=email] {
+        width: 249px;
+        height: 38px;
+        margin-left: 29px;
+        padding: 5px 0 0 14px;
+        outline: none;
+        font-size: 14px;
+        font-family: "FlowersFont-TEXT-OFFICE-REGULAR";
+        &:focus {
+            border: 1px solid #44b0b0;
+        }
+    }
+    label {
+        font-size: 11px;
+        font-family: "FlowersFont-HEAD-OFFICE-LIGTH";
+    }
+}
+
+.profile-form-group {
+    width: 249px;
+    height: 77px;
+}
+
+.account_fullName_label {
+    width: 249px;
+    height: 77px;
+    &:first-child {
+        margin-top: 24px;
+    }
+}
+
+.account_email_label {
+    margin-top: 18px;
+}
+.account_password_label {
+    margin-top: 18px;
+}
+
+.btn-right {
+    width: 249px;
+    height: 52px;
+    border-radius: 30px;
+    border: 3px solid #44b0b0;
+    margin: 32px 0 0 29px;
+    color: #44b0b0;
+    font-family: "FlowersFont-HEAD-OFFICE-MEDIUM";
+    text-align: center;
+    background: transparent;
+    &:hover {
+        background: #44b0b0;
+        color: white;
+        cursor: pointer;
+    }
+    &:active,&:focus {
+        outline: none;
+    }
+}
+
+.btn-left {
+    background: url("Change-password-1-min.png") transparent no-repeat 28% 42%;
+    width: 249px;
+    height: 52px;
+    border-radius: 30px;
+    border: 3px solid #414242;
+    margin: 19px 0 0 29px;
+    color: #414242;
+    font-family: "FlowersFont-HEAD-OFFICE-MEDIUM";
+    text-align: center;
+    &:hover {
+        background: #414242 url("Change-password-2-min.png") no-repeat 28% 42%;
+        color: white;
+        cursor: pointer;
+    }
+    &:active,&:focus {
+        outline: none;
+    }
+}
+
+.change-pass-cont {
+    width: 134px;
+    height: 18px;
+    padding: 3px 0 0 13px;
+    text-align: right;
+    margin: 31px 0 0 158px;
+    font-size: 16px;
+    color: #414242;
+    &:hover {
+        color: cadetblue;
+        .change-pass {
+            color: cadetblue;
+        }
+    }
+}
+
+.delimiter {
+    margin: 8px 0 0 29px;
+    height: 1px;
+    width: 80%;
+    border-top: 1px solid #D5D5D5;
+}
+
+.change-pass {
+    font-family: "FlowersFont-TEXT-OFFICE-REGULAR";
+    font-size: 12px;
+    color: #414242;
+    padding-left: 5px;
+}
+
+.profile-err-msg {
+    width: 249px;
+    margin-left: 29px;
+    display: block;
+    height: 13px;
+    font-size: 11px;
+    font-family: "FlowersFont-HEAD-OFFICE-TEXT";
+}
+
+.image-close {
+    margin: -100px 0 0 114px;
+    width: 17px;
+    height: 17px;
+    display: block;
+    color: #555;
+    position: absolute;
+    z-index: 2;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.black {
+    background-color: black;
+    width: 85px;
+    height: 85px;
+    margin: 0 30px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+}
+
+.image-uploader-background {
+    width: 85px;
+    height: 85px;
+    margin: 20px 0 0 30px;
+    position: relative;
+    display: block;
+}
+
+.image-uploader {
+    width: 72px;
+    height: 72px;
+    color: black;
+    display: block;
+    position: absolute;
+    margin: 5px 36px !important;
+    z-index: 3;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        + .black {
+            opacity: 0.5;
+        }
+        .camera {
+            display: block;
+            color: white;
+        }
+    }
+}
+
+.camera {
+    font-size: 36px;
+    display: none;
+    margin-left: 18px;
+    margin-top: 18px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.uploader-info {
+    margin-left: 20px;
+    position: absolute;
+    margin-top: 110px;
+}
+
+.extensions-info {
+    margin-left: 45px;
+    position: absolute;
+    margin-top: 130px;
+}

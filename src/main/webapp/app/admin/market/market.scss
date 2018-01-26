@@ -1,0 +1,161 @@
+.box-type-block {
+    margin: 40px 0 0 30px;
+    height: 643px;
+}
+
+.separation-border {
+    float: left;
+    width: 217px;
+    height: 217px;
+    margin: auto;
+}
+
+.box-border {
+    width: 196px;
+    height: 196px;
+    border: 1px solid #eaeaea;
+    display: block;
+}
+
+.short-name-block {
+    background: #ffffff;
+    text-align: center;
+    font-family: FlowersFont-HEAD-OFFICE-BOLD;
+    font-size: 26px;
+    margin-top: 30px;
+    display: block;
+}
+
+.line-separator {
+    height:3px;
+    width: 31px;
+    background: #eaeaea;
+    margin: 15px auto 0;
+    display: block;
+}
+
+.full-name-block {
+    background: #ffffff;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 14px;
+    display: block;
+    word-wrap: break-word;
+    padding: 0 4px;
+}
+.vertical-separator {
+    height: 20px;
+    width: 2px;
+    background: #D5D5D5;
+    float: left;
+    margin: 19px 20px 0;
+}
+
+.before-controls {
+    height: 144px;
+    width: 190px;
+    float: left;
+}
+
+
+.edit-block {
+    width: 45px;
+    margin: 20px 0 0 29px;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    float: left;
+    outline: none;
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+
+.delete-block {
+    width: 57px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    float: left;
+    outline: none;
+    &:hover {
+        color: cadetblue;
+    }
+
+}
+
+.delete-span {
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    outline: none;
+    float: right;
+}
+
+.edit-delete-icons {
+    font-size: 15px;
+    cursor: pointer;
+    float: left;
+    outline: none;
+}
+
+/* global  overall image styles */
+.image-w img, .image-w svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.title {
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 21px;
+}
+
+.add-button {
+    width: 59px;
+    height: 59px;
+    border: none;
+    display: block;
+    margin: 68px auto 0 74px;
+    cursor: pointer;
+    outline: none;
+    color: #777;
+    font-size: 62px;
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background: green;
+}
+
+.blue {
+    background: blue;
+}
+
+.gold {
+    background: gold;
+}
+
+.brown {
+    background: brown;
+}
+
+.violet {
+    background: violet;
+}
+
+.pink {
+    background: pink;
+}
+
+.aqua {
+    background: aqua;
+}

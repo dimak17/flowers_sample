@@ -1,0 +1,29 @@
+{
+    "flowersApp": {
+        "season" : {
+            "home": {
+                "title": "Seasons",
+                "createLabel": "Создать новый Season",
+                "createOrEditLabel": "Создать или отредактировать Season"
+            },
+            "created": "Новый Season создан с идентификатором {{ param }}",
+            "updated": "Season обновлен с идентификатором {{ param }}",
+            "deleted": "Season удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Season {{ id }}?"
+            },
+            "detail": {
+                "title": "Season"
+            },
+            "seasonName": "Season Name",
+            "seasonYear": "Season Year",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "notifyStartDate": "Notify Start Date",
+            "company": "Company",
+            "position": "Position",
+            "pinches": "Pinches",
+            "marketSeason": "Market Season"
+        }
+    }
+}

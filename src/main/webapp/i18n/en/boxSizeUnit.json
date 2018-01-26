@@ -1,0 +1,10 @@
+{
+    "flowersApp": {
+        "BoxSizeUnit" : {
+            "null": "",
+            "mm": "MM",
+            "m": "M",
+            "cm": "CM"
+        }
+    }
+}

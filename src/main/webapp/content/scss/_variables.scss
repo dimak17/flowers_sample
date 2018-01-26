@@ -1,0 +1,79 @@
+//Fonts
+//HEAD
+$base-font: "FlowersFont-HEAD-OFFICE-REGULAR";
+$base-font-light: "FlowersFont-HEAD-OFFICE-LIGTH";
+$base-font-bold: "FlowersFont-HEAD-OFFICE-BOLD";
+// Text
+$text-font: "FlowersFont-TEXT-OFFICE-REGULAR";
+$text-font-bold: "FlowersFont-TEXT-OFFICE-BOLD";
+$text-font-bold-italic: "FlowersFont-TEXT-OFFICE-BOLD-ITALIC";
+$text-font-italic: "FlowersFont-TEXT-OFFICE-ITALIC";
+$text-font-medium: "FlowersFont-TEXT-OFFICE-MEDIUM";
+$text-font-medium-italic: "FlowersFont-TEXT-OFFICE-MEDIUM-ITALIC";
+//**End Fonts
+
+//Colors
+
+//Base colors
+$base-bg: #eaeaea;
+$base-color: cadetblue;
+
+$menu-color: #F2F2F2;
+
+$white: #fff;
+$black: #000;
+$grey: #ccc;
+
+$red: red;
+$btn-red: #d9534f;
+
+$table-color: #eceeef;
+
+//Text colors
+$text-color: #292929;
+$link-color: $base-color;
+$title-color: #292b2c;
+
+//Form colors
+$form-color: $menu-color;
+
+$form-border-color: #a7a7a7;
+
+$small-form: 375px;
+$medium-form: 500px;
+$large-form: 900px;
+//**End Colors
+
+//Btn
+$btn-height: 38px;
+//End Btn
+
+//Header
+$header-h: 65px;
+$h-toggle-container-w: 55px;
+//**************
+
+//Main Nav
+$nav-w: 55px;
+//****************
+
+//Main Content Block
+
+//*********************
+//Borders***
+$base-border: 2px solid $base-color;
+
+$form-border: 1px solid $form-border-color;
+//Form input
+$form-input-h: 38px;
+//End Borders***
+
+//Other
+$default-transition: all .2s linear;
+
+$box-shadow: 0 0 3px $grey;
+
+$default-letter-spacing: .2px;
+$letter-spacing: .4px;
+
+//**End Other

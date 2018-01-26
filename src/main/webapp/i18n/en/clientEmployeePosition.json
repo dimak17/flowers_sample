@@ -1,0 +1,23 @@
+{
+    "flowersApp": {
+        "clientEmployeePosition" : {
+            "home": {
+                "title": "Client Employee Positions",
+                "createLabel": "Create a new Client Employee Position",
+                "createOrEditLabel": "Create or edit a Client Employee Position"
+            },
+            "created": "A new Client Employee Position is created with identifier {{ param }}",
+            "updated": "A Client Employee Position is updated with identifier {{ param }}",
+            "deleted": "A Client Employee Position is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Client Employee Position {{ id }}?"
+            },
+            "detail": {
+                "title": "Client Employee Position"
+            },
+            "name": "Name",
+            "company": "Company",
+            "clientEmployee": "Client Employee"
+        }
+    }
+}

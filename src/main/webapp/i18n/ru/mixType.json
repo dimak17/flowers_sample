@@ -1,0 +1,22 @@
+{
+    "flowersApp": {
+        "mixType" : {
+            "home": {
+                "title": "Mix Types",
+                "createLabel": "Создать новый Mix Type",
+                "createOrEditLabel": "Создать или отредактировать Mix Type"
+            },
+            "created": "Новый Mix Type создан с идентификатором {{ param }}",
+            "updated": "Mix Type обновлен с идентификатором {{ param }}",
+            "deleted": "Mix Type удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Mix Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Mix Type"
+            },
+            "name": "Name",
+            "company": "Company"
+        }
+    }
+}

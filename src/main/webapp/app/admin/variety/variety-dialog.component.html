@@ -1,0 +1,69 @@
+<form role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="close fa fa-times" data-dismiss="modal" (click)="clear()"></div>
+    <div>
+        <h4 class="phrase" id="myBoxTypeLabel" jhiTranslate="flowersApp.variety.home.createOrEditLabel">Enter Variety Data</h4>
+    </div>
+    <div class="modal-body">
+        <div class="uploader-title" jhiTranslate="flowersApp.variety.uploader-title">Variety image</div>
+        <small class="uploader-info" jhiTranslate="flowersApp.variety.uploader"></small>
+        <small class="extensions-info" jhiTranslate="flowersApp.variety.extensions"></small>
+        <div>
+            <label for="file-upload" class="image-uploader">
+                <div class="camera fa fa-camera-retro"></div>
+                <div class="black"></div>
+                <input type="file" id="file-upload" (change)="upload()" #fileInput />
+            </label>
+            <img *ngIf="base64Image" #image [src]="'data:image/png;base64,'+base64Image" class="image-uploader-background"/>
+            <div *ngIf="variety && variety.id" [routerLink]="['/', { outlets: { popup: 'variety/'+ variety.id + '/image/delete'} }]" replaceUrl="true" class="image-close fa fa-times"></div>
+            <div *ngIf="!variety.id" [routerLink]="['/', { outlets: { popup: 'variety/image/delete'} }]" replaceUrl="true" class="image-close fa fa-times"></div>
+        </div>
+
+        <div class="flowers-type-title" jhiTranslate="flowersApp.variety.flowers-type">Type of flowers</div>
+            <div [formGroup]="formGroup" class="modal-select input-group-data input-variety-data variety-group-data">
+                <ng-select id="typeOfFlowers" formControlName="typeOfFlowers" [allowClear]="true" [items]="typeOfFlowerNames" (selected)="selectedTypeOfFlower($event)"></ng-select>
+            </div>
+
+        <div class="name-title" jhiTranslate="flowersApp.variety.name" for="field_name">Name</div>
+        <div class="field-position">
+            <input type="text" [class]="requiredValidation(variety.name) || latinValidation(variety.name, nameMax) || maxLength(variety.name, nameMax) || duplicateValidation(variety.name)? 'name-form variety-required' : 'name-form'" name="name" id="field_name" maxlength="36" [(ngModel)]="variety.name"/>
+        <small *ngIf="requiredValidation(variety.name)" class="err-msg name-err text-danger" jhiTranslate="flowersApp.variety.validation.name.required"></small>
+        <small *ngIf="isFillValidation(variety.name) && latinValidation(variety.name, nameMax)" class="err-msg name-err text-danger" jhiTranslate="flowersApp.variety.validation.name.pattern"></small>
+        <small *ngIf="isFillValidation(variety.name) && duplicateValidation(variety.name)" class="err-msg name-err text-danger" jhiTranslate="flowersApp.variety.alert">This variety already exist</small>
+        <small *ngIf="isFillValidation(variety.name) && maxLength(variety.name, nameMax)" class="err-msg name-err text-danger" jhiTranslate="flowersApp.variety.validation.name.maximumSymbols"></small>
+        </div>
+
+        <div class="color-title" jhiTranslate="flowersApp.variety.color" for="field_color">Color</div>
+        <div class="field-position">
+            <input type="text" [class]="requiredValidation(variety.color) || latinValidation(variety.color, colorMax) || maxLength(variety.color, colorMax)? 'color-form variety-required' : 'color-form'" name="color" id="field_color" maxlength="26" [(ngModel)]="variety.color"/>
+        <small *ngIf="requiredValidation(variety.color)" class="err-msg color-err text-danger" jhiTranslate="flowersApp.variety.validation.color.required"></small>
+        <small *ngIf="isFillValidation(variety.color) && latinValidation(variety.color, colorMax)" class="err-msg color-err text-danger" jhiTranslate="flowersApp.variety.validation.color.pattern"></small>
+        <small *ngIf="isFillValidation(variety.color) && maxLength(variety.color, colorMax)" class="err-msg color-err text-danger" jhiTranslate="flowersApp.variety.validation.color.maximumSymbols"></small>
+        </div>
+
+        <div class="breeder-title" jhiTranslate="flowersApp.variety.breeder" for="field_color">Main breeder</div>
+        <div class="field-position">
+            <input type="text" [class]="latinValidation(variety.breeder, breederMax) || maxLength(variety.breeder, breederMax)? 'breeder-form variety-required' : 'breeder-form'" maxlength="26" name="breeder" id="field_breeder" [(ngModel)]="variety.breeder"/>
+        </div>
+        <small *ngIf="latinValidation(variety.breeder, breederMax)" class="err-msg breeder-err text-danger" jhiTranslate="flowersApp.variety.validation.breeder.pattern"></small>
+        <small *ngIf="maxLength(variety.breeder, breederMax)" class="err-msg breeder-err text-danger" jhiTranslate="flowersApp.variety.validation.breeder.maximumSymbols"></small>
+
+        <div class="separation-line"></div>
+
+        <div class="min-length-title" jhiTranslate="flowersApp.variety.minLength" for="field_color">Min length</div>
+        <div class="field-position">
+            <input type="text" [class]="digitValidation(variety.minLength) || maxLength(variety.minLength, digitMax)? 'min-length-form variety-required' : 'min-length-form'" maxlength="5" name="minLength" id="field_minLength" [(ngModel)]="variety.minLength"/>
+        </div>
+        <small *ngIf="digitValidation(variety.minLength)" class="err-msg min-length-err text-danger" jhiTranslate="flowersApp.variety.validation.minLength.pattern"></small>
+        <small *ngIf="maxLength(variety.minLength, digitMax)" class="err-msg min-length-err text-danger" jhiTranslate="flowersApp.variety.validation.minLength.maximumSymbols"></small>
+
+        <div class="max-length-title" jhiTranslate="flowersApp.variety.maxLength" for="field_maxLength">Max length</div>
+        <div class="field-position">
+            <input type="text" [class]="digitValidation(variety.maxLength) || maxLength(variety.maxLength, digitMax)? 'max-length-form variety-required' : 'max-length-form'" maxlength="5" name="maxLength" id="field_maxLength" [(ngModel)]="variety.maxLength"/>
+        </div>
+        <small *ngIf="digitValidation(variety.maxLength)" class="err-msg max-length-err text-danger" jhiTranslate="flowersApp.variety.validation.maxLength.pattern"></small>
+        <small *ngIf="maxLength(variety.maxLength, digitMax)" class="err-msg max-length-err text-danger" jhiTranslate="flowersApp.variety.validation.maxLength.maximumSymbols"></small>
+    </div>
+    <button type="submit" [disabled]="editForm.form.invalid || isSaving || saveButtonDeactivation(variety)" class="save-button" jhiTranslate="entity.action.save">Save</button>
+</form>
+

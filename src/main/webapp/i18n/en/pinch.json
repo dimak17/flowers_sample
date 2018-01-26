@@ -1,0 +1,24 @@
+{
+    "flowersApp": {
+        "pinch" : {
+            "home": {
+                "title": "Pinches",
+                "createLabel": "Create a new Pinch",
+                "createOrEditLabel": "Create or edit a Pinch"
+            },
+            "created": "A new Pinch is created with identifier {{ param }}",
+            "updated": "A Pinch is updated with identifier {{ param }}",
+            "deleted": "A Pinch is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Pinch {{ id }}?"
+            },
+            "detail": {
+                "title": "Pinch"
+            },
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "totalStems": "Total Stems",
+            "notifyStartDate": "Notify Start Date"
+        }
+    }
+}

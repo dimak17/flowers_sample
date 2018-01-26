@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity PinchVariety.
+    -->
+    <changeSet id="20170906091042-2" author="dima">
+
+        <addForeignKeyConstraint baseColumnNames="pinch_id"
+                                 baseTableName="pinch_variety"
+                                 constraintName="fk_pinch_variety_pinch_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pinch"/>
+
+        <addForeignKeyConstraint baseColumnNames="variety_id"
+                                 baseTableName="pinch_variety"
+                                 constraintName="fk_pinch_variety_variety_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="variety"/>
+
+    </changeSet>
+</databaseChangeLog>

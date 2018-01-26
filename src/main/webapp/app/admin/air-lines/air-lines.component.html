@@ -1,0 +1,34 @@
+<div class="air-lenes-container">
+    <h2>
+        <span class="title" jhiTranslate="flowersApp.airLines.home.title">Airlines List</span>
+    </h2>
+    <div style=" margin-top: 35px; overflow: auto; height: 625px" infinite-scroll (scroll)="loadPage(page + 1)"
+         [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="2">
+        <div  *ngFor="let airLine of airLines; trackBy: trackId">
+            <div class="air-line-block">
+                <i class="fa fa-plane fa-4x air-line-icon {{airLine.colorClass}}" aria-hidden="true"></i>
+                <div class="fields-block">
+                    <div><span class="fields-text" jhiTranslate="flowersApp.airLines.labels.Name">Air Line Name: </span>{{airLine.name}}</div>
+                    <div><span class="fields-text" jhiTranslate="flowersApp.airLines.labels.Number">Air Line Number: </span>{{airLine.number}}</div>
+                    <div class="act-block">
+                        <div class="edit-block" [routerLink]="['/', { outlets: { popup: 'air-lines/'+ airLine.id + '/edit'} }]"
+                        replaceUrl="true">
+                        <span class="fa fa-pencil edit-delete-icons"></span>
+                        <span class="delete-span" jhiTranslate="entity.action.edit">Edit</span>
+                        </div>
+                        <span class="vertical-separator"></span>
+                        <div class="delete-block"
+                        [routerLink]="['/', { outlets: { popup: 'air-lines/'+ airLine.id + '/delete'} }]">
+                        <span class="fa fa-trash-o edit-delete-icons"></span>
+                        <span class="delete-span" jhiTranslate="entity.action.delete">Delete</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="air-line-block">
+            <i class="fa fa-plus-square-o fa-4x add-button" aria-hidden="true" [routerLink]="['/', { outlets: { popup: ['air-lines-new'] } }]"></i>
+        </span>
+    </div>
+</div>
+

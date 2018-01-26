@@ -1,0 +1,102 @@
+//Typography
+html {
+    @media only screen and (min-width : 320px) and (max-width: 500px){
+        font-size: 16px;
+    }
+    @media only screen and (min-width : 500px) and (max-width: 768px) {
+        font-size: 16px;
+    }
+    @media only screen and (min-width : 768px) and (max-width: 992px) {
+        font-size: 16px;
+    }
+    @media only screen and (min-width : 992px) and (max-width: 1200px) {
+        font-size: 16px;
+    }
+    @media only screen and (min-width : 1200px) and (max-width: 1400px) {
+        font-size: 16px;
+    }
+    @media only screen and (min-width : 1400px) {
+        font-size: 16px;
+    }
+}
+.font {
+    color: $text-color;
+    letter-spacing: $default-letter-spacing;
+    line-height: 1.5rem;
+    letter-spacing: $default-letter-spacing;
+}
+
+body {
+    background: $base-bg;
+    @include font($text-font, 16px, 1rem);
+    @extend .font;
+}
+
+.title {
+    color: $title-color;
+    letter-spacing: $letter-spacing;
+    line-height: 1.5rem;
+    margin: 0;
+    letter-spacing: $letter-spacing;
+}
+
+h1,.h1 {
+    @include font($base-font, 35px, 2.1875rem);
+    @extend .title;
+}
+
+h2,.h2 {
+    @include font($base-font, 32px, 2rem);
+    @extend .title;
+}
+
+h3,.h3 {
+    @include font($base-font, 28px, 1.75rem);
+    @extend .title;
+}
+
+h4,.h4 {
+    @include font($base-font, 24px, 1.5rem);
+    @extend .title;
+}
+h5,.h5 {
+    @include font($base-font, 20px, 1.25rem);
+    @extend .title;
+}
+h6,.h6 {
+    @include font($base-font, 18px, 1.125rem);
+    @extend .title;
+}
+
+div, img, a, input, textarea, select, option, span, button, ul, li {
+    outline: none;
+}
+
+label, p, span{
+    margin: 0;
+}
+
+a, button, img, input, textarea, span, p, li {
+    outline: none;
+    &:focus, &:visited, &:active {
+        outline: none;
+    }
+}
+
+a {
+    color: $link-color;
+    &:focus, &:visited, &:active, &:link {
+        text-decoration: none;
+        color: $link-color;
+    }
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+//**********************************************************
+
+
+

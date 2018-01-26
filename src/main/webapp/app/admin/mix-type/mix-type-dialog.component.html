@@ -1,0 +1,31 @@
+<div class="modal-window__small">
+    <div class="{{mixType.colorClass}} g__color-line"></div>
+
+    <div class="modal__close" data-dismiss="modal" (click)="clear()"><span class="fa fa-times"></span></div>
+
+    <div class="modal-header">
+        <h4 class="modal-title_center" jhiTranslate="flowersApp.mixType.home.createLabel"></h4>
+    </div>
+
+    <div class="modal-body">
+        <form role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+            <div class="form__group_required">
+                <label class="form-label" jhiTranslate="flowersApp.mixType.name" for="field_shortName"></label>
+                <input [class]="fieldLengthValidation(mixType.name) || latinValidation(mixType.name)||(errorAlert && dublicateMixTypeName == mixType.name.toLowerCase().trim() || requiredValidation(mixType.name)|| !mixType.name)? 'form-input_required': 'form-input'" name="shortName" id="field_shortName" [(ngModel)]="mixType.name" maxlength="25"/>
+
+                <div class="form-input_error-container">
+                    <small *ngIf="(requiredValidation(mixType.name) || !mixType.name) && !fieldLengthValidation(mixType.name)" class="form-input_error" [hidden] jhiTranslate="flowersApp.mixType.validation.mixName.required"></small>
+                    <small *ngIf="latinValidation(mixType.name)&& !fieldLengthValidation(mixType.name)" class="form-input_error" [hidden] jhiTranslate="flowersApp.mixType.validation.mixName.pattern"></small>
+                    <small *ngIf="fieldLengthValidation(mixType.name)" class="form-input_error" [hidden] jhiTranslate="flowersApp.mixType.validation.mixName.maximumSymbols"></small>
+                    <small *ngIf="(errorAlert && dublicateMixTypeName == mixType.name.toLowerCase().trim())" class="form-input_error" jhiTranslate="flowersApp.mixType.alert">This mix type already exist!</small>
+                </div>
+            </div>
+
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving || saveButtonDeactivation(mixType)" class="button_small button_margin-center" jhiTranslate="entity.action.save">Save</button>
+
+        </form>
+    </div>
+
+    <div class="{{mixType.colorClass}} g__color-line"></div>
+</div>

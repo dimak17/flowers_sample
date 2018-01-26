@@ -1,0 +1,22 @@
+{
+    "flowersApp": {
+        "marketSeason" : {
+            "home": {
+                "title": "Market Seasons",
+                "createLabel": "Create a new Market Season",
+                "createOrEditLabel": "Create or edit a Market Season"
+            },
+            "created": "A new Market Season is created with identifier {{ param }}",
+            "updated": "A Market Season is updated with identifier {{ param }}",
+            "deleted": "A Market Season is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Market Season {{ id }}?"
+            },
+            "detail": {
+                "title": "Market Season"
+            },
+            "market": "Market",
+            "season": "Season"
+        }
+    }
+}

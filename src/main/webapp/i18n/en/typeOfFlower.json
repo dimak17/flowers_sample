@@ -1,0 +1,22 @@
+{
+    "flowersApp": {
+        "typeOfFlower" : {
+            "home": {
+                "title": "Type Of Flowers",
+                "createLabel": "Create a new Type Of Flower",
+                "createOrEditLabel": "Create or edit a Type Of Flower"
+            },
+            "created": "A new Type Of Flower is created with identifier {{ param }}",
+            "updated": "A Type Of Flower is updated with identifier {{ param }}",
+            "deleted": "A Type Of Flower is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Type Of Flower {{ id }}?"
+            },
+            "detail": {
+                "title": "Type Of Flower"
+            },
+            "name": "Name",
+            "company": "Company"
+        }
+    }
+}

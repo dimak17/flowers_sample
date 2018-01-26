@@ -1,0 +1,62 @@
+{
+    "flowersApp": {
+        "farm-data": {
+            "massage": "has usage in Company 🡪 Variety",
+            "title": "Enter your data",
+            "farmName": "Farm name",
+            "generalEmailAddress": "General email address",
+            "legalName": "Legal name",
+            "generalOfficePhone": "General office phone",
+            "city": "Сity",
+            "address": "Address",
+            "typeOfFlowers": "Type of flowers",
+            "country": "Country",
+            "farmSize": "Farm size",
+            "delete": {
+                "image-question": "Are you sure you want to delete this logo?"
+            }
+        },
+        "validation": {
+            "farmName": {
+                "pattern": "Farm name should contain latin symbols",
+                "required": "Farm name is required.",
+                "maxlength": "Farm name cannot be more than 50 characters long"
+            },
+            "generalEmailAddress": {
+                "pattern": "General email address should contain latin symbols",
+                "required": "General email address is required.",
+                "maxlength": "General email address cannot be more than 50 characters long.",
+                "email": "General email address is not valid, example: email@gmail.com"
+            },
+            "legalName": {
+                "pattern": "Legal name should contain latin symbols",
+                "required": "Legal name is required.",
+                "maxlength": "Legal name cannot be more than 50 characters long"
+            },
+            "generalOfficePhone": {
+                "pattern": "General office phone should contain latin symbols",
+                "required": "General office phone is required",
+                "maxlength": "General office phone cannot be more than 24 characters long"
+            },
+            "city": {
+                "pattern": "City should contain latin symbols",
+                "maxlength": "City cannot be more than 50 characters long"
+            },
+            "address": {
+                "pattern": "Address should contain latin symbols",
+                "maxlength": "Address cannot be more than 50 characters long"
+            },
+            "typeOfFlowers": {
+                "required": "Type of flowers is required"
+            },
+            "country": {
+                "required": "Country is required"
+            },
+            "farmSize": {
+                "pattern": "Farm size should contain latin symbols",
+                "maxlength": "Farm size cannot be more than 50 characters long"
+            }
+        }
+    }
+}
+

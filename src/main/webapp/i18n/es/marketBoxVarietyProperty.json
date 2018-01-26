@@ -1,0 +1,24 @@
+{
+    "flowersApp": {
+        "marketBoxVarietyProperty" : {
+            "home": {
+                "title": "Market Box Variety Properties",
+                "createLabel": "Crear nuevo Market Box Variety Property",
+                "createOrEditLabel": "Crear o editar Market Box Variety Property"
+            },
+            "created": "Un nuevo Market Box Variety Property ha sido creado con el identificador {{ param }}",
+            "updated": "Un Market Box Variety Property ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Market Box Variety Property ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Market Box Variety Property {{ id }}?"
+            },
+            "detail": {
+                "title": "Market Box Variety Property"
+            },
+            "capacity": "Capacity",
+            "length": "Length",
+            "marketBox": "Market Box",
+            "variety": "Variety"
+        }
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "flowersApp": {
+        "validation": {
+            "generalBankDetails": {
+                "maxLength": "Bank details can not be more than 500 characters long RU",
+                "pattern": "Bank Details should contains latin symbols RU"
+            },
+            "alternativeBankDetails": {
+                "maxLength": "Bank details can not be more than 500 characters long RU",
+                "pattern": "Bank Details should contains latin symbols RU"
+            }
+        },
+        "bankDetails": {
+            "home": {
+                "title": "Bank Details RU",
+                "createLabel": "Create a new Bank Details RU",
+                "createOrEditLabel": "Create or edit a Bank Details RU"
+            },
+            "created": "A new Bank Details is created with identifier {{ param }} RU",
+            "updated": "A Bank Details is updated with identifier {{ param }} RU",
+            "deleted": "A Bank Details is deleted with identifier {{ param }} RU",
+            "delete": {
+                "question": "Are you sure you want to delete Bank Details {{ id }}? RU"
+            },
+            "detail": {
+                "title": "Bank Details RU"
+            },
+            "general": "General RU",
+            "alternative": "Alternative RU",
+            "company": "Company RU",
+            "chekBoxLabel1": "Add General Company Bank Details to File RU",
+            "chekBoxLabel2": "Add Alternative Company Bank Details to File RU",
+            "generalLabel": "General Company Bank Details RU",
+            "alternativeLabel": "Alternative Company Bank Details RU",
+            "buttonContainer": {
+                "preview": "Preview RU",
+                "download": "Download RU",
+                "copy": "Copy RU",
+                "sendTo": "SendTo RU"
+            },
+            "uploadGeneralLabel": "General Bank Details File RU",
+            "uploadAlternativeLabel": "Alternative Bank Details File RU",
+            "uploadGeneralFileNameLabel": "Uploaded file name RU",
+            "uploadAlternativeFileNameLabel": "Uploaded file name RU",
+            "uploadBtnContainer": {
+                "upload": "Upload RU",
+                "delete": "Delete RU"
+            }
+        }
+    }
+}

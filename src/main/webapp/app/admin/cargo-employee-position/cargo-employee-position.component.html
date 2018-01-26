@@ -1,0 +1,36 @@
+<div [ngClass]="!loadComponent ? 'loader-right-block' : ''"></div>
+<div *ngIf="loadComponent">
+<div class="cargo-employee-position">
+    <div>
+        <span>
+            <button class="create-cargo-employee-position" jhiTranslate="flowersApp.cargoEmployeePosition.createCargoEmployeePosition" aria-hidden="true" [routerLink]="['/', { outlets: { popup: ['cargo-employee-position-new'] } }]"></button>
+        </span>
+    </div>
+    <h2>
+        <br><span class="title"></span>
+    </h2>
+        <div style=" margin-top: 35px; overflow: auto; height: 625px">
+            <div *ngFor="let cargoEmployeePosition of cargoEmployeePositions;trackBy: trackId">
+                <div class="cargo-employee-position-block">
+                    <i class="fa fa-briefcase fa-4x cargo-employee-position-icon {{cargoEmployeePosition.colorClass}}" aria-hidden="true"></i>
+                    <div class="fields-block">
+                        <div *ngIf="loadComponent"><span class="fields-text" jhiTranslate="flowersApp.cargoEmployeePosition.name">Cargo Employee Position Name: </span> {{cargoEmployeePosition.name}}</div>
+                        <div class="act-block">
+                            <div class="edit-block" [routerLink]="['/', { outlets: { popup: 'cargo-employee-position/'+ cargoEmployeePosition.id + '/edit'} }]"
+                                 replaceUrl="true">
+                                <span class="fa fa-pencil edit-delete-icons"></span>
+                                <span class="delete-span" jhiTranslate="entity.action.edit">Edit</span>
+                            </div>
+                            <span class="vertical-separator"></span>
+                            <div class="delete-block" *ngIf="loadComponent"
+                                 [routerLink]="['/', { outlets: { popup: 'cargo-employee-position/'+ cargoEmployeePosition.id + '/delete'} }]">
+                                <span class="fa fa-trash-o edit-delete-icons"></span>
+                                <span class="delete-span" jhiTranslate="entity.action.delete">Delete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>

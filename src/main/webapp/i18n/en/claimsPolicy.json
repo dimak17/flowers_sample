@@ -1,0 +1,49 @@
+{
+    "flowersApp": {
+        "claimsPolicy" : {
+            "home": {
+                "title": "Claims policies",
+                "createButton": "Create new policy",
+                "createOrEditButton": "Enter claims policy"
+            },
+            "created": "A new claims policy is created with identifier {{ param }}",
+            "updated": "A claims policy is updated with identifier {{ param }}",
+            "deleted": "A claims policy is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete claims policy {{ id }}?"
+            },
+            "detail": {
+                "title": "Claims policy"
+            },
+            "action":{
+                "edit":"Edit",
+                "delete":"Delete",
+                "confirm": "Confirm delete operation",
+                "cancel": "Cancel",
+                "back": "Back",
+                "save":"Save"
+            },
+            "warningMessage":"Warning,  if you delete current claim policy, the same shipping policy will be removed too",
+            "fullName":"Full name:",
+            "shortName": "Short name:",
+            "validation": {
+                "shortName": {
+                    "alert":"This policy already exist",
+                    "required": "Short name is required",
+                    "pattern": "Short name should contain latin symbols",
+                    "maximumSymbols": "This field should contain maximum 17 symbols"
+                },
+                "boxSize": {
+                    "pattern":  "Box size must contain only digits"
+                },
+                "fullName": {
+                    "required": "Full name is required",
+                    "pattern": "Full name should contains latin symbols",
+                    "maximumSymbols": "This field should contain maximum 25 symbols"
+                }
+            },
+            "fullName": "Full name"
+        }
+    }
+}
+

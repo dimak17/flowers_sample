@@ -1,0 +1,66 @@
+<div>
+    <h2>
+        <span jhiTranslate="flowersApp.pinchVariety.home.title">Pinch Varieties</span>
+        <button class="btn btn-primary float-right create-pinch-variety" [routerLink]="['/', { outlets: { popup: ['pinch-variety-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="flowersApp.pinchVariety.home.createLabel">
+            Create new Pinch Variety
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="pinchVarieties">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="flowersApp.pinchVariety.pinch">Pinch</span></th>
+            <th><span jhiTranslate="flowersApp.pinchVariety.variety">Variety</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let pinchVariety of pinchVarieties ;trackBy: trackId">
+                <td><a [routerLink]="['../pinch-variety', pinchVariety.id ]">{{pinchVariety.id}}</a></td>
+                <td>
+                    <div *ngIf="pinchVariety.pinch">
+                        <a [routerLink]="['../pinch', pinchVariety.pinch?.id ]" >{{pinchVariety.pinch?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="pinchVariety.variety">
+                        <a [routerLink]="['../variety', pinchVariety.variety?.id ]" >{{pinchVariety.variety?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../pinch-variety', pinchVariety.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'pinch-variety/'+ pinchVariety.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'pinch-variety/'+ pinchVariety.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

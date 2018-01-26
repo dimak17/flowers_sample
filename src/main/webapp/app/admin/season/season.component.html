@@ -1,0 +1,48 @@
+<div *ngIf="selectAllValuesPending" class="loader season-component-loader"></div>
+
+<div *ngIf="!selectAllValuesPending" class="seasons-block">
+    <h2>
+        <span class="title" jhiTranslate="flowersApp.season.home.title">Seasons list</span>
+    </h2>
+
+    <div class="add-button" [routerLink]="['/', { outlets: { popup: 'season-new' } }]"
+         jhiTranslate="flowersApp.season.createSeason">Create new season</div>
+
+
+        <div class="season-filter ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
+            <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+            <input class="input-filter" #gb type="text" pInputText size="50" placeholder="{{globalFilterPlaceHolder}}">
+        </div>
+    <div class="table-responsive" *ngIf="tableSeasons">
+        <div class="global-table">
+        <p-dataTable [value]="tableSeasons" selectionMode="single" scrollable="true" scrollHeight="500px"
+                     [rows]="10"
+                     [pageLinks]="3"
+                     [paginator]="true"
+                     [globalFilter]="gb"
+
+                     [(selection)]="season"
+                     (onRowDblclick)="action($event, '/edit')"
+                     (onRowClick)="onRowClick($event)"
+                     dataKey="id"
+                     sortField="id">
+            <p-column field="seasonName" header="{{headerSeasonName}}" [sortable]="true" [style]="{'width':'14%'}"></p-column>
+            <p-column field="seasonYear" header="{{headerSeasonYear}}" [sortable]="true" [style]="{'width':'13%'}"></p-column>
+            <p-column field="tableMarkets" header="{{headerSeasonMarkets}}" [sortable]="true" [style]="{'width':'18%'}"></p-column>
+            <p-column field="dates" header="{{headerSeasonDates}}" [sortable]="true" [style]="{'width':'15%'}"></p-column>
+            <p-column field="notifyTableStartDate" header="{{headerNotifySince}}" [sortable]="true" [style]="{'width':'17%'}"></p-column>
+            <p-column field="notifyTo" header="{{headerNotifyTo}}" [sortable]="true" [style]="{'width':'26%'}"></p-column>
+            <p-column field="edit" header="{{headerEdit}}" styleClass="myEdit" [style]="{'width':'8%', 'vertical-align':'inherit', 'text-align':'center'}">
+                <template let-item="rowData" pTemplate="body">
+                    <i (click)="action(item, '/edit')" class="edit-season favicon-table fa fa-pencil"></i>
+                </template>
+            </p-column>
+            <p-column field="delete" header="{{headerDelete}}" styleClass="myDelete"  [style]="{'width':'10%', 'vertical-align':'inherit', 'text-align':'center'}">
+                <template let-item="rowData" pTemplate="body">
+                    <i (click)="action(item, '/delete')" class="delete-season favicon-table fa fa-trash-o"></i>
+                </template>
+            </p-column>
+        </p-dataTable>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,187 @@
+<form class="market-dialog-form" name="editForm" role="form"  #editForm="ngForm" >
+    <div class="left">
+        <div>
+            <h4 class="phrase" id="myBoxTypeLabel" jhiTranslate="flowersApp.market.home.editLabel">Edit market</h4>
+        </div>
+        <div class="modal-body">
+            <label class="short-name" jhiTranslate="flowersApp.market.name" for="field_name">Name</label>
+
+            <div class="form-border">
+                <div class="market-position">
+                    <input required class="form" [ngClass]="isNameValid() ? 'invalid' : ''" name="name" id="field_name" [(ngModel)]="market.name"/>
+                </div>
+            </div>
+            <small *ngIf="!market.name" class="box-field-err-msg text-danger" jhiTranslate="flowersApp.market.validation.name.required"></small>
+            <small *ngIf="!latinValid(market.name)" class="box-field-err-msg text-danger" jhiTranslate="flowersApp.market.validation.name.pattern"></small>
+            <small *ngIf="!fieldLengthValid(market.name)" class="box-field-err-msg text-danger" jhiTranslate="flowersApp.market.validation.name.maximumSymbols"></small>
+            <small *ngIf="errorAlert && duplicateMarketName && duplicateMarketName === market.name" class="box-field-err-msg text-danger" jhiTranslate="flowersApp.market.validation.name.duplicate" translateValues="{name: '{{market.name}}'}"></small>
+            <div class="flowers-prime-tabs">
+                <p-tabView [activeIndex]="activeIndex" (onChange)="onTabChange($event)">
+                    <p-tabPanel header="{{tabLabelVarieties}}">
+                        <p-selectButton
+                            class="variety-type-select-button"
+                            [options]="varietyTypes"
+                            name="varietyTypes"
+                            (ngModelChange)="onSelectVarietyType($event)"
+                            [ngModel]="selectedVarietyType">
+                        </p-selectButton>
+                        <hr/>
+                        <div class="selected-varieties">
+                            <span *ngIf="!selectAllValuesPending" >{{getSelectedVarietiesTitles()}}</span>
+                        </div>
+                    </p-tabPanel>
+                    <p-tabPanel header="{{tabLabelBoxGroups}}">
+                        <div class="group-boxes-tab">
+                            <p-multiSelect
+                                dropdownArrowChange
+                                name="boxGroupsItems"
+                                (onChange)="onSelectBoxGroup($event)"
+                                [options]="boxGroupsItems"
+                                [(ngModel)]="boxGroupsSelectedItems"
+                            ></p-multiSelect>
+                        </div>
+                    </p-tabPanel>
+                    <p-tabPanel *ngIf="boxGroupsSelectedItemsRight && boxGroupsSelectedItemsRight.length" header="{{tabLabelBoxes}}">
+                        <div class="boxes-tab">
+                            <p-dropdown
+                                dropdownArrowChange
+                                class="float-left"
+                                name="uniqueBoxesItems"
+                                [autoWidth]="false"
+                                (onChange)="onSelectBox($event)"
+                                [options]="uniqueBoxesItems"
+                                [(ngModel)]="uniqueBoxesItemSelected"
+                            ></p-dropdown>
+
+                            <p-dataTable
+                                *ngIf="boxTypeSelected"
+                                class="boxes-data-table float-left"
+                                [value]="sizes.getValue(boxTypeSelected.id)"
+                                [editable]="true"
+                            >
+                                <p-column header="{{boxTableParamNamesColumn}}" field="name" [style]="{'width':'70%'}">
+                                    <ng-template let-size="rowData" pTemplate="body">
+                                        <div jhiTranslate="{{size.name}}"></div>
+                                    </ng-template>
+                                </p-column>
+                                <p-column [header]="boxTableValueColumn" field="value" [editable]="true" [style]="{'width':'30%'}">
+                                    <ng-template let-size="rowData" pTemplate="body">
+                                        <div class="market-boxes-table-cell-body">{{size.value ? size.value : '0'}}</div>
+                                    </ng-template>
+                                    <ng-template let-size="rowData" pTemplate="editor">
+                                        <p-inputMask
+                                            appendTo="body"
+                                            [name]="size.name"
+                                            [ngModel]="size.value"
+                                            (ngModelChange)="changeBoxesSizeInputMaskModel($event, size)"
+                                            [mask]="lengthMaskPattern"
+                                            [maxlength]="4"
+                                        ></p-inputMask>
+                                    </ng-template>
+                                </p-column>
+                            </p-dataTable>
+
+                            <p-dropdown
+                                *ngIf="boxTypeSelected && sizes.getValue(boxTypeSelected.id)"
+                                dropdownArrowChange
+                                class="float-right"
+                                name="propertiesMeasure"
+                                [autoWidth]="false"
+                                (onChange)="onMeasureChoose($event, this.sizes.getValue(boxTypeSelected.id))"
+                                [options]="propertiesMeasuresItems"
+                                [(ngModel)]="sizes.getValue(boxTypeSelected.id)[0].measure"
+                            ></p-dropdown>
+                        </div>
+                    </p-tabPanel>
+                </p-tabView>
+            </div>
+            <div class="flex-market-dialog-btn-cont">
+                <button type="button" class="delete-button">
+                    <span class="fa fa-trash-o">
+                        <span class="delete-btn-title" jhiTranslate="entity.action.delete">Delete</span>
+                    </span>
+                </button>
+                <button (click)="save()" [disabled]="editForm.form.invalid || isSaving || saveButtonDeactivation(market)" class="save-button">
+                    <span class="fa fa-check delete-btn-title">
+                        <span jhiTranslate="entity.action.save">Save</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div class="right">
+        <div class="close fa fa-times" data-dismiss="modal" (click)="clear()"></div>
+        <div *ngIf="activeIndex !== 1" class="right-top-box">
+            <div>
+                <label class="float-left" for="typeOfFlowers"
+                       jhiTranslate="flowersApp.market.typeOfFlowers">Choose type of Flowers</label>
+                <p-dropdown id="typeOfFlowers"
+                            dropdownArrowChange
+                            class="float-left"
+                            [style]="{'width':'170px'}"
+                            [options]="typeOfFlowersItems"
+                            [ngModel]="selectedTypeOfFlowerVal"
+                            (ngModelChange)="onSelectTypeOfFlower($event)"
+                            name="typeOfFlowersSelection"
+                ></p-dropdown>
+            </div>
+            <p-checkbox
+                *ngIf="typeOfFlowerNames"
+                class="select-all-checkbox"
+                binary="true"
+                name="typeOfFlowerNames"
+                value="false"
+                label="{{checkBoxCheckAllLabel}}"
+                [(ngModel)]="selectAllValues[activeIndex][getTypeIndex()][this.getTypeOfFlowersIndex()]"
+                (onChange)="onSelectAllVarieties($event)"
+            ></p-checkbox>
+        </div>
+        <div *ngIf="activeIndex !==1 && typeOfFlowerNames && !selectAllValuesPending" class="mrg scroll-style">
+            <div class="square-container" *ngFor="let variety of chosenVarieties[activeIndex][getTypeIndex()]">
+                <div
+                    class="square"
+                    [ngClass]="getSelectedStyleClass(variety)"
+                    (click)="onSelectVariety(variety)"
+                > {{variety.name}}</div>
+            </div>
+        </div>
+        <div *ngIf="activeIndex === 1 && boxGroupsSelectedItems && boxGroupsSelectedItemsRight" class="selected-groups-container">
+            <div *ngFor="let boxGroup of boxGroupsSelectedItemsRight; trackBy: trackByValue" class="box-groups-item">
+                <span>{{boxGroup.label}}</span>
+                <i (click)="onCloseGroup(boxGroup.value)" class="close-box-group fa fa-times" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div *ngIf="typeOfFlowerNames && selectAllValuesPending" class="loader"></div>
+    </div>
+    <div *ngIf="activeIndex === 2" class="bottom">
+        <p-dataTable
+            *ngIf="marketBoxVarietyPropertyDtosSelected
+                && marketBoxVarietyPropertyDtosSelected[getSelectedBoxIndex()]
+                && marketBoxVarietyPropertyDtosSelected[getSelectedBoxIndex()].length
+                && marketBoxVarietyPropertyDtosSelected[getSelectedBoxIndex()][0].capacitiesOnLength.size === 18"
+            [value]="marketBoxVarietyPropertyDtosSelected[getSelectedBoxIndex()]"
+            [editable]="true"
+            class="market-box-variety-properties-table"
+            scrollable="true"
+            scrollHeight="300px"
+        >
+            <p-column field="variety.name" header="Variety" [style]="{'word-wrap':'break-word'}"></p-column>
+            <p-column [style]="{'width':'4%'}" *ngFor="let col of lengths" [header]="lengthsLabels[col]" [editable]="true">
+                <ng-template let-property="rowData" let-i="rowIndex" pTemplate="body">
+                    <div class="market-table-property-cell-body">{{getKey(property, col)[1]}}</div>
+                </ng-template>
+                <ng-template let-property="rowData" pTemplate="editor">
+                    <p-inputMask
+                        [mask]="capacityPropertyMaskPattern"
+                        [name]="getPropertyTableCellEditorName(property, col)"
+                        [ngModel]="getKey(property, col)[1]"
+                        (ngModelChange)="changePropertyTableInputMaskModel($event, property, col)"
+                        [maxlength]="4"
+                    ></p-inputMask>
+                </ng-template>
+            </p-column>
+        </p-dataTable>
+        <div class="bottom-prop-table-panel"></div>
+    </div>
+</form>

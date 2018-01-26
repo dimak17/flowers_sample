@@ -1,0 +1,9 @@
+{
+    "flowersApp": {
+        "employee" : {
+            "position.select": {
+                "defaultTitle": "Fisto ananisto:)"
+            }
+        }
+    }
+}

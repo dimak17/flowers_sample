@@ -1,0 +1,70 @@
+<div>
+    <h2>
+        <span jhiTranslate="flowersApp.boxTypeGroup.home.title">Box Type Groups</span>
+        <button class="btn btn-primary float-right create-box-type-group" [routerLink]="['/', { outlets: { popup: ['box-type-group-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="flowersApp.boxTypeGroup.home.createLabel">
+            Create new Box Type Group
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="boxTypeGroups">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="quantity"><span jhiTranslate="flowersApp.boxTypeGroup.quantity">Quantity</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="order"><span jhiTranslate="flowersApp.boxTypeGroup.order">Order</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="boxGroup.id"><span jhiTranslate="flowersApp.boxTypeGroup.boxGroup">Box Group</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="boxType.id"><span jhiTranslate="flowersApp.boxTypeGroup.boxType">Box Type</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let boxTypeGroup of boxTypeGroups ;trackBy: trackId">
+                <td><a [routerLink]="['../box-type-group', boxTypeGroup.id ]">{{boxTypeGroup.id}}</a></td>
+                <td>{{boxTypeGroup.quantity}}</td>
+                <td>{{boxTypeGroup.order}}</td>
+                <td>
+                    <div *ngIf="boxTypeGroup.boxGroup">
+                        <a [routerLink]="['../box-group', boxTypeGroup.boxGroup?.id ]" >{{boxTypeGroup.boxGroup?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="boxTypeGroup.boxType">
+                        <a [routerLink]="['../box-type', boxTypeGroup.boxType?.id ]" >{{boxTypeGroup.boxType?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../box-type-group', boxTypeGroup.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'box-type-group/'+ boxTypeGroup.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'box-type-group/'+ boxTypeGroup.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,235 @@
+.flowers-prime-tabs {
+    .ui-tabview {
+        margin: 12px 0 0 12px;
+    }
+    .ui-widget-content,
+    .ui-state-default,
+    .ui-widget-header,
+    .ui-tabview {
+        border: none;
+    },
+    ul {
+        &.ui-tabview-nav {
+            border-bottom: 1px solid #EAEAEA;
+        }
+    }
+    .ui-corner-all {
+        border-radius: 0;
+    }
+    .ui-tabview .ui-tabview-nav > li {
+        background: transparent;
+        font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+        font-size: 14px;
+        &.ui-state-default {
+            &:hover {
+                background: transparent;
+                .ui-tabview-title {
+                    color: cadetblue;
+                }
+            }
+        }
+        &.ui-state-active {
+            border-bottom: 4px solid cadetblue;
+            .ui-tabview-title {
+                color: cadetblue;
+            }
+        }
+        a {
+            padding: 8px 13px;
+        }
+    }
+
+    /**
+     ** Select button
+     */
+    .ui-selectbutton  {
+        transition: none !important;
+        .ui-button {
+            transition: none !important;
+            &.ui-state-default {
+                transition: none !important;
+                background: white;
+                outline: none;
+                border: 1px solid cadetblue;
+                color: cadetblue;
+                &:hover {
+                    border-color: #D5D5D5;
+                    color: #555555;
+                    background: white;
+                }
+            }
+            &.ui-state-active {
+                transition: none !important;
+                background: cadetblue;
+                outline: none;
+                color: white;
+                border: 1px solid cadetblue;
+                box-shadow: none;
+                &:hover {
+                    border-color: cadetblue;
+                    color: white;
+                    background: cadetblue;
+                }
+            }
+        }
+        .ui-button-text-only .ui-button-text {
+            padding: .5em 2.15em;
+        }
+        font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+        font-size: 16px;
+        outline: none;
+        border: none;
+    }
+}
+
+.market-dialog-form {
+    p-selectButton {
+        margin-left: 6px;
+    }
+
+    .ui-multiselect {
+        margin: 25px 0 0 32px;
+        width: 300px;
+        .ui-multiselect-label {
+            font-size: 18px;
+            background: white;
+        }
+        .ui-multiselect-panel {
+            margin-left: 1px;
+            width: 298px;
+        }
+        .ui-multiselect-label-container {
+            border: 1px solid #D5D5D5;
+        }
+        .ui-chkbox-box{
+            &:not(.ui-state-disabled) {
+                &:not(.ui-state-active) {
+                    &:hover {
+                        background: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .ui-dropdown {
+        width: 65px;
+        margin-top: 5px;
+        border: 1px solid #D5D5D5;
+        outline: none;
+        box-shadow: none;
+        &:hover {
+            border-color: cadetblue;
+        }
+        .ui-dropdown-item {
+            padding: .165em .3em;
+            &:hover {
+                background: cadetblue;
+                color: white;
+            }
+        }
+
+        .ui-dropdown-label {
+            padding-left: 8px;
+            &:hover {
+                + .ui-dropdown-trigger {
+                    .fa {
+                        &.fa-angle-down {
+                            color: cadetblue;
+                        }
+                    }
+                }
+            }
+        }
+
+        .ui-dropdown-trigger {
+            &:hover {
+                .fa {
+                    &.fa-angle-down {
+                        color: cadetblue;
+                    }
+                }
+            }
+        }
+
+        .ui-clickable {
+            &.fa {
+                &.fa-angle-down {
+                    color: #999999;
+                    margin-top: 7px;
+                }
+            }
+        }
+
+        .ui-dropdown-panel {
+            border: 1px solid #D5D5D5;
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+    .ui-dropdown-items {
+        padding: 0;
+    }
+
+    thead {
+        tr {
+            th.ui-state-default {
+                color: white;
+                background: cadetblue;
+            }
+            border-color: #D5D5D5 !important;
+        }
+    }
+}
+
+.select-all-checkbox {
+    .ui-chkbox-label {
+        float: left;
+        margin-top: -21px;
+        margin-left: 25px;
+    }
+}
+
+/**
+** Datatable
+ */
+.boxes-data-table {
+    margin: 5px 0 0 34px;
+    width: 50%;
+    .ui-cell-editing {
+        .ui-inputtext {
+            padding: 0;
+        }
+    }
+    .ui-editable-column {
+        padding: 6px !important;
+        &.ui-cell-editing {
+            padding: 5px 6px !important;
+        }
+    }
+}
+
+.market-box-variety-properties-table {
+    .ui-datatable-data>tr>td.ui-editable-column {
+        padding: .5em 1px;
+    }
+    .ui-datatable-thead {
+        th {
+            padding: 0.25em 0 !important;
+        }
+    }
+}
+
+/**
+** Modal window
+ */
+.market-modal-window .modal-content {
+    width: 990px;
+    height: 563px;
+    border-radius: 0;
+}
+
+.market-modal-window .modal-dialog {
+    max-width: 990px;
+}

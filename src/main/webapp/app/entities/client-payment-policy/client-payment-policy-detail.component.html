@@ -1,0 +1,45 @@
+
+<div *ngIf="clientPaymentPolicy">
+    <h2><span jhiTranslate="flowersApp.clientPaymentPolicy.detail.title">Client Payment Policy</span> {{clientPaymentPolicy.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.clientPaymentPolicy.termsInDays">Terms In Days</span></dt>
+        <dd>
+            <span>{{clientPaymentPolicy.termsInDays}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.clientPaymentPolicy.termsInSum">Terms In Sum</span></dt>
+        <dd>
+            <span>{{clientPaymentPolicy.termsInSum}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.clientPaymentPolicy.status">Status</span></dt>
+        <dd>
+            <span>{{clientPaymentPolicy.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.clientPaymentPolicy.client">Client</span></dt>
+        <dd>
+            <div *ngIf="clientPaymentPolicy.client">
+                <a [routerLink]="['/client', clientPaymentPolicy.client?.id]">{{clientPaymentPolicy.client?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.clientPaymentPolicy.paymentPolicy">Payment Policy</span></dt>
+        <dd>
+            <div *ngIf="clientPaymentPolicy.paymentPolicy">
+                <a [routerLink]="['/payment-policy', clientPaymentPolicy.paymentPolicy?.id]">{{clientPaymentPolicy.paymentPolicy?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'client-payment-policy/'+ clientPaymentPolicy.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

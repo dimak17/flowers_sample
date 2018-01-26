@@ -1,0 +1,21 @@
+{
+    "fluentMethods": true,
+    "relationships": [{
+        "relationshipName": "company",
+        "otherEntityName": "company",
+        "relationshipType": "many-to-one",
+        "otherEntityRelationshipName": "cargoEmployeePosition"
+    }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170728125042",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "cargo_employee_position",
+    "pagination": "no"
+}

@@ -1,0 +1,48 @@
+{
+    "flowersApp": {
+        "cargoAgency": {
+            "alert": "This cargo agency already exist",
+            "question": "Are you sure you want to delete Cargo Agency {{ name }}?",
+            "questionAlert": "If you delete this agency, all cargo agency employees which works in this agency will be deleted also",
+            "createOrEditLabel" : "Edit cargo agency",
+            "createLabel" : "Create a new cargo agency",
+            "nameHeader": "Name",
+            "mainAddressHeader": "Main address",
+            "additionalAddressHeader": "Additional address",
+            "officePhoneHeader": "Office phone",
+            "emailHeader": "Email",
+            "editHeader": "Edit",
+            "deleteHeader": "Delete",
+            "webPageHeader": "Web page",
+            "globalFilterPlaceHolderHeader" : "Global Filter",
+            "createCargoAgency" : "Create cargo agency",
+
+            "company": "Company",
+            "validation": {
+                "nameHeader": {
+                    "required": "Name is required",
+                    "pattern": "Name should contain latin symbols",
+                    "maximumSymbols": "Name should contain maximum 50 symbols"
+                },
+                "mainAddressHeader": {
+                    "pattern": "Main address should contain latin symbols",
+                    "maximumSymbols": "Main address should contain maximum 50 symbols"
+                },
+                "additionalAddressHeader": {
+                    "pattern": "Additional address should contain latin symbols",
+                    "maximumSymbols": "Additional address should contain maximum 50 symbols"
+                },
+                "emailHeader": {
+                    "pattern": "Email should contain latin symbols",
+                    "maximumSymbols": "Email should contain maximum 50 symbols",
+                    "emailValidation": "Email is not valid, example: email@gmail.com",
+                    "required": "Email is required",
+                    "alertEmail": "This account already exist"
+                },
+                "webPageHeader": {
+                    "maximumSymbols": "Web page should contain maximum 50 symbols"
+                }
+            }
+        }
+    }
+}

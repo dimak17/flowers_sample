@@ -1,0 +1,29 @@
+<svg width="249" height="38" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet">
+ <defs>
+  <path id="b1JmYrcCKA" d="m252.88,20.88l-7.8,-7.88l-1.2,0.91l9,9.09l9,-9.09l-0.9,-0.91l-8.1,7.88z"/>
+  <path id="a1wueQKLW4" d="m254.02,23.79l-7.8,-7.88l-1.2,0.91l9,9.09l9,-9.09l-0.89,-0.91l-8.11,7.88z"/>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="40" width="251" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g stroke="null" id="svg_1">
+   <g stroke="null" id="svg_2">
+    <g stroke="null" id="svg_3">
+     <use stroke="null" x="0" y="0" transform="matrix(0.9477549040065293,0,0,1,-8.138486727467324,0) " id="svg_4" fill="#c7c7c7" xlink:href="#b1JmYrcCKA"/>
+     <g stroke="null" id="svg_5">
+      <use stroke="#000000" x="0" y="0" transform="matrix(0.9477549040065293,0,0,1,-8.138486727467324,0) " id="svg_6" stroke-opacity="0" fill-opacity="0" xlink:href="#b1JmYrcCKA"/>
+     </g>
+    </g>
+    <g stroke="null" id="svg_7">
+     <use stroke="null" x="0" y="0" transform="matrix(0.9477549040065293,0,0,1,-8.138486727467324,0) " id="svg_8" fill-opacity="0" fill="#000000" xlink:href="#a1wueQKLW4"/>
+     <g stroke="null" id="svg_9">
+      <use stroke="#000000" x="0" y="0" transform="matrix(0.9477549040065293,0,0,1,-8.138486727467324,0) " id="svg_10" stroke-opacity="0" fill-opacity="0" xlink:href="#a1wueQKLW4"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

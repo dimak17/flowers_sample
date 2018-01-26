@@ -1,0 +1,36 @@
+{
+    "flowersApp": {
+        "client" : {
+            "home": {
+                "title": "Clients",
+                "createLabel": "Crear nuevo Client",
+                "createOrEditLabel": "Crear o editar Client"
+            },
+            "created": "Un nuevo Client ha sido creado con el identificador {{ param }}",
+            "updated": "Un Client ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Client ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Client {{ id }}?"
+            },
+            "detail": {
+                "title": "Client"
+            },
+            "companyName": "Company Name",
+            "address": "Address",
+            "officePhone": "Office Phone",
+            "email": "Email",
+            "skype": "Skype",
+            "webPage": "Web Page",
+            "activationStatus": "Activation Status",
+            "blockStatus": "Block Status",
+            "idNumber": "Id Number",
+            "clientEmployees": "Client Employees",
+            "company": "Company",
+            "marketClient": "Market Client",
+            "claimsPolicy": "Claims Policy",
+            "label": "Label",
+            "companyUser": "Company User",
+            "clientPaymentPolicy": "Client Payment Policy"
+        }
+    }
+}

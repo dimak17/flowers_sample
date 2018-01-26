@@ -1,0 +1,25 @@
+{
+    "flowersApp": {
+        "marketSeasonVarietyProperty" : {
+            "home": {
+                "title": "Market Season Variety Properties",
+                "createLabel": "Создать новый Market Season Variety Property",
+                "createOrEditLabel": "Создать или отредактировать Market Season Variety Property"
+            },
+            "created": "Новый Market Season Variety Property создан с идентификатором {{ param }}",
+            "updated": "Market Season Variety Property обновлен с идентификатором {{ param }}",
+            "deleted": "Market Season Variety Property удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Market Season Variety Property {{ id }}?"
+            },
+            "detail": {
+                "title": "Market Season Variety Property"
+            },
+            "length": "Length",
+            "price": "Price",
+            "variety": "Variety",
+            "priceList": "Price List",
+            "marketSeason": "Market Season"
+        }
+    }
+}

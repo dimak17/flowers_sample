@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity ClientPaymentPolicy.
+    -->
+    <changeSet id="20171025142824-2" author="dima">
+
+        <addForeignKeyConstraint baseColumnNames="client_id"
+                                 baseTableName="client_payment_policy"
+                                 constraintName="fk_client_payment_policy_client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"/>
+
+        <addForeignKeyConstraint baseColumnNames="payment_policy_id"
+                                 baseTableName="client_payment_policy"
+                                 constraintName="fk_client_payment_policy_payment_policy_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="payment_policy"/>
+
+    </changeSet>
+</databaseChangeLog>

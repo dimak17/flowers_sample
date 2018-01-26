@@ -1,0 +1,155 @@
+.mix-type-block {
+    margin: 40px 0 0 30px;
+    height: 643px;
+}
+
+.separation-border {
+    float: left;
+    width: 217px;
+    height: 217px;
+    display: block;
+}
+
+.box-border {
+    width: 196px;
+    height: 196px;
+    border: 1px solid #D5D5D5;
+    display: block;
+}
+
+.number-block {
+    background: #ffffff;
+    text-align: center;
+    font-family: FlowersFont-HEAD-OFFICE-BOLD;
+    font-size: 20px;
+    margin-top: 41px;
+    display: block;
+}
+
+.line-separator {
+    height: 3px;
+    width: 31px;
+    background: cadetblue;
+    margin: 15px auto 0;
+    display: block;
+}
+
+.name-block {
+    background: #ffffff;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 15px;
+    padding: 0 3px;
+    display: block;
+    height: 42px;
+    word-wrap: break-word;
+}
+
+.edit-block {
+    width: 48px;
+    margin: 20px 0 0 29px;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    float: left;
+    outline: none;
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.delete-block {
+    width: 60px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    float: left;
+    outline: none;
+    &:hover {
+        color: cadetblue;
+    }
+
+}
+
+.delete-span {
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    outline: none;
+    float: right;
+}
+
+.edit-delete-icons {
+    font-size: 15px;
+    cursor: pointer;
+    float: left;
+    outline: none;
+}
+
+.vertical-separator-mix-type {
+    height: 20px;
+    width: 2px;
+    background: grey;
+    float: left;
+    margin: 19px 18px 0;
+}
+
+.title {
+    h2 {
+        font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+        font-size: 21px;
+    }
+}
+
+.add-button {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    border: 2px solid cadetblue;
+    margin: -40px 50px 0 0;
+    color: cadetblue;
+    outline: none;
+    cursor: pointer;
+    float: right;
+    text-align: center;
+    padding-top: 6px;
+
+    &:hover {
+        color: #FFFFFF;
+        background-color: cadetblue;
+    }
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background: green;
+}
+
+.blue {
+    background: blue;
+}
+
+.gold {
+    background: gold;
+}
+
+.brown {
+    background: brown;
+}
+
+.violet {
+    background: violet;
+}
+
+.pink {
+    background: pink;
+}
+
+.aqua {
+    background: aqua;
+}

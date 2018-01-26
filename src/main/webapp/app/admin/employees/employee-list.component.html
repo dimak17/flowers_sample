@@ -1,0 +1,45 @@
+<div class="employee-list-block">
+    <h2>
+        <span class="title" jhiTranslate="flowersApp.companyUser.home.title">Employee List</span>
+    </h2>
+
+    <div class="employee-add-button" [routerLink]="['/', { outlets: { popup: 'employee-user-new' } }]"
+         jhiTranslate="flowersApp.companyUser.createEmployee">Create new employee</div>
+
+
+    <div class="row">
+        <p-checkbox class="employee-checkbox" binary="true" ngDefaultControl (onChange)="checkChange()"></p-checkbox>
+        <span class="check-box-info" jhiTranslate="flowersApp.companyUser.checkBoxText">Show only activated employees</span>
+        <div class="col-md-4">
+            <input *ngIf="config.filtering" placeholder="{{filterTranslation}}"
+                   [ngTableFiltering]="config.filtering"
+                   class="employee-filter"
+                   (tableChanged)="onChangeTable(config)"/>
+        </div>
+    </div>
+    <br>
+
+    <div *ngIf="config" class="employee-scroll">
+        <ng-table *ngIf="config" class="changeTable" id="resultDataTable" [config]="config"
+          (tableChanged)="onChangeTable(config)"
+          (cellClicked)="onCellClick($event)"
+          [rows]="rows" [columns]="columns">
+        </ng-table>
+    </div>
+    <pagination *ngIf="config.paging"
+                class="pagination-employee"
+                [(ngModel)]="page"
+                [totalItems]="length"
+                [itemsPerPage]="itemsPerPage"
+                [firstText]="firstText"
+                [previousText]="previousText"
+                [nextText]="nextText"
+                [lastText]="lastText"
+                [maxSize]="maxSize"
+                [boundaryLinks]="true"
+                [rotate]="false"
+                (pageChanged)="onChangeTable(config, $event)"
+                (numPages)="numPages = $event">
+    </pagination>
+    <pre *ngIf="config.paging" class="employee-pagination-footer">{{pageXofY}}: {{page}} / {{numPages}}</pre>
+</div>

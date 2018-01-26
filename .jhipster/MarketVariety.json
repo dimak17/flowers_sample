@@ -1,0 +1,29 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "market",
+            "otherEntityName": "market",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "variety",
+            "otherEntityName": "variety",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "MarketVarietyType",
+            "fieldValues": "SPECIAL,PROHIBITED"
+        }
+    ],
+    "changelogDate": "20170722151101",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "market_variety",
+    "pagination": "no"
+}

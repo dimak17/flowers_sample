@@ -1,0 +1,22 @@
+{
+    "flowersApp": {
+        "marketClient" : {
+            "home": {
+                "title": "Market Clients",
+                "createLabel": "Create a new Market Client",
+                "createOrEditLabel": "Create or edit a Market Client"
+            },
+            "created": "A new Market Client is created with identifier {{ param }}",
+            "updated": "A Market Client is updated with identifier {{ param }}",
+            "deleted": "A Market Client is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Market Client {{ id }}?"
+            },
+            "detail": {
+                "title": "Market Client"
+            },
+            "market": "Market",
+            "client": "Client"
+        }
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "marketVarieties",
+            "otherEntityName": "marketVariety",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "market"
+        },
+        {
+            "relationshipName": "boxGroups",
+            "otherEntityName": "boxGroup",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "markets"
+        },
+        {
+            "relationshipName": "marketBoxes",
+            "otherEntityName": "marketBox",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "market"
+        },
+        {
+            "relationshipName": "companyUsers",
+            "otherEntityName": "companyUser",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "markets"
+        },
+        {
+            "relationshipName": "marketSeason",
+            "otherEntityName": "marketSeason",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "market"
+        },
+        {
+            "relationshipName": "marketClient",
+            "otherEntityName": "marketClient",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "market"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170722150356",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "market",
+    "pagination": "no"
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity CargoEmployee.
+    -->
+    <changeSet id="20170731085933-2" author="dima">
+
+        <addForeignKeyConstraint baseColumnNames="company_id"
+                                 baseTableName="cargo_employee"
+                                 constraintName="fk_cargo_employee_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="company"/>
+
+        <addForeignKeyConstraint baseColumnNames="cargo_employees_id"
+                                 baseTableName="cargo_employee_market"
+                                 constraintName="fk_cargo_employee_market_cargo_employees_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cargo_employee"/>
+        <addForeignKeyConstraint baseColumnNames="markets_id"
+                                 baseTableName="cargo_employee_market"
+                                 constraintName="fk_cargo_employee_market_markets_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="market"/>
+
+    </changeSet>
+</databaseChangeLog>

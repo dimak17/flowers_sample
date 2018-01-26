@@ -1,0 +1,62 @@
+<form role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+    <div class="{{claimsPolicy.colorClass}} top-color-line"></div>
+    <div class="fa fa-times close" data-dismiss="modal" (click)="clear()"></div>
+    <div>
+        <h4 class="phrase" id="myBoxTypeLabel" jhiTranslate="flowersApp.claimsPolicy.home.createOrEditButton"></h4>
+    </div>
+    <div class="modal-body">
+        <div class="short-name" jhiTranslate="flowersApp.claimsPolicy.shortName" for="field_shortName"></div>
+        <div class="form-border">
+            <div class="box-type-position">
+                <input type="text"  required
+                       [class]="requiredValidation(claimsPolicy.shortName)
+                       ||shortNameLengthValidation(claimsPolicy.shortName, shortNameMax)
+                       ||shortNameLatinValidation(claimsPolicy.shortName)
+                       ||(errorAlert && dublicateClaimsPolicyName == claimsPolicy.shortName.toLowerCase().trim()
+                       || !claimsPolicy.shortName)? 'box-type-position form-invalid'
+                        : 'form' " name="shortName"
+                       id="field_shortName"  maxlength="18"[(ngModel)]="claimsPolicy.shortName"/>
+                <small
+                    *ngIf="requiredValidation(claimsPolicy.shortName)&& !shortNameLengthValidation(claimsPolicy.shortName)"
+                    class="box-field-err-msg text-danger"
+                    jhiTranslate="flowersApp.claimsPolicy.validation.shortName.required"></small>
+                <small *ngIf="!claimsPolicy.shortName" class="box-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.claimsPolicy.validation.shortName.required"></small>
+                <small *ngIf="shortNameLatinValidation(claimsPolicy.shortName)" class="box-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.claimsPolicy.validation.shortName.pattern"></small>
+                <span class="error-name">
+            <small *ngIf="(errorAlert && dublicateClaimsPolicyName == claimsPolicy.shortName.toLowerCase().trim())"
+                   class="box-field-err-msg text-danger"
+                   jhiTranslate="flowersApp.claimsPolicy.validation.shortName.alert"></small></span>
+                <small *ngIf="shortNameLengthValidation(claimsPolicy.shortName)" class="box-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.claimsPolicy.validation.shortName.maximumSymbols"></small>
+            </div>
+        </div>
+        <div class="full-name" jhiTranslate="flowersApp.claimsPolicy.fullName" for="field_fullName"></div>
+        <div class="form-border">
+            <div class="box-type-position">
+                <input type="text" required
+                       [class]="requiredValidation(claimsPolicy.fullName)
+                       ||fullNameLengthValidation(claimsPolicy.fullName, fullNameMax)
+                       ||fullNameLatinValidation(claimsPolicy.fullName)
+                       ||(errorAlert && dublicateClaimsPolicyName == claimsPolicy.fullName.toLowerCase().trim()
+                       || !claimsPolicy.fullName)? 'box-type-position form-invalid'
+                        : 'form' " name="fullName"
+                       id="field_fullName" maxlength="26" [(ngModel)]="claimsPolicy.fullName"/>
+                <small
+                    *ngIf="requiredValidation(claimsPolicy.fullName)&& !fullNameLengthValidation(claimsPolicy.fullName)"
+                    class="box-field-err-msg text-danger"
+                    jhiTranslate="flowersApp.claimsPolicy.validation.fullName.required"></small>
+                <small *ngIf="!claimsPolicy.fullName" class="box-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.claimsPolicy.validation.fullName.required"></small>
+                <small *ngIf="fullNameLengthValidation(claimsPolicy.fullName)" class="box-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.claimsPolicy.validation.fullName.maximumSymbols"></small>
+                <small *ngIf="fullNameLatinValidation(claimsPolicy.fullName)" class="box-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.claimsPolicy.validation.fullName.pattern"></small>
+            </div>
+        </div>
+    </div>
+    <button type="submit" [disabled]="editForm.form.invalid || isSaving || saveButtonDeactivation(claimsPolicy)"
+            class="save-button" jhiTranslate="flowersApp.claimsPolicy.action.save"></button>
+    <div class="{{claimsPolicy.colorClass}} bottom-color-line"></div>
+</form>

@@ -1,0 +1,43 @@
+{
+    "flowersApp": {
+        "boxType" : {
+            "home": {
+                "title": "Box types list",
+                "createLabel": "Create a new box type",
+                "createOrEditLabel": "Edit box type"
+            },
+            "created": "A new box type is created with identifier {{ param }}",
+            "updated": "A box type is updated with identifier {{ param }}",
+            "deleted": "A box type is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete box type {{ name }}?",
+                "usageGroupingsError": "'{{ name }}' - has usage in 'Company' 🡪 'Box Grouping'",
+                "finalText": "Please, firstly remove it there"
+            },
+            "detail": {
+                "title": "Box type"
+            },
+            "shortName": "Short name",
+            "fullName": "Full name",
+            "boxSize": "Box size",
+            "alert": "This box type already exist",
+
+            "validation": {
+                "shortName": {
+                    "required": "Short name is required",
+                    "pattern": "Short name should contain latin symbols",
+                    "maximumSymbols": "Short name should contain maximum 5 symbols"
+                },
+                "fullName": {
+                    "required": "Full name is required",
+                    "pattern": "Full name should contain latin symbols",
+                    "maximumSymbols": "Full name should contain maximum 13 symbols"
+                },
+                "boxSize": {
+                    "pattern":  "Box size should contain digits"
+                }
+            },
+            "marketBoxes": "Market boxes"
+        }
+    }
+}

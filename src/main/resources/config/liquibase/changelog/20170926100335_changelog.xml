@@ -1,0 +1,48 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="dima (generated)" id="1506420232628-1">
+        <addForeignKeyConstraint baseColumnNames="company_id" baseTableName="cargo_employee_position" constraintName="FK23fthbk2q1omyhmppgdxuc7ao" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="company"/>
+    </changeSet>
+    <changeSet author="dima (generated)" id="1506420232628-2">
+        <addForeignKeyConstraint baseColumnNames="company_id" baseTableName="season" constraintName="FK46tyw5yjletv9un6t1lexacyl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="company"/>
+    </changeSet>
+    <changeSet author="dima (generated)" id="1506420232628-3">
+        <addForeignKeyConstraint baseColumnNames="pinch_id" baseTableName="pinch_season" constraintName="FK5uvfmje5vy2o8bex2udqgcatd" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="pinch"/>
+    </changeSet>
+    <changeSet author="dima (generated)" id="1506420232628-4">
+        <addForeignKeyConstraint baseColumnNames="season_id" baseTableName="season_market" constraintName="FKd45jofeyt5g8w8xsficakn1k7" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="season"/>
+    </changeSet>
+    <changeSet author="dima (generated)" id="1506420232628-5">
+        <addForeignKeyConstraint baseColumnNames="season_id" baseTableName="pinch_season" constraintName="FKec2tc7qusu0po95hdjk9rna58" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="season"/>
+    </changeSet>
+    <changeSet author="dima (generated)" id="1506420232628-6">
+        <addForeignKeyConstraint baseColumnNames="season_id" baseTableName="season_position" constraintName="FKet2ybm8bo5yrh9wmpyh0388dx" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="season"/>
+    </changeSet>
+    <changeSet author="dima (generated)" id="1506420232628-7">
+        <addForeignKeyConstraint baseColumnNames="company_id" baseTableName="box_type" constraintName="FKiavw2y5vxi7klr2se403ndr87" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="company"/>
+    </changeSet>
+    <changeSet author="dima (generated)" id="1506420232628-8">
+        <addForeignKeyConstraint baseColumnNames="cargo_employee_position_id" baseTableName="cargo_employee_cargo_employee_position" constraintName="FKk5j5spb0p37fgyr4sk8mra8wu" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cargo_employee_position"/>
+    </changeSet>
+    <changeSet author="dima (generated)" id="1506420232628-9">
+        <addForeignKeyConstraint baseColumnNames="position_id" baseTableName="season_position" constraintName="FKkpb72as9ittn6760kd2ghv7y1" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="position"/>
+    </changeSet>
+    <changeSet author="dima (generated)" id="1506420232628-10">
+        <addForeignKeyConstraint baseColumnNames="company_id" baseTableName="box_group" constraintName="FKlcllupdeuou33memh99hbku5n" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="company"/>
+    </changeSet>
+    <changeSet author="dima (generated)" id="1506420232628-11">
+        <addForeignKeyConstraint baseColumnNames="cargo_agency_id" baseTableName="cargo_employee" constraintName="FKlr41h0pmvht6woa2k51ca9aon" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cargo_agency"/>
+    </changeSet>
+    <changeSet author="dima (generated)" id="1506420232628-12">
+        <addForeignKeyConstraint baseColumnNames="company_user_id" baseTableName="pinch_company_user" constraintName="FKpnsfwn7alviqtb4e0mkgk5ey3" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="company_user"/>
+    </changeSet>
+    <changeSet author="dima (generated)" id="1506420232628-13">
+        <addForeignKeyConstraint baseColumnNames="pinch_id" baseTableName="pinch_company_user" constraintName="FKpsvc4sv961crwprhfhiiyoiht" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="pinch"/>
+    </changeSet>
+    <changeSet author="dima (generated)" id="1506420232628-14">
+        <addForeignKeyConstraint baseColumnNames="cargo_employee_id" baseTableName="cargo_employee_cargo_employee_position" constraintName="FKq92sy2dlihyqsliyf7oymmojw" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cargo_employee"/>
+    </changeSet>
+    <changeSet author="dima (generated)" id="1506420232628-15">
+        <addForeignKeyConstraint baseColumnNames="market_id" baseTableName="season_market" constraintName="FKqebplg71tg92lp3idwm034ny6" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="market"/>
+    </changeSet>
+</databaseChangeLog>

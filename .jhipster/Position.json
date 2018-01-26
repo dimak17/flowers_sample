@@ -1,0 +1,46 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "mainName"
+        },
+        {
+            "relationshipName": "companyUsers",
+            "otherEntityName": "companyUser",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "positions"
+        },
+        {
+            "relationshipName": "authority",
+            "otherEntityName": "authority",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "position"
+        },
+        {
+            "relationshipName": "seasons",
+            "otherEntityName": "season",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "positions"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170615152238",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "positions",
+    "pagination": "pagination"
+}

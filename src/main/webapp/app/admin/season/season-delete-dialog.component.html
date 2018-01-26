@@ -1,0 +1,22 @@
+<div *ngIf="selectAllValuesPending" class="loader season-dialog-loader"></div>
+
+<div *ngIf="!selectAllValuesPending">
+<form name="deleteForm" (ngSubmit)="confirmDelete(season.id)">
+    <div class="modal-header">
+        <h4 class="modal-title" jhiTranslate="entity.delete.title">Confirm delete operation</h4>
+        <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()"></button>
+    </div>
+    <div class="modal-body">
+        <div class="question" jhiTranslate="flowersApp.season.delete.question" translateValues="{name: '{{season.seasonName}}'}"></div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="button button-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" class="button button-danger">
+            <span class="fa fa-remove"></span>&nbsp;<span jhiTranslate="entity.action.delete">Delete</span>
+        </button>
+    </div>
+</form>
+</div>

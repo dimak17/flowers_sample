@@ -1,0 +1,26 @@
+{
+    "flowersApp": {
+        "marketBox" : {
+            "home": {
+                "title": "Market Boxes",
+                "createLabel": "Create a new Market Box",
+                "createOrEditLabel": "Create or edit a Market Box"
+            },
+            "created": "A new Market Box is created with identifier {{ param }}",
+            "updated": "A Market Box is updated with identifier {{ param }}",
+            "deleted": "A Market Box is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Market Box {{ id }}?"
+            },
+            "detail": {
+                "title": "Market Box"
+            },
+            "width": "Width",
+            "height": "Height",
+            "length": "Length",
+            "unit": "Unit",
+            "market": "Market",
+            "boxType": "Box Type"
+        }
+    }
+}

@@ -1,0 +1,201 @@
+.group {
+    width: 164px;
+    height: 48px;
+    border: 1px solid #eaeaea;
+    float: left;
+    z-index: -1;
+}
+
+.group-inner {
+    border: 1px solid #f7f7f7;
+    width: 162px;
+    height: 46px;
+}
+
+.group-left {
+    font-size: 13px;
+    font-family: "FlowersFont-TEXT-OFFICE-REGULAR";
+    float: left;
+    width: 64px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.group-line {
+    float: left;
+    width: 2px;
+    background-color: #eaeaea;
+    height: 19px;
+    margin-top: 14px;
+}
+
+.group-title {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+    font-family: "FlowersFont-TEXT-OFFICE-REGULAR";
+    float: left;
+    width: 74px;
+}
+
+.group-arrow {
+    float: left;
+    font-size: 16px;
+    margin: 14px 0 0 -4px;
+}
+
+.scrolled-box-types {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 118px;
+    margin-top: -4px;
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar {
+        width: 6px;
+        background-color: #F5F5F5;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: cadetblue;
+        border: 1px solid #555555;
+    }
+}
+
+.left-area {
+    margin-top: -4px;
+}
+
+.font-hover {
+    color: cadetblue;
+}
+
+.group-collapsed {
+    width: 164px;
+    position: absolute;
+    border: 2px solid cadetblue;
+    background: white;
+    z-index: 1;
+    font-size: 13px;
+    font-family: "FlowersFont-TEXT-OFFICE-REGULAR";
+}
+
+.group-collapsed-list-left {
+    //margin-top: -4px;
+    width: 66px;
+    height: 25px;
+    //&:last-child {
+    //    margin-bottom: -4px !important;
+    //}
+}
+
+.group-left-container {
+    height: 25px;
+    width: 64px;
+    float: left;
+    label {
+        height: 13px;
+        cursor: pointer;
+        float: left;
+        margin: 0 0 0 11px;
+    }
+}
+
+.radio {
+    float: left;
+    margin: 4px 9px 0 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #eaeaea;
+}
+
+.group-collapsed-selected {
+    float: left;
+    width: 164px;
+    height: 48px;
+    &:hover {
+        cursor: pointer;
+        .group-arrow{
+            color: cadetblue;
+        }
+    }
+    + .group-collapsed-list-left {
+        margin-top: 56px;
+    }
+    .group-left {
+        width: 64px;
+        margin-top: 15px;
+    }
+    .group-line {
+        height: 42px;
+    }
+}
+
+.group-collapsed-list-right {
+    float: left;
+    width: 72px;
+    height: 25px;
+    //margin-top: -4px;
+    label {
+        float: left;
+        margin: 0 0 0 9px;
+        cursor: pointer;
+    }
+}
+
+input[type=radio] {
+    display: none;
+}
+
+.right-excluded {
+    background: #f6f6f6;
+    opacity: 0.6;
+}
+
+.group-collapsed-line {
+    width: 2px;
+    height: 25px;
+    float: left;
+    background: #eaeaea;
+}
+
+.selected-radio {
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    margin: 3px;
+    display: none;
+}
+
+.selected {
+    background-color: cadetblue;
+    display: block;
+}
+
+.group-control-container {
+    position: relative;
+    width: 164px;
+    float: left;
+    height: 50px;
+}
+
+.group-collapsed.ng-invalid + div.group{
+    border: 1px solid red !important;
+}
+
+.box-grouping-err-msg {
+    font-size: 11px;
+    font-family: "FlowersFont-HEAD-OFFICE-TEXT";
+}
+
+.disabled-box {
+    opacity: 0.5;
+    label:hover {
+        cursor: default;
+    }
+}

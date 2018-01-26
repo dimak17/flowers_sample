@@ -1,0 +1,27 @@
+{
+    "flowersApp": {
+        "market" : {
+            "home": {
+                "title": "Markets",
+                "createLabel": "Crear nuevo Market",
+                "createOrEditLabel": "Crear o editar Market"
+            },
+            "created": "Un nuevo Market ha sido creado con el identificador {{ param }}",
+            "updated": "Un Market ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Market ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Market {{ id }}?"
+            },
+            "detail": {
+                "title": "Market"
+            },
+            "name": "Name",
+            "company": "Company",
+            "marketVarieties": "Market Varieties",
+            "boxGroups": "Box Groups",
+            "marketBoxes": "Market Boxes",
+            "companyUsers": "Company Users",
+            "marketSeason": "Market Season"
+        }
+    }
+}

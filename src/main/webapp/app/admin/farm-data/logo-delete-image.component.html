@@ -1,0 +1,26 @@
+<div class="modal-window__medium">
+
+    <button type="button" class="modal__close fa fa-times" data-dismiss="modal" aria-hidden="true" (click)="clear()"></button>
+
+    <div class="modal-header">
+        <h4 class="modal-title_center" jhiTranslate="entity.delete.title">Confirm delete operation</h4>
+    </div>
+
+    <div class="modal-body">
+        <form name="deleteForm" (ngSubmit)="confirmImageDelete()">
+
+        <div class="modal__form-group modal-question__container">
+            <span class="question" jhiTranslate="flowersApp.farm-data.delete.image-question"></span>
+        </div>
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="modal-btn__container">
+            <button type="button" class="button-empty_small" data-dismiss="modal" (click)="clear()"><span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span></button>
+            <button type="submit" class="button-danger_small"><span class="fa fa-remove"></span>&nbsp;<span jhiTranslate="entity.action.delete">Delete</span></button>
+        </div>
+
+        </form>
+    </div>
+
+</div>

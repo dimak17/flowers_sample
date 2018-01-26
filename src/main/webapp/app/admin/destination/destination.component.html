@@ -1,0 +1,69 @@
+<!--<div>-->
+    <!--<h2>-->
+        <!--<span jhiTranslate="flowersApp.destination.home.title">Destinations</span>-->
+        <!--<button class="btn btn-primary float-right create-destination" [routerLink]="['/', { outlets: { popup: ['destination-new'] } }]">-->
+            <!--<span class="fa fa-plus"></span>-->
+            <!--<span  jhiTranslate="flowersApp.destination.home.createLabel">-->
+            <!--Create new Destination-->
+            <!--</span>-->
+        <!--</button>-->
+    <!--</h2>-->
+    <!--<div class="row">-->
+    <!--</div>-->
+    <!--<br/>-->
+    <!--<div class="table-responsive" *ngIf="destinations">-->
+        <!--<table class="table table-striped">-->
+            <!--<thead>-->
+            <!--<tr>-->
+            <!--<th><span jhiTranslate="global.field.id">ID</span></th>-->
+            <!--<th><span jhiTranslate="flowersApp.destination.city">City</span></th>-->
+            <!--<th><span jhiTranslate="flowersApp.destination.info">Info</span></th>-->
+            <!--<th><span jhiTranslate="flowersApp.destination.labelCountry">Label Country</span></th>-->
+            <!--<th><span jhiTranslate="flowersApp.destination.company">Company</span></th>-->
+            <!--<th></th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr *ngFor="let destination of destinations ;trackBy: trackId">-->
+                <!--<td><a [routerLink]="['../destination', destination.id ]">{{destination.id}}</a></td>-->
+                <!--<td>{{destination.city}}</td>-->
+                <!--<td>{{destination.info}}</td>-->
+                <!--<td>-->
+                    <!--<div *ngIf="destination.labelCountry">-->
+                        <!--<a [routerLink]="['../label-country', destination.labelCountry?.id ]" >{{destination.labelCountry?.id}}</a>-->
+                    <!--</div>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<div *ngIf="destination.company">-->
+                        <!--<a [routerLink]="['../company', destination.company?.id ]" >{{destination.company?.id}}</a>-->
+                    <!--</div>-->
+                <!--</td>-->
+                <!--<td class="text-right">-->
+                    <!--<div class="btn-group flex-btn-group-container">-->
+                        <!--<button type="submit"-->
+                                <!--[routerLink]="['../destination', destination.id ]"-->
+                                <!--class="btn btn-info btn-sm">-->
+                            <!--<span class="fa fa-eye"></span>-->
+                            <!--<span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>-->
+                        <!--</button>-->
+                        <!--<button type="submit"-->
+                                <!--[routerLink]="['/', { outlets: { popup: 'destination/'+ destination.id + '/edit'} }]"-->
+                                <!--replaceUrl="true"-->
+                                <!--class="btn btn-primary btn-sm">-->
+                            <!--<span class="fa fa-pencil"></span>-->
+                            <!--<span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>-->
+                        <!--</button>-->
+                        <!--<button type="submit"-->
+                                <!--[routerLink]="['/', { outlets: { popup: 'destination/'+ destination.id + '/delete'} }]"-->
+                                <!--replaceUrl="true"-->
+                                <!--class="btn btn-danger btn-sm">-->
+                            <!--<span class="fa fa-remove"></span>-->
+                            <!--<span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>-->
+                        <!--</button>-->
+                    <!--</div>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+    <!--</div>-->
+<!--</div>-->

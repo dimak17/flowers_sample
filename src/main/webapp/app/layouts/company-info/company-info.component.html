@@ -1,0 +1,12 @@
+<jhi-flowers-tabs class="flower-tabs"  *ngIf="titles">
+    <p-tabView (onChange)="onChange($event)" [activeIndex]="selectedIndex">
+        <p-tabPanel header="{{titles.farmData}}"><jhi-flowers-farm-data *ngIf="selectedIndex == 0"></jhi-flowers-farm-data></p-tabPanel>
+        <p-tabPanel header="{{titles.boxesManager}}"><jhi-box-type *ngIf="selectedIndex == 1"></jhi-box-type></p-tabPanel>
+        <p-tabPanel header="{{titles.boxesGrouping}}"><jhi-flowers-box-grouping *ngIf="selectedIndex == 2"></jhi-flowers-box-grouping></p-tabPanel>
+        <p-tabPanel header="{{titles.varietiesList}}"><jhi-variety *ngIf="selectedIndex == 3"></jhi-variety></p-tabPanel>
+        <p-tabPanel header="{{titles.mixList}}"><jhi-flowers-mix-type *ngIf="selectedIndex == 4"></jhi-flowers-mix-type></p-tabPanel>
+        <p-tabPanel header="{{titles.farmBlockBeds}}"><jhi-blocks *ngIf="selectedIndex == 5"></jhi-blocks></p-tabPanel>
+        <p-tabPanel header="{{titles.markets}}"><div *ngIf="selectedIndex == 6"><jhi-flowers-market></jhi-flowers-market></div></p-tabPanel>
+        <p-tabPanel header="{{titles.bankDetails}}"><jhi-flowers-bank-details *ngIf="selectedIndex == 7"></jhi-flowers-bank-details></p-tabPanel>
+    </p-tabView>
+</jhi-flowers-tabs>

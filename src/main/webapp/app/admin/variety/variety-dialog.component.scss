@@ -1,0 +1,332 @@
+.phrase {
+    font-size: 26px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    color: black;
+    margin: 61px 236px;
+}
+
+.close {
+    width: 17px;
+    height: 17px;
+    margin: -55px 5px;
+    font-size: 20px;
+    display: block;
+    outline: none;
+
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.name-title {
+    color: #414242;
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    margin: -142px 0 0 502px;
+}
+
+.name-form {
+    width: 249px;
+    height: 38px;
+    border:1px solid #a7a7a7;
+    margin: 8px 0 0 502px;
+    color: black;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 14px;
+    padding-left: 13px;
+    outline: none;
+    background-color: #F2F2F2;
+
+    &:focus {
+        border-color: cadetblue;
+        background-color: white !important;
+    }
+}
+
+.variety-required {
+    border-left: 2px solid red !important;
+    outline: none;
+}
+
+input:required {
+    background: #ffffff ;
+    outline: none;
+
+    &:invalid {
+        background: #f2f2f2 ;
+    }
+}
+
+[required] {
+    background-color: #FFFFFF;
+}
+
+.color-title {
+    color: #414242;
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    margin: 20px 0 0 223px;
+}
+
+.color-form {
+    background-color: #F2F2F2;
+    width: 249px;
+    height: 38px;
+    border:1px solid #a7a7a7;
+    margin: 8px 0 0 223px;
+    color: black;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 14px;
+    padding-left: 13px;
+    outline: none;
+    text-transform: lowercase;
+
+    &:focus {
+        border-color: cadetblue;
+        background-color: white !important;
+    }
+}
+
+
+.breeder-title {
+    color: #414242;
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    margin: -64px 0 0 502px;
+}
+
+.breeder-form {
+    background-color: #F2F2F2;
+    width: 249px;
+    height: 38px;
+    border:1px solid #a7a7a7;
+    margin: 8px 0 0 502px;
+    color: black;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 14px;
+    padding-left: 13px;
+    outline: none;
+    text-transform: lowercase;
+
+    &:focus {
+        border-color: cadetblue;
+        background-color: white !important;
+    }
+}
+
+.separation-line {
+    height: 2px;
+    width: 530px;
+    margin: 20px 0 0 223px;
+    background-color: #a7a7a7;
+}
+
+.min-length-title {
+    color: #414242;
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    margin: 20px 0 0 223px;
+}
+
+.min-length-form {
+    background-color: #F2F2F2;
+    width: 249px;
+    height: 38px;
+    border:1px solid #a7a7a7;
+    margin: 8px 0 0 223px;
+    color: black;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 14px;
+    padding-left: 13px;
+    outline: none;
+
+    &:focus {
+        border-color: cadetblue;
+        background-color: white !important;
+    }
+}
+
+.max-length-title {
+    color: #414242;
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    margin: -64px 0 0 502px;
+}
+
+.max-length-form {
+    background-color: #F2F2F2;
+    width: 249px;
+    height: 38px;
+    border:1px solid #a7a7a7;
+    margin: 8px 0 0 502px;;
+    color: black;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 14px;
+    padding-left: 13px;
+    outline: none;
+
+    &:focus {
+        border-color: cadetblue;
+        background-color: white !important;
+    }
+}
+
+.save-button {
+    margin-left: 518px;
+    width: 250px;
+    height: 52px;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    font-family: FlowersFont-HEAD-OFFICE-MEDIUM;
+    border-radius: 52px;
+    border: 2px solid cadetblue;
+    margin-top: 30px;
+    color: cadetblue;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+        color: #FFFFFF;
+        background-color: cadetblue;
+    }
+}
+
+.black {
+    background-color: black;
+    width: 138px;
+    height: 138px;
+    margin: -42px -48px;
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.camera {
+    position: absolute;
+    z-index: 3;
+
+    &:hover {
+        + .black {
+            opacity: 0.5;
+        }
+    }
+}
+.image-close {
+    position: absolute;
+    cursor: pointer;
+    margin: -150px 0 0 166px;
+    font-size: 16px;
+    outline: none;
+
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.image-uploader-background {
+    width: 138px;
+    height: 138px;
+    margin: -158px 0 0 30px;
+    position: relative;
+    display: block;
+}
+
+.image-uploader {
+    position: relative;
+    font-size: 50px;
+    margin: 0 0 110px 78.5px;
+    z-index: 2;
+    cursor: pointer;
+    outline: none;
+    color: transparent;
+
+    &:hover {
+        color: white;
+    }
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.field-position {
+    position: relative;
+    width: 0;
+}
+
+.err-msg {
+    width: 249px;
+    display: block;
+    height: 13px;
+    font-size: 11px;
+    font-family: "FlowersFont-HEAD-OFFICE-TEXT";
+    position: absolute;
+    z-index: 2;
+}
+
+.name-err {
+    margin-left: 510px;
+}
+
+.color-err {
+    margin-left: 230px;
+}
+
+.breeder-err {
+    margin-left: 510px;
+}
+
+.min-length-err {
+    margin-left: 230px;
+}
+
+.max-length-err {
+    margin-left: 510px;
+}
+
+.uploader-title {
+    font-size: 14px;
+    margin-top: -70px;
+    margin-left: 30px;
+    position: absolute;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+}
+.uploader-info {
+    margin-left: 30px;
+    position: absolute;
+    margin-top: 110px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+}
+
+.extensions-info {
+    margin-left: 30px;
+    position: absolute;
+    margin-top: 130px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+}
+
+.alert-on-time {
+    margin-left: 580px;
+    font-size: 12px;
+}
+
+.modal-select {
+    margin-top: -122px;
+    margin-left: 191px;
+    position: absolute;
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+}
+
+.flowers-type-title {
+    margin-left: 222px;
+    margin-top: -142px;
+    color: #414242;
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    position: absolute;
+}

@@ -1,0 +1,71 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myCompanyLabel" jhiTranslate="flowersApp.company.home.createOrEditLabel">Create or edit a Company</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!company.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="company.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.company.farmName" for="field_farmName">Farm Name</label>
+            <input type="text" class="form-control" name="farmName" id="field_farmName"
+                [(ngModel)]="company.farmName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.company.legalName" for="field_legalName">Legal Name</label>
+            <input type="text" class="form-control" name="legalName" id="field_legalName"
+                [(ngModel)]="company.legalName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.company.generalOfficePhone" for="field_generalOfficePhone">General Office Phone</label>
+            <input type="text" class="form-control" name="generalOfficePhone" id="field_generalOfficePhone"
+                [(ngModel)]="company.generalOfficePhone"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.company.country" for="field_country">Country</label>
+            <input type="text" class="form-control" name="country" id="field_country"
+                [(ngModel)]="company.country"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.company.city" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                [(ngModel)]="company.city"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.company.farmSize" for="field_farmSize">Farm Size</label>
+            <input type="text" class="form-control" name="farmSize" id="field_farmSize"
+                [(ngModel)]="company.farmSize"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.company.generalEmailAddress" for="field_generalEmailAddress">General Email Address</label>
+            <input type="text" class="form-control" name="generalEmailAddress" id="field_generalEmailAddress"
+                [(ngModel)]="company.generalEmailAddress"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.company.address" for="field_address">Address</label>
+            <input type="text" class="form-control" name="address" id="field_address"
+                [(ngModel)]="company.address"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.company.typeOfFlowers" for="field_typeOfFlowers">Type Of Flowers</label>
+            <select class="form-control" name="typeOfFlowers" [(ngModel)]="company.typeOfFlowers" id="field_typeOfFlowers" >
+                <option value="ROSES" jhiTranslate="flowersApp.TYPE_OF_FLOWERS.ROSES">ROSES</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

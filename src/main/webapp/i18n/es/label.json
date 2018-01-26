@@ -1,0 +1,26 @@
+{
+    "flowersApp": {
+        "label" : {
+            "home": {
+                "title": "Labels",
+                "createLabel": "Crear nuevo Label",
+                "createOrEditLabel": "Crear o editar Label"
+            },
+            "created": "Un nuevo Label ha sido creado con el identificador {{ param }}",
+            "updated": "Un Label ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Label ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Label {{ id }}?"
+            },
+            "detail": {
+                "title": "Label"
+            },
+            "labelName": "Label Name",
+            "deliveryDays": "Delivery Days",
+            "wanted": "Wanted",
+            "company": "Company",
+            "labelCountry": "Label Country",
+            "client": "Client"
+        }
+    }
+}

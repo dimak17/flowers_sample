@@ -1,0 +1,23 @@
+{
+    "flowersApp": {
+        "paymentPolicy" : {
+            "home": {
+                "title": "Payment policies",
+                "createLabel": "Создать новый payment policy",
+                "createOrEditLabel": "Создать или отредактировать payment policy"
+            },
+            "created": "Новый payment policy создан с идентификатором {{ param }}",
+            "updated": "payment policy обновлен с идентификатором {{ param }}",
+            "deleted": "payment policy удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить payment policy {{ id }}?"
+            },
+            "detail": {
+                "title": "Payment policy"
+            },
+            "credit": "Credit",
+            "prepay": "Prepay",
+            "info":"For now you can use both payment policies"
+        }
+    }
+}

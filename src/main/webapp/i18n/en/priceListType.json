@@ -1,0 +1,11 @@
+{
+    "flowersApp": {
+        "PriceListType" : {
+            "null": "",
+            "DEFAULT": "DEFAULT",
+            "HIGH": "HIGH",
+            "LOW": "LOW",
+            "SEASON": "SEASON"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "flowersApp": {
+        "company-creator": {
+            "title": "Create company",
+            "form": {
+                "button": "Create"
+            },
+            "messages": {
+                "success": "<strong>Creation complete!</strong> Please notify client to email for confirmation.",
+                "successCreation": "<strong>Creation complete!</strong> Please check your email.",
+                "error": {
+                    "fail": "<strong>Creation failed!</strong> Please try again later.",
+                    "activationKey": "<strong>Registration failed!</strong> Registration key is invalid or you have already create account",
+                    "emailexists": "<strong>E-mail is already in use!</strong> Please choose another one."
+                }
+            }
+        },
+        "company-creator-email": {
+            "title": "Company activation"
+        }
+    }
+}

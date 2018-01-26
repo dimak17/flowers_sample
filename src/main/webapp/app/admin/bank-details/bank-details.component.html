@@ -1,0 +1,109 @@
+<form [formGroup]="dataForm" novalidate enctype="multipart/form-data">
+    <div class="bank-details-tabs">
+        <p-growl [(value)]="msgs" styleClass="bank-details-notification"></p-growl>
+        <p-tabView>
+            <p-tabPanel header="Create">
+
+                <div *ngIf="this.bankDetails">{{this.bankDetails.general}}</div>
+
+
+                <label jhiTranslate="flowersApp.bankDetails.generalLabel">General company bank details</label>
+                <div class="textarea-validation">
+                <textarea type="text" id="text-1" formControlName="general" maxLength="501"
+                  [(ngModel)]="generalDetailsStr"></textarea>
+                    <small
+                        *ngIf="dataForm.get('general').hasError('pattern') && ! dataForm.get('general').hasError('maxlength')"
+                        class="profile-err-msg text-danger"
+                        jhiTranslate="validation.generalBankDetails.pattern"></small>
+                    <small *ngIf="dataForm.get('general').hasError('maxlength')" class="profile-err-msg text-danger"
+                           jhiTranslate="validation.generalBankDetails.maxLength"></small>
+                </div>
+                <hr>
+                <label jhiTranslate="flowersApp.bankDetails.alternativeLabel">Alternative company bank details</label>
+                <div class="textarea-validation-2">
+                <textarea type="text" id="text-2" formControlName="alternative" maxLength="501"
+                  [(ngModel)]="alternativeDetailsStr"></textarea>
+                    <small
+                        *ngIf="dataForm.get('alternative').hasError('pattern') && !dataForm.get('alternative').hasError('maxlength')"
+                        class="profile-err-msg text-danger"
+                        jhiTranslate="validation.alternativeBankDetails.pattern"></small>
+                    <small *ngIf="dataForm.get('alternative').hasError('maxlength')" class="profile-err-msg text-danger"
+                           jhiTranslate="validation.alternativeBankDetails.maxLength"></small>
+                </div>
+                <div class="check-box-label1">
+                    <p-checkbox class="checkbox-1"
+                                binary="true"
+                                label="Select general company bank details"
+                                ngDefaultControl (onChange)="checkGeneralChange()"></p-checkbox></div>
+
+                <div class="check-box-label2">
+                    <p-checkbox class="checkbox-2"
+                                binary="true"
+                                label="Select alternative company bank details"
+                                ngDefaultControl (onChange)="checkAlternativeChange()"></p-checkbox></div>
+                <div class="btn__container">
+                    <div pTooltip="Please select options above" tooltipPosition="top">
+                        <button [routerLink]="['/', { outlets: { popup: 'bank-details-preview/' + initData() } }]"
+                            replaceUrl="true"
+                            [disabled]="isButtonDisabled"
+                            jhiTranslate="flowersApp.bankDetails.buttonContainer.preview">Preview</button></div>
+                    <div pTooltip="Please select options above" tooltipPosition="top">
+                    <button jhiTranslate="flowersApp.bankDetails.buttonContainer.download"
+                            [disabled]="isButtonDisabled"
+                            (click)="downloadFile()">Download</button></div>
+                    <button jhiTranslate="flowersApp.bankDetails.buttonContainer.copy"
+                            (click)="getSelectedInputs()">Copy</button>
+                    <div>
+                        <button class="add-button" [routerLink]="['/', { outlets: { popup: 'bank-details-new' } }]"
+                        jhiTranslate="flowersApp.bankDetails.buttonContainer.sendTo">SendTo</button>
+                    </div>
+                </div>
+            </p-tabPanel>
+            <p-tabPanel header="Upload">
+                <label class="upload-buttons-label"
+                       jhiTranslate="flowersApp.bankDetails.uploadGeneralLabel">General Bank Details File</label>
+                <p-fileUpload styleClass="uploader-button-style" #fileGenUpload
+                              maxFileSize="10000000"
+                              auto="true" customUpload="true"
+                              accept=".pdf,.txt,.doc,.docx,.xls,.xlsx,.rtf"
+                              chooseLabel="Upload"
+                              (uploadHandler)="onUpload($event, 'general')">
+                </p-fileUpload>
+                <div class="download-and-delete-buttons">
+                    <button jhiTranslate="flowersApp.bankDetails.buttonContainer.download"
+                            [disabled]="isGeneralButtonDisabled"
+                            (click)="downloadUploaded('general')">Download</button>
+                    <button jhiTranslate="flowersApp.bankDetails.uploadBtnContainer.delete"
+                            [disabled]="isGeneralButtonDisabled"
+                            [routerLink]="['/', { outlets: { popup: 'bank-details/'+ bankDetailCompanyId + '/type/'
+                            + 'general' + '/delete'} }]">Delete</button>
+                </div>
+                <label class="display-gen-filename-label"
+                       jhiTranslate="flowersApp.bankDetails.uploadGeneralFileNameLabel">Uploaded file name</label>
+                <div class="display-gen-file-name">{{generalFileName}}</div>
+                <hr>
+                <label class="upload-buttons-label2"
+                       jhiTranslate="flowersApp.bankDetails.uploadAlternativeLabel">Alternative Bank Details File</label>
+                <p-fileUpload styleClass="uploader-button-style" #fileAltUpload
+                              maxFileSize="10000000"
+                              auto="true" customUpload="true"
+                              accept=".pdf,.txt,.doc,.docx,.xls,.xlsx,.rtf"
+                              chooseLabel="Upload"
+                              (uploadHandler)="onUpload($event, 'alternative')">
+                </p-fileUpload>
+                <div class="download-and-delete-buttons">
+                    <button jhiTranslate="flowersApp.bankDetails.buttonContainer.download"
+                            [disabled]="isAlternativeButtonDisabled"
+                            (click)="downloadUploaded('alternative')">Download</button>
+                    <button jhiTranslate="flowersApp.bankDetails.uploadBtnContainer.delete"
+                            [disabled]="isAlternativeButtonDisabled"
+                            [routerLink]="['/', { outlets: { popup: 'bank-details/'+ bankDetailCompanyId + '/type/'
+                            + 'alternative' + '/delete'} }]">Delete</button>
+                </div>
+                <label class="display-alt-filename-label"
+                       jhiTranslate="flowersApp.bankDetails.uploadAlternativeFileNameLabel">Uploaded file name</label>
+                <div class="display-alt-file-name">{{alternativeFileName}}</div>
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+</form>

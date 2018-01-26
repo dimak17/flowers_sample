@@ -1,0 +1,82 @@
+<div>
+    <h2>
+        <span jhiTranslate="flowersApp.marketVarietyPropertyPriceList.home.title">Market Variety Properties</span>
+        <button class="btn btn-primary float-right jh-create-entity create-market-variety-property" [routerLink]="['/', { outlets: { popup: ['market-variety-property-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="flowersApp.marketVarietyPropertyPriceList.home.createLabel">
+            Create new Market Variety Property
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="marketVarietyProperties">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="flowersApp.marketVarietyPropertyPriceList.length">Length</span></th>
+            <th><span jhiTranslate="flowersApp.marketVarietyPropertyPriceList.price">Price</span></th>
+            <th><span jhiTranslate="flowersApp.marketVarietyPropertyPriceList.priceList">Price List</span></th>
+            <th><span jhiTranslate="flowersApp.marketVarietyPropertyPriceList.market">Market</span></th>
+            <th><span jhiTranslate="flowersApp.marketVarietyPropertyPriceList.variety">Variety</span></th>
+            <th><span jhiTranslate="flowersApp.marketVarietyPropertyPriceList.shippingPolicy">Shipping Policy</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let marketVarietyPropertyPriceList of marketVarietyProperties ;trackBy: trackId">
+                <td><a [routerLink]="['../market-variety-property', marketVarietyPropertyPriceList.id ]">{{marketVarietyPropertyPriceList.id}}</a></td>
+                <td jhiTranslate="{{'flowersApp.Length.' + marketVarietyPropertyPriceList.length}}">{{marketVarietyPropertyPriceList.length}}</td>
+                <td>{{marketVarietyPropertyPriceList.price}}</td>
+                <td>
+                    <div *ngIf="marketVarietyPropertyPriceList.priceList">
+                        <a [routerLink]="['../price-list', marketVarietyPropertyPriceList.priceList?.id ]" >{{marketVarietyPropertyPriceList.priceList?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="marketVarietyPropertyPriceList.market">
+                        <a [routerLink]="['../market', marketVarietyPropertyPriceList.market?.id ]" >{{marketVarietyPropertyPriceList.market?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="marketVarietyPropertyPriceList.variety">
+                        <a [routerLink]="['../variety', marketVarietyPropertyPriceList.variety?.id ]" >{{marketVarietyPropertyPriceList.variety?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="marketVarietyPropertyPriceList.shippingPolicy">
+                        <a [routerLink]="['../shipping-policy', marketVarietyPropertyPriceList.shippingPolicy?.id ]" >{{marketVarietyPropertyPriceList.shippingPolicy?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../market-variety-property', marketVarietyPropertyPriceList.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'market-variety-property/'+ marketVarietyPropertyPriceList.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'market-variety-property/'+ marketVarietyPropertyPriceList.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

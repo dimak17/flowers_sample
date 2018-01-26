@@ -1,0 +1,80 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myCompanyUserLabel" jhiTranslate="flowersApp.companyUser.home.createOrEditLabel">Create or edit a Company User</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!companyUser.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="companyUser.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.companyUser.skype" for="field_skype">Skype</label>
+            <input type="text" class="form-control" name="skype" id="field_skype"
+                [(ngModel)]="companyUser.skype"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.companyUser.fullName" for="field_fullName">Full Name</label>
+            <input type="text" class="form-control" name="fullName" id="field_fullName"
+                [(ngModel)]="companyUser.fullName"/>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.companyUser.workEmail" for="field_workEmail">Work Email</label>
+            <input type="text" class="form-control" name="workEmail" id="field_workEmail"
+                [(ngModel)]="companyUser.workEmail"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.companyUser.mobilePhone" for="field_mobilePhone">Mobile Phone</label>
+            <input type="text" class="form-control" name="mobilePhone" id="field_mobilePhone"
+                [(ngModel)]="companyUser.mobilePhone"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.companyUser.whatsUp" for="field_whatsUp">Whats Up</label>
+            <input type="text" class="form-control" name="whatsUp" id="field_whatsUp"
+                [(ngModel)]="companyUser.whatsUp"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.companyUser.officePhone" for="field_officePhone">Office Phone</label>
+            <input type="text" class="form-control" name="officePhone" id="field_officePhone"
+                [(ngModel)]="companyUser.officePhone"
+             />
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="flowersApp.companyUser.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" [(ngModel)]="companyUser.user" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="userOption.id === companyUser.user?.id ? companyUser.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="flowersApp.companyUser.company" for="field_company">Company</label>
+            <select class="form-control" id="field_company" name="company" [(ngModel)]="companyUser.company" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="companyOption.id === companyUser.company?.id ? companyUser.company : companyOption" *ngFor="let companyOption of companies; trackBy: trackCompanyById">{{companyOption.mainName}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="flowersApp.companyUser.positions" for="field_positions">Positions</label>
+            <select class="form-control" id="field_positions" multiple name="positions" [(ngModel)]="companyUser.positions">
+                <option [ngValue]="getSelected(companyUser.positions, positionOption)" *ngFor="let positionOption of positions; trackBy: trackPositionById">{{positionOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

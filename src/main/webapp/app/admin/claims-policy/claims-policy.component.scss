@@ -1,0 +1,191 @@
+.claims-container {
+    margin: 40px 0 0 30px;
+    height: 643px;
+}
+
+.load {
+    overflow: auto;
+    height: 625px;
+}
+
+.claim-line-block {
+    width: 48.5%;
+    height: 196px;
+    border: 1px solid #D5D5D5;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    display: flex;
+    float: left;
+    align-items: center;
+}
+
+.button-class {
+    height: 5px;
+    margin: 70px 0 40px 10px;
+}
+
+.add-button {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    border: 2px solid cadetblue;
+    margin: -40px 50px 0 0;
+    color: cadetblue;
+    outline: none;
+    cursor: pointer;
+    float: right;
+    text-align: center;
+    padding-top: 6px;
+    &:hover {
+        color: #FFFFFF;
+        background-color: cadetblue;
+    }
+}
+
+.claims-line-icon {
+    margin: 0 25px;
+}
+
+.fields-block {
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 18px;
+}
+
+.fields-text {
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: left;
+}
+
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 15px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: left;
+    word-break: break-all;
+}
+
+.info-name {
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    font-size: 18px;
+    margin: 20px 0 0 10px;
+    height: 50px;
+    min-width: 55%;
+}
+
+.act-block {
+    padding-top: 15px;
+}
+
+.vertical-separator {
+
+    height: 20px;
+    width: 2px;
+    background: grey;
+    float: left;
+    margin: 18px 20px 0;
+}
+
+/* global  overall image styles */
+.image-w img, .image-w svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.title {
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 21px;
+}
+
+.edit-block {
+    width: 45px;
+    margin: 20px 0 0 29px;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    float: left;
+    outline: none;
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.delete-block {
+    width: 57px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    float: left;
+    outline: none;
+
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.delete-span, .delete-span {
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    outline: none;
+    float: left;
+    margin-left: 5px;
+}
+
+.edit-delete-icons {
+    font-size: 15px;
+    cursor: pointer;
+    float: left;
+    outline: none;
+}
+
+.red {
+    color: #ff471a;
+}
+
+.green {
+    color: cadetblue;
+}
+
+.blue {
+    color: blue;
+}
+
+.gold {
+    color: #ffc61a;
+}
+
+.brown {
+    color: brown;
+}
+
+.violet {
+    color: #a366ff;
+}
+
+.pink {
+    color: pink;
+}
+
+.aqua {
+    color: steelblue;
+}
+
+@media screen and (max-width: 1281px) {
+    .claim-line-block {
+        width: 97%;
+    }
+    .claims-line-icon {
+        margin: 0 70px 0 30px;
+    }
+    .act-block {
+        padding-top: 15px;
+        margin-top: -30px;
+    }
+}

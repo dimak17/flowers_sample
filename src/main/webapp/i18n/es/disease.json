@@ -1,0 +1,21 @@
+{
+    "flowersApp": {
+        "disease" : {
+            "home": {
+                "title": "Diseases",
+                "createLabel": "Crear nuevo Disease",
+                "createOrEditLabel": "Crear o editar Disease"
+            },
+            "created": "Un nuevo Disease ha sido creado con el identificador {{ param }}",
+            "updated": "Un Disease ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Disease ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Disease {{ id }}?"
+            },
+            "detail": {
+                "title": "Disease"
+            },
+            "name": "Name"
+        }
+    }
+}

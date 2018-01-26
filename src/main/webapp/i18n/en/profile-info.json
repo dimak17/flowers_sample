@@ -1,0 +1,68 @@
+{
+    "flowersApp": {
+        "delete-image": {
+            "image-question": "Are you sure you want to delete this Image?"
+        },
+        "validation": {
+            "loginEmail": {
+                "required": "Account email is required",
+                "maxlength": "Account email cannot be more than 50 characters long",
+                "email": "Account email is not valid, example: email@gmail.com",
+                "pattern": "Account email  should contain latin symbols"
+            },
+            "oldPassword": {
+                "required": "Password is required",
+                "maxlength": "Password cannot be more than 50 characters long"
+            },
+            "newPassword": {
+                "required": "New password is required",
+                "minlength": "New password must be at least 6 characters long",
+                "maxlength": "New password cannot be more than 50 characters long"
+            },
+            "newPasswordRepeat": {
+                "required": "Repeat new password",
+                "minlength": "New password must be at least 6 characters long",
+                "maxlength": "New password cannot be more than 50 characters long",
+                "diff": "Passwords must match"
+            },
+            "fullName": {
+                "required": "Full name is required",
+                "maxlength": "Full name cannot be more than 50 characters long",
+                "pattern": "Full name should contain latin symbols"
+            },
+            "email": {
+                "required": "Email is required",
+                "maxlength": "Email cannot be more than 50 characters long",
+                "email": "Email is not valid, example: email@gmail.com"
+            },
+            "officePhone": {
+                "maxlength": "Office phone cannot be more than 24 characters long"
+            },
+            "mobilePhone": {
+                "maxlength": "Mobile phone cannot be more than 24 characters long",
+                "pattern": "Mobile phone can contain only digits + and ( )"
+            },
+            "skype": {
+                "maxlength": "Skype cannot be more than 50 characters long"
+            },
+            "save": {
+                "incorrect-password": "You enter incorrect password",
+                "same-login-email": "Account email not changed"
+            }
+        },
+        "form": {
+            "label": {
+                "account-email": "Account email",
+                "old-password": "Password",
+                "new-password": "New password",
+                "new-password-repeat": "Repeat new password",
+                "fullName": "Full name",
+                "right-email": "Email",
+                "office-phone": "Office phone",
+                "mobile": "Mobile",
+                "skype": "Skype",
+                "profile-photo": "Profile photo"
+            }
+        }
+    }
+}

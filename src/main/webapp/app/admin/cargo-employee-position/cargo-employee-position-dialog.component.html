@@ -1,0 +1,31 @@
+<form role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+    <div class="{{cargoEmployeePosition.colorClass}} top-color-line"></div>
+    <div class="close" data-dismiss="modal" (click)="clear()"><span class="fa fa-times"></span></div>
+    <div>
+        <h4 class="cargo-position-modal-title" *ngIf="!cargoEmployeePosition.id" id="createCargoEmployeePositionLabel" jhiTranslate="flowersApp.cargoEmployeePosition.createLabel">Enter your cargo employee position</h4>
+        <h4 class="cargo-position-modal-title" *ngIf="cargoEmployeePosition.id" id="editCargoEmployeePositionLabel" jhiTranslate="flowersApp.cargoEmployeePosition.createOrEditLabel">Edit cargo employee position</h4>
+    </div>
+    <div class="modal-body">
+        <div class="cargo-short-name" jhiTranslate="flowersApp.cargoEmployeePosition.name" for="field_name">Cargo employee position name</div>
+        <div class="form-border">
+            <div class="cargo-employee-position-position">
+                <input type="text" class="form-control" [class]="fieldLengthValidation(cargoEmployeePosition.name) || latinValidation(cargoEmployeePosition.name)
+                ||(errorAlert && duplicateCargoEmployeePositionName == cargoEmployeePosition.name.toLowerCase().trim() || requiredValidation(cargoEmployeePosition.name)
+                || !cargoEmployeePosition.name)? 'form form-invalid': 'form'" name="name" id="field_name"
+                       [(ngModel)]="cargoEmployeePosition.name" required maxlength="26"/></div>
+                <small *ngIf="(requiredValidation(cargoEmployeePosition.name) || !cargoEmployeePosition.name) && !fieldLengthValidation(cargoEmployeePosition.name)" class="cargo-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.cargoEmployeePosition.validation.name.required"></small>
+                <small *ngIf="latinValidation(cargoEmployeePosition.name)&& !fieldLengthValidation(cargoEmployeePosition.name)" class="box-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.cargoEmployeePosition.validation.name.pattern"></small>
+                <small *ngIf="fieldLengthValidation(cargoEmployeePosition.name)" class="box-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.cargoEmployeePosition.validation.name.maximumSymbols"></small>
+        </div>
+    </div>
+    <small *ngIf="(errorAlert && duplicateCargoEmployeePositionName == cargoEmployeePosition.name.toLowerCase().trim())" class="cargo-field-err-msg text-danger-position alert-on-time"
+           jhiTranslate="flowersApp.cargoEmployeePosition.alert">This cargo employee position already exist
+    </small>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving || saveButtonDeactivation(cargoEmployeePosition)"
+            class="save-button" jhiTranslate="entity.action.save">Save
+        </button>
+    <div class="{{cargoEmployeePosition.colorClass}} cargo-bottom-color-line"></div>
+</form>

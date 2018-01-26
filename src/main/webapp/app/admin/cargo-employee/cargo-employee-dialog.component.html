@@ -1,0 +1,86 @@
+<div *ngIf="loadComponent" class="loader employee-component-loader"></div>
+<div *ngIf="!loadComponent">
+<form name="editForm" role="form"  (ngSubmit)="save()" #editForm="ngForm">
+    <div class="modal-header cargo-employee-modal-header">
+        <h4 class="modal-title cargo-employee-title" *ngIf="!cargoEmployee.id" id="createCargoEmployeeLabel" jhiTranslate="flowersApp.cargoEmployee.createLabel">Create a cargo employee</h4>
+        <h4 class="modal-title cargo-employee-title" *ngIf="cargoEmployee.id" id="editCargoEmployeeLabel" jhiTranslate="flowersApp.cargoEmployee.createOrEditLabel">Edit cargo employee</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()"><i class="fa fa-times"></i></button>
+    </div>
+    <div class="cargo-employee-modal-body">
+        <div>
+            <label class="cargo-positions-title input-title" jhiTranslate="flowersApp.cargoEmployee.positionsHeader"></label>
+            <p-multiSelect *ngIf="selectedPositionsLabel && defaultLabel" name="positions"
+                           [styleClass]="'cargo-employee-multiselect ui-multiselect'"
+                           [defaultLabel]="defaultLabel"
+                           [selectedItemsLabel]="selectedPositionsLabel"
+                           [maxSelectedLabels]="3"
+                           [options]="cargoEmployeePositions"
+                           [(ngModel)]="selectedPositions">
+            </p-multiSelect>
+        </div>
+        <div>
+            <label class="cargo-markets-title input-title" jhiTranslate="flowersApp.cargoEmployee.marketsHeader"></label>
+            <p-multiSelect *ngIf="selectedMarketsLabel && defaultMarketsLabel" name="markets"
+                           [styleClass]="'cargo-markets-multiselect employee-multiselect ui-multiselect'"
+                           [defaultLabel]="defaultMarketsLabel"
+                           [selectedItemsLabel]="selectedMarketsLabel"
+                           [maxSelectedLabels]="3"
+                           [options]="companyUserMarkets"
+                           [(ngModel)]="marketsIdSelected">
+            </p-multiSelect>
+        </div>
+        <div class="separator"></div>
+        <div class="form-group">
+            <div class="cargo-employee-form-control-label" jhiTranslate="flowersApp.cargoEmployee.fullNameHeader" for="field_fullName">Full name</div>
+            <input type="text" class="cargo-employee-form-control" [class]="lengthValidation(cargoEmployee.fullName) || latinValidation(cargoEmployee.fullName) || requiredValidation(cargoEmployee.fullName)
+                || !cargoEmployee.fullName ? 'form form-invalid': 'form'" name="fullName" id="field_fullName"
+                [(ngModel)]="cargoEmployee.fullName" required maxlength="51"/>
+            <small *ngIf="(requiredValidation(cargoEmployee.fullName) || !cargoEmployee.fullName) && !lengthValidation(cargoEmployee.fullName)" class="cargo-employee-field-err-msg text-danger"
+                   jhiTranslate="flowersApp.cargoEmployee.validation.fullNameHeader.required"></small>
+            <small *ngIf="latinValidation(cargoEmployee.fullName) && !lengthValidation(cargoEmployee.fullName)" class="cargo-employee-field-err-msg text-danger" jhiTranslate="flowersApp.cargoEmployee.validation.fullNameHeader.pattern"></small>
+            <small *ngIf="isFillValidation(cargoEmployee.fullName) && lengthValidation(cargoEmployee.fullName)" class="cargo-employee-field-err-msg text-danger" jhiTranslate="flowersApp.cargoEmployee.validation.fullNameHeader.maximumSymbols"></small>
+        </div>
+        <div class="form-group">
+            <label class="cargo-employee-form-control-label" jhiTranslate="flowersApp.cargoEmployee.emailHeader" for="field_email">Email</label>
+            <br><input type="text" class="cargo-employee-form-control" [class]="requiredValidation(cargoEmployee.email) || lengthValidation(cargoEmployee.email) || emailValidation(cargoEmployee.email) || duplicateValidation(cargoEmployee.email)
+            || completeEmailValidation(cargoEmployee.email)? 'employee-required input-color work-email-input input-form' : 'input-color work-email-input input-form'" name="email" id="field_email"
+                [(ngModel)]="cargoEmployee.email" required maxlength="51"/>
+            <small *ngIf="requiredValidation(cargoEmployee.email)" class="work-email-alert cargo-employee-field-err-msg text-danger" jhiTranslate="flowersApp.cargoEmployee.validation.emailHeader.required"></small>
+            <small *ngIf="emailValidation(cargoEmployee.email) && !lengthValidation(cargoEmployee.email)" class="cargo-employee-field-err-msg text-danger"></small>
+            <small *ngIf="lengthValidation(cargoEmployee.email)" class="cargo-employee-field-err-msg text-danger" jhiTranslate="flowersApp.cargoEmployee.validation.emailHeader.maximumSymbols"></small>
+            <small *ngIf="isFillValidation(cargoEmployee.email) && (emailValidation(cargoEmployee.email)
+            || completeEmailValidation(cargoEmployee.email))" class="work-email-alert cargo-employee-field-err-msg text-danger" jhiTranslate="flowersApp.cargoEmployee.validation.emailHeader.emailValidation"></small>
+            <small *ngIf="isFillValidation(cargoEmployee.email) && duplicateValidation(cargoEmployee.email)" class="employee-field-err-msg text-danger alert-on-time" jhiTranslate="flowersApp.cargoEmployee.emailHeader.alertEmail">This Account already exist!</small>
+        </div>
+        <div class="form-group">
+            <label class="cargo-employee-form-control-label" jhiTranslate="flowersApp.cargoEmployee.officePhoneHeader" for="field_officePhone">Office phone</label>
+            <br><p-inputMask class="employee-mask" mask="(999) 999-9999? ext.99999" [(ngModel)]="officePhoneMask" placeholder="(999) 999-9999? ext.99999" name="officePhone" id="field_officePhone"></p-inputMask>
+        </div>
+        <div class="form-group">
+            <label class="cargo-employee-form-control-label" jhiTranslate="flowersApp.cargoEmployee.mobilePhoneHeader" for="field_mobilePhone">Mobile phone</label>
+            <br><p-inputMask [(ngModel)]="mobilePhoneMask" class="employee-mask" name="mobilePhone" id="field_mobilePhone" mask="(999) 999-9999" placeholder="(999) 999-9999"></p-inputMask>
+        <div class="form-group">
+            <label class="cargo-employee-form-control-label" jhiTranslate="flowersApp.cargoEmployee.skypeHeader" for="field_skype">Skype</label>
+            <br><input type="text" class="form" [class]="lengthValidation(cargoEmployee.skype) || latinValidation(cargoEmployee.skype) ? 'input-form form-invalid': 'form'" name="skype" id="field_skype"
+                [(ngModel)]="cargoEmployee.skype" maxlength="51"/>
+            <small *ngIf="latinValidation(cargoEmployee.skype) && !lengthValidation(cargoEmployee.skype)" class="cargo-employee-field-err-msg text-danger" jhiTranslate="flowersApp.cargoEmployee.validation.skypeHeader.pattern"></small>
+            <small *ngIf="lengthValidation(cargoEmployee.skype)" class="cargo-employee-field-err-msg text-danger" jhiTranslate="flowersApp.cargoEmployee.validation.skypeHeader.maximumSymbols"></small>
+        </div>
+        <p-dropdown [style]="{'margin-left':'350px', 'margin-top':'-680px', 'width':'300px'}"
+                    [options]="cargoAgencies"
+                    [(ngModel)]="selectedAgency"
+                    [ngModelOptions]="{standalone: true}"
+                    placeholder="{{chooseAgencyForCargoEmployee}}">
+        </p-dropdown>
+        <small *ngIf="dropdownValidation(selectedAgency)" class="agency-employee-err-msg text-danger" jhiTranslate="flowersApp.cargoEmployee.validation.agencies.required"></small>
+        <label class="agency-employee-title" jhiTranslate="flowersApp.cargoEmployee.agencies"></label>
+    </div>
+    <div class="modal-footer cargo-modal-footer">
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving || saveButtonDeactivation(cargoEmployee)" class="btn-cargo">
+            <span></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+    </div>
+</form>
+</div>

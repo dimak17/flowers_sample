@@ -1,0 +1,43 @@
+<div class="modal-window__small">
+    <div class="{{boxType.colorClass}} g__color-line "></div>
+
+    <div class="modal__close fa fa-times" data-dismiss="modal" (click)="clear()"></div>
+
+    <div class="modal-header">
+        <h4 *ngIf="boxType.id" class="modal-title_center" id="updateBoxTypeLabel" jhiTranslate="flowersApp.boxType.home.createOrEditLabel">Edit Box Type</h4>
+        <h4 *ngIf="!boxType.id" class="modal-title_center" id="createBoxTypeLabel" jhiTranslate="flowersApp.boxType.home.createLabel">Create a new Box Type</h4>
+    </div>
+
+    <div class="modal-body">
+        <form role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+            <div class="form__group_required">
+                <label class="form-label" jhiTranslate="flowersApp.boxType.shortName" for="field_shortName">Short Name</label>
+                <input type="text" [class]="requiredValidation(boxType.shortName) || latinValidation(boxType.shortName, shortNameMax) || lengthValidation(boxType.shortName, shortNameMax)? 'form-input_required' : 'form-input'" name="shortName" id="field_shortName" maxlength="6" [(ngModel)]="boxType.shortName"/>
+
+                <div class="form-input_error-container">
+                    <small *ngIf="requiredValidation(boxType.shortName)" class="form-input_error" jhiTranslate="flowersApp.boxType.validation.shortName.required"></small>
+                    <small *ngIf="isFillValidation(boxType.shortName) && latinValidation(boxType.shortName, shortNameMax)" class="form-input_error" jhiTranslate="flowersApp.boxType.validation.shortName.pattern"></small>
+                    <small *ngIf="isFillValidation(boxType.shortName) && duplicateValidation(boxType.shortName)" class="form-input_error" jhiTranslate="flowersApp.boxType.alert">This box type already exist</small>
+                    <small *ngIf="isFillValidation(boxType.shortName) && lengthValidation(boxType.shortName, shortNameMax)" class="form-input_error" jhiTranslate="flowersApp.boxType.validation.shortName.maximumSymbols"></small>
+                </div>
+            </div>
+
+            <div class="form__group_required">
+                <label class="form-label" jhiTranslate="flowersApp.boxType.fullName" for="field_fullName">Full Name</label>
+                <input type="text" [class]="requiredValidation(boxType.fullName) || latinValidation(boxType.fullName, fullNameMax) || lengthValidation(boxType.fullName, fullNameMax)? 'form-input_required' : 'form-input'" name="fullName" id="field_fullName" maxlength="14" [(ngModel)]="boxType.fullName"/>
+
+                <div class="form-input_error-container">
+                    <small *ngIf="requiredValidation(boxType.fullName)" class="form-input_error" jhiTranslate="flowersApp.boxType.validation.fullName.required"></small>
+                    <small *ngIf="isFillValidation(boxType.fullName) && latinValidation(boxType.fullName, fullNameMax)" class="form-input_error" jhiTranslate="flowersApp.boxType.validation.fullName.pattern"></small>
+                    <small *ngIf="isFillValidation(boxType.fullName) && lengthValidation(boxType.fullName, fullNameMax)"  class="form-input_error" jhiTranslate="flowersApp.boxType.validation.fullName.maximumSymbols"></small>
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="editForm.form.invalid || isSaving || saveButtonDeactivation(boxType)" class="button_medium button_margin-center" jhiTranslate="entity.action.save">Save</button>
+
+        </form>
+    </div>
+
+    <div class="{{boxType.colorClass}} g__color-line"></div>
+</div>

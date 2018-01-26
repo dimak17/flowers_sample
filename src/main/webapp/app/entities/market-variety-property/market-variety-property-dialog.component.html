@@ -1,0 +1,81 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myMarketVarietyPropertyLabel" jhiTranslate="flowersApp.marketVarietyPropertyPriceList.home.createOrEditLabel">Create or edit a Market Variety Property</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!marketVarietyPropertyPriceList.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="marketVarietyPropertyPriceList.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.marketVarietyPropertyPriceList.length" for="field_length">Length</label>
+            <select class="form-control" name="length" [(ngModel)]="marketVarietyPropertyPriceList.length" id="field_length" >
+                <option value="_40" jhiTranslate="flowersApp.Length._40">_40</option>
+                <option value="_50" jhiTranslate="flowersApp.Length._50">_50</option>
+                <option value="_60" jhiTranslate="flowersApp.Length._60">_60</option>
+                <option value="_70" jhiTranslate="flowersApp.Length._70">_70</option>
+                <option value="_80" jhiTranslate="flowersApp.Length._80">_80</option>
+                <option value="_90" jhiTranslate="flowersApp.Length._90">_90</option>
+                <option value="_100" jhiTranslate="flowersApp.Length._100">_100</option>
+                <option value="_110" jhiTranslate="flowersApp.Length._110">_110</option>
+                <option value="_120" jhiTranslate="flowersApp.Length._120">_120</option>
+                <option value="_130" jhiTranslate="flowersApp.Length._130">_130</option>
+                <option value="_140" jhiTranslate="flowersApp.Length._140">_140</option>
+                <option value="_150" jhiTranslate="flowersApp.Length._150">_150</option>
+                <option value="_160" jhiTranslate="flowersApp.Length._160">_160</option>
+                <option value="_170" jhiTranslate="flowersApp.Length._170">_170</option>
+                <option value="_180" jhiTranslate="flowersApp.Length._180">_180</option>
+                <option value="_190" jhiTranslate="flowersApp.Length._190">_190</option>
+                <option value="_200" jhiTranslate="flowersApp.Length._200">_200</option>
+                <option value="_210" jhiTranslate="flowersApp.Length._210">_210</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="flowersApp.marketVarietyPropertyPriceList.price" for="field_price">Price</label>
+            <input type="number" class="form-control" name="price" id="field_price"
+                [(ngModel)]="marketVarietyPropertyPriceList.price"  />
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="flowersApp.marketVarietyPropertyPriceList.priceList" for="field_priceList">Price List</label>
+            <select class="form-control" id="field_priceList" name="priceList" [(ngModel)]="marketVarietyPropertyPriceList.priceList" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="priceListOption.id === marketVarietyPropertyPriceList.priceList?.id ? marketVarietyPropertyPriceList.priceList : priceListOption" *ngFor="let priceListOption of pricelists; trackBy: trackPriceListById">{{priceListOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="flowersApp.marketVarietyPropertyPriceList.market" for="field_market">Market</label>
+            <select class="form-control" id="field_market" name="market" [(ngModel)]="marketVarietyPropertyPriceList.market" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="marketOption.id === marketVarietyPropertyPriceList.market?.id ? marketVarietyPropertyPriceList.market : marketOption" *ngFor="let marketOption of markets; trackBy: trackMarketById">{{marketOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="flowersApp.marketVarietyPropertyPriceList.variety" for="field_variety">Variety</label>
+            <select class="form-control" id="field_variety" name="variety" [(ngModel)]="marketVarietyPropertyPriceList.variety" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="varietyOption.id === marketVarietyPropertyPriceList.variety?.id ? marketVarietyPropertyPriceList.variety : varietyOption" *ngFor="let varietyOption of varieties; trackBy: trackVarietyById">{{varietyOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="flowersApp.marketVarietyPropertyPriceList.shippingPolicy" for="field_shippingPolicy">Shipping Policy</label>
+            <select class="form-control" id="field_shippingPolicy" name="shippingPolicy" [(ngModel)]="marketVarietyPropertyPriceList.shippingPolicy" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="shippingPolicyOption.id === marketVarietyPropertyPriceList.shippingPolicy?.id ? marketVarietyPropertyPriceList.shippingPolicy : shippingPolicyOption" *ngFor="let shippingPolicyOption of shippingpolicies; trackBy: trackShippingPolicyById">{{shippingPolicyOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

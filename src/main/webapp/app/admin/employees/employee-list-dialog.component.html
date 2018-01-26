@@ -1,0 +1,84 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="employee-header modal-header">
+        <h4 class="phrase" *ngIf="!companyUser.id" id="createEmployeeLabel" jhiTranslate="flowersApp.companyUser.home.createLabel">Create a new employee</h4>
+        <h4 class="phrase" *ngIf="companyUser.id" id="updateEmployeeLabel" jhiTranslate="flowersApp.companyUser.home.createOrEditLabel">Edit an employee</h4>
+        <i class="employee-close fa fa-times" data-dismiss="modal" (click)="clear()"></i>
+    </div>
+
+    <div class="modal-body">
+        <div>
+            <label class="positions-title input-title" jhiTranslate="flowersApp.companyUser.positions">Positions</label>
+            <p-multiSelect name="positions" [styleClass]="'employee-multiselect ui-multiselect'" [selectedItemsLabel]="'{0} positions are selected'" [maxSelectedLabels]="12" [defaultLabel]="defaultLabel" [options]="companyUserPositions" [(ngModel)]="positionsIdSelected" ></p-multiSelect>
+            <small *ngIf="multiselectValidation(positionsIdSelected)" class="employee-positions-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.positions.required"></small>
+        </div>
+
+        <div>
+            <label class="markets-title input-title" jhiTranslate="flowersApp.companyUser.markets">Markets</label>
+            <p-multiSelect name="markets" [styleClass]="'markets-multiselect employee-multiselect ui-multiselect'" [selectedItemsLabel]="'{0} markets are selected'" [maxSelectedLabels]="12" [defaultLabel]="defaultMarketsLabel" [options]="companyUserMarkets" [(ngModel)]="marketsIdSelected" ></p-multiSelect>
+            <small *ngIf="multiselectValidation(marketsIdSelected)" class="employee-markets-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.markets.required"></small>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="form-group">
+            <label class="full-name-title input-title" jhiTranslate="flowersApp.companyUser.fullName" for="field_fullName">Full Name</label>
+                <input type="text" [class]="requiredValidation(companyUser.fullName) || latinValidation(companyUser.fullName)
+                || lengthValidation(companyUser.fullName)? 'employee-required input-color full-name-input input-form' : 'input-color full-name-input input-form'" name="fullName" id="field_fullName" maxlength="51" [(ngModel)]="companyUser.fullName"/>
+            <small *ngIf="requiredValidation(companyUser.fullName)" class="employee-field-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.fullName.required"></small>
+            <small *ngIf="isFillValidation(companyUser.fullName) && latinValidation(companyUser.fullName)" class="employee-field-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.fullName.pattern"></small>
+            <small *ngIf="isFillValidation(companyUser.fullName) && lengthValidation(companyUser.fullName)" class="employee-field-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.fullName.maximumSymbols"></small>
+        </div>
+
+        <div class="form-group">
+            <label class="account-email-title input-title" jhiTranslate="flowersApp.companyUser.accountEmail" for="field_accountEmail">Account Email</label>
+            <input type="text" [class]="requiredValidation(companyUser.accountEmail) || lengthValidation(companyUser.accountEmail) || duplicateValidation(companyUser.accountEmail)
+            || emailValidation(companyUser.accountEmail) || completeEmailValidation(companyUser.accountEmail)? 'employee-required input-color account-email-input input-form' : 'input-color account-email-input input-form'" name="accountEmail" id="field_accountEmail" maxlength="51" [(ngModel)]="companyUser.accountEmail"/>
+            <small *ngIf="requiredValidation(companyUser.accountEmail)" class="employee-field-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.accountEmail.required"></small>
+            <small *ngIf="isFillValidation(companyUser.accountEmail) && lengthValidation(companyUser.accountEmail)" class="employee-field-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.accountEmail.maximumSymbols"></small>
+            <small *ngIf="isFillValidation(companyUser.accountEmail) && (emailValidation(companyUser.accountEmail)
+            || completeEmailValidation(companyUser.accountEmail))" class="employee-field-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.emailValidation"></small>
+            <small *ngIf="isFillValidation(companyUser.accountEmail) && duplicateValidation(companyUser.accountEmail)" class="employee-field-err-msg text-danger alert-on-time" jhiTranslate="flowersApp.companyUser.alert">This Account already exist!</small>
+        </div>
+
+        <div class="form-group">
+            <label class="work-email-title input-title" jhiTranslate="flowersApp.companyUser.workEmail" for="field_workEmail">Work Email</label>
+            <input type="text" [class]="requiredValidation(companyUser.workEmail) || lengthValidation(companyUser.workEmail) || emailValidation(companyUser.workEmail)
+            || completeEmailValidation(companyUser.workEmail)? 'employee-required input-color work-email-input input-form' : 'input-color work-email-input input-form'" name="workEmail" id="field_workEmail" maxlength="51" [(ngModel)]="companyUser.workEmail"/></div>
+            <small *ngIf="requiredValidation(companyUser.workEmail)" class="work-email-alert employee-field-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.workEmail.required"></small>
+            <small *ngIf="isFillValidation(companyUser.workEmail) && lengthValidation(companyUser.workEmail)" class="work-email-alert employee-field-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.workEmail.maximumSymbols"></small>
+            <small *ngIf="isFillValidation(companyUser.workEmail) && (emailValidation(companyUser.workEmail)
+            || completeEmailValidation(companyUser.workEmail))" class="work-email-alert employee-field-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.emailValidation"></small>
+        </div>
+
+        <div class="form-group">
+            <label class="skype-title input-title" jhiTranslate="flowersApp.companyUser.skype" for="field_skype">Skype</label>
+            <input type="text" [class]="lengthValidation(companyUser.skype)? 'employee-required input-color skype-input input-form' : 'input-color skype-input input-form'" name="skype" id="field_skype" maxlength="51" [(ngModel)]="companyUser.skype"/>
+            <small *ngIf="isFillValidation(companyUser.skype) && lengthValidation(companyUser.skype)" class="skype-alert employee-field-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.skype.maximumSymbols"></small>
+        </div>
+
+        <div class="form-group">
+            <label class="mob-phone-title input-title" jhiTranslate="flowersApp.companyUser.mobilePhone" for="field_mobilePhone">Mobile Phone</label>
+            <input type="text" [class]="lengthValidation(companyUser.mobilePhone)? 'employee-required input-color mob-phone-input input-form' : 'input-color mob-phone-input input-form'" name="mobilePhone" id="field_mobilePhone" maxlength="51" [(ngModel)]="companyUser.mobilePhone"/>
+            <small *ngIf="isFillValidation(companyUser.mobilePhone) && mobilePhoneValidation(companyUser.mobilePhone)" class="mob-phone-alert employee-field-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.mobilePhone.pattern"></small>
+            <small *ngIf="isFillValidation(companyUser.mobilePhone) && lengthValidation(companyUser.mobilePhone)" class="mob-phone-alert employee-field-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.mobilePhone.maximumSymbols"></small>
+        </div>
+
+        <div class="form-group">
+            <label class="off-phone-title input-title" jhiTranslate="flowersApp.companyUser.officePhone" for="field_officePhone">Office Phone</label>
+            <input type="text" [class]="lengthValidation(companyUser.officePhone)? 'employee-required input-color off-phone-input input-form' : 'input-color off-phone-input input-form'" name="officePhone" id="field_officePhone" maxlength="51" [(ngModel)]="companyUser.officePhone"/>
+            <small *ngIf="isFillValidation(companyUser.officePhone) && lengthValidation(companyUser.officePhone)" class="off-phone-alert employee-field-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.officePhone.maximumSymbols"></small>
+            <small *ngIf="isFillValidation(companyUser.officePhone) && latinValidation(companyUser.officePhone)" class="latin-off-phone off-phone-alert employee-field-err-msg text-danger" jhiTranslate="flowersApp.companyUser.validation.officePhone.pattern"></small>
+        </div>
+    <div class="employee-swith-button">
+        <div *ngIf="companyUserValidation(companyUser)" class="activated-border"></div>
+        <div *ngIf="companyUserValidation(companyUser)" class="deactivated-border"></div>
+        <div *ngIf="companyUserValidation(companyUser)" class="activated-data">{{actSwitch}}</div>
+        <div *ngIf="companyUserValidation(companyUser)" class="deactivated-data">{{deactSwitch}}</div>
+        <p-inputSwitch class="employee-switch" *ngIf="companyUserValidation(companyUser)" name="checked" [onLabel]="actSwitch" [offLabel]="deactSwitch" (onChange)="handleStatusChange($event)"  [(ngModel)]="checked" ></p-inputSwitch>
+    </div>
+
+        <button [class]="companyUser.user? (companyUserValidation(companyUser)? 'update-save-btn employee-save-button' : 'current-employee-save-button update-save-btn employee-save-button') : 'create-save-btn employee-save-button'" type="submit" [disabled]="editForm.form.invalid || isSaving || saveButtonDeactive(companyUser)" class="update-save-btn employee-save-button">
+            <span jhiTranslate="entity.action.save">Save</span>
+        </button>
+</form>

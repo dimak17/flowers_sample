@@ -1,0 +1,56 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "cargoEmployeePosition",
+            "otherEntityName": "cargoEmployeePosition",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cargoEmployee"
+        },
+
+        {
+            "relationshipName": "market",
+            "otherEntityName": "market",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cargoEmployee"
+        },
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "fullName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "officePhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mobilePhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "skype",
+            "fieldType": "String"
+        }
+
+    ],
+    "changelogDate": "20170731085933",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "cargo_employee",
+    "pagination": "no"
+}

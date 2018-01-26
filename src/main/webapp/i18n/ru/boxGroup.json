@@ -1,0 +1,22 @@
+{
+    "flowersApp": {
+        "boxGroup" : {
+            "home": {
+                "title": "Box Groups",
+                "createLabel": "Создать новый Box Group",
+                "createOrEditLabel": "Создать или отредактировать Box Group"
+            },
+            "created": "Новый Box Group создан с идентификатором {{ param }}",
+            "updated": "Box Group обновлен с идентификатором {{ param }}",
+            "deleted": "Box Group удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Box Group {{ id }}?"
+            },
+            "detail": {
+                "title": "Box Group"
+            },
+            "boxTypeGroups": "Box Type Groups",
+            "markets": "Markets"
+        }
+    }
+}

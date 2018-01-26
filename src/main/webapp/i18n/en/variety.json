@@ -1,0 +1,62 @@
+{
+    "flowersApp": {
+        "variety" : {
+            "home": {
+                "title": "Varieties list",
+                "createLabel": "Enter variety data",
+                "createOrEditLabel": "Enter variety data"
+            },
+            "created": "A new variety is created with identifier {{ param }}",
+            "updated": "A variety is updated with identifier {{ param }}",
+            "deleted": "A variety is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete variety {{ id }}?",
+                "image-question": "Are you sure you want to delete this image?",
+                "usageBlocksError": "'{{ name }}' - has usage in 'Company' 🡪 'Farm Block & Beds' 🡪 blocks: '{{blocks}}'",
+                "finalText": "Please, firstly remove it there"
+            },
+            "detail": {
+                "title": "Variety"
+            },
+            "flowers-type": "Type of flowers:",
+            "name": "Name:",
+            "color": "Color:",
+            "breeder": "Main breeder:",
+            "breeder2": "Breeder:",
+            "minLength": "Min. length:",
+            "maxLength": "Max. length:",
+            "alert": "This variety already exist",
+            "createVariety": "Create new variety",
+            "choose": "Type of flower",
+
+            "validation": {
+                "name": {
+                    "required": "Name is required",
+                    "pattern": "Name should contains latin symbols",
+                    "maximumSymbols": "Name should contain maximum 35 symbols"
+                },
+                "color": {
+                    "required": "Color is required",
+                    "pattern": "Color should contains latin symbols",
+                    "maximumSymbols": "Color should contain maximum 25 symbols"
+                },
+                "breeder": {
+                    "pattern": "Breeder should contains latin symbols",
+                    "maximumSymbols": "Breeder should contain maximum 25 symbols"
+                },
+                "minLength": {
+                    "pattern":  "Min length should contain only digits",
+                    "maximumSymbols": "Min. length should contain maximum 4 digits"
+                },
+                "maxLength": {
+                    "pattern":  "Max length should contain only digits",
+                    "maximumSymbols": "Max. length should contain maximum 4 digits"
+                }
+            },
+            "uploader": "Allowed image extensions:",
+            "uploader-title": "Variety image",
+            "extensions": "(.png, .jpg, .jpeg)"
+        }
+
+    }
+}

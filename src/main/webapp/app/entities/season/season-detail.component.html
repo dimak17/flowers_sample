@@ -1,0 +1,53 @@
+
+<div *ngIf="season">
+    <h2><span jhiTranslate="flowersApp.season.detail.title">Season</span> {{season.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.season.seasonName">Season Name</span></dt>
+        <dd>
+            <span>{{season.seasonName}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.season.seasonYear">Season Year</span></dt>
+        <dd>
+            <span>{{season.seasonYear}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.season.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{season.startDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.season.endDate">End Date</span></dt>
+        <dd>
+            <span>{{season.endDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.season.notifyStartDate">Notify Start Date</span></dt>
+        <dd>
+            <span>{{season.notifyStartDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.season.company">Company</span></dt>
+        <dd>
+            <div *ngIf="season.company">
+                <a [routerLink]="['/company', season.company?.id]">{{season.company?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.season.position">Position</span></dt>
+        <dd>
+            <span *ngFor="let position of season.positions; let last = last">
+                <a [routerLink]="['/position', position?.id ]">{{position.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'season/'+ season.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

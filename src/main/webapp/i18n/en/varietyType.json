@@ -1,0 +1,9 @@
+{
+    "flowersApp": {
+        "VarietyType" : {
+            "null": "",
+            "SIMPLE": "SIMPLE",
+            "SPECIAL": "SPECIAL"
+        }
+    }
+}

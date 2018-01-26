@@ -1,0 +1,16 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "PriceListType",
+            "fieldValues": "DEFAULT,HIGH,LOW,SEASON"
+        }
+    ],
+    "changelogDate": "20170725112609",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "price_list",
+    "pagination": "no"
+}

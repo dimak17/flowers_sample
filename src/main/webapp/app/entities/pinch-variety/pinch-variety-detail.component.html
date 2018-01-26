@@ -1,0 +1,33 @@
+
+<div *ngIf="pinchVariety">
+    <h2><span jhiTranslate="flowersApp.pinchVariety.detail.title">Pinch Variety</span> {{pinchVariety.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.pinchVariety.pinch">Pinch</span></dt>
+        <dd>
+            <div *ngIf="pinchVariety.pinch">
+                <a [routerLink]="['/pinch', pinchVariety.pinch?.id]">{{pinchVariety.pinch?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.pinchVariety.variety">Variety</span></dt>
+        <dd>
+            <div *ngIf="pinchVariety.variety">
+                <a [routerLink]="['/variety', pinchVariety.variety?.id]">{{pinchVariety.variety?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'pinch-variety/'+ pinchVariety.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

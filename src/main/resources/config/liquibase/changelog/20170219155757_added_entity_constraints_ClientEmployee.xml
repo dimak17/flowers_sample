@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity ClientEmployee.
+    -->
+    <changeSet id="20170219155757-2" author="dima">
+
+        <addForeignKeyConstraint baseColumnNames="client_id"
+                                 baseTableName="client_employee"
+                                 constraintName="fk_client_employee_client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"/>
+
+        <addForeignKeyConstraint baseColumnNames="company_id"
+                                 baseTableName="client_employee"
+                                 constraintName="fk_client_employee_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="company"/>
+
+        <addForeignKeyConstraint baseColumnNames="client_employees_id"
+                                 baseTableName="client_employee_client_employee_position"
+                                 constraintName="fk_client_employee_client_employee_position_client_employees_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client_employee"/>
+        <addForeignKeyConstraint baseColumnNames="client_employee_positions_id"
+                                 baseTableName="client_employee_client_employee_position"
+                                 constraintName="client_employee_client_employee_client_employee_positions_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client_employee_position"/>
+
+    </changeSet>
+</databaseChangeLog>

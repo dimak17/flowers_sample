@@ -1,0 +1,76 @@
+<div>
+    <h2>
+        <span jhiTranslate="flowersApp.season.home.title">Seasons</span>
+        <button class="btn btn-primary float-right jh-create-entity create-season" [routerLink]="['/', { outlets: { popup: ['season-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="flowersApp.season.home.createLabel">
+            Create new Season
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="seasons">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="flowersApp.season.seasonName">Season Name</span></th>
+            <th><span jhiTranslate="flowersApp.season.seasonYear">Season Year</span></th>
+            <th><span jhiTranslate="flowersApp.season.startDate">Start Date</span></th>
+            <th><span jhiTranslate="flowersApp.season.endDate">End Date</span></th>
+            <th><span jhiTranslate="flowersApp.season.notifyStartDate">Notify Start Date</span></th>
+            <th><span jhiTranslate="flowersApp.season.company">Company</span></th>
+            <th><span jhiTranslate="flowersApp.season.position">Position</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let season of seasons ;trackBy: trackId">
+                <td><a [routerLink]="['../season', season.id ]">{{season.id}}</a></td>
+                <td>{{season.seasonName}}</td>
+                <td>{{season.seasonYear}}</td>
+                <td>{{season.startDate | date:'mediumDate'}}</td>
+                <td>{{season.endDate | date:'mediumDate'}}</td>
+                <td>{{season.notifyStartDate | date:'mediumDate'}}</td>
+                <td>
+                    <div *ngIf="season.company">
+                        <a [routerLink]="['../company', season.company?.id ]" >{{season.company?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <span *ngFor="let position of season.positions; let last = last">
+                            <a class="form-control-static" [routerLink]="['../position', position?.id ]">{{position.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../season', season.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'season/'+ season.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'season/'+ season.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

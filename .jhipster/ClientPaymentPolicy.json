@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "client",
+            "otherEntityName": "client",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "paymentPolicy",
+            "otherEntityName": "paymentPolicy",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "termsInDays",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "termsInSum",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20171025142824",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "client_payment_policy",
+    "pagination": "no"
+}

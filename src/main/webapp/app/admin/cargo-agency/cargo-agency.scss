@@ -1,0 +1,104 @@
+.create-cargo-agency {
+    float: right;
+    width: 200px;
+    margin: 40px 40px 40px 0;
+    height: 40px;
+    padding: 6px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    border: 2px solid cadetblue;
+    color: cadetblue;
+    background-color: #fff;
+    outline: none;
+    &:hover {
+        color: #fff;
+        background-color: cadetblue;
+    }
+}
+
+.edit-cargo-agency {
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    &:hover {
+        color: cadetblue ;
+    }
+}
+
+.delete-cargo-agency {
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    &:hover {
+        color: cadetblue ;
+    }
+}
+
+.filter {
+    &:focus {
+        background-color: white;
+    }
+    padding-left: 10px;
+    height: 35px;
+    outline: none;
+    border-radius: 0;
+    border: 1px solid #a7a7a7;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+}
+
+.edit-agency {
+    margin: -6px 0 0 -8px;
+    width: 9%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    &:hover {
+        color: cadetblue ;
+    }
+}
+
+.favicon-table {
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.delete-agency {
+    margin: -6px 0 0 -8px;
+    width: 9%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    &:hover {
+        color: cadetblue ;
+    }
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid cadetblue;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+.agency-component-loader {
+    margin: 100px auto;
+    width: 100px;
+    height: 100px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

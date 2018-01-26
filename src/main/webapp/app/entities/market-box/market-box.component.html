@@ -1,0 +1,74 @@
+<div>
+    <h2>
+        <span jhiTranslate="flowersApp.marketBox.home.title">Market Boxes</span>
+        <button class="btn btn-primary float-right create-market-box" [routerLink]="['/', { outlets: { popup: ['market-box-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="flowersApp.marketBox.home.createLabel">
+            Create new Market Box
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="marketBoxes">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="flowersApp.marketBox.width">Width</span></th>
+            <th><span jhiTranslate="flowersApp.marketBox.height">Height</span></th>
+            <th><span jhiTranslate="flowersApp.marketBox.length">Length</span></th>
+            <th><span jhiTranslate="flowersApp.marketBox.unit">Unit</span></th>
+            <th><span jhiTranslate="flowersApp.marketBox.market">Market</span></th>
+            <th><span jhiTranslate="flowersApp.marketBox.boxType">Box Type</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let marketBox of marketBoxes ;trackBy: trackId">
+                <td><a [routerLink]="['../market-box', marketBox.id ]">{{marketBox.id}}</a></td>
+                <td>{{marketBox.width}}</td>
+                <td>{{marketBox.height}}</td>
+                <td>{{marketBox.length}}</td>
+                <td jhiTranslate="{{'flowersApp.BoxSizeUnit.' + marketBox.unit}}">{{marketBox.unit}}</td>
+                <td>
+                    <div *ngIf="marketBox.market">
+                        <a [routerLink]="['../market', marketBox.market?.id ]" >{{marketBox.market?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="marketBox.boxType">
+                        <a [routerLink]="['../box-type', marketBox.boxType?.id ]" >{{marketBox.boxType?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../market-box', marketBox.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'market-box/'+ marketBox.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'market-box/'+ marketBox.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

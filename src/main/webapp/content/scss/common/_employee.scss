@@ -1,0 +1,373 @@
+// Employee list dialog
+
+.activated-button {
+    width: 250px;
+    height: 52px;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    font-family: FlowersFont-HEAD-OFFICE-MEDIUM;
+    border-radius: 52px;
+    border: 3px solid cadetblue;
+    margin: 30px 0 0 70px;
+    color: cadetblue;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+        color: #FFFFFF;
+        background-color: cadetblue;
+    }
+}
+
+.full-name-title {
+    margin: -10px 0 0 10px;
+    position: absolute;
+}
+
+.account-email-title {
+    margin: 5px 0 0 10px;
+    position: absolute;
+}
+
+.work-email-title {
+    margin: 5px 0 0 10px;
+    position: absolute;
+
+}
+
+.skype-title {
+    margin: -10px 0 0 25px;
+    position: absolute;
+
+}
+
+.mob-phone-title {
+    margin: 5px 0 0 25px;
+    position: absolute;
+}
+
+.off-phone-title {
+    margin: 5px 0 0 25px;
+    position: absolute;
+}
+
+.positions-title {
+    margin: -10px 0 0 350px;
+    position: absolute;
+}
+
+.markets-title {
+    margin: 130px 0 0 350px;
+    position: absolute;
+}
+
+.input-color {
+    background-color: #F2F2F2;
+
+    &:focus {
+        background-color: white;
+    }
+}
+
+.full-name-input {
+    margin: 9px 0 0 10px;
+}
+
+.account-email-input {
+    margin: 25px 0 0 10px;
+}
+
+.work-email-input {
+    margin: 25px 0 0 10px;
+}
+
+.skype-input {
+    margin: 10px 0 0 25px;
+}
+
+.mob-phone-input {
+    margin: 25px 0 0 25px;
+}
+
+.off-phone-input {
+    margin: 25px 0 0 25px;
+}
+
+.input-title {
+    color: #414242;
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+}
+
+.input-form {
+    width: 249px;
+    height: 38px;
+    border:1px solid #a7a7a7;
+    color: black;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 14px;
+    padding-left: 13px;
+    outline: none;
+
+    &:focus {
+        border-color: cadetblue;
+        background-color: white !important;
+    }
+}
+
+.employee-save-button {
+    width: 250px;
+    height: 52px;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    font-family: FlowersFont-HEAD-OFFICE-MEDIUM;
+    border-radius: 52px;
+    border: 3px solid cadetblue;
+    margin: -75px 0 0 700px;
+    color: cadetblue;
+    outline: none;
+    position: absolute;
+    cursor: pointer;
+
+    &:hover {
+        color: #FFFFFF;
+        background-color: cadetblue;
+    }
+}
+
+.current-employee-save-button {
+    margin-top: 0 !important;
+}
+
+.update-save-btn {
+    margin: -58px 0 0 720px;
+}
+
+.create-save-btn {
+    margin: -20px 0 0 720px;
+}
+
+.employee-header {
+    border-bottom: none;
+}
+
+.phrase {
+    font-size: 26px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    color: black;
+    margin: 30px 0 0 350px;
+}
+
+.separator {
+    width: 2px;
+    height: 455px;
+    background-color: #a7a7a7;
+    margin-left: 300px;
+    margin-top: -10px;
+    position: absolute;
+}
+
+.activated-data {
+    font-size: 16px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    color: cadetblue;
+    position: absolute;
+    z-index: 2;
+    margin: 15px 0 0 30px;
+}
+
+.deactivated-data {
+    font-size: 16px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    color: #b12626;
+    position: absolute;
+    z-index: 2;
+    margin: 15px 0 0 155px;
+}
+
+.employee-switch-border {
+    border: 2px solid #a7a7a7;
+    width: 250px;
+    height: 50px;
+    position: absolute;
+    background: transparent;
+    border-radius: 52px;
+    z-index: 3;
+    margin: 1px 0 0 9px;
+}
+
+.activated-border {
+    border: 2px solid cadetblue;
+    width: 141px;
+    height: 50px;
+    position: absolute;
+    background: transparent;
+    border-radius: 52px;
+    z-index: 3;
+    margin: 1px 0 0 9px;
+}
+
+.deactivated-border {
+    border: 2px solid #b12626;
+    width: 141px;
+    height: 50px;
+    position: absolute;
+    background: transparent;
+    border-radius: 52px;
+    z-index: 3;
+    margin: 1px 0 0 104px;
+}
+
+input:required {
+    background: #ffffff;
+    outline: none;
+}
+
+input:required:invalid {
+    background: #f2f2f2;
+}
+
+.employee-field-err-msg {
+    width: 249px;
+    margin-left: 10px;
+    display: block;
+    height: 13px;
+    font-size: 11px;
+    font-family: FlowersFont-HEAD-OFFICE-TEXT;
+    position: absolute;
+    z-index: 2;
+}
+
+.employee-required {
+    border-left: 2px solid red !important;
+    outline: none;
+}
+
+.work-email-alert {
+    margin-top: -15px;
+}
+
+.skype-alert {
+    margin-left: 25px;
+}
+
+.mob-phone-alert {
+    margin-left: 25px;
+}
+
+.off-phone-alert {
+    margin-left: 25px;
+}
+
+.employee-swith-button {
+    margin-left: 20px;
+}
+
+.latin-off-phone {
+    width: 260px !important;
+}
+
+// Employee list dialog ********************
+
+//Employee list global
+
+
+.employee-update-modal-window .modal-content {
+    margin: 30px 0 0 -250px;
+    width: 1000px;
+    height: 630px;
+    background-color: white;
+    border-radius: 0;
+}
+
+
+.employee-create-modal-window .modal-content {
+    margin: 30px 0 0 -250px;
+    width: 1000px;
+    height: 610px;
+    background-color: white;
+    border-radius: 0;
+}
+
+.pagination-employee {
+    .pagination>li>a.page-link {
+        border-radius: 0 !important;
+        color: cadetblue;
+        font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    }
+
+    .pagination>li.active>a {
+        background-color: cadetblue !important;
+        border-color: cadetblue !important;
+        color: #FFFFFF !important;
+    }
+
+    .pagination>li.disabled>a {
+        color: #636c72 !important;
+    }
+
+    .pagination {
+        margin: 15px 0 15px 0;
+    }
+}
+
+.employee-pagination-footer {
+    border-radius: 0 !important;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR !important;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: #f7f7f9;
+    padding: 0.75rem 1.25rem;
+}
+
+.employee-close {
+    position: absolute;
+    cursor: pointer;
+    margin: -30px 0 0 960px;
+    font-size: 20px;
+    outline: none;
+    opacity: .5;
+
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.employee-switch .ui-inputswitch {
+    height: 52px;
+    width: 252px !important;
+    border-radius: 52px !important;
+}
+
+.employee-positions-err-msg {
+    width: 249px;
+    margin: -10px 0 0 480px;
+    display: block;
+    height: 13px;
+    font-size: 11px;
+    font-family: FlowersFont-HEAD-OFFICE-TEXT;
+    position: absolute;
+    z-index: 2;
+}
+
+.employee-markets-err-msg {
+    width: 249px;
+    margin: 132px 0 0 480px;
+    display: block;
+    height: 13px;
+    font-size: 11px;
+    font-family: FlowersFont-HEAD-OFFICE-TEXT;
+    position: absolute;
+    z-index: 2;
+}
+
+.employee-multiselect {
+    position: absolute;
+    margin: 8px 100px 0 350px;
+}
+
+.markets-multiselect {
+    margin-top: 150px !important;
+}
+
+
+// Employee list global ********************

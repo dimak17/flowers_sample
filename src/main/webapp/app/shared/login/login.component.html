@@ -1,0 +1,45 @@
+<div class="modal-window__small">
+
+    <button aria-label="Close" data-dismiss="modal" class="modal__close fa fa-times" type="button" (click)="activeModal.dismiss('closed')"></button>
+
+    <div class="modal-header">
+        <h4 class="modal-title_center" jhiTranslate="login.title">Sign in</h4>
+    </div>
+
+    <div class="modal-body">
+        <form role="form" (ngSubmit)="login()">
+
+            <div class="alert alert-danger" *ngIf="authenticationError" jhiTranslate="login.messages.error.authentication">
+                <strong>Failed to sign in!</strong> Please check your credentials and try again.
+            </div>
+
+            <div class="form__group">
+                <label class="form-label" for="username" jhiTranslate="global.form.username">Login</label>
+                <input type="text" class="form-input" name="username" id="username" placeholder="{{'global.form.username.placeholder' | translate}}" [(ngModel)]="username">
+            </div>
+
+            <div class="form__group">
+                <label class="form-label" for="password" jhiTranslate="login.form.password">Password</label>
+                <input type="password" class="form-input" name="password" id="password" placeholder="{{'login.form.password.placeholder' | translate}}"
+                       [(ngModel)]="password">
+            </div>
+
+            <div class="form__group">
+                <p-checkbox [(ngModel)]="rememberMe" binary="true" name="rememberMe" id="rememberMe" label="Remember me"></p-checkbox>
+            </div>
+
+            <button type="submit" class="button_medium button_margin-center" jhiTranslate="login.form.button">Sign in</button>
+
+        </form>
+
+        <div class="alert_link">
+            <a class="alert-link" (click)="requestResetPassword()" jhiTranslate="login.password.forgot">Did you forget your password?</a>
+        </div>
+        <!--<div class="alert alert-warning">-->
+        <!--<span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>-->
+        <!--<a class="alert-link" (click)="register()" jhiTranslate="global.messages.info.register.link">Register a new account</a>-->
+        <!--</div>-->
+    </div>
+
+</div>
+

@@ -1,0 +1,152 @@
+.input-group-data {
+    width: 283px;
+    margin-right: 32px;
+    margin-left: 32px;
+    display: inline-table;
+}
+
+input[type=text], input[type=email] {
+    font-size: 14px;
+    font-family: "FlowersFont-TEXT-OFFICE-REGULAR";
+    width: 279px;
+    height: 38px;
+    border: 1px solid #a7a7a7;
+    margin: 5px 9px -5px 0;
+    outline: none;
+    padding: 12px 7px;
+    &:hover {
+        cursor: text;
+    }
+    &:focus {
+        border: 1px solid cadetblue;
+    }
+}
+
+option:checked {
+    color: white;
+    background: cadetblue;
+}
+
+label {
+    width: 279px;
+    margin-right: 0;
+    margin-top: 11px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-family: "FlowersFont-HEAD-OFFICE-LIGTH";
+}
+
+.farm-data {
+    background-color: #ffffff;
+    hr {
+        margin: 0 32px;
+    }
+}
+
+.profile-data-group {
+    input.ng-invalid {
+        border-left: 2px solid red;
+    }
+    height: 90px;
+    small {
+        font-size: 11px;
+        font-family: "FlowersFont-HEAD-OFFICE-TEXT";
+    }
+}
+
+.farm-data-h2 {
+
+    h2 {
+        font-size: 21px;
+        font-family: "FlowersFont-TEXT-OFFICE-REGULAR";
+        padding: 40px 0 20px 32px;
+    }
+}
+
+.container-type-of-flowers {
+}
+
+.container-country {
+}
+
+.black {
+    background-color: black;
+    width: 138px;
+    height: 138px;
+    margin: -42px -48px;
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.camera {
+    position: absolute;
+    z-index: 3;
+
+    &:hover {
+        + .black {
+            opacity: 0.5;
+        }
+    }
+}
+.image-close {
+    position: absolute;
+    cursor: pointer;
+    margin: -150px 0 0 166px;
+    font-size: 16px;
+    outline: none;
+
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.image-uploader-background {
+    width: 138px;
+    height: 138px;
+    margin: -158px 0 0 30px;
+    position: relative;
+    display: block;
+}
+
+.image-uploader {
+    position: relative;
+    font-size: 50px;
+    margin: 50px 0 110px 78.5px;
+    z-index: 2;
+    cursor: pointer;
+    outline: none;
+    color: transparent;
+
+    &:hover {
+        color: white;
+    }
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.download-button {
+    margin : 20px 0 0 30px;
+    width: 279px;
+    padding: 6px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    border: 2px solid #44b0b0;
+    color: #44b0b0;
+    background-color: #fff;
+    outline: none;
+    &:hover {
+        color: #fff;
+        background-color: #44b0b0;
+    }
+}
+
+
+

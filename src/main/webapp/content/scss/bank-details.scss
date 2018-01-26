@@ -1,0 +1,177 @@
+.bank-details-tabs {
+    .ui-widget-content,
+    .ui-state-default,
+    .ui-widget-header,
+    .ui-tabview {
+        border: none;
+    }
+        .ui-tabview-nav {
+            background: white !important;
+            justify-content: center !important;
+        }
+    .ui-corner-all {
+        border-radius: 0;
+    }
+    .ui-tabview .ui-tabview-nav > li {
+        flex-grow: 0;
+        width:100px;
+        font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+        font-size: 14px;
+
+        &.ui-state-default {
+            &:hover {
+                background: transparent;
+                .ui-tabview-title {
+                    color: cadetblue;
+                }
+            }
+        }
+        &.ui-state-active {
+            border-bottom: 4px solid cadetblue;
+            .ui-tabview-title {
+                color: cadetblue;
+            }
+        }
+        a {
+            padding: 8px 22px;
+        }
+    }
+
+    //.ui-tabview.ui-tabview-top > .ui-tabview-nav {
+    //    height: 50px;
+    //}
+    .ui-widget {
+        font-size: 1em;
+    }
+}
+//end of bank-details tabs
+
+// start bank-details uploader primeng
+.uploader-button-style {
+
+    .ui-corner-bottom {
+        display: none;
+    }
+
+    .ui-fileupload-row {
+        display: none;
+    }
+
+    .fa-plus:before {
+        display: none;
+    }
+    .ui-button-text-icon-left .ui-button-text {
+        margin-top: 8px;
+        padding: 0px;
+    }
+    .ui-button-text-icon-left .fa {
+        display: none;
+    }
+    .ui-widget-header {
+        background: none;
+        width: 180px;
+    }
+
+    .ui-fileupload {
+        width: 346px;
+        margin:100px 0 0 24px;
+    }
+
+    .ui-fileupload-buttonbar .ui-button {
+        vertical-align: middle;
+        margin-right: 0.29em;
+    }
+
+    .ui-widget-header .ui-button, .ui-widget-content .ui-button, .ui-widget.ui-button, .ui-button {
+        border: cadetblue;
+        color: #FFFFFF;
+        background: cadetblue;
+    }
+
+    .ui-corner-all {
+        border-radius: 0px;
+    }
+
+    .ui-fileupload-choose:not(.ui-state-disabled):active {
+        background: cadetblue;
+    }
+    .ui-fileupload-choose:not(.ui-state-disabled):hover, .ui-fileupload-choose.ui-state-focus {
+        background: cadetblue;
+        outline: 0 none;
+    }
+
+    .ui-widget.ui-button, .ui-button {
+        margin: 18px 0 0 32px;
+        width: 120px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 50px;
+        border: 2px solid cadetblue;
+        color: cadetblue;
+        transition: all .0s;
+        background-color: #fff;
+        outline: none;
+        height: 40px;
+        &:hover {
+            color: #fff;
+            background-color: cadetblue;
+        }
+    }
+    .ui-state-default {
+        border: 1px solid cadetblue;
+        background: #ffffff;
+        color: #555555;
+    }
+}
+// end bank-details uploader primeng
+
+// start of bank details ckeckbox primeng
+.checkbox-1 {
+    margin-top: -7px;
+}
+
+.checkbox-2 {
+    margin-top: 30px;
+}
+
+.ui-chkbox-label {
+    vertical-align: middle;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.check-box-label1 {
+    margin-left: 32px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+}
+
+.check-box-label2 {
+    margin-left: 32px;
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+}
+// end of bank details ckeckbox primeng
+
+.download-and-delete-buttons {
+    margin: -48px 0 0 166px;
+}
+
+// disabled preview and download buttons style on create tab
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    cursor: not-allowed;
+}
+
+// end of disabled preview and download buttons style on create tab
+
+.bank-details-notification{
+    .ui-growl-item-container.ui-state-highlight.ui-growl-message-info {
+        background-color: cadetblue;
+        border-color: cadetblue;
+    }
+    .ui-growl-item {
+        position: relative;
+        display: block;
+        padding: .5em 1em;
+        margin-top: 50px;
+    }
+}
+

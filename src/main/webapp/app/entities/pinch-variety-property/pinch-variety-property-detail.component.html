@@ -1,0 +1,35 @@
+
+<div *ngIf="pinchVarietyProperty">
+    <h2><span jhiTranslate="flowersApp.pinchVarietyProperty.detail.title">Pinch Variety Property</span> {{pinchVarietyProperty.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.pinchVarietyProperty.length">Length</span></dt>
+        <dd>
+            <span>{{pinchVarietyProperty.length}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.pinchVarietyProperty.quantity">Quantity</span></dt>
+        <dd>
+            <span>{{pinchVarietyProperty.quantity}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.pinchVarietyProperty.pinchVariety">Pinch Variety</span></dt>
+        <dd>
+            <div *ngIf="pinchVarietyProperty.pinchVariety">
+                <a [routerLink]="['/pinch-variety', pinchVarietyProperty.pinchVariety?.id]">{{pinchVarietyProperty.pinchVariety?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'pinch-variety-property/'+ pinchVarietyProperty.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

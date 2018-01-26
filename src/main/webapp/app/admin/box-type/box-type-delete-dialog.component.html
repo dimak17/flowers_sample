@@ -1,0 +1,30 @@
+<div class="modal-window__medium">
+
+    <button type="button" class="modal__close fa fa-times" data-dismiss="modal" aria-hidden="true" (click)="clear()"></button>
+
+    <div class="modal-header">
+        <h4 class="modal-title_center" jhiTranslate="entity.delete.title">Confirm delete operation</h4>
+    </div>
+
+    <div class="modal-body">
+
+        <form name="deleteForm" (ngSubmit)="confirmDelete(boxType.id)">
+
+            <div class="modal__form-group modal-question__container">
+                <div class="modal-question" jhiTranslate="flowersApp.boxType.delete.question" translateValues="{name: '{{boxType.shortName}}'}"></div>
+
+                <div class="form-input_error-container">
+                    <small *ngIf="usageGroupingsError" class="form-input_error" jhiTranslate="flowersApp.boxType.delete.usageGroupingsError" translateValues="{name: '{{boxType.shortName}}'}"></small>
+                    <small *ngIf="usageGroupingsError" class="form-input_error" jhiTranslate="flowersApp.boxType.delete.finalText"></small>
+                </div>
+            </div>
+
+            <div class="modal-btn__container">
+                <button type="button" class="button-empty_small" data-dismiss="modal" (click)="clear()"><span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span></button>
+                <button type="submit" class="button-danger_small"><span class="fa fa-remove"></span>&nbsp;<span jhiTranslate="entity.action.delete">Delete</span></button>
+            </div>
+
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,97 @@
+<div [ngClass]="!loadComponent ? 'loader-right-block' : ''"></div>
+<div *ngIf="loadComponent" class="price-list">
+    <p-accordion class="accordion-price-list" [activeIndex]="index">
+        <p-accordionTab>
+            <div class="accordion-block">
+                <div class="accordion-left-block">
+                    <div class="half">
+                        <p-dataTable [value]="shippingPolicies" selectionMode="single" [(selection)]="shippingPolicy"
+                                     scrollable="true" scrollHeight="130px"
+                                     [emptyMessage]="priceListTranslation.create + priceListTranslation.shippingPolicy"
+                                     (click)="selectShippingPolicy(shippingPolicy)">
+                            <p-column field="fullName" header="{{priceListTranslation.shippingPolicy | firstLetterToUpperCase}}"></p-column>
+                        </p-dataTable>
+                    </div>
+                    <div class="half">
+                        <p-dataTable [value]="markets" selectionMode="single" [(selection)]="market"
+                                     scrollable="true" scrollHeight="130px" (click)="selectMarket(market)"
+                                     [emptyMessage]="priceListTranslation.emptyMassage + priceListTranslation.shippingPolicy">
+                            <p-column field="name" header="{{priceListTranslation.markets | firstLetterToUpperCase}}"></p-column>
+                        </p-dataTable>
+                    </div>
+                </div>
+                <div class="accordion-middle-block">
+                    <p-dataTable [value]="marketSeasons" selectionMode="single" [(selection)]="marketSeason"
+                                 scrollable="true" scrollHeight="286px" (click)="selectSeason(marketSeason)"
+                                 [emptyMessage]="priceListTranslation.emptyMassage + priceListTranslation.markets">
+                        <p-column field="season.seasonName" header="{{priceListTranslation.seasons | firstLetterToUpperCase}}"></p-column>
+                    </p-dataTable>
+                </div>
+                <div class="accordion-right-block">
+                    <div *ngIf="showHeaderRightBlock" class="header-right-block">
+                        <form [formGroup]="dataForm" novalidate>
+                            <label>{{priceListTranslation.typeOfFlowers}}</label>
+                            <ng-select class="input-group-data input-block-data" id="typeOfFlowers"
+                                       formControlName="typeOfFlowers"
+                                       [allowClear]="true" [items]="typeOfFlowers"
+                                       (selected)="selectedTypeOfFlower($event)"></ng-select>
+                        </form>
+                        <div class="buttons">
+                            <button type="button" id="switch-button" class="all-button"
+                                    [ngClass]="isAllButton ? 'all-button-active' : ''" (click)="useAllButton()"
+                                    jhiTranslate="flowersApp.block.allButton">All
+                            </button>
+                            <button type="button" class="var-button"
+                                    [ngClass]="!isAllButton ? 'var-button-active' : ''" (click)="useVarButton()"
+                                    jhiTranslate="flowersApp.block.varButton">Variety list
+                            </button>
+                        </div>
+                    </div>
+                    <div [ngClass]="loadingRightBlock ? 'loader-right-block' : ''"></div>
+                    <div *ngIf="showVariety" class="square-container" infinite-scroll>
+                        <div class="square" *ngFor="let variety of varieties"
+                             [ngClass]="checkSelectedVarieties(variety)  ? 'square-selected' : ''"
+                             (click)="onSelect(variety)"> {{variety.name.toLowerCase()}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </p-accordionTab>
+    </p-accordion>
+</div>
+<div *ngIf="loadComponent" class="two-button">
+    <div class="block-button">
+        <button type="button" pButton class="fa fa-chevron-down button-down"
+                (click)="openNext()"></button>
+    </div>
+    <div class="block-button">
+        <button type="button" pButton class="fa fa-chevron-up button-up"
+                (click)="openPrev()"></button>
+    </div>
+</div>
+<div *ngIf="showHeaderRightBlock" >
+    <p-dropdown [options]="fileFormats" [(ngModel)]="extension" [style]="{'width':'150px'}" placeholder="{{priceListTranslation.selectFileFormat}}" optionField="label"></p-dropdown>
+    <button class="block-button" type="submit" [disabled]="isDownloadingFile"
+            (click)="downloadFile()" value="Download File">{{priceListTranslation.downloadFile}}
+    </button>
+    <p-checkbox [(ngModel)]="isAllTypeOfFlowers" binary="true" name="isAllTypeOfFlowers" id="rememberMe" label={{priceListTranslation.allTypeOfFlowers}}></p-checkbox>
+</div>
+<div *ngIf="loadComponent" class="container-price-list">
+    <p-dataTable [value]="marketSeasonVarietiesSelected" [editable]="true" scrollable="true"
+                 [scrollHeight]="sizeScroll()"
+                 [emptyMessage]="priceListTranslation.emptyMassage + priceListTranslation.variety">
+        <p-column field="variety.name" header="{{priceListTranslation.variety | firstLetterToUpperCase}}"
+                  [style]="{'width':'15%', 'text-align': 'center', 'word-break': 'break-word'}"></p-column>
+        <p-column *ngFor="let c of cols; let i = index" [field]="c.field" [header]="c.header" [editable]="true"
+                  [style]="{'text-align': 'center'}">
+            <ng-template let-item="rowData" pTemplate="body">
+                <span>{{item[c.field] | currency : 'USD' : true : '.1-2'}}</span>
+            </ng-template>
+            <ng-template let-item="rowData" pTemplate="editor">
+                <p-inputMask (ngModelChange)="save(item, $event, i)" [(ngModel)]="item[c.field]" mask="9?9?.99"
+                             slotChar="0"
+                             appendTo="body" autoClear="false" required="true"></p-inputMask>
+            </ng-template>
+        </p-column>
+    </p-dataTable>
+</div>

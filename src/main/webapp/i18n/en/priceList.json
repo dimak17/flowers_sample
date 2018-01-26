@@ -1,0 +1,16 @@
+{
+    "flowersApp": {
+        "priceList" : {
+            "variety": "variety",
+            "shippingPolicy": "shipping policy",
+            "markets": "market",
+            "typeOfFlowers": "Type of flower",
+            "emptyMassage": "No selected ",
+            "seasons": "season",
+            "create": "Create new ",
+            "downloadFile": "Download",
+            "selectFileFormat": "Select file format",
+            "allTypeOfFlowers": "All type of flowers"
+        }
+    }
+}

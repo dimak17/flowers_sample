@@ -1,0 +1,53 @@
+
+<div *ngIf="marketVarietyPropertyPriceList">
+    <h2><span jhiTranslate="flowersApp.marketVarietyPropertyPriceList.detail.title">Market Variety Property</span> {{marketVarietyPropertyPriceList.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.marketVarietyPropertyPriceList.length">Length</span></dt>
+        <dd>
+            <span jhiTranslate="{{'flowersApp.Length.' + marketVarietyPropertyPriceList.length}}">{{marketVarietyPropertyPriceList.length}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketVarietyPropertyPriceList.price">Price</span></dt>
+        <dd>
+            <span>{{marketVarietyPropertyPriceList.price}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketVarietyPropertyPriceList.priceList">Price List</span></dt>
+        <dd>
+            <div *ngIf="marketVarietyPropertyPriceList.priceList">
+                <a [routerLink]="['/price-list', marketVarietyPropertyPriceList.priceList?.id]">{{marketVarietyPropertyPriceList.priceList?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketVarietyPropertyPriceList.market">Market</span></dt>
+        <dd>
+            <div *ngIf="marketVarietyPropertyPriceList.market">
+                <a [routerLink]="['/market', marketVarietyPropertyPriceList.market?.id]">{{marketVarietyPropertyPriceList.market?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketVarietyPropertyPriceList.variety">Variety</span></dt>
+        <dd>
+            <div *ngIf="marketVarietyPropertyPriceList.variety">
+                <a [routerLink]="['/variety', marketVarietyPropertyPriceList.variety?.id]">{{marketVarietyPropertyPriceList.variety?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketVarietyPropertyPriceList.shippingPolicy">Shipping Policy</span></dt>
+        <dd>
+            <div *ngIf="marketVarietyPropertyPriceList.shippingPolicy">
+                <a [routerLink]="['/shipping-policy', marketVarietyPropertyPriceList.shippingPolicy?.id]">{{marketVarietyPropertyPriceList.shippingPolicy?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'market-variety-property/'+ marketVarietyPropertyPriceList.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

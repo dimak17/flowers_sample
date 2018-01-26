@@ -1,0 +1,48 @@
+{
+    "flowersApp": {
+        "shippingPolicy" : {
+            "home": {
+                "title": "Shipping policies",
+                "createButton": "Create new policy",
+                "createOrEditButton": "Enter a shipping policy"
+            },
+            "created": "A new shipping policy is created with identifier {{ param }}",
+            "updated": "A shipping policy is updated with identifier {{ param }}",
+            "deleted": "A shipping policy is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete shipping policy {{ id }}?"
+            },
+            "detail": {
+                "title": "Shipping policy"
+            },
+            "action":{
+                "edit":"Edit",
+                "delete":"Delete",
+                "confirm": "Confirm delete operation",
+                "cancel": "Cancel",
+                "back": "Back",
+                "save":"Save"
+            },
+            "warningMessage":"Warning,  if you delete current shipping policy, the same claim policy will be removed too",
+            "fullName":"Full name:",
+            "shortName": "Short name:",
+            "validation": {
+                "shortName": {
+                    "alert":"This policy already exist",
+                    "required": "Short name is required",
+                    "pattern": "Short name should contain latin symbols",
+                    "maximumSymbols": "This field should contain maximum 17 symbols"
+                },
+                "boxSize": {
+                    "pattern":  "Box size must contain only digits"
+                },
+                "fullName": {
+                    "required": "Full name is required",
+                    "pattern": "Full name should contains latin symbols",
+                    "maximumSymbols": "This field should contain maximum 25 symbols"
+                }
+            }
+        }
+    }
+}
+

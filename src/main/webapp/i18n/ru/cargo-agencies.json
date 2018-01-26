@@ -1,0 +1,9 @@
+{
+    "flowersApp": {
+        "cargo-agencies": {
+            "cargoAgencies": "Cargo Agencies",
+            "cargoEmployees": "Cargo Employees",
+            "cargoEmployeePositions": "Cargo Employee Positions"
+        }
+    }
+}

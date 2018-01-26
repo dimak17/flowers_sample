@@ -1,0 +1,28 @@
+{
+    "flowersApp": {
+        "cargoEmployeePosition" : {
+            "name": "Position name:",
+            "createCargoEmployeePosition" : "Create employee position",
+            "validation": {
+                "name":{
+                    "required": "Position name is required",
+                    "pattern": "Position name should contain latin symbols",
+                    "maximumSymbols": "Position name should contain maximum 25 symbols"
+                }
+            },
+            "createLabel" : "Create employee position",
+            "createOrEditLabel" : "Edit employee position",
+            "alert": "This employee position already exist",
+            "created": "A new Cargo Employee Position is created with identifier {{ param }}",
+            "updated": "A Cargo Employee Position is updated with identifier {{ param }}",
+            "deleted": "A Cargo Employee Position is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Cargo Employee Position {{ name }}?",
+                "questionAlert": "If you delete this position, it will be deleted in cargo employees table"
+
+
+
+            }
+        }
+    }
+}

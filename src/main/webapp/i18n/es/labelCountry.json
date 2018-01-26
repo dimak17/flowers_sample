@@ -1,0 +1,24 @@
+{
+    "flowersApp": {
+        "labelCountry" : {
+            "home": {
+                "title": "Label Countries",
+                "createLabel": "Crear nuevo Label Country",
+                "createOrEditLabel": "Crear o editar Label Country"
+            },
+            "created": "Un nuevo Label Country ha sido creado con el identificador {{ param }}",
+            "updated": "Un Label Country ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Label Country ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Label Country {{ id }}?"
+            },
+            "detail": {
+                "title": "Label Country"
+            },
+            "label": "Label",
+            "country": "Country",
+            "company": "Company",
+            "destination": "Destination"
+        }
+    }
+}

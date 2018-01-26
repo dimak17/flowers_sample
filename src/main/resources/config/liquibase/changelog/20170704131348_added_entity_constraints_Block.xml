@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Block.
+    -->
+    <changeSet id="20170704131348-2" author="dima">
+
+        <addForeignKeyConstraint baseColumnNames="blocks_id"
+                                 baseTableName="block_variety"
+                                 constraintName="fk_block_variety_blocks_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="block"/>
+        <addForeignKeyConstraint baseColumnNames="varieties_id"
+                                 baseTableName="block_variety"
+                                 constraintName="fk_block_variety_varieties_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="variety"/>
+
+        <addForeignKeyConstraint baseColumnNames="company_id"
+                                 baseTableName="block"
+                                 constraintName="fk_block_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="company"/>
+
+    </changeSet>
+</databaseChangeLog>

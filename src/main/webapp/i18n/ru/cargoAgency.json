@@ -1,0 +1,44 @@
+{
+    "flowersApp": {
+        "cargoAgency" : {
+            "question": "Вы уверены что хотите удалить Cargo Agency {{ name }}?",
+            "alert": "This cargo agency already exist!",
+            "questionAlert": "If you delete this agency, you will lost all data",
+            "createOrEditLabel" : "Edit cargo agency",
+            "createLabel" : "Создать новое агенство",
+            "name": "Имя",
+            "mainAddress": "Основной адресс",
+            "additionalAddress": "Дополнительний адресс",
+            "officePhone": "Офис телефон",
+            "email": "Емеил",
+            "edit" : "Едит",
+            "delete" : "Удалить",
+            "globalFilterPlaceHolder" : "Global Filter",
+            "createCargoAgency" : "Create cargo agency",
+            "company": "Company",
+            "validation": {
+                "name": {
+                    "required": "Name is required",
+                    "pattern": "Name should contains latin symbols",
+                    "maximumSymbols": "Name should contains maximum 50 symbols"
+                },
+                "mainAddress": {
+                    "pattern": "Main address should contains latin symbols",
+                    "maximumSymbols": "Main address should contains maximum 50 symbols"
+                },
+                "additionalAddress": {
+                    "pattern": "Additional address should contains latin symbols",
+                    "maximumSymbols": "Additional address should contains maximum 50 symbols"
+                },
+                "email": {
+                    "pattern": "Email should contains latin symbols",
+                    "maximumSymbols": "Email should contains maximum 50 symbols",
+                    "emailValidation": "Email is not valid, example: email@gmail.com",
+                    "required": "Email is required",
+                    "alertEmail": "This account already exist"
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,69 @@
+<div *ngIf="loadComponent" class="loader agency-component-loader"></div>
+<div *ngIf="!loadComponent">
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+    <div class="modal-header cargo-agency-modal-header">
+        <h4 class="modal-title" *ngIf="!cargoAgency.id" id="createCargoAgencyLabel" jhiTranslate="flowersApp.cargoAgency.createLabel">Create a Cargo Agency</h4>
+        <h4 class="modal-title cargo-edit" *ngIf="cargoAgency.id" id="editCargoAgencyLabel" jhiTranslate="flowersApp.cargoAgency.createOrEditLabel">Edit Cargo Agency</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()"><i class="fa fa-times"></i></button>
+    </div>
+    <div class="cargo-modal-body">
+        <div class="cargo-agency-data">
+            <label class="cargo-form-control-label" jhiTranslate="flowersApp.cargoAgency.nameHeader" for="field_name">Cargo agency name</label>
+            <input type="text" class="cargo-form-control" [class]="lengthValidation(cargoAgency.name) || latinValidation(cargoAgency.name)
+                ||(errorAlert && duplicateCargoAgencyName == cargoAgency.name.toLowerCase().trim() || requiredValidation(cargoAgency.name)
+                || !cargoAgency.name)? 'input-form form-invalid': 'form'" name="name" id="field_name"
+                [(ngModel)]="cargoAgency.name"  required maxlength="51" />
+            <small *ngIf="(requiredValidation(cargoAgency.name) || !cargoAgency.name) && !lengthValidation(cargoAgency.name)" class="cargo-agency-field-err-msg text-danger"
+                   jhiTranslate="flowersApp.cargoAgency.validation.nameHeader.required"></small>
+            <small *ngIf="latinValidation(cargoAgency.name) && !lengthValidation(cargoAgency.name)" class="cargo-agency-field-err-msg text-danger" jhiTranslate="flowersApp.cargoAgency.validation.nameHeader.pattern"></small>
+            <small *ngIf="isFillValidation(cargoAgency.name) && lengthValidation(cargoAgency.name)" class="cargo-agency-field-err-msg text-danger" jhiTranslate="flowersApp.cargoAgency.validation.nameHeader.maximumSymbols"></small>
+            <small *ngIf="(errorAlert && duplicateCargoAgencyName == cargoAgency.name.toLowerCase().trim())" class="cargo-agency-field-err-msg text-danger"
+                   jhiTranslate="flowersApp.cargoAgency.alert">This Cargo Agency already exist
+            </small>
+        </div>
+        <div class="form-group">
+            <label class="cargo-form-control-label" jhiTranslate="flowersApp.cargoAgency.mainAddressHeader" for="field_mainAddress">Main address</label>
+            <input type="text" class="form" [class]="lengthValidation(cargoAgency.mainAddress) || latinValidation(cargoAgency.mainAddress) ? 'input-form form-invalid': 'form'" name="mainAddress" id="field_mainAddress"
+                [(ngModel)]="cargoAgency.mainAddress" maxlength="51" />
+            <small *ngIf="latinValidation(cargoAgency.mainAddress) && !lengthValidation(cargoAgency.mainAddress)" class="cargo-agency-field-err-msg text-danger" jhiTranslate="flowersApp.cargoAgency.validation.mainAddressHeader.pattern"></small>
+            <small *ngIf="isFillValidation(cargoAgency.mainAddress) && lengthValidation(cargoAgency.mainAddress)" class="cargo-agency-field-err-msg text-danger" jhiTranslate="flowersApp.cargoAgency.validation.mainAddressHeader.maximumSymbols"></small>
+        </div>
+        <div class="form-group">
+            <label class="cargo-form-control-label" jhiTranslate="flowersApp.cargoAgency.additionalAddressHeader" for="field_additionalAddress">Additional address</label>
+            <input type="text" class="form" [class]="lengthValidation(cargoAgency.additionalAddress) || latinValidation(cargoAgency.additionalAddress) ? 'input-form form-invalid': 'form'" name="additionalAddress" id="field_additionalAddress"
+                [(ngModel)]="cargoAgency.additionalAddress" maxlength="51" />
+            <small *ngIf="latinValidation(cargoAgency.additionalAddress) && !lengthValidation(cargoAgency.additionalAddress)" class="cargo-agency-field-err-msg text-danger" jhiTranslate="flowersApp.cargoAgency.validation.additionalAddressHeader.pattern"></small>
+            <small *ngIf="isFillValidation(cargoAgency.additionalAddress) && lengthValidation(cargoAgency.additionalAddress)" class="cargo-agency-field-err-msg text-danger" jhiTranslate="flowersApp.cargoAgency.validation.additionalAddressHeader.maximumSymbols"></small>
+        </div>
+        <div class="form-group">
+            <label class="cargo-form-control-label" jhiTranslate="flowersApp.cargoAgency.officePhoneHeader" for="field_officePhone">Office phone</label>
+            <p-inputMask class="cargo-agency-mask" mask="(999) 999-9999? ext.99999" [(ngModel)]="officePhoneMask" placeholder="(999) 999-9999? ext.99999" type="text" name="officePhone" id="field_officePhone"></p-inputMask>
+        </div>
+        <div class="form-group">
+            <label class="cargo-form-control-label" jhiTranslate="flowersApp.cargoAgency.emailHeader" for="field_emailHeader">Email</label>
+            <input type="text" class="cargo-form-control" [class]="requiredValidation(cargoAgency.email) || lengthValidation(cargoAgency.email) || emailValidation(cargoAgency.email) || duplicateValidation(cargoAgency.email)
+            || completeEmailValidation(cargoAgency.email)? 'employee-required input-color work-email-input input-form' : 'input-color work-email-input input-form'" name="email" id="field_emailHeader"
+                [(ngModel)]="cargoAgency.email"  required maxlength="51" />
+            <small *ngIf="requiredValidation(cargoAgency.email)" class="work-email-alert cargo-agency-field-err-msg text-danger" jhiTranslate="flowersApp.cargoAgency.validation.emailHeader.required"></small>
+            <small *ngIf="emailValidation(cargoAgency.email) && !lengthValidation(cargoAgency.email)" class="cargo-agency-field-err-msg text-danger"></small>
+            <small *ngIf="lengthValidation(cargoAgency.email)" class="cargo-agency-field-err-msg text-danger" jhiTranslate="flowersApp.cargoAgency.validation.emailHeader.maximumSymbols"></small>
+            <small *ngIf="isFillValidation(cargoAgency.email) && (emailValidation(cargoAgency.email)
+            || completeEmailValidation(cargoAgency.email))" class="work-email-alert cargo-agency-field-err-msg text-danger" jhiTranslate="flowersApp.cargoAgency.validation.emailHeader.emailValidation"></small>
+            <small *ngIf="isFillValidation(cargoAgency.email) && duplicateValidation(cargoAgency.email)" class="cargo-agency-field-err-msg text-danger alert-on-time" jhiTranslate="flowersApp.cargoAgency.emailHeader.alertEmail">This Account already exist!</small>
+        </div>
+        <div class="form-group">
+            <label class="cargo-form-control-label" jhiTranslate="flowersApp.cargoAgency.webPageHeader" for="field_webPage">Webpage</label>
+            <input type="text" class="cargo-form-control"  name="webPage" id="field_webPage" [class]="lengthValidation(cargoAgency.webPage) ? 'input-form form-invalid': 'form'"
+                   [(ngModel)]="cargoAgency.webPage" maxlength="51" />
+            <small *ngIf="lengthValidation(cargoAgency.webPage)" class="cargo-agency-field-err-msg text-danger" jhiTranslate="flowersApp.cargoAgency.validation.webPageHeader.maximumSymbols"></small>
+        </div>
+    </div>
+    <div class="modal-footer cargo-agency-modal-footer">
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving || saveButtonDeactivation(cargoAgency)" class="btn-cargo">
+            <span></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
+</div>
+

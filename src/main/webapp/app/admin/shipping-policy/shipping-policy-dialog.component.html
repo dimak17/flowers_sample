@@ -1,0 +1,63 @@
+<form role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+    <div class="{{shippingPolicy.colorClass}} top-color-line"></div>
+    <div class="fa fa-times close" data-dismiss="modal" (click)="clear()"></div>
+    <div>
+        <h4 class="phrase" id="myBoxTypeLabel" jhiTranslate="flowersApp.shippingPolicy.home.createOrEditButton"></h4>
+    </div>
+    <div class="modal-body">
+        <div class="short-name" jhiTranslate="flowersApp.shippingPolicy.shortName" for="field_shortName"></div>
+        <div class="form-border">
+            <div class="box-type-position">
+                <input type="text" required
+                       [class]="requiredValidation(shippingPolicy.shortName)
+                       ||shortNameLengthValidation(shippingPolicy.shortName, shortNameMax)
+                       ||shortNameLatinValidation(shippingPolicy.shortName)
+                       ||(errorAlert && dublicateShippingPolicyName == shippingPolicy.shortName.toLowerCase().trim()
+                       || !shippingPolicy.shortName)? 'box-type-position form-invalid'
+                        : 'form' " name="shortName"
+                       id="field_shortName" maxlength="18"[(ngModel)]="shippingPolicy.shortName"/>
+                <small
+                    *ngIf="requiredValidation(shippingPolicy.shortName)&& !shortNameLengthValidation(shippingPolicy.shortName)"
+                    class="box-field-err-msg text-danger"
+                    jhiTranslate="flowersApp.shippingPolicy.validation.shortName.required"></small>
+                <small *ngIf="!shippingPolicy.shortName" class="box-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.shippingPolicy.validation.shortName.required"></small>
+                <small *ngIf="shortNameLatinValidation(shippingPolicy.shortName)" class="box-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.shippingPolicy.validation.shortName.pattern"></small>
+                <span class="error-name">
+             <small *ngIf="(errorAlert && dublicateShippingPolicyName == shippingPolicy.shortName.toLowerCase().trim())"
+                    class="box-field-err-msg text-danger"
+                    jhiTranslate="flowersApp.shippingPolicy.validation.shortName.alert"></small></span>
+                <small *ngIf="shortNameLengthValidation(shippingPolicy.shortName)" class="box-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.shippingPolicy.validation.shortName.maximumSymbols"></small>
+            </div>
+        </div>
+        <div class="full-name" jhiTranslate="flowersApp.shippingPolicy.fullName" for="field_fullName"></div>
+        <div class="form-border">
+            <div class="box-type-position">
+                <input type="text"  required
+                       [class]="requiredValidation(shippingPolicy.fullName)
+                       ||fullNameLengthValidation(shippingPolicy.fullName, fullNameMax)
+                       ||fullNameLatinValidation(shippingPolicy.fullName)
+                       ||(errorAlert && dublicateShippingPolicyName == shippingPolicy.fullName.toLowerCase().trim()
+                       || !shippingPolicy.fullName)? 'box-type-position form-invalid'
+                        : 'form' " name="fullName"
+                       id="field_fullName" maxlength="26" [(ngModel)]="shippingPolicy.fullName"/>
+                <small
+                    *ngIf="requiredValidation(shippingPolicy.fullName)&& !fullNameLengthValidation(shippingPolicy.fullName)"
+                    class="box-field-err-msg text-danger"
+                    jhiTranslate="flowersApp.shippingPolicy.validation.fullName.required"></small>
+                <small *ngIf="!shippingPolicy.fullName" class="box-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.shippingPolicy.validation.fullName.required"></small>
+                <small *ngIf="fullNameLengthValidation(shippingPolicy.fullName)" class="box-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.shippingPolicy.validation.fullName.maximumSymbols"></small>
+                <small *ngIf="fullNameLatinValidation(shippingPolicy.fullName)" class="box-field-err-msg text-danger"
+                       jhiTranslate="flowersApp.shippingPolicy.validation.fullName.pattern"></small>
+            </div>
+        </div>
+    </div>
+    <button type="submit" [disabled]="editForm.form.invalid || isSaving || saveButtonDeactivation(shippingPolicy)"
+            class="save-button" jhiTranslate="flowersApp.shippingPolicy.action.save"></button>
+    <div class="{{shippingPolicy.colorClass}} bottom-color-line"></div>
+</form>
+

@@ -1,0 +1,9 @@
+{
+    "flowersApp": {
+        "policy-info": {
+            "shippingPolicy": "Shipping Policy",
+            "claimsPolicy": "Claims Policy",
+            "paymentPolicy": "Payment Policy"
+        }
+    }
+}

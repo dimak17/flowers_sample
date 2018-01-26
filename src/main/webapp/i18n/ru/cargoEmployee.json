@@ -1,0 +1,53 @@
+{
+    "flowersApp": {
+        "cargoEmployee" : {
+            "alert": "This cargo employee already exist",
+            "question": "Вы уверены что хотите удалить Cargo Employee {{ fullName }}?",
+            "createOrEditLabel" : "Edit cargo employee",
+            "createLabel" : "Создать нового сотрудника",
+            "fullName": "Имя",
+            "email": "Емеил",
+            "officePhone": "Офис телефон",
+            "mobilePhone": "Моб. телефон",
+            "skype": "Скайп",
+            "markets": "Маркети",
+            "positions" : "Позиции",
+            "agencies" : "Agency",
+            "edit" : "Едит",
+            "delete" : "Удалить",
+            "globalFilterPlaceHolder" : "Global Filter",
+            "createCargoEmployee" : "Create cargo Employee",
+            "defaultMarketsLabel": "Choose market gor cargo agency",
+            "defaultLabel": "Choose positions gor cargo agency",
+            "selectedPositionsLabel": "{0} positions are selected",
+            "selectedMarketsLabel": "{0} markets are selected",
+            "chooseAgencyForCargoEmployee" : "Choose agency for cargo employee",
+
+            "validation": {
+                "fullName": {
+                    "required": "Full name is required",
+                    "pattern": "Full name should contains latin symbols",
+                    "maximumSymbols": "Full name should contains maximum 50 symbols"
+                },
+
+                "email": {
+                    "pattern": "Email should contains latin symbols",
+                    "maximumSymbols": "Email should contains maximum 50 symbols",
+                    "emailValidation": "Email is not valid, example: email@gmail.com",
+                    "required": "Email is required",
+                    "alertEmail": "This account already exist"
+                },
+
+                "skype": {
+                    "pattern": "Skype should contains latin symbols",
+                    "maximumSymbols": "Skype should contains maximum 50 symbols"
+                },
+
+                "agencies": {
+                    "required": "Agency is required"
+                }
+
+            }
+        }
+    }
+}

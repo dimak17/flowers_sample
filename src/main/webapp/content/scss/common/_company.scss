@@ -1,0 +1,609 @@
+// Farm data
+
+.input-group-data {
+    .dropdown {
+        width: 279px;
+        height: 38px;
+        margin: 5px 9px -5px 0;
+        border-radius: 0;
+        outline: none;
+        ul {
+            font-size: 14px;
+            font-family: "FlowersFont-TEXT-OFFICE-REGULAR";
+            display: block;
+        }
+    }
+    .dropdown-menu {
+        margin-right: -1.5px;
+        padding: 0;
+        margin-top: -30px;
+        border: 1px solid #18a09e;
+        border-radius: 0;
+        background-clip: inherit;
+    }
+    .btn-secondary:focus, .btn-secondary.focus {
+        box-shadow: none;
+
+    }
+    .btn-secondary {
+        &:hover {
+            background: none;
+        }
+    }
+
+    .btn {
+        width: 279px;
+        height: 38px;
+        border-radius: 0;
+        padding: 10px 0 10px 7px;
+        transition: none;
+        &:focus {
+            border: 1px solid #18a09e;
+            box-shadow: none;
+        }
+
+        span {
+            font-size: 14px;
+            font-family: "FlowersFont-TEXT-OFFICE-REGULAR";
+        }
+    }
+    .btn-link {
+        display: none;
+    }
+    .form-control {
+        border-radius: 0;
+        border: 1px solid #a7a7a7;
+        width: 279px;
+        height: 38px;
+        &:hover {
+            cursor: pointer;
+        }
+        &:focus, &:active {
+            border: 1px solid #18a09e;
+        }
+    }
+
+    .pull-right {
+        font-size: 30px;
+        color: #c7c7c7;
+        margin-top: -8px;
+        margin-right: 10px;
+        &:hover {
+            color: cadetblue;
+        }
+    }
+
+}
+
+ng-select.ng-invalid {
+    border: none;
+    .ui-select-match span {
+        border-left: 2px solid red;
+    }
+}
+
+.profile-data-group .ui-multiselect {
+    .ui-multiselect-header {
+        display: none;
+    }
+    width: 279px;
+    height: 38px;
+    .ui-multiselect-panel {
+        width: 277px;
+    }
+}
+
+.farm-data {
+    .ui-growl {
+        right: 85px;
+        top: 136px;
+    }
+}
+
+// Farm data ******************
+
+// Mix type
+//
+//.mix-type-modal-window .modal-content {
+//    margin: 161px 0 0 0;
+//    width: 375px;
+//    height: 349px;
+//    background-color: white;
+//    border-radius: 0.0rem;
+//}
+//
+//.mix-type-modal-window .modal-dialog {
+//    width: 375px;
+//    height: 349px;
+//}
+//
+//.delete-mix-type .modal-content {
+//    margin-top: 161px;
+//    width: 500px;
+//    background-color: white;
+//    border-radius: 0.0rem;
+//    .modal-header {
+//        font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//    }
+//    .modal-body {
+//        font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//    }
+//}
+
+// Mix-type ******************************************
+
+// Box-type modal-window
+//
+//.top-color-line {
+//    width: 108px;
+//    height: 6px;
+//    margin:0 auto;
+//    background: cadetblue;
+//}
+//
+//.bottom-color-line {
+//    width: 108px;
+//    height: 6px;
+//    background: cadetblue;
+//    bottom: 0;
+//    position: absolute;
+//    margin-left: 133.5px;
+//}
+//
+//.phrase {
+//    font-size: 26px;
+//    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//    color: black;
+//    margin: 61px 0 0 72px;
+//}
+//
+//.close {
+//    width: 17px;
+//    height: 17px;
+//    margin: -5px 5px;
+//    font-size: 20px;
+//    display: block;
+//    outline: none;
+//}
+//
+//.fa-times:hover {
+//    color: cadetblue;
+//}
+//
+//.short-name {
+//    color: #414242;
+//    font-size: 12px;
+//    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//    margin-left: 55px;
+//}
+//
+//.full-name {
+//    color: #414242;
+//    font-size: 12px;
+//    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//    margin:16px 0 0 55px;
+//}
+//
+//.form {
+//    background-color: #F2F2F2;
+//    width: 249px;
+//    height: 38px;
+//    border:1px solid #a7a7a7;
+//    margin-left: 55px;
+//    color: black;
+//    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+//    font-size: 14px;
+//    padding-left: 13px;
+//    outline: none;
+//
+//    &:focus {
+//        border-color: cadetblue;
+//        background-color: white !important;
+//    }
+//}
+//
+//.save-button {
+//    width: 250px;
+//    height: 52px;
+//    background-color: #FFFFFF;
+//    font-size: 16px;
+//    font-family: FlowersFont-HEAD-OFFICE-MEDIUM;
+//    border-radius: 52px;
+//    border: 2px solid cadetblue;
+//    margin: 30px 0 0 70px;
+//    color: cadetblue;
+//    outline: none;
+//    cursor: pointer;
+//
+//    &:hover {
+//        color: #FFFFFF;
+//        background-color: cadetblue;
+//    }
+//}
+//
+//input:required {
+//    background: #ffffff;
+//    outline: none;
+//}
+//
+//input:required:invalid {
+//    background: #f2f2f2;
+//}
+//
+//.box-type-position {
+//    border-left: 2px solid red !important;
+//}
+//
+//
+//.box-field-err-msg {
+//    width: 249px;
+//    margin-left: 58px;
+//    display: block;
+//    height: 13px;
+//    font-size: 11px;
+//    font-family: FlowersFont-HEAD-OFFICE-TEXT;
+//    position: absolute;
+//    z-index: 2;
+//}
+
+//Box-type modal window
+
+//Box-type delet dialog
+//.button {
+//    line-height: 1.25;
+//    border: 1px solid transparent;
+//    padding: 0.5rem 1rem;
+//    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//    margin-top: 15px;
+//    height: 35px;
+//}
+//
+//.button-secondary {
+//    color: #292b2c;
+//    background-color: #fff;
+//    border-color: #ccc;
+//
+//    &:hover {
+//        background-color: #e6e6e6;
+//        border-color: #adadad;
+//    }
+//}
+//
+//.button-danger {
+//    color: #fff;
+//    background-color: #d9534f;
+//    border-color: #d9534f;
+//
+//    &:hover {
+//        background-color: #c9302c;
+//        border-color: #c12e2a;
+//    }
+//}
+//
+//.close {
+//    width: 17px;
+//    height: 17px;
+//    margin: -15px 0 0 460px;
+//    font-size: 20px;
+//    display: block;
+//    outline: none;
+//    position: absolute;
+//}
+//
+//.fa-times:hover {
+//    color: cadetblue;
+//}
+//
+//
+//.modal-header {
+//    height: 55px;
+//}
+//
+//.question {
+//    margin: 5px;
+//    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//}
+//
+//.modal-title {
+//    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//}
+//
+//.box-err {
+//    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+//}
+
+// Box type delet dialog ****************************************
+
+//Mix Type dialog
+//
+//.top-color-line {
+//    width: 108px;
+//    height: 6px;
+//    margin: 0 auto;
+//    background: cadetblue;
+//}
+//
+//.bottom-color-line {
+//    width: 108px;
+//    height: 6px;
+//    background: cadetblue;
+//    margin-left: 132.5px;
+//    bottom: 0;
+//    position: absolute;
+//}
+//
+//.phrase {
+//    font-size: 26px;
+//    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//    color: black;
+//    margin: 61px 0 0 72px;
+//}
+//
+//.close {
+//    margin: -7px 4px 0 0;
+//    display: block;
+//    outline: none;
+//    &:hover {
+//        color:cadetblue;
+//    }
+//    span {
+//        font-size: 20px;
+//    }
+//}
+//
+//.short-name {
+//    color: #414242;
+//    font-size: 12px;
+//    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//    margin-left: 55px;
+//}
+//
+//.full-name {
+//    color: #414242;
+//    font-size: 12px;
+//    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//    margin: 16px 0 0 55px;
+//}
+//
+//.form {
+//    width: 249px;
+//    height: 38px;
+//    border: 1px solid #a7a7a7;
+//    margin-left: 55px;
+//    color: black;
+//    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+//    font-size: 14px;
+//    padding-left: 13px;
+//    outline: none;
+//}
+//
+//.form-invalid {
+//    border-left: 2px solid red !important;
+//}
+//
+//input {
+//    &:focus {
+//        border: 1px solid cadetblue;
+//    }
+//}
+//
+//
+//.save-button {
+//    width: 250px;
+//    height: 52px;
+//    background-color: #FFFFFF;
+//    font-size: 16px;
+//    font-family: FlowersFont-HEAD-OFFICE-MEDIUM;
+//    border: 3px solid cadetblue;
+//    margin: 30px 0 0 70px;
+//    color: cadetblue;
+//    outline: none;
+//    cursor: pointer;
+//    &:hover {
+//        color: #FFFFFF;
+//        background-color: cadetblue;
+//    }
+//}
+//
+//.box-type-position {
+//    .ng-invalid {
+//        border-left: 2px solid red !important;
+//        outline: none;
+//    }
+//}
+//
+//.mix-field-err-msg {
+//    width: 249px;
+//    margin-left: 58px;
+//    display: block;
+//    height: 13px;
+//    font-size: 11px;
+//    font-family: FlowersFont-HEAD-OFFICE-TEXT;
+//    position: absolute;
+//    z-index: 2;
+//}
+//
+//.alert-on-time {
+//    margin-left: 120px;
+//    font-size: 12px;
+//}
+//
+//.red {
+//    background: red;
+//}
+//
+//.green {
+//    background: green;
+//}
+//
+//.blue {
+//    background: blue;
+//}
+//
+//.gold {
+//    background: gold;
+//}
+//
+//.brown {
+//    background: brown;
+//}
+//
+//.violet {
+//    background: violet;
+//}
+//
+//.pink {
+//    background: pink;
+//}
+//
+//.aqua {
+//    background: aqua;
+//}
+//Mix type dialog ****************************************
+
+//Mix type delet dialog
+//
+//.button {
+//    line-height: 1.25;
+//    border: 1px solid transparent;
+//    padding: 0.5rem 1rem;
+//    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//    margin-top: 15px;
+//    height: 35px;
+//    cursor: pointer;
+//    outline: none;
+//}
+//
+//.button-secondary {
+//    color: #292b2c;
+//    background-color: #fff;
+//    border-color: #ccc;
+//    &:hover {
+//        background-color: #e6e6e6;
+//        border-color: #adadad;
+//    }
+//}
+//
+//.button-danger {
+//    color: #fff;
+//    background-color: #d9534f;
+//    border-color: #d9534f;
+//    &:hover {
+//        background-color: #c9302c;
+//        border-color: #c12e2a;
+//    }
+//}
+//
+//.close {
+//    margin: -15px 0 0 464px;
+//    display: block;
+//    outline: none;
+//    position: absolute;
+//    &:hover {
+//        color:cadetblue;
+//    }
+//    span {
+//        font-size: 20px;
+//    }
+//
+//}
+//
+//.modal-header {
+//    height: 55px;
+//}
+//
+//.question {
+//    margin: 5px;
+//    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+//}
+
+// Mix type delet dialog ***********************************
+
+//Farm data delet image dialog
+//
+//.button {
+//    line-height: 1.25;
+//    border: 1px solid transparent;
+//    padding: 0.5rem 1rem;
+//    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//    height: 35px;
+//    cursor: pointer;
+//    margin-top: 15px;
+//}
+//
+//.button-secondary {
+//    color: #292b2c;
+//    background-color: #fff;
+//    border-color: #ccc;
+//    cursor: pointer;
+//    &:hover {
+//        background-color: #e6e6e6;
+//        border-color: #adadad;
+//    }
+//}
+//
+//.button-danger {
+//    color: #fff;
+//    background-color: #d9534f;
+//    border-color: #d9534f;
+//    cursor: pointer;
+//    &:hover {
+//        background-color: #c9302c;
+//        border-color: #c12e2a;
+//    }
+//}
+//
+//.close {
+//    width: 17px;
+//    height: 17px;
+//    margin: -15px 0 0 460px;
+//    font-size: 20px;
+//    display: block;
+//    outline: none;
+//    position: absolute;
+//
+//    &:hover {
+//        color: cadetblue;
+//    }
+//}
+//
+//.modal-header {
+//    height: 55px;
+//}
+//
+//.modal-title {
+//    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//}
+//
+//.question {
+//    margin: 5px;
+//    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+//}
+//
+//.var-err {
+//    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+//    margin-left: 0;
+//}
+
+
+//Farm-data delet dialog component ***************
+
+
+//Box-types
+
+.box-type-modal-window .modal-content {
+    position: absolute;
+    margin: 161px 0 0 50px;
+    width: 375px;
+    height: 453px;
+    background-color: white;
+    border-radius: 0;
+}
+
+.delete-box-type .modal-content {
+    margin-top: 161px;
+    width: 500px;
+    background-color: white;
+    border-radius: 0;
+}
+//*******************************************

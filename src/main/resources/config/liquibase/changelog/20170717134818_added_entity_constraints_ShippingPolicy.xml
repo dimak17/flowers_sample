@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Shipping Policy.
+    -->
+    <changeSet id="20170717134818-2" author="dima">
+
+
+        <addForeignKeyConstraint baseColumnNames="company_id"
+                                 baseTableName="shipping_policy"
+                                 constraintName="fk_shipping_policy_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="company"/>
+    <!--
+        Added the constraints for entity ShippingPolicy.
+    -->
+
+        <addForeignKeyConstraint baseColumnNames="company_id"
+                                 baseTableName="shipping_policy"
+                                 constraintName="fk_shipping_policy_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="company"/>
+
+    </changeSet>
+</databaseChangeLog>

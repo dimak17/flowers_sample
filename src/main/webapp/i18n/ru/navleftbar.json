@@ -1,0 +1,49 @@
+{
+    "navleftbar": [
+        {
+            "name": "Company",
+            "path": "company-info",
+            "icon": "fa fa-home"
+        },
+        {
+            "name": "Employee",
+            "path": "employee-info",
+            "icon": "fa fa-user-circle-o"
+        },
+        {
+            "name": "Seasons/Pinch",
+            "path": "seasons-pinch-info",
+            "icon": "fa fa-sun-o"
+        },
+        {
+            "name": "Cargo Agencies",
+            "path": "cargo-agencies",
+            "icon": "fa fa-truck"
+        },
+        {
+            "name": "Air-Lines List",
+            "path": "air-lines-info",
+            "icon": "fa fa-plane"
+        },
+        {
+            "name": "Policy",
+            "path": "policy-info",
+            "icon": "fa fa-file-text-o"
+        },
+        {
+            "name": "Price Lists",
+            "path": "price-lists",
+            "icon": "fa fa-dollar"
+        },
+        {
+            "name": "Clients",
+            "path": "clients",
+            "icon": "fa fa-users"
+        },
+        {
+            "name": "DAEs",
+            "path": "daes",
+            "icon": "fa fa-files-o"
+        }
+    ]
+}

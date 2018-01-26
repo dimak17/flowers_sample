@@ -1,0 +1,199 @@
+
+.variety-list-block {
+    margin: 40px 0 0 30px;
+    height: 643px;
+}
+
+.title {
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 21px;
+}
+
+.variety-block {
+    width: 49%;
+    border: 1px solid #D5D5D5;
+    padding: 18px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    display: flex;
+    float: left;
+    align-items: center;
+    word-break: break-all;
+}
+
+.block-resize {
+    width: 95%;
+}
+
+
+.buttons-hover {
+    margin-top: 140px;
+    position: absolute;
+}
+
+img.center {
+    display: block;
+}
+
+.info {
+    font-family:FlowersFont-HEAD-OFFICE-LIGTH;
+    font-size: 14px;
+    margin-bottom: -10px;
+}
+
+.fields-text {
+    font-weight: 300;
+    text-align: left;
+}
+
+.info-data {
+    font-size: 13px;
+}
+
+.info-name {
+    margin: 20px 0 0 10px;
+    height: 50px;
+    min-width: 55%;
+}
+.info-color {
+    margin: -10px 0 0 10px;
+}
+
+.info-breeder {
+    margin: 5px 0 0 10px;
+}
+
+.info-min-length {
+    margin: 5px 0 0 10px;
+}
+
+.info-max-length {
+    margin: 5px 0 0 10px;
+}
+
+.info-data {
+    margin-left: 5px;
+    font-size: 13px;
+}
+
+.data-edit {
+    position: absolute;
+    margin-left: 4px;
+    width: 33px;
+}
+
+.data-delete {
+    position: absolute;
+    margin-left: 5px;
+    width: 50px;
+}
+.data {
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    outline: none;
+    float: right;
+}
+
+.edit-delete-icons {
+    font-size: 15px;
+    cursor: pointer;
+    float: left;
+    outline: none;
+}
+
+.edit-block {
+    width: 45px;
+    margin: 5px 0 0 10px;
+    border: none;
+    cursor: pointer;
+    float: left;
+    outline: none;
+    position: relative;
+
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.delete-block {
+    width: 57px;
+    margin: 5px 0 0 5px;
+    border: none;
+    cursor: pointer;
+    float: left;
+    outline: none;
+    position: relative;
+
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.vertical-separator {
+    height:15px;
+    width: 2px;
+    background: grey;
+    display: block;
+    float: left;
+    margin: 5px 20px 0;
+}
+
+.add-button {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    border-radius: 52px;
+    border: 2px solid cadetblue;
+    margin: -104px 50px 0 0;
+    color: cadetblue;
+    outline: none;
+    cursor: pointer;
+    float: right;
+    text-align: center;
+    padding-top: 6px;
+
+    &:hover {
+        color: #FFFFFF;
+        background-color: cadetblue;
+    }
+}
+
+.fa-plus-square-o:hover {
+    color: cadetblue;
+}
+
+.img-pos {
+    width: 190px;
+    height: 141px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.variety-scroll{
+    margin-top: 35px;
+    overflow: auto;
+    height: 650px
+}
+
+.choose-title {
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+}
+
+.flower-selector {
+    margin-left: -32px;
+}
+
+@media screen and (max-width: 1286px){
+    .variety-block {
+        width: 97%;
+    },
+
+    .info {
+         font-family:FlowersFont-HEAD-OFFICE-LIGTH;
+         font-size: 14px;
+         margin: 0 0 -10px 56px;
+}
+}

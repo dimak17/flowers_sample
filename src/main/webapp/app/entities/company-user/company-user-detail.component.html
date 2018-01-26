@@ -1,0 +1,61 @@
+
+<div *ngIf="companyUser">
+    <h2><span jhiTranslate="flowersApp.companyUser.detail.title">Company User</span> {{companyUser.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.companyUser.skype">Skype</span></dt>
+        <dd>
+            <span>{{companyUser.skype}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.companyUser.fullName">Full Name</span></dt>
+        <dd>
+            <span>{{companyUser.fullName}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.companyUser.workEmail">Work Email</span></dt>
+        <dd>
+            <span>{{companyUser.workEmail}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.companyUser.mobilePhone">Mobile Phone</span></dt>
+        <dd>
+            <span>{{companyUser.mobilePhone}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.companyUser.whatsUp">Whats Up</span></dt>
+        <dd>
+            <span>{{companyUser.whatsUp}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.companyUser.officePhone">Office Phone</span></dt>
+        <dd>
+            <span>{{companyUser.officePhone}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.companyUser.user">User</span></dt>
+        <dd>
+            {{companyUser.user?.login}}
+        </dd>
+        <dt><span jhiTranslate="flowersApp.companyUser.company">Company</span></dt>
+        <dd>
+            <div *ngIf="companyUser.company">
+                <a [routerLink]="['/company', companyUser.company?.id]">{{companyUser.company?.mainName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.companyUser.positions">Positions</span></dt>
+        <dd>
+            <span *ngFor="let positions of companyUser.positions; let last = last">
+                <a [routerLink]="['/position', positions?.id ]">{{positions.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'company-user/'+ companyUser.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

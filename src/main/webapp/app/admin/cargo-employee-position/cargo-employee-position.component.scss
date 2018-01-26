@@ -1,0 +1,170 @@
+.cargo-employee-position {
+    margin: 40px 0 0 30px;
+    height: 643px;
+}
+
+.cargo-employee-position-block {
+    width: 48%;
+    height:196px;
+    border: 2px solid #eaeaea;
+    padding: 18px;
+    margin: 0 4px 4px 0;
+    display: flex;
+    float: left;
+    align-items: center;
+}
+
+@media screen and (max-width: 1050px) {
+    .cargo-employee-position-block {
+        width: 96%;
+    }
+}
+
+.create-cargo-employee-position {
+    float: right;
+    margin: 0 57px 0 0;
+    height: 40px;
+    padding: 6px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    border: 2px solid cadetblue;
+    color: cadetblue;
+    background-color: #fff;
+    outline: none;
+    &:hover {
+        color: #fff;
+        background-color: cadetblue;
+    }
+}
+
+.cargo-employee-position-icon {
+    margin: 0 25px;
+}
+
+.fields-block {
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 18px;
+    width: 300px;
+    word-break: break-all;
+}
+
+.fields-text {
+    font-family: FlowersFont-HEAD-OFFICE-LIGTH;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: left;
+}
+
+.act-block {
+    padding-top: 15px;
+}
+
+.vertical-separator {
+    height: 10px;
+    width: 2px;
+    background: grey;
+    display: block;
+    float: left;
+    margin: 0 10px 0 10px;
+}
+/* global  overall image styles */
+.image-w img, .image-w svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.title {
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    font-size: 21px;
+}
+
+.edit-block {
+    width: 70px;
+    border: none;
+    cursor: pointer;
+    float: left;
+    outline: none;
+    &:hover {
+        color: cadetblue ;
+    }
+}
+
+.delete-block {
+    width: 70px;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    float: left;
+    outline: none;
+    &:hover {
+        color: cadetblue ;
+    }
+}
+
+.delete-span, .delete-span {
+    font-size: 12px;
+    font-family: FlowersFont-HEAD-OFFICE-REGULAR;
+    outline: none;
+    float: left;
+    margin-left: 5px;
+}
+
+.edit-delete-icons {
+    font-size: 17px;
+    cursor: pointer;
+    float: left;
+    outline: none;
+}
+
+.loader-right-block {
+    margin: 120px auto;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid cadetblue;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: blue;
+}
+
+.gold {
+    color: gold;
+}
+
+.brown {
+    color: brown;
+}
+
+.violet {
+    color: violet;
+}
+
+.pink {
+    color: pink;
+}
+
+.aqua {
+    color: aqua;
+}

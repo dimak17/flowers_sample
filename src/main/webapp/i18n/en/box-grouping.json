@@ -1,0 +1,17 @@
+{
+    "flowersApp": {
+        "box-grouping": {
+            "title": "Box grouping",
+            "deleteButton": "Delete one",
+            "deleteAllButton": "Delete all",
+            "validation": {
+                "required": "Fill box",
+                "required_or_delete": "Fill box or delete it"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Group {{ name }}?"
+            },
+            "warn_save": "Please save it"
+        }
+    }
+}

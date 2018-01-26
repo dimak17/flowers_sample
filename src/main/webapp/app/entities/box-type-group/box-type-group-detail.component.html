@@ -1,0 +1,41 @@
+
+<div *ngIf="boxTypeGroup">
+    <h2><span jhiTranslate="flowersApp.boxTypeGroup.detail.title">Box Type Group</span> {{boxTypeGroup.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.boxTypeGroup.quantity">Quantity</span></dt>
+        <dd>
+            <span>{{boxTypeGroup.quantity}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.boxTypeGroup.order">Order</span></dt>
+        <dd>
+            <span>{{boxTypeGroup.order}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.boxTypeGroup.boxGroup">Box Group</span></dt>
+        <dd>
+            <div *ngIf="boxTypeGroup.boxGroup">
+                <a [routerLink]="['/box-group', boxTypeGroup.boxGroup?.id]">{{boxTypeGroup.boxGroup?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.boxTypeGroup.boxType">Box Type</span></dt>
+        <dd>
+            <div *ngIf="boxTypeGroup.boxType">
+                <a [routerLink]="['/box-type', boxTypeGroup.boxType?.id]">{{boxTypeGroup.boxType?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'box-type-group/'+ boxTypeGroup.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,44 @@
+{
+    "flowersApp": {
+        "boxType" : {
+            "home": {
+                "title": "Tipo de cajas",
+                "createLabel": "Crear nueva caja",
+                "createOrEditLabel": "Editar la caja"
+            },
+            "created": "Un nuevo tipo de caja ha sido creado con el identificador {{ param }}",
+            "updated": "Un box bype ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un box type ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar la caja {{ name }}?",
+                "usageGroupingsError": "'{{ name }}' - se utiliza en 'Empresa' 🡪 'Grupos de Cajas'",
+                "finalText": "Por favor, primero elimínenlo ahí"
+            },
+            "detail": {
+                "title": "Tipo de caja"
+            },
+
+            "shortName": "Abreviatura",
+            "fullName": "Nombre completo",
+            "boxSize": "Tamaño de la caja",
+            "alert": "Este tipo de caja ya existe",
+            "createBoxType": "Crear nuevo tipo de caja",
+
+            "validation": {
+                "shortName": {
+                    "required": "Abreviatura es requerida",
+                    "pattern": "Abreviatura debe contener caracteres latinos",
+                    "maximumSymbols": "Abreviatura debe contener máximo 5 símbolos"
+                },
+                "fullName": {
+                    "required": "Nombre completo es requerido",
+                    "pattern": "Nombre completo debe contener caracteres latinos",
+                    "maximumSymbols": "Nombre completo debe contener máximo 13 símbolos"
+                },
+                "boxSize": {
+                    "pattern":  "Tamaño de la caja debe contener dígitos"
+                }
+            }
+        }
+    }
+}

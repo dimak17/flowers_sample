@@ -1,0 +1,24 @@
+{
+    "flowersApp": {
+        "position" : {
+            "home": {
+                "title": "Positions",
+                "createLabel": "Создать новый Position",
+                "createOrEditLabel": "Создать или отредактировать Position"
+            },
+            "created": "Новый Position создан с идентификатором {{ param }}",
+            "updated": "Position обновлен с идентификатором {{ param }}",
+            "deleted": "Position удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Position {{ id }}?"
+            },
+            "detail": {
+                "title": "Position"
+            },
+            "name": "Name",
+            "company": "Company",
+            "companyUsers": "Company Users",
+            "authority": "Authority"
+        }
+    }
+}

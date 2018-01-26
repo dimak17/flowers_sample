@@ -1,0 +1,27 @@
+{
+    "flowersApp": {
+        "market" : {
+            "home": {
+                "title": "Markets",
+                "createLabel": "Создать новый Market",
+                "createOrEditLabel": "Создать или отредактировать Market"
+            },
+            "created": "Новый Market создан с идентификатором {{ param }}",
+            "updated": "Market обновлен с идентификатором {{ param }}",
+            "deleted": "Market удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Market {{ id }}?"
+            },
+            "detail": {
+                "title": "Market"
+            },
+            "name": "Name",
+            "company": "Company",
+            "marketVarieties": "Market Varieties",
+            "boxGroups": "Box Groups",
+            "marketBoxes": "Market Boxes",
+            "companyUsers": "Company Users",
+            "marketSeason": "Market Season"
+        }
+    }
+}

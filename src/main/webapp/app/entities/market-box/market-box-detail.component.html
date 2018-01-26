@@ -1,0 +1,49 @@
+
+<div *ngIf="marketBox">
+    <h2><span jhiTranslate="flowersApp.marketBox.detail.title">Market Box</span> {{marketBox.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="flowersApp.marketBox.width">Width</span></dt>
+        <dd>
+            <span>{{marketBox.width}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketBox.height">Height</span></dt>
+        <dd>
+            <span>{{marketBox.height}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketBox.length">Length</span></dt>
+        <dd>
+            <span>{{marketBox.length}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketBox.unit">Unit</span></dt>
+        <dd>
+            <span jhiTranslate="{{'flowersApp.BoxSizeUnit.' + marketBox.unit}}">{{marketBox.unit}}</span>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketBox.market">Market</span></dt>
+        <dd>
+            <div *ngIf="marketBox.market">
+                <a [routerLink]="['/market', marketBox.market?.id]">{{marketBox.market?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="flowersApp.marketBox.boxType">Box Type</span></dt>
+        <dd>
+            <div *ngIf="marketBox.boxType">
+                <a [routerLink]="['/box-type', marketBox.boxType?.id]">{{marketBox.boxType?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'market-box/'+ marketBox.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
